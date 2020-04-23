@@ -2,14 +2,31 @@
 // Paperplane _blankTheme - template per index.
 get_header();
 ?>
-
-
-<div class="box-fullscreen fullscreen-cta fullscreen-cta-center bg-3 lazy coverize" data-bg="url('<?php bloginfo('stylesheet_directory'); ?>/assets/images/test-images/1.jpg')" data-aos="zoom-out">
-  <div class="fullscreen-cta-aligner">
-    <div class="wrapper">
-      <div class="wrapper-padded">
-        <div class="fullscreen-cta-safe-padding last-child-no-margin txt-4" data-aos="fade-right">
-          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec sodales nibh, ut volutpat felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</h1>
+<div class="wrapper">
+  <div class="wrapper-padded">
+    <div class="wrapper-padded-more">
+      <div class="flex-hold flex-hold-2 margins-fit verticalize intro-box">
+        <div class="flex-hold-child">
+          <div class="intro-news-padder">
+            <div class="category-holder cat-fill-a">
+              <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Uffici">Uffici</a></h6>
+            </div>
+            <h2><a href="#" title="xxxx" aria-label="xxxx">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+            <div class="tags-holder">
+              <a href="#" class="tag-button filled-button">Tag</a> <a href="#" class="tag-button filled-button">Tag</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-hold-child">
+          <a href="#" title="xxxx" aria-label="xxxx">
+            <div class="no-the-100">
+              <img src="https://via.placeholder.com/590x436" />
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -17,399 +34,464 @@ get_header();
 </div>
 
 
-<div class="wrapper bg-7" data-aos="fade-up">
+<div class="wrapper bg-9">
+  <span class="wrapper-step bg-12"></span>
   <div class="wrapper-padded">
-    <div class="wrapper-padded-more-840">
-      <div class="content-styled modulo-space">
-        <h1>Test tipografico h1<br />Test tipografico h1!!!!!</h1>
-        <a href="#" class="round-button clear-round-button">clear-round-button</a>
-        <h2>Test tipografico h2<br />Test tipografico h2</h2>
-        <h3>Test tipografico h3<br />Test tipografico h3</h3>
-        <h4>Test tipografico h4<br />Test tipografico h4</h4>
-        <h5>Test tipografico h5<br />Test tipografico h5</h5>
-        <h6>Test tipografico h6<br />Test tipografico h6</h6>
-        <p>
-          Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipiscing elit. <em>Sed facilisis sodales sem eu vestibulum</em>. Pellentesque mi nulla, molestie at accumsan sed, vulputate sed mauris. Phasellus orci arcu, iaculis eu finibus eu, efficitur et quam. Quisque lobortis, dolor quis dignissim porttitor, mi velit lacinia lectus, eget consectetur nisl orci a erat. Fusce posuere orci non felis maximus sodales. Fusce eu augue auctor, congue nisl sit amet, dapibus ligula. Quisque id diam nisi. Nunc lacinia mauris vel tincidunt tincidunt. <strong>Nulla sed augue auctor, volutpat dui varius, rutrum arcu.</strong> Aliquam id sem odio. Ut a ligula tempor, dapibus magna ut, lobortis nunc. Fusce vitae mattis nibh.
-        </p>
-        <a href="#" class="round-button dark-round-button">dark-round-button</a>
-
-        <ul>
-          <li>Elenco puntato</li>
-          <li>Elenco puntato</li>
-          <li>Elenco puntato</li>
-          <li>Elenco puntato</li>
-          <li>Elenco puntato</li>
-        </ul>
-        <ol>
-          <li>Elenco numerato</li>
-          <li>Elenco numerato</li>
-          <li>Elenco numerato</li>
-          <li>Elenco numerato</li>
-          <li>Elenco numerato</li>
-        </ol>
-
-        <p>
-          <?php _e('Ciao mondo!', 'paperplane-theme'); ?>
-        </p>
-
-        <div class="expander-top">
-          <button class="expander exp-open" aria-expanded="false"><span class="exp-plus"></span>Titolo ad espansione<br />con test a capo</button>
+    <div class="wrapper-padded-more">
+      <div class="flex-hold flex-hold-3 margins-wide grid-separator-1">
+        <!-- card singoli contenuti -->
+        <div class="flex-hold-child card insite">
+          <div class="card_inner regular-card">
+            <div class="cover-image">
+              <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">
+                <div class="no-the-100">
+                  <img src="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg" />
+                </div>
+              </a>
+            </div>
+            <div class="category-holder cat-fill-b">
+              <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+            </div>
+            <div class="texts-holder">
+              <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+          <div class="cta-holder">
+            <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+          </div>
         </div>
+        <!-- card singoli contenuti -->
+        <!-- card singoli contenuti -->
+        <div class="flex-hold-child card insite">
+          <div class="card_inner regular-card">
+            <div class="category-holder cat-fill-a">
+              <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Uffici">Uffici</a></h6>
+            </div>
+            <div class="texts-holder">
+              <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
 
-        <div class="expandable-content">
-          <div class=" content-styled">
-            <p>Test tipografico paragrafo<br />Test tipografico paragrafo con un <a href="#">link</a>.</p>
+          </div>
+          <div class="cta-holder">
+            <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+          </div>
+        </div>
+        <!-- card singoli contenuti -->
+        <!-- card singoli contenuti -->
+        <div class="flex-hold-child card insite">
+          <div class="card_inner regular-card">
+            <div class="category-holder cat-fill-a">
+              <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Uffici">Uffici</a></h6>
+            </div>
+            <div class="texts-holder">
+              <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+
+          </div>
+          <div class="cta-holder">
+            <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+          </div>
+        </div>
+        <!-- card singoli contenuti -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="wrapper bg-9">
+  <div class="wrapper-padded">
+    <div class="wrapper-padded-more">
+      <h2>Le prossime scadenze</h2>
+      <!-- cards-slideshow -->
+      <div class="slide-four">
+
+          <!-- card singoli contenuti -->
+          <div class="single-slide">
+            <div class="card insite">
+              <div class="card_inner regular-card">
+                <div class="category-holder cat-fill-b">
+                  <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+                </div>
+                <div class="texts-holder">
+                  <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="more-info">
+                  <p>
+                    <strong>Data pubblicazione:</strong> 12 febbraio 2020<br />
+                    <strong>Data scadenza:</strong> 12 marzo 2020
+                  </p>
+                </div>
+              </div>
+              <div class="cta-holder">
+                <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="single-slide">
+            <div class="card insite">
+              <div class="card_inner regular-card">
+                <div class="category-holder cat-fill-b">
+                  <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+                </div>
+                <div class="texts-holder">
+                  <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="more-info">
+                  <p>
+                    <strong>Data pubblicazione:</strong> 12 febbraio 2020<br />
+                    <strong>Data scadenza:</strong> 12 marzo 2020
+                  </p>
+                </div>
+              </div>
+              <div class="cta-holder">
+                <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="single-slide">
+            <div class="card insite">
+              <div class="card_inner regular-card">
+                <div class="category-holder cat-fill-b">
+                  <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+                </div>
+                <div class="texts-holder">
+                  <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="more-info">
+                  <p>
+                    <strong>Data pubblicazione:</strong> 12 febbraio 2020<br />
+                    <strong>Data scadenza:</strong> 12 marzo 2020
+                  </p>
+                </div>
+              </div>
+              <div class="cta-holder">
+                <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="single-slide">
+            <div class="card insite">
+              <div class="card_inner regular-card">
+                <div class="category-holder cat-fill-b">
+                  <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+                </div>
+                <div class="texts-holder">
+                  <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="more-info">
+                  <p>
+                    <strong>Data pubblicazione:</strong> 12 febbraio 2020<br />
+                    <strong>Data scadenza:</strong> 12 marzo 2020
+                  </p>
+                </div>
+              </div>
+              <div class="cta-holder">
+                <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="single-slide">
+            <div class="card insite">
+              <div class="card_inner regular-card">
+                <div class="category-holder cat-fill-b">
+                  <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
+                </div>
+                <div class="texts-holder">
+                  <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="more-info">
+                  <p>
+                    <strong>Data pubblicazione:</strong> 12 febbraio 2020<br />
+                    <strong>Data scadenza:</strong> 12 marzo 2020
+                  </p>
+                </div>
+              </div>
+              <div class="cta-holder">
+                <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+
+      </div>
+      <!-- cards-slideshow -->
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <span class="wrapper-step-image">
+    <span class="wrapper-step-image lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
+    </span>
+  </span>
+  <div class="wrapper-padded">
+    <div class="wrapper-padded-more">
+      <div class="highlight-box">
+        <h2 class="txt-12">Argomenti in evidenza</h2>
+        <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card insite">
+            <div class="card_inner regular-card">
+              <div class="category-square cat-fill-a">
+                <span></span>
+              </div>
+              <div class="texts-holder">
+                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="inner-news-listing">
+                <ul>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur orem ipsum dolor sit amen consectetur</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cta-holder">
+              <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card insite">
+            <div class="card_inner regular-card">
+              <div class="category-square cat-fill-a">
+                <span></span>
+              </div>
+              <div class="texts-holder">
+                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="inner-news-listing">
+                <ul>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur orem ipsum dolor sit amen consectetur</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cta-holder">
+              <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card insite">
+            <div class="card_inner regular-card">
+              <div class="category-square cat-fill-a">
+                <span></span>
+              </div>
+              <div class="texts-holder">
+                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="inner-news-listing">
+                <ul>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit</a>
+                  </li>
+                  <li>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur orem ipsum dolor sit amen consectetur</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cta-holder">
+              <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+
+        </div>
+        <div class="aligncenter">
+          <h6 class="txt-1 allupper">Altri argomenti</h6>
+          <div class="tags-holder">
+            <a href="#" class="tag-button filled-button">Tag</a> <a href="#" class="tag-button filled-button">Tag</a>
           </div>
         </div>
 
       </div>
+
     </div>
   </div>
 </div>
 
 
-<div class="box-fullscreen fullscreen-cta fullscreen-cta-bottom bg-3 lazy fixx" data-bg="url('<?php bloginfo('stylesheet_directory'); ?>/assets/images/test-images/2.jpg')">
-  <div class="fullscreen-cta-aligner">
-    <div class="wrapper">
-      <div class="wrapper-padded">
-        <div class="fullscreen-cta-safe-padding last-child-no-margin txt-4" data-aos="fade-right">
-          <h1>Box fullscreen con titolo in basso e immagine BG</h1>
-          <h1>Box fullscreen con titolo in basso e immagine BG</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="wrapper bg-7">
+<div class="wrapper">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more">
-      <div class="wrapper-padded-more-650">
-        <div class="modulo-space">
-          <h1>Slideshow</h1>
-          <?php get_template_part( 'template-parts/slideshows/regular-slideshow-b' ); ?>
+      <div class="thematic-box">
+        <h2>Siti tematici</h2>
+        <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-2">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-4">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-6">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-6">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-2">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
+          <!-- card singoli contenuti -->
+          <div class="flex-hold-child card offsite bg-4">
+            <div class="card_inner cap-card">
+              <div class="category-square title-block cat-fill">
+                <span>
+                <h5>Sito tematico</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- card singoli contenuti -->
         </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="wrapper bg-7">
-  <div class="wrapper-padded">
-    <div class="wrapper-padded-more">
-      <h1>Test griglie</h1>
-      <h2>le griglie con flexbox ora hanno una classe che gestisce il numero di elementi per riga e una che definisce la loro spaziatura.</h2>
-
-      <h2>griglia a 2 - margins-thin</h2>
-      <div class="flex-hold flex-hold-2 margins-thin bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box - xxx</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 2 - margins-wide</h2>
-      <div class="flex-hold flex-hold-2 margins-wide bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 2 - margins-fit</h2>
-      <div class="flex-hold flex-hold-2 margins-fit bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 3 - margins-thin</h2>
-      <div class="flex-hold flex-hold-3 margins-thin bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 3 - margins-wide</h2>
-      <div class="flex-hold flex-hold-3 margins-wide bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 3 - margins-fit</h2>
-      <div class="flex-hold flex-hold-3 margins-fit bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 4 - margins-thin</h2>
-      <div class="flex-hold flex-hold-4 margins-thin bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 4 - margins-wide</h2>
-      <div class="flex-hold flex-hold-4 margins-wide bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <?php
-          $image_data = array(
-              'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
-              'image_value' => 'immagine_acf', // se utilizzi un custom field indica qui il nome del campo
-              'size_fallback' => 'full_desk'
-          );
-          $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-              'retina' => 'full_desk_retina',
-              'desktop' => 'full_desk',
-              'mobile' => 'content_picture',
-              'micro' => 'micro'
-          );
-          print_theme_image( $image_data, $image_sizes );
-          ?>
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 4 - margins-fit</h2>
-      <div class="flex-hold flex-hold-4 margins-fit bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 5 - margins-thin</h2>
-      <div class="flex-hold flex-hold-5 margins-thin bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 5 - margins-wide</h2>
-      <div class="flex-hold flex-hold-5 margins-wide bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-      </div>
-
-      <h2>griglia a 5 - margins-fit</h2>
-      <div class="flex-hold flex-hold-5 margins-fit bg-5">
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
-        <div class="flex-hold-child bg-3">
-          <h2>just a box</h2>
-        </div>
-
       </div>
 
     </div>
   </div>
 </div>
-<div class="wrapper bg-7 modulo-space">
-  <?php get_template_part( 'template-parts/slideshows/regular-slideshow' ); ?>
+
+
+<div class="wrapper lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
+  <div class="search-banner">
+    <div class="wrapper-padded">
+      <div class="wrapper-padded-more-780">
+        <form class="banner-form">
+          <input type="text" placeholder="cerca" />
+          <button><span class="icon-search"></span></button>
+        </form>
+        <div class="tags-holder">
+          <a href="#" class="square-button green filled">Label</a> <a href="#" class="square-button green filled">Label</a> <a href="#" class="square-button green filled">Label</a>
+           <a href="#" class="square-button green filled">Label</a> <a href="#" class="square-button green filled">Label</a> <a href="#" class="square-button green filled">Label</a>
+           <a href="#" class="square-button green filled">Label</a> <a href="#" class="square-button green filled">Label</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
 <?php get_footer(); ?>

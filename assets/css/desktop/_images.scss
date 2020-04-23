@@ -1,6 +1,41 @@
 // main: ../style.scss
-@import '../0-global/vars';
-@import '../0-global/mixin';
+@import '../global/vars';
+@import '../global/mixin';
+
+.column-color {
+	.no-the-100 {
+		width: calc(100% + 96px);
+		margin-left: -48px;
+		margin-top: -48px;
+	}
+
+	.image-rounder {
+		.no-the-100 {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+}
+
+.image-rounder {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	@include define-border-radius(160px);
+	overflow: hidden;
+}
+
+.page-opening-image-rounder {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	@include define-border-radius(300px);
+	overflow: hidden;
+	margin: 72px 0;
+}
 
 .wp-caption.aligncenter,
 .wp-caption.alignnone {
@@ -15,12 +50,12 @@
 
 .wp-caption.alignleft {
 	float: left;
-	margin-right: 15px;
+	margin-right: 20px;
 }
 
 .wp-caption.alignright {
 	float: right;
-	margin-left: 15px;
+	margin-left: 20px;
 }
 
 .wp-caption-text,

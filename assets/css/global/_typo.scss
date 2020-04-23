@@ -1,0 +1,232 @@
+// main: ../style.scss
+@import 'vars';
+@import 'mixin';
+
+.activate-search,
+.arrow-button,
+.button-appearance-normalizer,
+.caption,
+.card p,
+.cta,
+.inner-news-listing,
+.navi,
+.paragraph-variant,
+.paragraph-variant-holder p,
+.square-button,
+.tag-button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=text],
+select,
+small,
+textarea {
+  font-family: $font-main;
+}
+
+p {
+  font-family: $font-sub;
+}
+
+.arrow-button,
+.square-button,
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-weight: $font-weight-3;
+}
+
+.activate-search,
+.card p strong,
+.index-listing,
+.navi,
+.tag-button,
+h5 {
+  font-weight: $font-weight-2;
+}
+
+.breadcrumbs-holder,
+.button-appearance-normalizer,
+.caption,
+.card p,
+.content-styled h3,
+.h3-variant,
+.inner-news-listing,
+.paragraph-variant,
+.paragraph-variant-holder p,
+.share-actions,
+p,
+small {
+  font-weight: $font-weight-1;
+}
+
+.light {
+  font-weight: $font-weight-1 !important;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.alignleft {
+  text-align: left;
+}
+
+.allupper,
+.arrow-button {
+  text-transform: uppercase;
+}
+// comma separated links
+
+.category-list {
+  //margin-bottom: 24px;
+  a:link {
+    &:after {
+      content: ", ";
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+  }
+
+  span {
+    &:after {
+      content: ", ";
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+  }
+}
+// remove typography elements last child margin bottom
+
+.last-child-no-margin {
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  ol:last-child,
+  p:last-child,
+  ul:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.content-styled {
+  strong {
+    font-weight: $font-weight-3;
+  }
+
+  ol,
+  ul {
+    font-family: $font-sub;
+  }
+
+  ul {
+    list-style-position: inside;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: table-row;
+
+      &:before {
+        position: relative;
+        display: table-cell;
+        content: '●';
+        font-weight: $font-weight-3;
+        color: $color-2;
+        padding: 0 10px 0 0;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    list-style-type: decimal;
+    padding: 0;
+    counter-reset: li-counter;
+  }
+
+  ol > li {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: table-row;
+
+    &:before {
+      position: relative;
+      display: table-cell;
+      top: 0;
+      left: 0;
+      font-weight: $font-weight-3;
+      color: $color-2;
+      text-align: right;
+      content: counter(li-counter)". ";
+      counter-increment: li-counter;
+      padding: 0 15px 0 0;
+    }
+  }
+}
+
+.inner-news-listing {
+  ul {
+    list-style-position: inside;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+
+    li {
+      position: relative;
+      padding: 0 0 10px 34px;
+      margin: 0 0 10px;
+      border-bottom: solid 1px $color-10;
+      min-height: 24px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        &:before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          //margin-top: -24px;
+          display: table-cell;
+          content: "";
+          width: 24px;
+          height: 24px;
+          overflow: hidden;
+          background-color: $color-2;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  &.restricted,
+  &.warning {
+    .icon {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// main: ../style.scss
+
+#footer,
+#header,
+#header-overlay,
+.no-print {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  float: none;
+}
+/** Setting margins */
+@page {
+  margin: 2cm;
+}
+/* Or: */
+@page :left {
+  margin: 1cm;
+}
+
+@page :right {
+  margin: 1cm;
+}
+
+.entry iframe,
+ins {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  white-space: nowrap;
+}
+
+.embed-responsive,
+.embed-youtube {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}

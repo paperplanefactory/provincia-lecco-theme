@@ -4,7 +4,9 @@ function register_theme_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
+      'footer-menu' => __( 'Footer Menu' ),
+      'overlay-menu-desktop' => __ ( 'Overlay Menu Desktop' ),
+      'overlay-menu-mobile' => __ ( 'Overlay Menu Mobile' )
     )
   );
 }
@@ -53,12 +55,25 @@ if( function_exists('acf_add_options_page') ) {
   foreach ( $languages as $lang ) {
     // gestione cookie GDPR
     acf_add_options_sub_page( array (
-      'page_title' => 'Opzioni eventuali (' . strtoupper( $lang ) . ')',
-      'menu_title' => __('Opzioni eventuali (' . strtoupper( $lang ) . ')', 'text-domain'),
-      'menu_slug'  => "opzioni-eventuali-${lang}",
+      'page_title' => 'Gestione footer (' . strtoupper( $lang ) . ')',
+      'menu_title' => __('Gestione footer (' . strtoupper( $lang ) . ')', 'text-domain'),
+      'menu_slug'  => "gestione-footer-${lang}",
       'post_id'    => $lang,
       'parent_slug'     => $parent['menu_slug'],
     ) );
+  }
+  $use_mega_menus = get_field( 'use_mega_menus', 'option');
+  if ( $use_mega_menus == 1 ) {
+    foreach ( $languages as $lang ) {
+      // gestione cookie GDPR
+      acf_add_options_sub_page( array (
+        'page_title' => 'Gestione mega menu (' . strtoupper( $lang ) . ')',
+        'menu_title' => __('Gestione mega menu (' . strtoupper( $lang ) . ')', 'text-domain'),
+        'menu_slug'  => "gestione-mega-menu-${lang}",
+        'post_id'    => $lang,
+        'parent_slug'     => $parent['menu_slug'],
+      ) );
+    }
   }
 }
 
@@ -71,4 +86,21 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 	) );
 
 	return $meta_caps;
+}
+
+
+add_action('admin_head', 'my_custom_acf');
+function my_custom_acf() {
+  echo '<style>
+  [data-name*="choose_module"] {
+    background-color: #2867c5 !important;
+    color: #FFFFFF;
+  }
+  .acf-label.acf-accordion-title, .acf-label.acf-accordion-title:hover  {
+    background-color: #989898 !important;
+    color: #000000;
+  }
+
+
+  </style>';
 }

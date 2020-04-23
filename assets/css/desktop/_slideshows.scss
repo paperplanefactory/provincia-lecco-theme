@@ -1,20 +1,49 @@
- // main: ../style.scss
-@import '../0-global/vars';
-@import '../0-global/mixin';
+// main: ../style.scss
+@import '../global/vars';
+@import '../global/mixin';
 
-.slider-nav {
-  width: calc(100% - 50px);
-  margin: 25px 0 0 25px;
-  .slick-prev {
-    left: -25px;
-    margin-top: -23px;
+.slide-four {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+  //padding-bottom: 78px;
+  .slick-list {
+    padding: 8px;
   }
+
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    top: -50px;
+    font-size: 30px;
+  }
+
+  .slick-prev {
+    right: 50px;
+  }
+
   .slick-next {
-    right: -25px;
-    margin-top: -23px;
+    right: 0;
   }
 }
 
+.single-slide {
+  .card {
+    position: relative;
+    width: calc(100% + 8px);
+    left: -8px;
+
+    .card_inner {
+      &.regular-card {
+        padding: 20px 28px 35px 20px;
+      }
+    }
+  }
+}
+
+.slide-caption {
+  margin-top: 20px;
+}
 // navigation
 
 .slick-arrow {
@@ -26,40 +55,35 @@
   margin-top: -5px;
 }
 
-.slick-prev {
-  top: 50%;
-  left: 10px;
-}
-
-.slick-next {
-  top: 50%;
-  right: 10px;
-}
-
 .slick-dots {
   text-align: center;
-  padding: 10px 0 0 0 !important;
+  padding: 15px 0 0 0 !important;
+
   li {
     display: inline-block;
     margin: 0 5px;
+
     button {
-      width: 20px;
-      height: 20px;
+      width: 12px;
+      height: 12px;
       border: none;
-      background-color: $color-3;
+      //background-color: $color-4;
+      border: solid 1px $color-4;
       font-size: 0;
       margin: 0;
       padding: 0;
       @include define-basic-transition(all, 0.3s);
-      @include define-border-radius(20px);
+      @include define-border-radius(12px);
       cursor: pointer;
+
       &:hover {
-        background-color: $color-1;
+        background-color: $color-4;
       }
     }
+
     &.slick-active {
       button {
-        background-color: $color-1;
+        background-color: $color-4;
       }
     }
   }
@@ -69,6 +93,6 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 10px 0 0 0;
+  padding: 10px 0 0;
   text-align: center;
 }

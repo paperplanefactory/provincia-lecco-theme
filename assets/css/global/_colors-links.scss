@@ -1,0 +1,533 @@
+// main: ../style.scss
+@import 'vars';
+@import 'mixin';
+
+::-moz-selection {
+	background: $color-1;
+	color: $color-4;
+}
+
+::selection {
+	background: $color-1;
+	color: $color-4;
+}
+
+::-moz-selection {
+	background: $color-1;
+	color: $color-4;
+}
+
+::-webkit-selection {
+	background: $color-1;
+	color: $color-4;
+}
+
+::-webkit-input-placeholder {
+	color: $color-1;
+}
+
+:-moz-placeholder {
+	color: $color-1;
+}
+
+::-moz-placeholder {
+	color: $color-1;
+}
+// txt colors
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+	color: $color-2;
+}
+
+.txt-1 {
+	color: $color-1;
+}
+
+.txt-2 {
+	color: $color-2;
+}
+
+.txt-3 {
+	color: $color-3;
+}
+
+.txt-4 {
+	color: $color-4;
+}
+
+.txt-5 {
+	color: $color-5;
+}
+
+.txt-6 {
+	color: $color-6;
+}
+
+.txt-7 {
+	color: $color-7;
+}
+
+.txt-8 {
+	color: $color-8;
+}
+
+.txt-9 {
+	color: $color-9;
+}
+
+.txt-10 {
+	color: $color-10;
+}
+
+.txt-11 {
+	color: $color-11;
+}
+
+.txt-12 {
+	color: $color-12;
+}
+// bg colors
+
+.bg-1 {
+	background-color: $color-1;
+}
+
+.bg-2 {
+	background-color: $color-2;
+}
+
+.bg-3 {
+	background-color: $color-3;
+}
+
+.bg-4 {
+	background-color: $color-4;
+}
+
+.bg-5 {
+	background-color: $color-5;
+}
+
+.bg-6 {
+	background-color: $color-6;
+}
+
+.bg-7 {
+	background-color: $color-7;
+}
+
+.bg-8 {
+	background-color: $color-8;
+}
+
+.bg-9 {
+	background-color: $color-9;
+}
+
+.bg-10 {
+	background-color: $color-10;
+}
+
+.bg-11 {
+	background-color: $color-11;
+}
+
+.bg-12 {
+	background-color: $color-12;
+}
+
+.default-box-shadow {
+	-webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}
+// link behaviour and colors
+
+:-webkit-any-link {
+	@include define-basic-transition(all, 0.3s);
+}
+
+:-moz-any-link {
+	@include define-basic-transition(all, 0.3s);
+}
+
+:any-link {
+	@include define-basic-transition(all, 0.3s);
+}
+
+a:link,
+a:visited {
+	color: $color-2;
+}
+
+a:active,
+a:hover {
+	color: $color-1;
+}
+
+.white-links {
+	a:link,
+	a:visited {
+		color: $color-12;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-11;
+	}
+}
+
+.grey-links {
+	a:link,
+	a:visited {
+		color: $color-1;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-1;
+	}
+}
+
+a.absl:active,
+a.absl:hover,
+a.absl:link,
+a.absl:visited {
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.inner-news-listing {
+	a:link,
+	a:visited {
+		color: $color-1;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-2;
+	}
+}
+
+.image-card-content {
+	color: $color-12;
+
+	h3 {
+		color: $color-12;
+	}
+
+	a:link,
+	a:visited {
+		color: $color-12;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-2;
+	}
+}
+
+a.arrow-button:link,
+a.arrow-button:visited {
+	color: $color-4;
+}
+
+a.arrow-button:active,
+a.arrow-button:hover {
+	color: $color-1;
+}
+
+a.square-button.green:link,
+a.square-button.green:visited {
+	color: $color-4 !important;
+	border-color: $color-4;
+}
+
+a.square-button.green:active,
+a.square-button.green:hover {
+	color: $color-8 !important;
+	background-color: $color-4;
+}
+
+a.square-button.green.filled:link,
+a.square-button.green.filled:visited {
+	color: $color-8 !important;
+	background-color: $color-4;
+}
+
+a.square-button.green.filled:active,
+a.square-button.green.filled:hover {
+	color: $color-4 !important;
+	background-color: $color-12;
+}
+
+a.square-button.blue:link,
+a.square-button.blue:visited {
+	color: $color-3 !important;
+	border-color: $color-3;
+}
+
+a.square-button.blue:active,
+a.square-button.blue:hover {
+	color: $color-12 !important;
+	background-color: $color-3;
+}
+
+a.square-button.blue.filled:link,
+a.square-button.blue.filled:visited {
+	color: $color-12 !important;
+	background-color: $color-3;
+}
+
+a.square-button.blue.filled:active,
+a.square-button.blue.filled:hover {
+	color: $color-3 !important;
+	background-color: $color-12;
+}
+
+a.tag-button:link,
+a.tag-button:visited {
+	color: $color-4 !important;
+	border-color: $color-8;
+	background-color: $color-8;
+}
+
+a.tag-button:active,
+a.tag-button:hover {
+	color: $color-8 !important;
+	background-color: $color-4;
+}
+
+.undelinked-links {
+	a {
+		text-decoration: underline;
+	}
+}
+
+.share-actions {
+	li {
+		span {
+			color: $color-4;
+		}
+	}
+}
+
+.slick-next,
+.slick-prev {
+	color: $color-4;
+
+	&:hover {
+		color: $color-1;
+	}
+
+	&.slick-disabled {
+		opacity: 0.3;
+	}
+}
+
+.content-styled {
+	h3,
+	h4 {
+		color: $color-1;
+	}
+
+	a:link,
+	a:visited {
+		text-decoration: underline;
+		color: $color-3;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-1;
+	}
+}
+
+.category-holder {
+	a:active,
+	a:hover,
+	a:link,
+	a:visited {
+		&:before {
+			content: "";
+			position: relative;
+			top: 6px;
+			display: inline-block;
+			margin-right: 10px;
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&.cat-fill-a {
+		a:active,
+		a:hover,
+		a:link,
+		a:visited {
+			&:before {
+				background-color: $color-2;
+			}
+		}
+	}
+
+	&.cat-fill-b {
+		a:active,
+		a:hover,
+		a:link,
+		a:visited {
+			&:before {
+				background-color: $color-8;
+			}
+		}
+	}
+}
+
+.category-square {
+	min-height: 48px;
+
+	a:active,
+	a:hover,
+	a:link,
+	a:visited,
+	span {
+		position: relative;
+		padding-left: 68px;
+		display: table-cell;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	&.cat-fill-a {
+		a:active,
+		a:hover,
+		a:link,
+		a:visited,
+		span {
+			&:before {
+				background-color: $color-2;
+			}
+		}
+	}
+
+	&.cat-fill-b {
+		a:active,
+		a:hover,
+		a:link,
+		a:visited,
+		span {
+			&:before {
+				background-color: $color-8;
+			}
+		}
+	}
+}
+
+.offsite {
+	.category-holder {
+		&.cat-fill {
+			a:active,
+			a:hover,
+			a:link,
+			a:visited {
+				&:before {
+					background-color: $color-12;
+				}
+			}
+		}
+	}
+
+	.category-square {
+		&.cat-fill {
+			a:active,
+			a:hover,
+			a:link,
+			a:visited,
+			span {
+				&:before {
+					background-color: $color-12;
+				}
+			}
+		}
+	}
+}
+
+.card {
+	-webkit-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+	-moz-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+	box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+
+	&.insite {
+		background-color: $color-12;
+	}
+
+	&.offsite {
+		color: $color-12;
+		//background-color: $color-13;
+	}
+
+	&.restricted,
+	&.warning {
+		background-color: $color-12;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			width: 4px;
+			height: 100%;
+		}
+	}
+
+	&.warning {
+		.icon {
+			color: $color-6;
+		}
+
+		&:before {
+			background-color: $color-6;
+		}
+	}
+
+	&.restricted {
+		.icon {
+			color: $color-5;
+		}
+
+		&:before {
+			background-color: $color-5;
+		}
+	}
+}
+
+.with-bg-image {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0.4);
+	background-blend-mode: multiply;
+}
+
+.actions-holder {
+	background-color: $color-12;
+	-webkit-box-shadow: 0 0 16px 0 rgba(0,43,85,0.1);
+	-moz-box-shadow: 0 0 16px 0 rgba(0,43,85,0.1);
+	box-shadow: 0 0 16px 0 rgba(0,43,85,0.1);
+}

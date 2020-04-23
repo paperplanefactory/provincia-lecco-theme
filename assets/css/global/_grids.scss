@@ -1,0 +1,100 @@
+// main: ../style.scss
+@import 'vars';
+@import 'mixin'; // wrappers and more
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-padded {
+  position: relative;
+  margin: 0 auto;
+}
+
+.wrapper-padded-intro,
+.wrapper-padded-more {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-padded-more-924 {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-padded-more-780 {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-padded-more-650 {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-padded-more-500 {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex-hold {
+  position: relative;
+  width: 100%;
+  @include flex-wrap;
+}
+
+.flex-hold-child,
+.flex-hold-child-image,
+.flex-hold-child-texts,
+.left-fix,
+.page-opening-image,
+.page-opening-text,
+.right-fix {
+  position: relative;
+  -webkit-box-flex: 1;
+}
+
+.card {
+  position: relative;
+  @include define-border-radius(8px);
+  overflow: hidden;
+  //
+  &.autonomous-height {
+    align-self: flex-start;
+  }
+}
+
+.actions-holder {
+  position: absolute;
+  z-index: 10;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  opacity: 1;
+  pointer-events: all;
+  @include define-basic-transition(all, 0.3s);
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:before {
+    content: "▲";
+    color: $color-12;
+    position: absolute;
+    top: -14px;
+    left: 20px;
+  }
+
+  .padder {
+    padding: 24px !important;
+  }
+}
