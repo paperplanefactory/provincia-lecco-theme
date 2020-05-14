@@ -71,6 +71,45 @@
   }
 }
 
+.card-outline {
+  position: relative;
+  @include define-border-radius(8px);
+  //overflow: hidden;
+  border-style: solid;
+  border-width: 1px;
+
+  &.green {
+    border-color: $color-4;
+
+    .icon-box {
+      color: $color-4;
+    }
+  }
+
+  &.blue {
+    border-color: $color-3;
+
+    .icon-box {
+      color: $color-3;
+    }
+  }
+  //
+  &.autonomous-height {
+    align-self: flex-start;
+  }
+
+  .icon-box {
+    position: absolute;
+    left: 40px;
+    top: -12px;
+    width: 72px;
+    height: 24px;
+    background-color: $color-12;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
 .actions-holder {
   position: absolute;
   z-index: 10;

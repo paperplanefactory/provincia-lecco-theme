@@ -3,8 +3,8 @@
 @import 'mixin'; // hamburger
 
 .hambuger-element {
-  width: 20px;
-  height: 16px;
+  width: 30px;
+  height: 22px;
   position: relative;
   display: inline-block;
   z-index: 9998;
@@ -19,12 +19,13 @@
 .hambuger-element span {
   display: block;
   position: absolute;
-  height: 2px;
+  height: 4px;
   width: 100%;
   opacity: 1;
   left: 0;
   @include define-rotate(0);
   @include define-basic-transition(all, 0.15s);
+  background-color: $color-12;
 }
 
 .hambuger-element span:nth-child(1) {
@@ -33,7 +34,7 @@
 
 .hambuger-element span:nth-child(2),
 .hambuger-element span:nth-child(3) {
-  top: 7px;
+  top: 9px;
 }
 
 .hambuger-element span:nth-child(4) {
@@ -95,7 +96,7 @@
   display: inline-block;
   text-decoration: none !important;
   @include define-border-radius(16px);
-  padding: 4px 32px;
+  padding: 4px 22px;
 }
 
 .button-appearance-normalizer {
@@ -169,6 +170,46 @@
     float: right;
     font-size: 30px;
     color: $color-4;
+  }
+}
+
+.search-overlay-title {
+  position: relative;
+  color: $color-2;
+
+  &:hover {
+    color: $color-1;
+  }
+
+  span {
+    position: relative;
+    top: 8px;
+    color: $color-4;
+    margin-right: 10px;
+  }
+}
+
+.search-form {
+  .search-erase,
+  .search-submit {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    @include define-basic-transition(all, 0.3s);
+    background-color: transparent;
+    font-size: 25px;
+    color: $color-4;
+
+    span {
+      position: absolute;
+      top: 11px;
+      right: 9px;
+    }
   }
 }
 

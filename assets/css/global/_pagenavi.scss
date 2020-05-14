@@ -5,8 +5,10 @@
 .wp-pagenavi {
 	display: block;
 	width: 100%;
-	font-size: $h4-size-desktop;
-	font-weight: $font-weight-2;
+	margin-top: 40px;
+	font-size: $h5-size-desktop;
+	font-weight: $font-weight-1;
+	text-align: center;
 }
 
 .wp-pagenavi .extend,
@@ -21,49 +23,54 @@
 
 .wp-pagenavi .previouspostslink {
 	display: inline-block;
-	float: left;
 	margin: 0 20px 0 0;
 	color: $color-2;
 }
 
 .wp-pagenavi .nextpostslink {
 	display: inline-block;
-	float: left;
 	margin: 0 20px 0 0;
-	color: $color-2;
+	color: $color-4 !important;
 }
 
 .wp-pagenavi a {
 	display: inline-block;
-	float: left;
+	width: 46px;
+	height: 46px;
+	text-align: center;
+	line-height: 46px;
 	margin: 0 20px 0 0;
-	color: $color-2;
-	border: none !important;
+	color: $color-1;
+	border: none;
 }
 
 .wp-pagenavi a:link {
-	color: $color-2;
+	color: $color-1;
 }
 
 .wp-pagenavi a:visited {
-	color: $color-2;
+	color: $color-1;
 }
 
 .wp-pagenavi a:hover {
-	color: $color-1;
+	color: $color-4;
 }
 
 .wp-pagenavi .page {
 	display: inline-block;
-	float: left;
 	margin: 0 20px 0 0;
 	color: $color-2;
 }
 
 .wp-pagenavi span.current {
 	display: inline-block;
-	float: left;
+	display: inline-block;
+	width: 46px;
+	height: 46px;
+	text-align: center;
+	line-height: 46px;
 	margin: 0 20px 0 0;
-	color: $color-3;
-	border: none !important;
+	color: $color-4;
+	border: $color-4 solid 1px;
+	@include define-border-radius(4px);
 }

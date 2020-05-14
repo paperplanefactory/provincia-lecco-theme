@@ -41,15 +41,14 @@ if ( $header_width === 'full-width' ) {
 }
 if ( $header_width === 'contained-width' ) {
   $header_wrapper = 'wrapper-padded-intro';
-  $mega_menu_wrapper = 'mega-menu-holder-contained';
 }
 global $footer_wrapper;
 $footer_width = get_field( 'theme_footer_width', 'option' );
 if ( $footer_width === 'full-width' ) {
-  $footer_wrapper = '';
+  $footer_wrapper = 'wrapper-padded-intro';
 }
 if ( $footer_width === 'contained-width' ) {
-  $footer_wrapper = 'wrapper-padded-intro';
+  $footer_wrapper = 'wrapper-padded-more';
 }
 $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
 ?>
@@ -79,8 +78,8 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
     <div class="wrapper-padded">
       <div class="<?php echo $header_wrapper; ?>">
         <?php
-        if ( has_nav_menu( 'footer-menu' ) ) {
-          wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'header-menu-top' ) );
+        if ( has_nav_menu( 'header-menu-above' ) ) {
+          wp_nav_menu( array( 'theme_location' => 'header-menu-above', 'container' => 'ul', 'menu_class' => 'header-menu-top' ) );
         }
         ?>
       </div>
@@ -94,7 +93,7 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
         </div>
         <div class="side-head">
           <ul>
-            <li>
+            <li class="header-social">
               Seguici su
             </li>
             <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
@@ -105,8 +104,8 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
               </li>
             <?php endwhile; ?>
             <li class="search-menu">
-              <button class="activate-search activate-search-js">
-                Cerca
+              <button class="activate-search activate-search-js button-appearance-normalizer"  aria-label="Mostra/nascondi pannello di ricerca">
+                <span class="lablel">Cerca</span>
                 <div class="icon-hold">
                   <span class="icon-search"></span>
                 </div>
@@ -125,13 +124,13 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
         </div>
         <nav class="menu navi">
           <?php
-          if ( has_nav_menu( 'header-menu' ) ) {
-            wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
+          if ( has_nav_menu( 'header-menu-left' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
           }
           ?>
           <?php
-          if ( has_nav_menu( 'header-menu' ) ) {
-            wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'ul', 'menu_class' => 'header-menu head-navi-side' ) );
+          if ( has_nav_menu( 'header-menu-right' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-menu-right', 'container' => 'ul', 'menu_class' => 'header-menu head-navi-side' ) );
           }
           ?>
         </nav>
@@ -139,30 +138,123 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
     </div>
   </div>
 </header>
-<?php include( locate_template( 'template-parts/grid/mega-menu.php' ) ); ?>
 
-<div id="head-overlay" class="hidden no-bg">
+
+
+
+
+<header id="header-compact" class="hidden bg-3 txt-12 white-links paragraph-variant-holder">
+  <div class="wrapper-padded">
+    <div class="<?php echo $header_wrapper; ?>">
+      <div id="header-structure">
+        <div class="logo">
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+        </div>
+        <nav class="menu navi">
+          <?php
+          if ( has_nav_menu( 'header-menu-left' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
+          }
+          ?>
+          <?php
+          if ( has_nav_menu( 'header-menu-right' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'header-menu-right', 'container' => 'ul', 'menu_class' => 'header-menu head-navi-side' ) );
+          }
+          ?>
+        </nav>
+        <div class="side-head">
+          <ul>
+            <li class="search-menu">
+              <button class="activate-search activate-search-js" aria-label="Mostra/nascondi pannello di ricerca">
+                <span class="icon-search"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<div id="search-overlay" class="hidden bg-12" aria-expanded="false">
   <div class="scroll-opportunity">
     <div class="wrapper">
-      <nav class="menu">
-        <?php
-        if ( has_nav_menu( 'overlay-menu-mobile' ) ) {
-          wp_nav_menu( array( 'theme_location' => 'overlay-menu-mobile', 'container' => 'ul', 'menu_class' => 'overlay-menu-mobile-css overlay-menu-mobile-js' ) );
-        }
-        ?>
-      </nav>
+      <div class="wrapper-padded">
+        <div class="<?php echo $header_wrapper; ?>">
+          <div class="search-overlay-structure">
+            <button class="search-overlay-title search-overlay-title-js button-appearance-normalizer" aria-label="Chiudi pannello di ricerca"><span class="icon-left-arrow"></span>Cerca</button>
+            <div class="search-form overlay-form">
+              <form class="">
+                <input type="text" class="search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
+                <button type="submit" class="search-submit"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
+              </form>
+              <button class="search-erase search-erase-js">x</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <?php if ( have_rows( 'global_socials', 'option' ) ) : ?>
-        <ul class="inline-socials">
-          <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
-            <li>
-              <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
-                <i class="<?php the_sub_field( 'global_socials_icona' ); ?>" aria-hidden="true"></i>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        </ul>
-      <?php endif; ?>
+
+
+<div id="head-overlay" class="hidden bg-3 txt-12 white-links paragraph-variant-holder">
+  <div class="scroll-opportunity">
+    <div class="wrapper">
+      <div class="wrapper-padded">
+        <div class="<?php echo $header_wrapper; ?>">
+          <nav class="menu navi">
+            <?php
+            if ( has_nav_menu( 'header-menu-left' ) ) {
+              wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
+            }
+            ?>
+            <?php
+            if ( has_nav_menu( 'header-menu-right' ) ) {
+              wp_nav_menu( array( 'theme_location' => 'header-menu-right', 'container' => 'ul', 'menu_class' => 'header-menu head-navi-side' ) );
+            }
+            ?>
+          </nav>
+
+          <?php if ( have_rows( 'global_socials', 'option' ) ) : ?>
+            <ul class="inline-socials">
+              <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
+                <li>
+                  <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
+                    <i class="<?php the_sub_field( 'global_socials_icona' ); ?>" aria-hidden="true"></i>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+            </ul>
+          <?php endif; ?>
+
+          <div class="flex-hold flex-hold-4 margins-wide footer-block-2">
+
+            <div class="flex-hold-child">
+              <?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>
+            </div>
+
+            <div class="flex-hold-child">
+              <?php the_field( 'informazioni_carta_dei_servizi', $acf_options_parameter ); ?>
+            </div>
+
+            <div class="flex-hold-child">
+              <?php the_field( 'informazioni_contatti', $acf_options_parameter ); ?>
+            </div>
+
+            <div class="flex-hold-child">
+              <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

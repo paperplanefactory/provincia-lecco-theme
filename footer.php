@@ -13,8 +13,8 @@ global $footer_wrapper;
           <div class="flex-hold-child">
             <h5 class="allupper">Amministrazione</h5>
             <?php
-            if ( has_nav_menu( 'footer-menu' ) ) {
-              wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+            if ( has_nav_menu( 'footer-menu-amministrazione' ) ) {
+              wp_nav_menu( array( 'theme_location' => 'footer-menu-amministrazione', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -22,8 +22,8 @@ global $footer_wrapper;
           <div class="flex-hold-child">
             <h5 class="allupper">Servizi</h5>
             <?php
-            if ( has_nav_menu( 'footer-menu' ) ) {
-              wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+            if ( has_nav_menu( 'footer-menu-servizi' ) ) {
+              wp_nav_menu( array( 'theme_location-servizi' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -31,8 +31,8 @@ global $footer_wrapper;
           <div class="flex-hold-child">
             <h5 class="allupper">Novità</h5>
             <?php
-            if ( has_nav_menu( 'footer-menu' ) ) {
-              wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+            if ( has_nav_menu( 'footer-menu-novita' ) ) {
+              wp_nav_menu( array( 'theme_location-novita' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -40,8 +40,8 @@ global $footer_wrapper;
           <div class="flex-hold-child">
             <h5 class="allupper">Documenti</h5>
             <?php
-            if ( has_nav_menu( 'footer-menu' ) ) {
-              wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+            if ( has_nav_menu( 'footer-menu-documenti' ) ) {
+              wp_nav_menu( array( 'theme_location-documenti' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -53,31 +53,19 @@ global $footer_wrapper;
         <div class="flex-hold flex-hold-4 margins-wide footer-block-2">
 
           <div class="flex-hold-child">
-            <h5 class="allupper">Amministrazione trasparente</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-            </p>
+            <?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>
           </div>
 
           <div class="flex-hold-child">
-            <h5 class="allupper">Contatti</h5>
-            <p>
-              Piazza Lorem ipsum dolor, 23<br />09872 Nome della città (AA)
-            </p>
-            <p>
-              CF 0985649876
-            </p>
-            <p>
-              indirizzopecdellente@pec.gov.it<br />+39 0609090909
-            </p>
+            <?php the_field( 'informazioni_carta_dei_servizi', $acf_options_parameter ); ?>
           </div>
 
           <div class="flex-hold-child">
-            <h5 class="allupper">Newsletter</h5>
-            <a href="#" class="square-button blue filled">Iscriviti</a><br />
+            <?php the_field( 'informazioni_contatti', $acf_options_parameter ); ?>
           </div>
 
           <div class="flex-hold-child">
+            <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
             <h5 class="allupper">Seguici su</h5>
             <?php if ( have_rows( 'global_socials', 'option' ) ) : ?>
               <ul class="inline-socials">
@@ -102,8 +90,8 @@ global $footer_wrapper;
     <div class="wrapper-padded">
       <div class="<?php echo $footer_wrapper; ?>">
         <?php
-        if ( has_nav_menu( 'footer-menu' ) ) {
-          wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu-bottom' ) );
+        if ( has_nav_menu( 'footer-menu-legal' ) ) {
+          wp_nav_menu( array( 'theme_location' => 'footer-menu-legal', 'container' => 'ul', 'menu_class' => 'footer-menu-bottom' ) );
         }
         ?>
       </div>
@@ -111,16 +99,6 @@ global $footer_wrapper;
   </div>
 </footer>
 
-<!--
-<div class="preload-container">
-  <div class="sk-folding-cube">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
-  </div>
-</div>
--->
 <?php wp_footer(); ?>
 </body>
 </html>

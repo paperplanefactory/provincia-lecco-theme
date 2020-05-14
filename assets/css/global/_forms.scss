@@ -25,24 +25,48 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		display: inline-block;
-		text-align: center;
-		text-decoration: none !important;
 		width: 44px;
 		height: 44px;
-		margin: 0;
-		border: none;
-		cursor: pointer;
-		@include define-basic-transition(all, 0.3s);
-		background-color: transparent;
-		font-size: 25px;
-		color: $color-4;
 
 		span {
-			position: absolute;
-			top: 11px;
-			right: 9px;
+			position: relative;
+			top: 3px;
+			font-size: 24px;
+			color: $color-4;
 		}
+	}
+}
+
+.overlay-form {
+	position: relative;
+
+	input[type=email],
+	input[type=number],
+	input[type=tel],
+	input[type=text],
+	select,
+	textarea {
+		position: relative;
+		background-color: $color-12;
+		width: calc(100% - 88px);
+		margin: 0;
+		padding: 0 44px;
+		height: 52px;
+		border: none;
+		border-bottom: $color-10 solid 1px;
+	}
+
+	.search-erase {
+		position: absolute;
+		top: 3px;
+		right: 0;
+		display: none;
+	}
+
+	.search-submit {
+		position: absolute;
+		top: 3px;
+		left: 0;
 	}
 }
 

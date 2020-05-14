@@ -2,6 +2,44 @@
 @import '../global/vars';
 @import '../global/mixin';
 
+.modules-wrapper,
+.page-index-right {
+  .slide-module {
+    position: relative;
+    left: -45px;
+    width: calc(100% + 90px) !important;
+    margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+  }
+}
+
+.slide-one {
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    font-size: 30px;
+  }
+
+  .slick-prev {
+    left: 15px;
+    bottom: 3px;
+  }
+
+  .slick-next {
+    left: 55px;
+    bottom: 4px;
+  }
+
+  .wp-caption-text {
+    padding-left: 100px;
+    background-color: $color-8;
+  }
+
+  .wp-caption-text-fake {
+    height: 50px;
+    background-color: $color-12;
+  }
+}
+
 .slide-four {
   position: relative;
   width: 100%;

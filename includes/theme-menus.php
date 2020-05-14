@@ -3,9 +3,15 @@
 function register_theme_menus() {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' ),
-      'footer-menu' => __( 'Footer Menu' ),
-      'overlay-menu-desktop' => __ ( 'Overlay Menu Desktop' ),
+      'header-menu-left' => __( 'Header Menu Sinistra' ),
+      'header-menu-right' => __( 'Header Menu Destra' ),
+      'header-menu-above' => __( 'Header Menu Sopra' ),
+      'footer-menu-amministrazione' => __( 'Footer Menu Amministrazione' ),
+      'footer-menu-servizi' => __( 'Footer Menu Servizi' ),
+      'footer-menu-novita' => __( 'Footer Menu Novità' ),
+      'footer-menu-documenti' => __( 'Footer Menu Documenti' ),
+      'footer-menu-legal' => __( 'Footer Menu Info Legali' ),
+      //'overlay-menu-desktop' => __ ( 'Overlay Menu Desktop' ),
       'overlay-menu-mobile' => __ ( 'Overlay Menu Mobile' )
     )
   );
@@ -25,7 +31,7 @@ if( function_exists('acf_add_options_page') ) {
   $parent = acf_add_options_page(array(
     'page_title' 	=> 'Impostazioni sito',
 		'menu_title'	=> 'Impostazioni sito',
-		'capability'	=> 'edit_posts',
+		'capability'	=> 'update_core',
 		//'menu_slug' 	=> 'impostazioni-sito',
 		//'redirect'		=> false
 	));
@@ -35,12 +41,7 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title' 	=> 'Gestione social',
 		'parent_slug' 	=> $parent['menu_slug'],
 	));
-  // partner / sponsor
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Gestione partner / sponsor',
-		'menu_title' 	=> 'Gestione partner / sponsor',
-		'parent_slug' 	=> $parent['menu_slug'],
-	));
+
   // verifico che sia attivo Polylang
   if ( function_exists( 'PLL' ) ) {
     $langs_parameters = array(
@@ -53,7 +54,7 @@ if( function_exists('acf_add_options_page') ) {
     $languages = array('any-lang');
   }
   foreach ( $languages as $lang ) {
-    // gestione cookie GDPR
+    // gestione footer
     acf_add_options_sub_page( array (
       'page_title' => 'Gestione footer (' . strtoupper( $lang ) . ')',
       'menu_title' => __('Gestione footer (' . strtoupper( $lang ) . ')', 'text-domain'),
@@ -61,19 +62,14 @@ if( function_exists('acf_add_options_page') ) {
       'post_id'    => $lang,
       'parent_slug'     => $parent['menu_slug'],
     ) );
-  }
-  $use_mega_menus = get_field( 'use_mega_menus', 'option');
-  if ( $use_mega_menus == 1 ) {
-    foreach ( $languages as $lang ) {
-      // gestione cookie GDPR
-      acf_add_options_sub_page( array (
-        'page_title' => 'Gestione mega menu (' . strtoupper( $lang ) . ')',
-        'menu_title' => __('Gestione mega menu (' . strtoupper( $lang ) . ')', 'text-domain'),
-        'menu_slug'  => "gestione-mega-menu-${lang}",
-        'post_id'    => $lang,
-        'parent_slug'     => $parent['menu_slug'],
-      ) );
-    }
+    // gestione archivi
+    acf_add_options_sub_page( array (
+      'page_title' => 'Gestione archivi (' . strtoupper( $lang ) . ')',
+      'menu_title' => __('Gestione archivi (' . strtoupper( $lang ) . ')', 'text-domain'),
+      'menu_slug'  => "gestione-archivi-${lang}",
+      'post_id'    => $lang,
+      'parent_slug'     => $parent['menu_slug'],
+    ) );
   }
 }
 
@@ -89,7 +85,7 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 }
 
 
-add_action('admin_head', 'my_custom_acf');
+//add_action('admin_head', 'my_custom_acf');
 function my_custom_acf() {
   echo '<style>
   [data-name*="choose_module"] {

@@ -9,10 +9,11 @@ $font-weight-2: 600; //Titillium - semi bold
 $font-weight-3: 700; //Lora - bold | Titillium - bold
 // header sizes
 $header-desktop-height: 226px;
-$header-desktop-height-compact: 102px;
-$header-smartphone-height: 64px; // wrapper paddings
+$header-desktop-height-compact: 64px;
+$header-smartphone-height: 136px;
+$header-smartphone-height-compact: 60px; // wrapper paddings
 $wrapper-padded-desktop: 30px;
-$wrapper-padded-smartphone: 30px; // colors vars
+$wrapper-padded-smartphone: 24px; // colors vars
 $color-1: #363B3F;
 $color-2: #2773B3;
 $color-3: #3499EF;
@@ -58,30 +59,33 @@ $cta1-marginbottom-desktop: 0;
 $small-size-desktop: 14px;
 $small-lineheight-desktop: 20px;
 $small-marginbottom-desktop: 0; //fonts smartphone
-$h1-size-smartphone: 40px;
-$h1-lineheight-smartphone: 50px;
-$h1-marginbottom-smartphone: 16px;
-$h2-size-smartphone: 24px;
-$h2-lineheight-smartphone: 32px;
+$h1-size-smartphone: 32px;
+$h1-lineheight-smartphone: 40px;
+$h1-marginbottom-smartphone: 24px;
+$h2-size-smartphone: 28px;
+$h2-lineheight-smartphone: 36px;
 $h2-marginbottom-smartphone: 16px;
-$h3-size-smartphone: 20px;
-$h3-lineheight-smartphone: 30px;
+$h3-size-smartphone: 24px;
+$h3-lineheight-smartphone: 32px;
 $h3-marginbottom-smartphone: 16px;
-$h4-size-smartphone: 20px;
+$h4-size-smartphone: 21px;
 $h4-lineheight-smartphone: 30px;
-$h4-marginbottom-smartphone: 16px;
-$h5-size-smartphone: 20px;
-$h5-lineheight-smartphone: 30px;
-$h5-marginbottom-smartphone: 16px;
-$h6-size-smartphone: 20px;
-$h6-lineheight-smartphone: 30px;
-$h6-marginbottom-smartphone: 16px;
+$h4-marginbottom-smartphone: 8px;
+$h4-size-variant-smartphone: 18px;
+$h4-lineheight-variant-smartphone: 24px;
+$h4-marginbottom-variant-smartphone: 8px;
+$h5-size-smartphone: 16px;
+$h5-lineheight-smartphone: 24px;
+$h5-marginbottom-smartphone: 8px;
+$h6-size-smartphone: 14px;
+$h6-lineheight-smartphone: 20px;
+$h6-marginbottom-smartphone: 0;
 $paragraph-size-smartphone: 16px;
 $paragraph-lineheight-smartphone: 24px;
 $paragraph-marginbottom-smartphone: 16px;
-$cta1-size-smartphone: 12px;
-$cta1-lineheight-smartphone: 20px;
-$cta1-marginbottom-smartphone: 10px;
-$cta2-size-smartphone: 12px;
-$cta2-lineheight-smartphone: 20px;
-$cta2-marginbottom-smartphone: 10px;
+$cta1-size-smartphone: 18px;
+$cta1-lineheight-smartphone: 30px;
+$cta1-marginbottom-smartphone: 0;
+$small-size-smartphone: 14px;
+$small-lineheight-smartphone: 20px;
+$small-marginbottom-smartphone: 0;

@@ -2,6 +2,7 @@
 @import '../global/vars';
 @import '../global/mixin';
 
+.search-overlay-title,
 h1 {
   font-size: $h1-size-desktop;
   line-height: $h1-lineheight-desktop;
@@ -30,7 +31,6 @@ h4 {
   margin-bottom: $h4-marginbottom-desktop;
 }
 
-.content-styled h4,
 .h4-variant {
   font-size: $h4-size-variant-desktop;
   line-height: $h4-lineheight-variant-desktop;
@@ -38,7 +38,7 @@ h4 {
 }
 
 .breadcrumbs-holder,
-.button-appearance-normalizer,
+.button-typo-normalizer,
 .card p,
 .footer-menu,
 .page-opening-menu,
@@ -72,6 +72,15 @@ h6 {
   line-height: $h6-lineheight-desktop;
   margin-bottom: $h6-marginbottom-desktop;
   letter-spacing: 1px;
+}
+
+.wp-caption-text,
+.wp-caption.aligncenter .wp-caption-text,
+.wp-caption.alignleft .wp-caption-text,
+.wp-caption.alignnone .wp-caption-text,
+.wp-caption.alignright .wp-caption-text {
+  font-size: $h6-size-desktop;
+  line-height: $h6-lineheight-desktop;
 }
 
 .index-menu-expander {
@@ -130,18 +139,6 @@ small {
       font-size: $paragraph-size-desktop;
     }
   }
-}
-
-.wp-caption-text,
-.wp-caption.aligncenter .wp-caption-text,
-.wp-caption.alignleft .wp-caption-text,
-.wp-caption.alignnone .wp-caption-text,
-.wp-caption.alignright .wp-caption-text {
-  padding: 5px 0 0;
-  font-size: $cta1-size-desktop;
-  line-height: $cta1-lineheight-desktop;
-  word-wrap: break-word;
-  font-style: italic;
 }
 
 .page-opening-menu {

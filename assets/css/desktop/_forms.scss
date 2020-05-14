@@ -13,6 +13,24 @@
 	}
 }
 
+.overlay-form {
+	input[type=email],
+	input[type=number],
+	input[type=tel],
+	input[type=text] {
+		font-size: $h3-size-desktop;
+		line-height: $h3-lineheight-desktop;
+		margin-bottom: 15px;
+	}
+
+	.search-submit {
+		span {
+			font-size: $h3-size-desktop;
+			line-height: $h3-lineheight-desktop;
+		}
+	}
+}
+
 .form-hold {
 	margin: 10px 0;
 

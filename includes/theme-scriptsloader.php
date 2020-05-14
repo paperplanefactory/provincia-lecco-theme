@@ -34,8 +34,8 @@ function all_scripts(){
   }
   // Infinite Scroll
   // documentazione: https://infinite-scroll.com/
-  wp_register_script( 'custom-infinitescroll', get_template_directory_uri() . '/assets/js/libs/infinite-scroll.min.js#deferload', '', '3.0.6', false);
-  wp_enqueue_script( 'custom-infinitescroll' );
+  //wp_register_script( 'custom-infinitescroll', get_template_directory_uri() . '/assets/js/libs/infinite-scroll.min.js#deferload', '', '3.0.6', false);
+  //wp_enqueue_script( 'custom-infinitescroll' );
 
   // Lazy load
   // documentazione: http://www.andreaverlicchi.eu/lazyload/
@@ -44,8 +44,8 @@ function all_scripts(){
 
   // AOS
   // documentazione: https://github.com/michalsnik/aos
-  wp_register_script( 'theme-aos', get_template_directory_uri() . '/assets/js/libs/aos.min.js#deferload', '', $theme_version, true);
-  wp_enqueue_script( 'theme-aos' );
+  //wp_register_script( 'theme-aos', get_template_directory_uri() . '/assets/js/libs/aos.min.js#deferload', '', $theme_version, true);
+  //wp_enqueue_script( 'theme-aos' );
 
   // slick
   // documentazione: https://github.com/kenwheeler/slick

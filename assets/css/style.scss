@@ -37,11 +37,9 @@
 @media print {
   @import 'global/print';
 }
-@import 'global/cookies';
-@import 'global/libraries/aos';
+@import 'global/cookies'; //@import 'global/libraries/aos';
 @import 'global/libraries/slick'; // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
-// @import 'global/pagenavi';
-// @import 'global/visual-debug';
+@import 'global/pagenavi'; // @import 'global/visual-debug';
 // IMPORTANTE!!
 // 0 - verifica di utilizzare l'ultima versione del tema!!
 // 1 - rinominare la cartella del tema

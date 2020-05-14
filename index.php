@@ -5,8 +5,8 @@ get_header();
 <div class="wrapper">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more">
-      <div class="flex-hold flex-hold-2 margins-fit verticalize intro-box">
-        <div class="flex-hold-child">
+      <div class="flex-hold flex-hold-2 margins-fit  intro-box">
+        <div class="flex-hold-child text-box flex-hold verticalize">
           <div class="intro-news-padder">
             <div class="category-holder cat-fill-a">
               <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Uffici">Uffici</a></h6>
@@ -21,12 +21,15 @@ get_header();
             </div>
           </div>
         </div>
-        <div class="flex-hold-child">
-          <a href="#" title="xxxx" aria-label="xxxx">
-            <div class="no-the-100">
-              <img src="https://via.placeholder.com/590x436" />
-            </div>
-          </a>
+        <div class="flex-hold-child image-box full-image">
+          <div class="full-image">
+            <a href="#" title="xxxx" aria-label="xxxx">
+              <div class="no-the-100">
+                <img src="https://via.placeholder.com/590x436" />
+              </div>
+            </a>
+          </div>
+
         </div>
       </div>
     </div>

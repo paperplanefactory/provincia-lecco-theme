@@ -1,24 +1,11 @@
 <?php
-get_header();
-include( locate_template( 'template-parts/grid/page-opening.php' ) );
-?>
-
-<div class="wrapper">
-  <div class="module-spacer-flex">
-    <div class="wrapper-padded">
-      <div class="wrapper-padded-more">
-        <?php
-        if ( have_posts() ) : ?>
-        <div class="flex-hold flex-hold-3 margins-wide grid-infinite">
-        <?php while ( have_posts() ) : the_post(); ?>
-          <?php get_template_part( 'template-parts/grid/post-infinite' ); ?>
-        <?php endwhile; ?>
-        </div>
-        <?php endif; ?>
-        <?php get_template_part( 'template-parts/grid/infinite-message' ); ?>
-      </div>
-    </div>
-  </div>
-</div>
-
-<?php get_footer(); ?>
+$redirect_term = get_queried_object();
+$redirect_url = get_field( 'term_archive_page', $redirect_term );
+if ( $redirect_url != '' ) {
+  wp_redirect( $redirect_url, 301 );
+}
+else {
+  $home_url = get_home_url();
+  wp_redirect( $home_url, 307 );
+}
+ ?>

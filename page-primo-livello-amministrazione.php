@@ -22,9 +22,9 @@ get_header();
             <p class="paragraph-variant">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
             </p>
-            <form class="banner-form">
+            <form class="search-form banner-form">
               <input type="text" placeholder='Cerca in "Amministrazione"' />
-              <button><span class="icon-search"></span></button>
+              <button type="submit"><span class="icon-search"></span></button>
             </form>
           </div>
           <div class="page-opening-right">
@@ -59,7 +59,7 @@ get_header();
                 </div>
 
               </ul>
-              <button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer" aria-expanded="false"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>
+              <button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>
             </div>
           </div>
         </div>

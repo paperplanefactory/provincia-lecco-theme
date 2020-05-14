@@ -169,6 +169,12 @@ a:hover {
 	color: $color-1;
 }
 
+p {
+	a {
+		text-decoration: underline;
+	}
+}
+
 .white-links {
 	a:link,
 	a:visited {
@@ -294,6 +300,31 @@ a.square-button.blue.filled:hover {
 	background-color: $color-12;
 }
 
+a.square-button.white:link,
+a.square-button.white:visited {
+	color: $color-3 !important;
+	border-color: $color-12;
+}
+
+a.square-button.white:active,
+a.square-button.white:hover {
+	color: $color-12 !important;
+	background-color: $color-3;
+}
+
+a.square-button.white.filled:link,
+a.square-button.white.filled:visited {
+	color: $color-12 !important;
+	background-color: $color-3;
+	border-color: $color-12;
+}
+
+a.square-button.white.filled:active,
+a.square-button.white.filled:hover {
+	color: $color-3 !important;
+	background-color: $color-12;
+}
+
 a.tag-button:link,
 a.tag-button:visited {
 	color: $color-4 !important;
@@ -358,7 +389,6 @@ a.tag-button:hover {
 	a:link,
 	a:visited {
 		&:before {
-			content: "";
 			position: relative;
 			top: 6px;
 			display: inline-block;
@@ -374,7 +404,8 @@ a.tag-button:hover {
 		a:link,
 		a:visited {
 			&:before {
-				background-color: $color-2;
+				color: $color-4;
+				font-size: 24px;
 			}
 		}
 	}
@@ -523,6 +554,12 @@ a.tag-button:hover {
 	background-repeat: no-repeat;
 	background-color: rgba(0, 0, 0, 0.4);
 	background-blend-mode: multiply;
+}
+
+.with-bg-image-side {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 }
 
 .actions-holder {

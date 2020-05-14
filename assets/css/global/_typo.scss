@@ -4,7 +4,7 @@
 
 .activate-search,
 .arrow-button,
-.button-appearance-normalizer,
+.button-typo-normalizer,
 .caption,
 .card p,
 .cta,
@@ -12,8 +12,14 @@
 .navi,
 .paragraph-variant,
 .paragraph-variant-holder p,
+.search-overlay-title,
 .square-button,
 .tag-button,
+.wp-caption-text,
+.wp-caption.aligncenter .wp-caption-text,
+.wp-caption.alignleft .wp-caption-text,
+.wp-caption.alignnone .wp-caption-text,
+.wp-caption.alignright .wp-caption-text,
 h1,
 h2,
 h3,
@@ -35,6 +41,7 @@ p {
 }
 
 .arrow-button,
+.search-overlay-title,
 .square-button,
 h1,
 h2,
@@ -54,7 +61,7 @@ h5 {
 }
 
 .breadcrumbs-holder,
-.button-appearance-normalizer,
+.button-typo-normalizer,
 .caption,
 .card p,
 .content-styled h3,
@@ -63,6 +70,11 @@ h5 {
 .paragraph-variant,
 .paragraph-variant-holder p,
 .share-actions,
+.wp-caption-text,
+.wp-caption.aligncenter .wp-caption-text,
+.wp-caption.alignleft .wp-caption-text,
+.wp-caption.alignnone .wp-caption-text,
+.wp-caption.alignright .wp-caption-text,
 p,
 small {
   font-weight: $font-weight-1;
@@ -228,5 +240,11 @@ small {
     .icon {
       font-size: 24px;
     }
+  }
+}
+
+#footer {
+  h5 {
+    text-transform: uppercase;
   }
 }

@@ -1,19 +1,177 @@
 <?php
-// Paperplane _blankTheme - template per single posts.
+// Paperplane _blankTheme - template per single amministrazione_cpt.
 get_header();
 ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-  <div class="wrapper-padded">
-    <div class="wrapper-padded-more">
-      <div class="wrapper-padded-more-650">
-        <div class="content_styled">
-          <?php paperplane_breadcrumbs(); ?>
-          <h2><?php the_title(); ?></h2>
-          <?php the_content(); ?>
+<?php
+while ( have_posts() ) : the_post();
+$my_id = get_the_ID();
+$post_type = get_post_type();
+ ?>
+  <div class="wrapper">
+    <div class="wrapper-padded">
+      <div class="wrapper-padded-intro">
+        <div class="single-content-opening-padder">
+          <div class="breadcrumbs-holder grey-links undelinked-links" typeof="BreadcrumbList" vocab="http://schema.org/">
+            <?php bcn_display(); ?>
+          </div>
+
+          <div class="flex-hold flex-hold-page-opening">
+            <div class="page-opening-left printable">
+              <h1><?php the_title(); ?></h1>
+              <?php if ( get_field( 'page_abstract' ) ) : ?>
+                <p class="paragraph-variant">
+                  <?php the_field( 'page_abstract' ); ?>
+                </p>
+              <?php endif; ?>
+              <?php if ( $post_type === 'post' ) : ?>
+                <div class="data-holder paragraph-variant-holder">
+                  <p>
+                    Data: <?php echo get_the_date( 'j F Y' ); ?>
+                  </p>
+                </div>
+                <?php
+                $image_data = array(
+                    'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+                    'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+                    'size_fallback' => 'full_desk'
+                );
+                $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+                    'retina' => 'full_desk_retina',
+                    'desktop' => 'full_desk',
+                    'mobile' => 'content_picture',
+                    'micro' => 'micro'
+                );
+                print_theme_image( $image_data, $image_sizes );
+                ?>
+              <?php else : ?>
+                <?php include( locate_template( 'template-parts/grid/intro-avvisi-warnings.php' ) ); ?>
+              <?php endif; ?>
+            </div>
+            <div class="page-opening-right no-print">
+              <div class="padder">
+                <?php include( locate_template( 'template-parts/grid/intro-actions.php' ) ); ?>
+                <h5 class="light">Argomenti</h5>
+                <?php list_argomenti_pills(); ?>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <div class="wrapper">
+    <div class="wrapper-padded">
+      <div class="wrapper-padded-more">
+        <?php if ( get_field( 'content_index' ) == 1 ) : ?>
+          <div class="flex-hold flex-hold-page-index">
+            <div class="page-index-left no-print">
+              <div class="sticky-element sticky-columns-js">
+                <button class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="true">
+                  Indice della pagina<span class="icon-collapse-1"></span>
+                </button>
+                <div class="index-menu-js">
+                  <ul class="index-listing">
+                    <?php include( locate_template( 'template-parts/modules/modules-index-handler.php' ) ); ?>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            <div class="page-index-right">
+              <div class="padder">
+                <?php include( locate_template( 'template-parts/modules/modules-handler.php' ) ); ?>
+                <div class="module-separator">
+                  <p class="paragraph-variant"><strong>
+                    Ultimo aggiornamento<br />
+                    <?php the_modified_time('d/m/Y, H:i'); ?>
+                  </strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php else : ?>
+          <div class="wrapper-padded-more-780 modules-wrapper">
+            <div class="padder">
+              <?php include( locate_template( 'template-parts/modules/modules-handler.php' ) ); ?>
+              <div class="module-separator">
+                <p class="paragraph-variant"><strong>
+                  Ultimo aggiornamento<br />
+                  <?php the_modified_time('d/m/Y, H:i'); ?>
+                </strong></p>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+
+
+<?php if ( get_field( 'related_content_method' ) != 'no-related' ) : ?>
+  <?php
+  if ( get_field( 'related_content_method' ) === 'manually-related ' ) :
+    $related_content_handpicked = get_field('related_content_handpicked');
+    ?>
+    <div class="wrapper bg-9">
+      <div class="wrapper-padded">
+        <div class="wrapper-padded-more">
+          <div class="listing-box">
+            <h2 class="aligncenter">Contenuti Correlati</h2>
+            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+              <?php foreach( $related_content_handpicked as $post ) : setup_postdata( $post ); ?>
+                <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php else : ?>
+    <?php
+    $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
+    $content_argomenti = array();
+    foreach( $terms_argomenti as $term_argomenti ) {
+      $content_argomenti[] = $term_argomenti->term_id;
+    }
+    $content_argomenti = implode(', ', $content_argomenti);
+    $args_related_content = array(
+      'post_type' => $post_type,
+      'posts_per_page' => 3,
+      'post__not_in' => array($my_id),
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'argomenti_tax',
+          'field' => 'term_ID',
+          'terms' => array($content_argomenti)
+        )
+      ),
+    );
+    $my_related_content = get_posts( $args_related_content );
+    if ( !empty ( $my_related_content ) ) : ?>
+    <div class="wrapper bg-9">
+      <div class="wrapper-padded">
+        <div class="wrapper-padded-more">
+          <div class="listing-box">
+            <h2 class="aligncenter">Contenuti Correlati</h2>
+            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+              <?php foreach ( $my_related_content as $post ) : setup_postdata ( $post ); ?>
+                 <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+               <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+  <?php endif; ?>
+<?php endif; ?>
+
+
+
 <?php endwhile; ?>
 <?php get_footer(); ?>
