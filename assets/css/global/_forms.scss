@@ -2,6 +2,16 @@
 @import 'vars';
 @import 'mixin'; // forms
 
+select {
+	position: relative;
+	background-color: $color-12;
+	width: 200px;
+	margin: 0 0 0 10px;
+	padding: 10px 0 10px 10px;
+	border: $color-10 solid 1px;
+	@include define-border-radius(4px);
+}
+
 .banner-form {
 	position: relative;
 	height: 44px;
@@ -44,7 +54,6 @@
 	input[type=number],
 	input[type=tel],
 	input[type=text],
-	select,
 	textarea {
 		position: relative;
 		background-color: $color-12;

@@ -1,0 +1,91 @@
+{
+    "key": "group_5ec6770e6193a",
+    "title": "Gestione archivi bandi",
+    "fields": [
+        {
+            "key": "field_5ec67728f4d36",
+            "label": "Questa pagina elenca dei bandi?",
+            "name": "listing_bandi",
+            "type": "true_false",
+            "instructions": "Impostare solo se si tratta di una pagina di elenco bandi e non della pagina principale dei bandi.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ec67d6b7bd23",
+            "label": "È un archivio dei bandi scaduti?",
+            "name": "archivio_bandi_scaduti",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ec67ccd8728f",
+            "label": "Link alla pagina per elencare i bandi scaduti",
+            "name": "link_bandi_scaduti",
+            "type": "page_link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ec67d6b7bd23",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-area-listing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1590066665
+}

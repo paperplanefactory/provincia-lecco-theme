@@ -1,0 +1,452 @@
+{
+    "key": "group_5ea92b1115b56",
+    "title": "Impostazioni pagina listing",
+    "fields": [
+        {
+            "key": "field_5ea93f2d3e8d6",
+            "label": "Scegli l'area relativa a questa pagina",
+            "name": "listing_page_taxonmy",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "amministrazione_tax": "Amministrazione",
+                "servizi_tax": "Servizi",
+                "documenti_tax": "Documenti",
+                "category": "Novità"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ea93eac3e8d4",
+            "label": "È una pagina di primo livello, secondo o terzo livello?",
+            "name": "listing_page_level",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "!=",
+                        "value": "argomenti"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primo-livello": "Primo livello",
+                "secondo-livello": "Secondo livello",
+                "terzo-livello": "Terzo livello"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ea94b270632c",
+            "label": "Impostazioni pagina di secondo\/terzo livello",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93eac3e8d4",
+                        "operator": "==",
+                        "value": "secondo-livello"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93eac3e8d4",
+                        "operator": "==",
+                        "value": "terzo-livello"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ea9514734880",
+            "label": "Categoria di contenuti da elencare",
+            "name": "listing_page_level_second_taxonmy_amministrazione",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "amministrazione_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "amministrazione_tax",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5ea9526c34881",
+            "label": "Categoria di contenuti da elencare",
+            "name": "listing_page_level_second_taxonmy_servizi",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "servizi_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "servizi_tax",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5ea9529e34883",
+            "label": "Categoria di contenuti da elencare",
+            "name": "listing_page_level_second_taxonmy_documenti",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "documenti_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "documenti_tax",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5ebbb40abb148",
+            "label": "Categoria di contenuti da elencare",
+            "name": "listing_page_level_second_taxonmy_novita",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "category"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5ea94b070632b",
+            "label": "Contenuti in evidenza",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ea94413b12e6",
+            "label": "Contenuti in evidenza Amministrazione",
+            "name": "listing_page_highlight_contents_amministrazione",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "amministrazione_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "amministrazione_cpt",
+                "page"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ea94c7e0632d",
+            "label": "Contenuti in evidenza Servizi",
+            "name": "listing_page_highlight_contents_servizi",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "servizi_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "servizi_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ea94c9e0632e",
+            "label": "Contenuti in evidenza Documenti",
+            "name": "listing_page_highlight_contents_documenti",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "documenti_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "documenti_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ebbb3d9bb147",
+            "label": "Contenuti in evidenza Novità",
+            "name": "listing_page_highlight_contents_novita",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "category"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "documenti_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ebd49c9ac39a",
+            "label": "Progetti in evidenza",
+            "name": "listing_page_highlight_progetti",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "category"
+                    },
+                    {
+                        "field": "field_5ea93eac3e8d4",
+                        "operator": "==",
+                        "value": "primo-livello"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "progetti_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-area-listing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1590065165
+}

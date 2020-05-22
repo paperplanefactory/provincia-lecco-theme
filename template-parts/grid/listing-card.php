@@ -1,8 +1,31 @@
 <!-- card singoli contenuti -->
 <?php
-// tipologia di card
-if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento_cpt') ) ) :
-  if ( $compact_argomenti != 1 ) : ?>
+// tipologia di card – risultato di ricerca
+if ( $search_result_card == 1 ) : ?>
+<div class="flex-hold-child card insite">
+  <div class="card_inner regular-card">
+    <div class="category-holder cat-fill-a">
+      <?php content_tax(); ?>
+    </div>
+    <div class="texts-holder compact">
+      <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+      <?php if ( get_field( 'page_abstract' ) ) : ?>
+        <p>
+          <?php the_field( 'page_abstract' ); ?>
+        </p>
+      <?php endif; ?>
+    </div>
+  </div>
+  <div class="cta-holder">
+    <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
+  </div>
+</div>
+<?php
+// tipologia di card – progetti o argomenti
+elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento_cpt') ) ) :
+  // tipologia di card – progetti o argomenti compatti
+  if ( $compact_argomenti != 1 ) :
+    ?>
   <?php
   $thumb_id = get_post_thumbnail_id();
   $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
@@ -16,7 +39,10 @@ if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento
 
     </div>
   </div>
-<?php else : ?>
+<?php
+// tipologia di card – progetti o argomenti estesi
+else :
+  ?>
   <div class="flex-hold-child card insite">
     <div class="card_inner cap-card">
       <div class="last-child-no-margin">
@@ -28,7 +54,7 @@ if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento
 
 <?php else : ?>
   <?php
-  // card politico
+  // tipologia di card – politico
   if( has_term( 'politici', 'amministrazione_tax' ) && get_post_thumbnail_id() ) :
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
@@ -50,6 +76,48 @@ if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento
       </div>
     </div>
   <?php
+  // card compatta per listing area in pagina argomento
+  elseif ( $compact_card == 1 ) :
+    ?>
+    <div class="flex-hold-child card insite">
+      <div class="card_inner regular-card">
+        <div class="category-holder cat-fill-a">
+          <?php content_tax(); ?>
+        </div>
+        <div class="texts-holder-no-cta">
+          <div class="last-child-no-margin">
+            <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+            <?php if ( get_field( 'page_abstract' ) ) : ?>
+              <p>
+                <?php the_field( 'page_abstract' ); ?>
+              </p>
+            <?php endif; ?>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <?php
+  // tipologia di card – sito tematico
+  elseif( get_post_type() == 'siti_tematici_cpt' ) :
+    ?>
+    <div class="flex-hold-child card offsite bg-4">
+      <a href="<?php the_field( 'sito_tematico_url' ); ?>" class="absl" target="_blank"></a>
+      <div class="card_inner cap-card">
+        <div class="category-square title-block cat-fill">
+          <span>
+          <h5><?php the_title(); ?></h5>
+          <?php if ( get_field( 'page_abstract' ) ) : ?>
+            <p>
+              <?php the_field( 'page_abstract' ); ?>
+            </p>
+          <?php endif; ?>
+          </span>
+        </div>
+      </div>
+    </div>
+  <?php
+  // tipologia di card – tutte le altre card
   else :
     ?>
     <div class="flex-hold-child card insite">
@@ -74,17 +142,66 @@ if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento
             </a>
           </div>
         <?php endif; ?>
-        <div class="category-holder cat-fill-a">
-          <?php content_tax(); ?>
-        </div>
+        <?php
+        // stampo il bollo con la data per le card scadenze nello slideshow in homepage
+        if ( $slide_listing == 1 ) :
+          $scadenza_bando = get_field( 'scadenza_bando' );
+          $giorno = date_i18n( 'j',  strtotime( $scadenza_bando ) );
+          $mese = date_i18n( 'F',  strtotime( $scadenza_bando ) );
+          $anno = date_i18n( 'Y',  strtotime( $scadenza_bando ) );
+          ?>
+          <div class="card-date-holder">
+            <div class="data">
+              <h3><?php echo $giorno; ?></h3>
+              <h5><?php echo $mese; ?><br /><?php echo $anno; ?></h5>
+            </div>
+          </div>
+        <?php endif; ?>
+        <?php
+        // stampo le categorie tranne che per le card scadenze nello slideshow in homepage
+        if ( $slide_listing != 1 ) : ?>
+          <div class="category-holder cat-fill-a">
+            <?php content_tax(); ?>
+          </div>
+        <?php endif; ?>
+
         <div class="texts-holder">
-          <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+          <?php if ( $slide_listing != 1 ) : ?>
+            <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+          <?php else : ?>
+            <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+          <?php endif; ?>
+
           <?php if ( get_field( 'page_abstract' ) ) : ?>
             <p>
               <?php the_field( 'page_abstract' ); ?>
             </p>
           <?php endif; ?>
         </div>
+        <?php
+        // stampo le scadenze tranne che per le card scadenze nello slideshow in homepage
+        if ( $slide_listing != 1 ) : ?>
+          <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>
+            <?php
+            $pubblicazione_bando = get_field( 'pubblicazione_bando' );
+            $giorno_pubblicazione = date_i18n( 'j',  strtotime( $pubblicazione_bando ) );
+            $mese_pubblicazione = date_i18n( 'F',  strtotime( $pubblicazione_bando ) );
+            $anno_pubblicazione = date_i18n( 'Y',  strtotime( $pubblicazione_bando ) );
+
+            $scadenza_bando = get_field( 'scadenza_bando' );
+            $giorno_scadenza = date_i18n( 'j',  strtotime( $scadenza_bando ) );
+            $mese_scadenza = date_i18n( 'F',  strtotime( $scadenza_bando ) );
+            $anno_scadenza = date_i18n( 'Y',  strtotime( $scadenza_bando ) );
+            ?>
+            <div class="more-info">
+              <p>
+                <strong>Data pubblicazione:</strong> <?php echo $giorno_pubblicazione; ?> <?php echo $mese_pubblicazione; ?> <?php echo $anno_pubblicazione; ?><br />
+                <strong>Data scadenza:</strong> <?php echo $giorno_scadenza; ?> <?php echo $mese_scadenza; ?> <?php echo $anno_scadenza; ?>
+              </p>
+            </div>
+          <?php endif; ?>
+        <?php endif; ?>
+
       </div>
       <div class="cta-holder">
         <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
@@ -96,6 +213,4 @@ if ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento
   endif;
   ?>
 <?php endif; ?>
-
-
 <!-- card singoli contenuti -->

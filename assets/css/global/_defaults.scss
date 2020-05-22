@@ -81,6 +81,16 @@ body {
 		text-transform: uppercase;
 	}
 }
+
+.bordered {
+	&.bottom {
+		border-bottom: solid 1px $color-10;
+	}
+
+	&.top {
+		border-top: solid 1px $color-10;
+	}
+}
 // responsive iframes / videos
 
 .video_frame {

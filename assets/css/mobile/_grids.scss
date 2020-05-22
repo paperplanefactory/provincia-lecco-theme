@@ -22,7 +22,7 @@
 }
 
 .page-opening-padder {
-  padding: 40px 0 110px;
+  padding: 40px 0 80px;
 }
 
 .single-content-opening-padder {
@@ -169,11 +169,11 @@
 }
 
 .flex-hold-page-opening {
-  margin-top: 60px;
+  margin-top: 30px;
 
   .page-opening-left {
     order: 1;
-    width: 60%;
+    width: 100%;
 
     .banner-form {
       margin-top: 30px;
@@ -186,10 +186,14 @@
 
   .page-opening-right {
     order: 2;
-    width: 40%;
+    width: 100%;
 
     .padder {
-      padding-left: 160px;
+      padding-top: 30px;
+
+      .card {
+        margin-top: 20px;
+      }
     }
 
     .tags-holder {
@@ -463,6 +467,8 @@
   .texts-holder {
     margin-bottom: 50px;
   }
+
+  .texts-holder-no-cta {}
 
   .more-info {
     margin-bottom: 40px;

@@ -7,6 +7,18 @@ get_header();
 while ( have_posts() ) : the_post();
 $my_id = get_the_ID();
 $post_type = get_post_type();
+// verifico scadenze bando
+if ( get_field( 'scadenza_bando' ) ) {
+  $scadenza_bando = get_field( 'scadenza_bando' );
+  $today = date('Y-m-d H:i:s');
+  if ( $scadenza_bando < $today ) {
+    $scadenza_check = 'scaduto';
+  }
+  else {
+    $scadenza_check = 'non_scaduto';
+  }
+}
+
  ?>
   <div class="wrapper">
     <div class="wrapper-padded">
@@ -23,6 +35,25 @@ $post_type = get_post_type();
                 <p class="paragraph-variant">
                   <?php the_field( 'page_abstract' ); ?>
                 </p>
+              <?php endif; ?>
+              <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>
+                <?php
+                $pubblicazione_bando = get_field( 'pubblicazione_bando' );
+                $giorno_pubblicazione = date_i18n( 'j',  strtotime( $pubblicazione_bando ) );
+                $mese_pubblicazione = date_i18n( 'F',  strtotime( $pubblicazione_bando ) );
+                $anno_pubblicazione = date_i18n( 'Y',  strtotime( $pubblicazione_bando ) );
+
+                $scadenza_bando = get_field( 'scadenza_bando' );
+                $giorno_scadenza = date_i18n( 'j',  strtotime( $scadenza_bando ) );
+                $mese_scadenza = date_i18n( 'F',  strtotime( $scadenza_bando ) );
+                $anno_scadenza = date_i18n( 'Y',  strtotime( $scadenza_bando ) );
+                ?>
+                <div class="more-info">
+                  <p class="paragraph-variant">
+                    <strong>Data pubblicazione:</strong> <?php echo $giorno_pubblicazione; ?> <?php echo $mese_pubblicazione; ?> <?php echo $anno_pubblicazione; ?><br />
+                    <strong>Data scadenza:</strong> <?php echo $giorno_scadenza; ?> <?php echo $mese_scadenza; ?> <?php echo $anno_scadenza; ?>
+                  </p>
+                </div>
               <?php endif; ?>
               <?php if ( $post_type === 'post' ) : ?>
                 <div class="data-holder paragraph-variant-holder">
@@ -51,7 +82,6 @@ $post_type = get_post_type();
             <div class="page-opening-right no-print">
               <div class="padder">
                 <?php include( locate_template( 'template-parts/grid/intro-actions.php' ) ); ?>
-                <h5 class="light">Argomenti</h5>
                 <?php list_argomenti_pills(); ?>
               </div>
             </div>
@@ -140,7 +170,7 @@ $post_type = get_post_type();
     }
     $content_argomenti = implode(', ', $content_argomenti);
     $args_related_content = array(
-      'post_type' => $post_type,
+      'post_type' => array('post', 'progetti_cpt'),
       'posts_per_page' => 3,
       'post__not_in' => array($my_id),
       'tax_query' => array(
@@ -170,8 +200,5 @@ $post_type = get_post_type();
     <?php endif; ?>
   <?php endif; ?>
 <?php endif; ?>
-
-
-
 <?php endwhile; ?>
 <?php get_footer(); ?>

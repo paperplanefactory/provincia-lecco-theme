@@ -10,6 +10,8 @@ get_header();
 ?>
 <?php
 while ( have_posts() ) : the_post();
+// aggiorno le visualizzazioni
+provincia_lecco_set_post_view();
 $listing_page_cpt_listed = get_field('listing_page_cpt_listed');
 // verifico se è una pagina di primo o di secondo livello
 $listing_page_level = get_field('listing_page_level');
@@ -48,14 +50,13 @@ if ( $listing_page_taxonmy === 'category' ) {
   // termine di tassonomia per listing
   $tax_query = get_field('listing_page_level_second_taxonmy_novita');
 }
-if ( $listing_page_taxonmy === 'argomenti' ) {
-  // contenuti da elencare in evidenza
-  $listing_page_highlight_contents = get_field('listing_page_highlight_argomenti');
-  //$cpt_query = 'documenti_cpt';
-  // termine di tassonomia per listing
-  //$tax_query = get_field('listing_page_highlight_argomenti');
-}
 
+// verifico se è impostato un filtro sui bandi
+$listing_bandi = get_field( 'listing_bandi' );
+$archivio_bandi_scaduti = get_field( 'archivio_bandi_scaduti' );
+if ( $archivio_bandi_scaduti != 1 ) {
+  $link_bandi_scaduti = get_field( 'link_bandi_scaduti' );
+}
 ?>
   <div class="wrapper">
     <div class="wrapper-padded">
@@ -74,11 +75,9 @@ if ( $listing_page_taxonmy === 'argomenti' ) {
                 </p>
               <?php endif; ?>
 
-              <form action="/action_page.php" class="search-form banner-form">
+              <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
                 <input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"'  aria-label="Digita una parola chiave per la ricerca" />
-                <input type="hidden" name="s_cpt" value="<?php echo $cpt_query; ?>">
-                <input type="hidden" name="s_tax_name" value="<?php echo $listing_page_taxonmy; ?>">
-                <input type="hidden" name="s_tax_term_id" value="<?php echo $tax_query; ?>">
+                <input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]" value="<?php echo $tax_query; ?>">
                 <button class="button-appearance-normalizer" type="submit" aria-label="Cerca"><span class="icon-search"></span></button>
               </form>
             </div>
@@ -238,70 +237,94 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
 if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo-livello' ) :
   ?>
   <?php
-  $page = get_query_var('paged');
-  $args_all_cpts = array(
-    'post_type' => $cpt_query,
-    'posts_per_page' => 15,
-    'paged' => $page,
-    'orderby'    => 'menu_order',
-    //'sort_order' => 'asc',
-    'tax_query' => array(
-      array(
-        'taxonomy' => $listing_page_taxonmy,
-        'field' => 'term_ID',
-        'terms' => $tax_query
-      )
-    ),
-  );
-  query_posts( $args_all_cpts );
+  if ( $listing_bandi == 1 ) {
+    $today = date('Y-m-d H:i:s');
+    if ( $archivio_bandi_scaduti != 1 ) {
+      $meta_query_bandi_attivi = array(
+        array(
+          'key' => 'scadenza_bando',
+          'value' => $today,
+          'compare' => '>='
+        )
+      );
+      $ordering = 'DESC';
+    }
+    else {
+      $meta_query_bandi_attivi = array(
+        array(
+          'key' => 'scadenza_bando',
+          'value' => $today,
+          'compare' => '<'
+        )
+      );
+      $ordering = 'ASC';
+    }
+
+
+    $page = get_query_var('paged');
+    $args_all_cpts = array(
+      'post_type' => $cpt_query,
+      'posts_per_page' => 15,
+      'paged' => $page,
+      'tax_query' => array(
+        array(
+          'taxonomy' => $listing_page_taxonmy,
+          'field' => 'term_ID',
+          'terms' => $tax_query
+        )
+      ),
+      'order' => $ordering,
+      'orderby' => 'meta_value_num',
+      'meta_key' => 'scadenza_bando',
+      'meta_query' => $meta_query_bandi_attivi,
+    );
+    query_posts( $args_all_cpts );
+  }
+  else {
+    $page = get_query_var('paged');
+    $args_all_cpts = array(
+      'post_type' => $cpt_query,
+      'posts_per_page' => 15,
+      'paged' => $page,
+      'orderby'    => 'menu_order',
+      //'sort_order' => 'asc',
+      'tax_query' => array(
+        array(
+          'taxonomy' => $listing_page_taxonmy,
+          'field' => 'term_ID',
+          'terms' => $tax_query
+        )
+      ),
+    );
+    query_posts( $args_all_cpts );
+  }
   if ( have_posts() ) :
    ?>
    <div class="wrapper">
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">
-           <h2>Tutto su <?php the_title(); ?></h2>
+           <div class="flex-hold flex-hold-2 margins-fit verticalize opening-child-right">
+             <div class="flex-hold-child">
+               <?php if ( $archivio_bandi_scaduti != 1 ) : ?>
+                 <h2><?php the_title(); ?> in scadenza</h2>
+               <?php else : ?>
+                 <h2><?php the_title(); ?></h2>
+               <?php endif; ?>
+             </div>
+             <div class="flex-hold-child">
+               <?php if ( $archivio_bandi_scaduti != 1 ) : ?>
+                 <a href="<?php echo $link_bandi_scaduti; ?>" class="square-button green filled"><?php the_title(); ?> scaduti</a>
+                <?php endif; ?>
+             </div>
+           </div>
+
            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
              <?php while ( have_posts() ) : the_post(); ?>
                <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
              <?php endwhile; wp_reset_postdata(); ?>
            </div>
            <?php wp_pagenavi(); ?>
-         </div>
-       </div>
-     </div>
-   </div>
-  <?php endif; ?>
-<?php endif; ?>
-
-
-
-
-<?php
-// listing di secondo e terzo livello
-if ( $listing_page_taxonmy === 'argomenti' ) :
-  ?>
-  <?php
-  $compact_argomenti = 1;
-  $args_all_subpages = array(
-    'post_type' => 'argomento_cpt',
-    'posts_per_page' => -1,
-    'orderby'    => 'menu_order',
-    //'sort_order' => 'asc'
-  );
-  $my_all_subpages = get_posts( $args_all_subpages );
-  if ( !empty ( $my_all_subpages ) ) :
-   ?>
-   <div class="wrapper">
-     <div class="wrapper-padded">
-       <div class="wrapper-padded-more">
-         <div class="listing-box">
-           <h2>Tutti gli argomenti</h2>
-           <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
-             <?php foreach ( $my_all_subpages as $post ) : setup_postdata ( $post ); ?>
-               <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
-             <?php endforeach; wp_reset_postdata(); ?>
-           </div>
          </div>
        </div>
      </div>

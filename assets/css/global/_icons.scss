@@ -62,10 +62,6 @@
   content: "\68";
 }
 
-.icon-left-arrow-tip:before {
-  content: "\69";
-}
-
 .icon-collapse-1:before {
   content: "\6a";
 }
@@ -122,10 +118,6 @@
   content: "\77";
 }
 
-.icon-note:before {
-  content: "\78";
-}
-
 .icon-information:before {
   content: "\79";
 }
@@ -140,4 +132,16 @@
 
 .icon-warning:before {
   content: "\42";
+}
+
+.icon-note:before {
+  content: "\76";
+}
+
+.left-arrow-tip:before {
+  content: "\69";
+}
+
+.icon-check:before {
+  content: "\78";
 }

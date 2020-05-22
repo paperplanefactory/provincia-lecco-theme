@@ -74,6 +74,11 @@ h6 {
   letter-spacing: 1px;
 }
 
+select {
+  font-size: $h6-size-desktop;
+  line-height: $h6-lineheight-desktop;
+}
+
 .wp-caption-text,
 .wp-caption.aligncenter .wp-caption-text,
 .wp-caption.alignleft .wp-caption-text,

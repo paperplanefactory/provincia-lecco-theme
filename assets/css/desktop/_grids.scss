@@ -37,12 +37,31 @@
   }
 }
 
+.inpage-searchform {
+  margin-top: 60px;
+}
+
 .page-opening-padder {
   padding: 40px 0 110px;
 }
 
 .single-content-opening-padder {
   padding: 40px 0 10px;
+}
+
+.intro-search-results-padder {
+  margin: 0 0 30px;
+
+  .flex-hold-child {
+    h5 {
+      display: inline-block;
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .flex-hold-child:nth-child(2n) {
+    text-align: right;
+  }
 }
 
 .intro-news-padder {
@@ -135,23 +154,10 @@
   margin: 40px 0 0;
 }
 
-.parnter-grid {
-  margin-top: 20px;
-}
-
-.partner-box {
-  @include flex-wrap;
-  width: 100%;
-}
-
-.partner-label {
-  width: 100%;
-  align-items: flex-start;
-}
-
-.partner-logo {
-  @include flex-wrap;
-  align-items: center;
+.opening-child-right {
+  .flex-hold-child:nth-child(2n) {
+    text-align: right;
+  }
 }
 
 .flex-hold-2 {
@@ -206,6 +212,10 @@
 
     .padder {
       padding-left: 160px;
+
+      .card {
+        margin-top: 20px;
+      }
     }
 
     .tags-holder {
@@ -238,6 +248,74 @@
 
     .padder {
       padding: 55px 45px 85px;
+    }
+  }
+}
+
+.flex-hold-search-page {
+  margin-top: 30px;
+  padding-top: 60px;
+  //border-top: solid 1px $color-10;
+  .search-page-left {
+    order: 1;
+    //width: 350px;
+    width: 200px;
+
+    .sticky-element-compact {
+      top: calc(#{$header-desktop-height-compact} + 30px);
+    }
+
+    .sticky-element-expanded {
+      top: calc(#{$header-desktop-height} + 30px);
+    }
+
+    .padder {
+      padding: 0 0 30px;
+
+      h5 {
+        margin-top: 30px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .search-page-right {
+    order: 2;
+    width: calc(100% - 200px);
+
+    .padder {
+      padding: 0 0 85px 24px;
+    }
+  }
+}
+
+.card-date-holder {
+  .data {
+    order: 1;
+    width: 90px;
+    height: 85px;
+    overflow: hidden;
+    @include define-border-radius(8px);
+    background-color: $color-8;
+    text-align: center;
+    padding-top: 4px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+    -moz-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+    box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+
+    h3,
+    h5 {
+      color: $color-1;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      line-height: $h5-size-desktop;
     }
   }
 }
@@ -508,6 +586,14 @@
 
   .texts-holder {
     margin-bottom: 50px;
+
+    &.compact {
+      margin-bottom: 25px;
+    }
+  }
+
+  .texts-holder-no-cta {
+    //margin-bottom: 50px;
   }
 
   .more-info {

@@ -50,6 +50,10 @@
       case 'module-listing-auto' :
       include( locate_template( 'template-parts/modules/module-listing-auto.php' ) );
       break;
+      // module-documenti
+      case 'module-documenti' :
+      include( locate_template( 'template-parts/modules/module-documenti.php' ) );
+      break;
 
       // module-highlighted-sentence
       case 'module-highlighted-sentence' :

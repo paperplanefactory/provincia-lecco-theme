@@ -1,51 +1,58 @@
 <!-- module-listing-auto -->
 <?php
-$module_auto_listing_cpt = get_sub_field( 'module_auto_listing_cpt' );
-$module_auto_listing_area_amministrativa_taxterm = get_sub_field( 'module_auto_listing_area_amministrativa_taxterm' );
+if ( get_sub_field( 'module_auto_listing_mode' ) === 'manual' ) {
+  $my_autolisting = get_sub_field( 'module_auto_listing_manual' );
+}
+else {
+  $module_auto_listing_cpt = get_sub_field( 'module_auto_listing_cpt' );
+  $module_auto_listing_area_amministrativa_taxterm = get_sub_field( 'module_auto_listing_area_amministrativa_taxterm' );
 
-if ( $module_auto_listing_cpt === 'amministrazione_cpt' ) {
-  $module_auto_listing_amministrazione_taxterm = get_sub_field( 'module_auto_listing_amministrazione_taxterm' );
-  $args_autolisting = array(
-    'post_type' => $module_auto_listing_cpt,
-    'posts_per_page' => -1,
-    'post__not_in' => array($my_id),
-    'relation'		=> 'AND',
-  	'tax_query'		=> array(
-  		array(
-  			'taxonomy'	=> 'amministrazione_tax',
-  			'field'		=> 'term_id',
-  			'terms'		=> $module_auto_listing_amministrazione_taxterm
-  		),
-  		array(
-  			'taxonomy'	=> 'aree_amministrative_tax',
-  			'field'		=> 'term_id',
-  			'terms'		=> $module_auto_listing_area_amministrativa_taxterm
-  		)
-  	),
-    'orderby'    => 'menu_order',
-    //'sort_order' => 'asc'
-  );
+  if ( $module_auto_listing_cpt === 'amministrazione_cpt' ) {
+    $module_auto_listing_amministrazione_taxterm = get_sub_field( 'module_auto_listing_amministrazione_taxterm' );
+    $args_autolisting = array(
+      'post_type' => $module_auto_listing_cpt,
+      'posts_per_page' => -1,
+      'post__not_in' => array($my_id),
+      'relation'		=> 'AND',
+    	'tax_query'		=> array(
+    		array(
+    			'taxonomy'	=> 'amministrazione_tax',
+    			'field'		=> 'term_id',
+    			'terms'		=> $module_auto_listing_amministrazione_taxterm
+    		),
+    		array(
+    			'taxonomy'	=> 'aree_amministrative_tax',
+    			'field'		=> 'term_id',
+    			'terms'		=> $module_auto_listing_area_amministrativa_taxterm
+    		)
+    	),
+      'orderby'    => 'menu_order',
+      //'sort_order' => 'asc'
+    );
+  }
+
+  elseif ( $module_auto_listing_cpt === 'servizi_cpt' || $module_auto_listing_cpt === 'documenti_cpt' ) {
+    $module_auto_listing_amministrazione_taxterm = get_sub_field( 'module_auto_listing_amministrazione_taxterm' );
+    $args_autolisting = array(
+      'post_type' => $module_auto_listing_cpt,
+      'posts_per_page' => -1,
+      'post__not_in' => array($my_id),
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'aree_amministrative_tax',
+          'field' => 'term_id',
+          'terms' => $module_auto_listing_area_amministrativa_taxterm
+        )
+      ),
+      'orderby'    => 'menu_order',
+      //'sort_order' => 'asc'
+    );
+  }
+
+  $my_autolisting = get_posts( $args_autolisting );
 }
 
-elseif ( $module_auto_listing_cpt === 'servizi_cpt' || $module_auto_listing_cpt === 'documenti_cpt' ) {
-  $module_auto_listing_amministrazione_taxterm = get_sub_field( 'module_auto_listing_amministrazione_taxterm' );
-  $args_autolisting = array(
-    'post_type' => $module_auto_listing_cpt,
-    'posts_per_page' => -1,
-    'post__not_in' => array($my_id),
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'aree_amministrative_tax',
-        'field' => 'term_id',
-        'terms' => $module_auto_listing_area_amministrativa_taxterm
-      )
-    ),
-    'orderby'    => 'menu_order',
-    //'sort_order' => 'asc'
-  );
-}
 
-$my_autolisting = get_posts( $args_autolisting );
 if ( !empty ( $my_autolisting ) ) :
  ?>
  <div class="text-module">

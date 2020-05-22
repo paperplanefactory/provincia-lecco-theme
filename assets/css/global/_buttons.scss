@@ -118,6 +118,76 @@
   }
 }
 
+.page-search-cats-expander {
+  margin: 0;
+  padding: 0;
+  color: $color-2;
+
+  .icon-js {
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+    color: $color-4;
+  }
+}
+
+.page-search-cats-listing {
+  display: none;
+  margin: 0 0 10px;
+  padding: 0 0 0 15px;
+
+  li {
+    position: relative;
+    margin: 0;
+
+    input[type='checkbox'] {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+    }
+
+    button {
+      position: relative;
+      display: block !important;
+      width: 100%;
+      color: $color-2;
+      text-align: left;
+
+      span {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: solid 1px $color-2;
+        @include define-border-radius(4px);
+        margin: 0 10px 0 0;
+
+        &.checked {
+          background-color: $color-2;
+
+          &:before {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            font-size: 13px;
+            color: $color-12;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-search-cats-listing-argomenti {
+  display: block !important;
+  padding: 0 !important;
+}
+
 .share-menu-expander {
   margin: 0;
   padding: 0;

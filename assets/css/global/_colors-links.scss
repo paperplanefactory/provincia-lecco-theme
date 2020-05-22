@@ -169,6 +169,16 @@ a:hover {
 	color: $color-1;
 }
 
+a.green-link:link,
+a.green-link:visited {
+	color: $color-4 !important;
+}
+
+a.green-link:active,
+a.green-link:hover {
+	color: $color-1 !important;
+}
+
 p {
 	a {
 		text-decoration: underline;
@@ -410,6 +420,20 @@ a.tag-button:hover {
 		}
 	}
 
+	.child-cats {
+		a {
+			&:after {
+				content: " - ";
+			}
+
+			&:last-child {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
+
 	&.cat-fill-b {
 		a:active,
 		a:hover,
@@ -495,6 +519,14 @@ a.tag-button:hover {
 				}
 			}
 		}
+	}
+}
+
+.search-results {
+	.card {
+		-webkit-box-shadow: 0 0 0 0 rgba(0,43,85,0.1);
+		-moz-box-shadow: 0 0 0 0 rgba(0,43,85,0.1);
+		box-shadow: 0 0 0 0 rgba(0,43,85,0.1);
 	}
 }
 

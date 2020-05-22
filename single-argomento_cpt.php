@@ -7,49 +7,9 @@ get_header();
 ?>
 <?php
 while ( have_posts() ) : the_post();
+$argomento_area_correlata = get_field( 'argomento_area_correlata' );
 $argomenti_in_evidenza = get_field( 'argomenti_in_evidenza' );
 $argomento_page_listing_term = get_field( 'argomento_page_listing_term' );
-
-
-$listing_page_cpt_listed = get_field('listing_page_cpt_listed');
-// verifico se è una pagina di primo o di secondo livello
-$listing_page_level = get_field('listing_page_level');
-// verifico di quale area fa parte
-$listing_page_taxonmy = get_field('listing_page_taxonmy');
-if ( $listing_page_taxonmy === 'amministrazione_tax' ) {
-  // contenuti da elencare in evidenza
-  $listing_page_highlight_contents = get_field('listing_page_highlight_contents_amministrazione');
-  // custom post type per listing
-  $cpt_query = 'amministrazione_cpt';
-  // termine di tassonomia per listing
-  $tax_query = get_field('listing_page_level_second_taxonmy_amministrazione');
-}
-if ( $listing_page_taxonmy === 'servizi_tax' ) {
-  // contenuti da elencare in evidenza
-  $listing_page_highlight_contents = get_field('listing_page_highlight_contents_servizi');
-  // custom post type per listing
-  $cpt_query = 'servizi_cpt';
-  // termine di tassonomia per listing
-  $tax_query = get_field('listing_page_level_second_taxonmy_servizi');
-}
-if ( $listing_page_taxonmy === 'documenti_tax' ) {
-  // contenuti da elencare in evidenza
-  $listing_page_highlight_contents = get_field('listing_page_highlight_contents_documenti');
-  $cpt_query = 'documenti_cpt';
-  // termine di tassonomia per listing
-  $tax_query = get_field('listing_page_level_second_taxonmy_documenti');
-}
-if ( $listing_page_taxonmy === 'category' ) {
-  // contenuti da elencare in evidenza
-  $listing_page_highlight_contents = get_field('listing_page_highlight_contents_novita');
-  // progetti da elencare in evidenza
-  $listing_page_highlight_progetti = get_field('listing_page_highlight_progetti');
-  // custom post type per listing
-  $cpt_query = 'post';
-  // termine di tassonomia per listing
-  $tax_query = get_field('listing_page_level_second_taxonmy_novita');
-}
-
 ?>
   <div class="wrapper">
     <div class="wrapper-padded">
@@ -68,27 +28,24 @@ if ( $listing_page_taxonmy === 'category' ) {
                 </p>
               <?php endif; ?>
 
-              <form action="/action_page.php" class="search-form banner-form">
-                <input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"' />
-                <input type="hidden" name="s_cpt" value="<?php echo $cpt_query; ?>">
-                <input type="hidden" name="s_tax_name" value="<?php echo $listing_page_taxonmy; ?>">
-                <input type="hidden" name="s_tax_term_id" value="<?php echo $tax_query; ?>">
+              <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
+                <input type="text" name="search-kw" aria-label="Digita una parola chiave per la ricerca" placeholder='Cerca in "<?php the_title(); ?>"' />
+                <input type="hidden" name="argomenti_tax[]" value="<?php echo $argomento_page_listing_term; ?>">
                 <button class="button-appearance-normalizer" type="submit"><span class="icon-search"></span></button>
               </form>
             </div>
             <div class="page-opening-right">
               <div class="padder">
-                <h5 class="allupper">Tutta l’amministrazione</h5>
-                <?php if ( $listing_page_level === 'primo-livello' ) {
-                  intro_menu_list_subpage_items();
-                }
-                elseif ( $listing_page_level === 'secondo-livello' ) {
-                  intro_menu_list_parent_subpage_items();
-                }
-                elseif ( $listing_page_level === 'terzo-livello' ) {
-                  intro_menu_list_parent_parent_subpage_items();
-                }
-                ?>
+                <?php
+                // contenuti in evidenza se non c'è paginazione
+                if ( $argomento_area_correlata && !is_paged() ) :
+                  ?>
+                  <h5>Questo argomento è gestito da</h5>
+                  <?php foreach( $argomento_area_correlata as $post ) : setup_postdata( $post );
+                  $compact_card = 1; ?>
+                    <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+                  <?php endforeach; wp_reset_postdata(); ?>
+                <?php endif; ?>
               </div>
             </div>
           </div>
@@ -100,7 +57,7 @@ if ( $listing_page_taxonmy === 'category' ) {
 <?php endwhile; ?>
 
 <?php
-// contentui in evidenza se non c'è paginazione
+// contenuti in evidenza se non c'è paginazione
 if ( $argomenti_in_evidenza && !is_paged() ) :
   ?>
   <div class="wrapper bg-9">

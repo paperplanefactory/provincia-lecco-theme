@@ -1,0 +1,1249 @@
+{
+    "key": "group_5eaa93ffe6eeb",
+    "title": "Gestione contenuti",
+    "fields": [
+        {
+            "key": "field_5eaa942f5251e",
+            "label": "Generare un indice dei contenuti?",
+            "name": "content_index",
+            "type": "true_false",
+            "instructions": "Scegliendo di generare un indice la pagina ogni modulo potrà essere assegnato come voce dell'indice.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5eaa952287981",
+            "label": "Gestione contenuto a moduli",
+            "name": "new_module",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Aggiungi modulo",
+            "sub_fields": [
+                {
+                    "key": "field_5eaa98176b1fc",
+                    "label": "Scegli il tipo di contenuto",
+                    "name": "choose_module",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "module-text": "Testo semplice con editor",
+                        "module-text-highlight": "Testo in evidenza con editor",
+                        "module-text-card": "Testo in card con editor",
+                        "module-listing-auto": "Listing contenuti",
+                        "module-scadenze": "Listing scadenze (per bandi)",
+                        "module-documenti": "Listing documenti (per bandi)",
+                        "module-cta": "Modulo call to action",
+                        "module-slideshow": "Slideshow",
+                        "module-map": "Mappa (embed)",
+                        "module-video": "Video (embed)"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eaaa50d26ac0",
+                    "label": "Mostrare questo modulo?",
+                    "name": "show_hide_module",
+                    "type": "true_false",
+                    "instructions": "È possibie utilizzare questa opzione per nascondere un modulo senza doverlo cancellare.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5eaa95703d5ea",
+                    "label": "Impostazioni indice",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa942f5251e",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaa95973d5eb",
+                    "label": "Titolo",
+                    "name": "module_index_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eaa95db3d5ec",
+                    "label": "Aggiungere il titolo anche all'inizio del modulo?",
+                    "name": "module_index_title_in_module",
+                    "type": "true_false",
+                    "instructions": "Scegliendo sì il titolo verrà aggiunto anche all'inizio del modulo e non solo nell'indice.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5eaa988eae4b3",
+                    "label": "Testo semplice con editor",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-text"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaa98aeae4b4",
+                    "label": "Contenuti",
+                    "name": "module_text_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5eaaa9eb54e7e",
+                    "label": "Slideshow",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-slideshow"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaaaa0c54e7f",
+                    "label": "Gestione immagini",
+                    "name": "module_slideshow_repeater",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Aggiungi slide",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eaaaa2c54e80",
+                            "label": "Immagine",
+                            "name": "module_slideshow_repeater_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5eaaaa4554e81",
+                            "label": "Didascalia",
+                            "name": "module_slideshow_repeater_caption",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5eaaae0e27e43",
+                    "label": "Mappa (embed)",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-map"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaaae1727e44",
+                    "label": "Embed mappa",
+                    "name": "module_map_embed",
+                    "type": "text",
+                    "instructions": "Copiare il codice ottenuto tramite Google Maps Condividi -> Incorporare una mappa.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eaab137ad437",
+                    "label": "Video (embed)",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaab148ad438",
+                    "label": "Embed video",
+                    "name": "module_video_embed",
+                    "type": "oembed",
+                    "instructions": "Copiare la URL del video di YouTube, Vimeo o altre piattaforme compatibili.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_5eaab447914df",
+                    "label": "Listing scadenze per bandi",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-scadenze"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaab5a8914e4",
+                    "label": "Testo introduttivo",
+                    "name": "module_scadenze_intro",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5eaab462914e0",
+                    "label": "Gestione scadenze",
+                    "name": "module_scadenze_repeater",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Aggiungi scadenza",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eaab489914e1",
+                            "label": "Data scadenza",
+                            "name": "module_scadenze_repeater_data",
+                            "type": "date_picker",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "d\/m\/Y",
+                            "return_format": "Ymd",
+                            "first_day": 1
+                        },
+                        {
+                            "key": "field_5eaab4d3914e2",
+                            "label": "Titolo scadenza",
+                            "name": "module_scadenze_repeater_titolo",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5eaab4f0914e3",
+                            "label": "Informazioni scadenza",
+                            "name": "module_scadenze_repeater_informazioni",
+                            "type": "wysiwyg",
+                            "instructions": "Formattare il testo utilizzando solo paragrafi.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5eaac7808d1d3",
+                    "label": "Modulo call to action",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-cta"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eaacd74edf82",
+                    "label": "Testo introduttivo",
+                    "name": "module_cta_intro",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5eaac7d38d1d6",
+                    "label": "Tipo di link",
+                    "name": "module_call_to_action_link_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link-interno": "Contenuto interno al sito",
+                        "link-esterno": "Contenuto esterno al sito",
+                        "link-file": "File"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eaacab58d1db",
+                    "label": "Aspetto dei link",
+                    "name": "module_call_to_action_link_appearence",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link-button": "Bottone quadrato",
+                        "link-pill": "Bottone pillola"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eaac7928d1d4",
+                    "label": "Gestione call to action",
+                    "name": "module_call_to_action_repeater",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaac7d38d1d6",
+                                "operator": "==",
+                                "value": "link-esterno"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5eaac7d38d1d6",
+                                "operator": "==",
+                                "value": "link-file"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Aggiungi CTA",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eaac7ba8d1d5",
+                            "label": "Testo",
+                            "name": "module_call_to_action_repeater_testo",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5eaac8588d1d7",
+                            "label": "URL di destinazione",
+                            "name": "module_call_to_action_repeater_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5eaac7d38d1d6",
+                                        "operator": "==",
+                                        "value": "link-esterno"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5eaac9518d1d9",
+                            "label": "Scegli file",
+                            "name": "module_call_to_action_repeater_file",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5eaac7d38d1d6",
+                                        "operator": "==",
+                                        "value": "link-file"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5eaac96e8d1da",
+                    "label": "Scegli i contenuti",
+                    "name": "module_call_to_action_link_internal",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaac7d38d1d6",
+                                "operator": "==",
+                                "value": "link-interno"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_5eaad2c4d8c26",
+                    "label": "Listing contenuti",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "Utilizzare questo modulo per elencare contenuti a scelta. In questo modo i contenuti elencati saranno sempre aggiornati in automatico.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-listing-auto"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5ec3a301e2994",
+                    "label": "Scegli contenuti a mano oppure in base alle tassonomie",
+                    "name": "module_auto_listing_mode",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "manual": "Manuale",
+                        "auto": "In base alle tassonomie"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eaad388d8c27",
+                    "label": "Scegli il tipo di contenuto da elencare",
+                    "name": "module_auto_listing_cpt",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "auto"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "amministrazione_cpt": "Amministrazione",
+                        "servizi_cpt": "Servizi",
+                        "documenti_cpt": "Documenti"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eaad759296b8",
+                    "label": "Scegli un contenuto specifico di Amministrazione",
+                    "name": "module_auto_listing_amministrazione_taxterm",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "auto"
+                            },
+                            {
+                                "field": "field_5eaad388d8c27",
+                                "operator": "==",
+                                "value": "amministrazione_cpt"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "amministrazione_tax",
+                    "field_type": "select",
+                    "allow_null": 1,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5eaad83a296b9",
+                    "label": "Scegli area amministrativa",
+                    "name": "module_auto_listing_area_amministrativa_taxterm",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "auto"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "aree_amministrative_tax",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5ec3a3a8e2996",
+                    "label": "Scegli i contenuti",
+                    "name": "module_auto_listing_manual",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "manual"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "page",
+                        "servizi_cpt",
+                        "amministrazione_cpt",
+                        "documenti_cpt",
+                        "progetti_cpt"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_5eba569e7ac87",
+                    "label": "Testo in evidenza con editor",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-text-highlight"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eba56b47ac88",
+                    "label": "Contenuti",
+                    "name": "module_highlight_text_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5eba57087ac89",
+                    "label": "Associare questo box ad una tassonomia?",
+                    "name": "module_highlight_text_icon",
+                    "type": "select",
+                    "instructions": "Scegli una tassonomia per associare il box ad essa e utilizzare la sua icona.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none": "Nessuna",
+                        "icon-administration": "Amministrazione",
+                        "icon-note": "Nota",
+                        "icon-information": "Informazione"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eba6323ccffa",
+                    "label": "Testo in card con editor",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-text-card"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5eba6334ccffb",
+                    "label": "Contenuti",
+                    "name": "module_card_text_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5ec688c314d95",
+                    "label": "Listing documenti (per bandi)",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eaa98176b1fc",
+                                "operator": "==",
+                                "value": "module-documenti"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5ec688dc14d96",
+                    "label": "Gestione documenti",
+                    "name": "module_gestione_documenti_repeater",
+                    "type": "repeater",
+                    "instructions": "I documenti elencati di seguito non verranno più mostrati ai visitatori se la data di scadenza del bando è stata superata.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Aggiungi documento",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ec6891014d97",
+                            "label": "Questo documento si trova sul sito della Provincia o su un sito esterno?",
+                            "name": "module_gestione_documenti_repeater_doc_location",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "doc-internal": "Sul sito della Provincia",
+                                "doc-external": "Su un sito esterno"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5ec6896c14d98",
+                            "label": "Scegli il file",
+                            "name": "module_gestione_documenti_repeater_doc_file",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ec6891014d97",
+                                        "operator": "==",
+                                        "value": "doc-internal"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5ec6899414d99",
+                            "label": "Inserisci la URL del documento",
+                            "name": "module_gestione_documenti_repeater_doc_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ec6891014d97",
+                                        "operator": "==",
+                                        "value": "doc-external"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5ec689ae14d9a",
+                            "label": "Titolo del documento",
+                            "name": "module_gestione_documenti_repeater_doc_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5ec689c014d9b",
+                            "label": "Descrizione del documento",
+                            "name": "module_gestione_documenti_repeater_doc_description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "br"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "servizi_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "documenti_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "progetti_cpt"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1590070797
+}

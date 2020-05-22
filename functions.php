@@ -23,6 +23,8 @@ include_once "includes/theme-embedded-acf-social.php";
 include_once "includes/theme-embedded-acf-parnters-sponsors.php";
 // gestione tassonomie
 include_once "includes/theme-taxonomies.php";
+// contantore visualizzazioni pagina
+include_once "includes/theme-view-counter.php";
 // ruoli aggiuntivi
 // include_once "includes/theme-custom-users.php";
 // transients killer
