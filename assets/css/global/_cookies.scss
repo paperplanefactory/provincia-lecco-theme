@@ -1,4 +1,4 @@
- // main: ../style.scss
+// main: ../style.scss
 @import 'vars';
 @import 'mixin';
 
@@ -8,20 +8,20 @@
 	width: calc(100% - 6px);
 	bottom: 0;
 	left: 0;
-  font-weight: normal;
+	font-weight: normal;
 	font-family: $font-main;
-  font-size: 12px;
-  line-height: 18px;
+	font-size: 12px;
+	line-height: 18px;
 	border: $color-1 solid 3px;
 	background-color: $color-1;
-	color: $color-4;
+	color: $color-12;
 	transition: opacity 1s;
-	pointer-events: none;
-	opacity: 0;
+
 	&.shown {
 		pointer-events: all;
 		opacity: 1;
 	}
+
 	.paperplane-cookie-notice-container {
 		position: relative;
 		width: calc(100% - 40px);
@@ -29,17 +29,21 @@
 		margin: 0 auto;
 		padding: 20px;
 		text-align: center;
-		.paperplane-message-cookie-accepted, .paperplane-message-cookie-refused {
+
+		.paperplane-message-cookie-accepted,
+		.paperplane-message-cookie-refused {
 			display: none;
 		}
 	}
+
 	a {
 		display: inline-block;
 		margin: 5px;
 		padding: 3px 6px;
 		background-color: $color-4;
-		color: $color-1;
+		color: $color-12;
 		text-transform: uppercase;
+		font-weight: $font-weight-3;
 	}
 }
 
@@ -51,6 +55,7 @@
 	color: #FFFFFF;
 	text-transform: uppercase;
 	cursor: pointer;
+
 	p {
 		margin: 0;
 	}

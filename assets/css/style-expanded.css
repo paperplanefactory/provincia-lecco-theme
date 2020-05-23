@@ -261,50 +261,8 @@ body {
   align-items: center;
 }
 
-.last-message {
-  position: relative;
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #3499EF;
-  padding: 20px;
-}
-
-.bottom-message {
-  position: fixed;
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  text-align: center;
-  background-color: #363B3F;
-  color: #3499EF;
-  padding: 20px;
-}
-
 .navigation {
   display: none;
-}
-
-#infscr-loading {
-  position: fixed;
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 30px) !important;
-  background-color: #363B3F;
-  text-align: center;
-  padding: 15px;
-  display: none;
-}
-
-#infscr-loading p {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #019E59;
-  text-transform: uppercase;
 }
 
 .bordered.bottom {
@@ -4339,10 +4297,8 @@ select {
   line-height: 18px;
   border: #363B3F solid 3px;
   background-color: #363B3F;
-  color: #019E59;
+  color: #FFFFFF;
   transition: opacity 1s;
-  pointer-events: none;
-  opacity: 0;
 }
 
 #paperplane-cookie-notice.shown {
@@ -4359,7 +4315,8 @@ select {
   text-align: center;
 }
 
-#paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-accepted, #paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-refused {
+#paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-accepted,
+#paperplane-cookie-notice .paperplane-cookie-notice-container .paperplane-message-cookie-refused {
   display: none;
 }
 
@@ -4368,8 +4325,9 @@ select {
   margin: 5px;
   padding: 3px 6px;
   background-color: #019E59;
-  color: #363B3F;
+  color: #FFFFFF;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .paperplane-gdpr-content-message {
