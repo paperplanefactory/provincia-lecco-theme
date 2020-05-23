@@ -51,6 +51,8 @@ if ( $footer_width === 'contained-width' ) {
   $footer_wrapper = 'wrapper-padded-more';
 }
 $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
+global $today;
+$today = date('Y-m-d H:i:s');
 ?>
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $static_bloginfo_stylesheet_directory; ?>/assets/images/favicons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo $static_bloginfo_stylesheet_directory; ?>/assets/images/favicons/apple-icon-60x60.png">
@@ -93,18 +95,20 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
         </div>
         <div class="side-head">
           <ul>
-            <li class="header-social">
-              Seguici su
-            </li>
-            <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
+            <?php if ( get_field( 'social_header', 'any-lang' ) == 1 ) : ?>
               <li class="header-social">
-                <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
-                  <i class="<?php the_sub_field( 'global_socials_icona' ); ?>" aria-hidden="true"></i>
-                </a>
+                Seguici su
               </li>
-            <?php endwhile; ?>
+              <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
+                <li class="header-social">
+                  <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
+                    <i class="<?php the_sub_field( 'global_socials_icona' ); ?>" aria-hidden="true"></i>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+            <?php endif; ?>
             <li class="search-menu">
-              <button class="activate-search activate-search-js button-appearance-normalizer"  aria-label="Mostra/nascondi pannello di ricerca">
+              <button class="activate-search activate-search-js button-appearance-normalizer"  aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
                 <span class="lablel">Cerca</span>
                 <div class="icon-hold">
                   <span class="icon-search"></span>
@@ -113,7 +117,7 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
               </button>
             </li>
             <li class="hamb-menu">
-              <div type="button" aria-haspopup="true" aria-expanded="false" aria-label="Navigation" class="hambuger-element ham-activator">
+              <div type="button" aria-haspopup="true" aria-expanded="false" aria-label="Apri/chiudi il menu di navigazione" data-collapsed="Apri il menu di navigazione" data-expanded="Chiudi il menu di navigazione" class="hambuger-element ham-activator">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -165,7 +169,7 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
         <div class="side-head">
           <ul>
             <li class="search-menu">
-              <button class="activate-search activate-search-js" aria-label="Mostra/nascondi pannello di ricerca">
+              <button class="activate-search activate-search-js" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
                 <span class="icon-search"></span>
               </button>
             </li>
@@ -251,10 +255,30 @@ $static_bloginfo_stylesheet_directory = get_bloginfo('stylesheet_directory');
             <div class="flex-hold-child">
               <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<?php
+$meta_query_avvisi = array(
+  array(
+    'key' => 'scadenza_avviso',
+    'value' => $today,
+    'compare' => '>=',
+  ),
+);
+$args_avvisi = array(
+  'post_type' => 'avviso_cpt',
+  'posts_per_page' => 1,
+  'meta_query' => $meta_query_avvisi,
+);
+$my_avvisi = get_posts( $args_avvisi );
+if ( !empty ( $my_avvisi ) ) :
+ ?>
+ <?php foreach( $my_avvisi as $post ) : setup_postdata( $post ); ?>
+   <?php include( locate_template( 'template-parts/grid/avviso.php' ) ); ?>
+ <?php endforeach; wp_reset_postdata(); ?>
+<?php endif; ?>

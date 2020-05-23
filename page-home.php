@@ -14,7 +14,6 @@ if ( $gestione_notizia_evidenza === 'evidenza-auto' ) {
   $args_notizia_evidenza = array(
     'post_type' => 'post',
     'posts_per_page' => 1,
-    //'post__not_in' => array($my_id),
   );
   $my_notizia_evidenza = get_posts( $args_notizia_evidenza );
 }
@@ -57,12 +56,12 @@ else {
                  $image_data = array(
                      'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
                      'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-                     'size_fallback' => 'full_desk'
+                     'size_fallback' => 'home_box'
                  );
                  $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-                     'retina' => 'full_desk_retina',
-                     'desktop' => 'full_desk',
-                     'mobile' => 'content_picture',
+                     'retina' => 'home_box',
+                     'desktop' => 'home_box',
+                     'mobile' => 'home_box',
                      'micro' => 'micro'
                  );
                  print_theme_image( $image_data, $image_sizes );
@@ -117,7 +116,7 @@ else {
 
 
 <?php
-$today = date('Y-m-d H:i:s');
+global $today;
 $meta_query_bandi_attivi = array(
   array(
     'key' => 'scadenza_bando',
@@ -128,7 +127,7 @@ $meta_query_bandi_attivi = array(
 $args_scadenze = array(
   'post_type' => 'documenti_cpt',
   'posts_per_page' => 20,
-  'order' => 'DESC',
+  'order' => 'ASC',
   'orderby' => 'meta_value_num',
   'meta_key' => 'scadenza_bando',
   'meta_query' => $meta_query_bandi_attivi,
@@ -205,7 +204,7 @@ $argomenti_evidenza_contenuti = get_field( 'argomenti_evidenza_contenuti' );
                   <?php
                   $argomenti_tax = get_field( 'argomento_page_listing_term' );
                   $args_list_argomento_content = array(
-                    //'post_type' => 'post',
+                    'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
                     'posts_per_page' => 3,
                     'order' => 'ASC',
                     'tax_query' => array(
@@ -280,8 +279,11 @@ if ( !empty ( $my_siti_tematici ) ) :
 
 
 
-
-<div class="wrapper lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
+<?php
+$box_ricerca_immagine_apertura = get_field( 'box_ricerca_immagine_apertura' );
+$box_ricerca_immagine_apertura_URL = $box_ricerca_immagine_apertura['sizes']['full_desk'];
+ ?>
+<div class="wrapper lazy with-bg-image" data-bg="<?php echo $box_ricerca_immagine_apertura_URL; ?>">
   <div class="search-banner">
     <div class="wrapper-padded">
       <div class="wrapper-padded-more-780">
@@ -300,12 +302,13 @@ if ( !empty ( $my_siti_tematici ) ) :
         $my_pagine_visitate = get_posts( $args_pagine_visitate );
         if ( !empty ( $my_pagine_visitate ) ) :
          ?>
-
-          <div class="tags-holder">
-            <?php foreach ( $my_pagine_visitate as $post ) : setup_postdata ( $post ); ?>
-              <a href="<?php the_permalink(); ?>" class="square-button green filled"><?php the_title(); ?></a>
-             <?php endforeach; wp_reset_postdata(); ?>
-          </div>
+         <div class="desktop-only">
+           <div class="tags-holder">
+             <?php foreach ( $my_pagine_visitate as $post ) : setup_postdata ( $post ); ?>
+               <a href="<?php the_permalink(); ?>" class="square-button green filled"><?php the_title(); ?></a>
+              <?php endforeach; wp_reset_postdata(); ?>
+           </div>
+         </div>
         <?php endif; ?>
       </div>
     </div>

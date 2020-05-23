@@ -54,35 +54,6 @@
       case 'module-documenti' :
       include( locate_template( 'template-parts/modules/module-documenti.php' ) );
       break;
-
-      // module-highlighted-sentence
-      case 'module-highlighted-sentence' :
-      include( locate_template( 'template-parts/modules/module-highlighted-sentence.php' ) );
-      break;
-      // module-columns
-      case 'module-columns' :
-      include( locate_template( 'template-parts/modules/module-columns.php' ) );
-      break;
-      // module-module-columns-fix-column
-      case 'module-columns-fix-column' :
-      include( locate_template( 'template-parts/modules/module-columns-fix-column.php' ) );
-      break;
-      // module-stripe
-      case 'module-stripe' :
-      include( locate_template( 'template-parts/modules/module-stripe.php' ) );
-      break;
-      // module-fullscreen-image
-      case 'module-fullscreen-image' :
-      include( locate_template( 'template-parts/modules/module-fullscreen-image.php' ) );
-      break;
-      // module-expanding-text
-      case 'module-expanding-text' :
-      include( locate_template( 'template-parts/modules/module-expanding-text.php' ) );
-      break;
-      // module-banner
-      case 'module-banner' :
-      include( locate_template( 'template-parts/modules/module-banner.php' ) );
-      break;
     }
   }
 

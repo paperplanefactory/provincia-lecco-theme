@@ -268,6 +268,47 @@
             "min": 1,
             "max": 6,
             "return_format": "object"
+        },
+        {
+            "key": "field_5ec8cb7c233c4",
+            "label": "Box di ricerca",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ec8cb8d233c5",
+            "label": "Immagine box di ricerca",
+            "name": "box_ricerca_immagine_apertura",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -289,5 +330,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590056292
+    "modified": 1590217694
 }

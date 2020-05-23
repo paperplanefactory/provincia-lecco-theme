@@ -2,15 +2,52 @@
 
 #footer,
 #header,
+#header-compact,
 #header-overlay,
-.no-print {
+#preheader,
+#search-overlay,
+.no-print,
+.page-index-left,
+button,
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=text],
+select,
+textarea {
   display: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-.wrapper {
+.wrapper,
+.wrapper-padded,
+.wrapper-padded-intro,
+.wrapper-padded-more,
+.wrapper-padded-more-500,
+.wrapper-padded-more-650,
+.wrapper-padded-more-780,
+.wrapper-padded-more-924 {
   width: 100%;
+  max-width: 100%;
   margin: 0;
   float: none;
+}
+
+.flex-hold,
+.flex-hold-child {
+  display: block;
+  width: 100%;
+}
+
+* {
+  border: none !important;
+  -webkit-box-shadow: 0 0 0 0 rgba(0,43,85,0) !important;
+  -moz-box-shadow: 0 0 0 0 rgba(0,43,85,0) !important;
+  box-shadow: 0 0 0 0 rgba(0,43,85,0) !important;
+  color: #000 !important;
+  background-color: transparent !important;
 }
 /** Setting margins */
 @page {

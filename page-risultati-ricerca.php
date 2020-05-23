@@ -8,6 +8,13 @@ get_header();
 $search_result_card = 1;
 // recupero la parola chiave di ricerca
 $search_kw = $_GET["search-kw"];
+// recupero l'ordinamento
+if ( !isset( $_GET["results_order"] ) ) {
+  $results_order = 'title';
+}
+else {
+  $results_order = $_GET["results_order"];
+}
 // verifico se ci sono filtri attivi
 if ( isset( $_GET["amministrazione_tax"] ) || isset( $_GET["servizi_tax"] ) || isset( $_GET["category_tax"] ) || isset( $_GET["documenti_tax"] ) || isset( $_GET["argomenti_tax"] ) ) {
   $remove_filters = 1;
@@ -19,7 +26,7 @@ else {
 $tax_query = array(
   'relation' => 'OR',
 );
-// verifico se è impostata la ricerca solo per argomento
+// verifico se è impostata solo la ricerca solo per argomento
 if ( !isset( $_GET["amministrazione_tax"] ) && !isset( $_GET["servizi_tax"] ) && !isset( $_GET["category_tax"] ) && !isset( $_GET["documenti_tax"] ) ) {
   if ( !empty( $_GET["argomenti_tax"] ) ) {
     $argomenti_tax = $_GET["argomenti_tax"];
@@ -32,63 +39,121 @@ if ( !isset( $_GET["amministrazione_tax"] ) && !isset( $_GET["servizi_tax"] ) &&
 }
 // altrimenti recupero le altre tassonomie
 else {
+  // recupero amministrazione_tax
   if ( !empty( $_GET["amministrazione_tax"] ) ) {
-    $amministrazione_tax = $_GET["amministrazione_tax"];
-    $tax_query[] =  array(
-      'taxonomy' => 'amministrazione_tax',
-      'field' => 'term_id',
-      'terms' => $amministrazione_tax,
-      array(
-        'taxonomy' => 'argomenti_tax',
-        'field'    => 'term_id',
-        'terms'    => $argomenti_tax,
-      ),
-    );
+    // se è incrociata con un argomento
+    if ( !empty( $_GET["argomenti_tax"] ) ) {
+      $tax_query[] =  array(
+        array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'amministrazione_tax',
+            'field' => 'term_id',
+            'terms' => $_GET["amministrazione_tax"],
+          ),
+          array(
+            'taxonomy' => 'argomenti_tax',
+            'field'    => 'term_id',
+            'terms'    => $_GET["argomenti_tax"],
+          ),
+        ),
+      );
+    }
+    else {
+      // se non è incrociata con un argomento
+      $tax_query[] =  array(
+        'taxonomy' => 'amministrazione_tax',
+        'field' => 'term_id',
+        'terms' => $_GET["amministrazione_tax"],
+      );
+    }
   }
-
+  // recupero servizi_tax
   if ( !empty( $_GET["servizi_tax"] ) ) {
-    $servizi_tax = $_GET["servizi_tax"];
-    $tax_query[] =  array(
-      'taxonomy' => 'servizi_tax',
-      'field' => 'term_id',
-      'terms' => $servizi_tax,
-      array(
-        'taxonomy' => 'argomenti_tax',
-        'field'    => 'term_id',
-        'terms'    => $argomenti_tax,
-      ),
-    );
+    // se è incrociata con un argomento
+    if ( !empty( $_GET["argomenti_tax"] ) ) {
+      $tax_query[] =  array(
+        array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'servizi_tax',
+            'field' => 'term_id',
+            'terms' => $_GET["servizi_tax"],
+          ),
+          array(
+            'taxonomy' => 'argomenti_tax',
+            'field'    => 'term_id',
+            'terms'    => $_GET["argomenti_tax"],
+          ),
+        ),
+      );
+    }
+    else {
+      // se non è incrociata con un argomento
+      $tax_query[] =  array(
+        'taxonomy' => 'servizi_tax',
+        'field' => 'term_id',
+        'terms' => $_GET["servizi_tax"],
+      );
+    }
   }
-
+  // recupero documenti_tax
+  if ( !empty( $_GET["documenti_tax"] ) ) {
+    if ( !empty( $_GET["argomenti_tax"] ) ) {
+      // se è incrociata con un argomento
+      $tax_query[] =  array(
+        array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'documenti_tax',
+            'field' => 'term_id',
+            'terms' => $_GET["documenti_tax"],
+          ),
+          array(
+            'taxonomy' => 'argomenti_tax',
+            'field'    => 'term_id',
+            'terms'    => $_GET["argomenti_tax"],
+          ),
+        ),
+      );
+    }
+    else {
+      // se non è incrociata con un argomento
+      $tax_query[] =  array(
+        'taxonomy' => 'documenti_tax',
+        'field' => 'term_id',
+        'terms' => $_GET["documenti_tax"],
+      );
+    }
+  }
+  // recupero category_tax (category)
   if ( !empty( $_GET["category_tax"] ) ) {
-    $category_tax = $_GET["category_tax"];
-    $tax_query[] =  array(
-      'relation' => 'AND',
-      array(
+    // se è incrociata con un argomento
+    if ( !empty( $_GET["argomenti_tax"] ) ) {
+      $tax_query[] =  array(
+        array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'category',
+            'field' => 'term_id',
+            'terms' => $_GET["category_tax"],
+          ),
+          array(
+            'taxonomy' => 'argomenti_tax',
+            'field'    => 'term_id',
+            'terms'    => $_GET["argomenti_tax"],
+          ),
+        ),
+      );
+    }
+    else {
+      // se non è incrociata con un argomento
+      $tax_query[] =  array(
         'taxonomy' => 'category',
         'field' => 'term_id',
-        'terms' => $category_tax,
-      ),
-      array(
-        'taxonomy' => 'argomenti_tax',
-        'field'    => 'term_id',
-        'terms'    => $argomenti_tax,
-      ),
-    );
-  }
-
-  if ( !empty( $_GET["documenti_tax"] ) ) {
-    $documenti_tax = $_GET["documenti_tax"];
-    $tax_query[] =  array(
-      'taxonomy' => 'documenti_tax',
-      'field' => 'term_id',
-      'terms' => $documenti_tax,
-      array(
-        'taxonomy' => 'argomenti_tax',
-        'field'    => 'term_id',
-        'terms'    => $argomenti_tax,
-      ),
-    );
+        'terms' => $_GET["category_tax"],
+      );
+    }
   }
 }
 // imposto la paginazione
@@ -104,17 +169,22 @@ else {
   $orderby = 'date';
   $order = 'DESC';
 }
-
+// combino i parametri per la query
 $search_query_parameters = array(
   'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
+  //'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', ),
   's' => $search_kw,
-  'tax_query' => $tax_query,
+  'tax_query' => $tax_query_good,
   'paged' => $page,
   'orderby' => $orderby,
-  'order' => $order
+  'order' => $order,
+  'posts_per_page' => 24,
+  'tax_query' => $tax_query
 );
+// genero la query
 $search_query = new WP_Query( $search_query_parameters );
 ?>
+
 <form method="get" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>/" id="search-filters">
 <div class="wrapper">
   <div class="wrapper-padded">
@@ -124,7 +194,9 @@ $search_query = new WP_Query( $search_query_parameters );
           <?php bcn_display(); ?>
         </div>
         <div class="inpage-searchform">
-          <h4 class="txt-1">Hai cercato:</h4>
+          <?php if ( $search_kw != '' ) : ?>
+            <h4 class="txt-1">Hai cercato:</h4>
+          <?php endif; ?>
           <div class="search-form overlay-form">
               <input type="text" name="search-kw" class="search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
               <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
@@ -147,13 +219,45 @@ $search_query = new WP_Query( $search_query_parameters );
           <div class="sticky-element sticky-columns-js">
             <div class="padder">
                 <div class="sticky-element sticky-columns-js">
-                  <h5 class="allupper txt-4">Categorie</h5>
-                  <?php search_results_amministrazione_tax_listing(); ?>
-                  <?php search_results_servizi_tax_listing(); ?>
-                  <?php search_results_novita_tax_listing(); ?>
-                  <?php search_results_documenti_tax_listing(); ?>
-                  <h5 class="allupper txt-4">Argomenti</h5>
-                  <?php search_results_argomenti_tax_listing(); ?>
+                  <button class="mobile-only index-menu-expander index-menu-expander-only-mobile-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il pannello dei filtri di ricerca" data-collapsed="Apri il pannello dei filtri di ricerca" data-expanded="Chiudi il pannello dei filtri di ricerca">
+                    Filtri di ricerca<span class="icon-expand"></span>
+                  </button>
+                  <div class="index-menu-only-mobile-js">
+                    <h5 class="allupper txt-4">Categorie</h5>
+                    <?php
+                    // funzione che richiama i filtri di ricerca
+
+                    $tax_name = 'Amministrazione';
+                    $tax_slug = 'amministrazione_tax';
+                    $tax_search_parameter = 'amministrazione_tax[]';
+                    $js_name = 'amministrazione';
+                    search_results_tax_listing( $tax_name, $tax_slug, $tax_search_parameter, $js_name );
+
+                    $tax_name = 'Servizi';
+                    $tax_slug = 'servizi_tax';
+                    $tax_search_parameter = 'servizi_tax[]';
+                    $js_name = 'servizi';
+                    search_results_tax_listing( $tax_name, $tax_slug, $tax_search_parameter, $js_name );
+
+                    $tax_name = 'Novità';
+                    $tax_slug = 'category';
+                    $tax_search_parameter = 'category_tax[]';
+                    $js_name = 'novita';
+                    search_results_tax_listing( $tax_name, $tax_slug, $tax_search_parameter, $js_name );
+
+                    $tax_name = 'Documenti e dati';
+                    $tax_slug = 'documenti_tax';
+                    $tax_search_parameter = 'documenti_tax[]';
+                    $js_name = 'documenti';
+                    search_results_tax_listing( $tax_name, $tax_slug, $tax_search_parameter, $js_name );
+                     ?>
+                    <?php
+                     ?>
+                    <h5 class="allupper txt-4">Argomenti</h5>
+                    <?php search_results_argomenti_tax_listing(); ?>
+                  </div>
+
+
                 </div>
 
             </div>
@@ -166,6 +270,7 @@ $search_query = new WP_Query( $search_query_parameters );
             <div class="flex-hold flex-hold-2 margins-thin bordered bottom intro-search-results-padder verticalize">
               <div class="flex-hold-child">
                 <?php
+                // conto i risultati
                  $count = $search_query->found_posts;
                  echo $count;
                  if ( $count == 1 ) {
@@ -176,14 +281,23 @@ $search_query = new WP_Query( $search_query_parameters );
                  }
                  ?>
                  <?php if ( $remove_filters == 1 ) : ?>
-                   <h5 class="allupper"><a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?search-kw=<?php echo $search_kw ; ?>" class="green-link">Elimina filtri</a></h5>
+                   <h5 class="allupper eraser-btn"><a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?search-kw=<?php echo $search_kw ; ?>" class="green-link">Elimina filtri</a></h5>
                  <?php endif; ?>
               </div>
               <div class="flex-hold-child">
-                Ordina per <select id="cars" name="results_order" class="order-results-js">
-                  <option value="title">Titolo</option>
-                  <option value="date">Data</option>
-                </select>
+                Ordina per
+                <?php if ( $results_order === 'title' ) : ?>
+                  <select name="results_order" class="order-results order-results-js">
+                    <option value="title">Titolo</option>
+                    <option value="date">Data</option>
+                  </select>
+                <?php else : ?>
+                  <select name="results_order" class="order-results order-results-js">
+                    <option value="date">Data</option>
+                    <option value="title">Titolo</option>
+                  </select>
+                <?php endif; ?>
+
               </div>
             </div>
             <?php if ( $search_query->have_posts() ) : ?>
@@ -201,99 +315,4 @@ $search_query = new WP_Query( $search_query_parameters );
   </div>
 </div>
 </form>
-<?php
-if ( $_GET['amministrazione_tax'] ) {
-  ?>
-  <script type="text/javascript">
-  $('#page-search-cats-expander-amministrazione').attr('aria-expanded', true);
-  $('#page-search-cats-expander-amministrazione').find('.icon-js').addClass('icon-expand').removeClass('left-arrow-tip');
-  $('#page-search-cats-listing-amministrazione').slideDown(150);
-</script>
-<?php
-  foreach($_GET['amministrazione_tax'] as $item){
-    ?>
-    <script type="text/javascript">
-    $('#button-check-cat-<?php echo $item; ?>-js').find('.icon-js').addClass('checked icon-check');
-    $('#hidden-input-set-<?php echo $item; ?>-js').prop('checked', true);
-  </script>
-  <?php
-  }
-}
-
-if ( $_GET['servizi_tax'] ) {
-  ?>
-  <script type="text/javascript">
-  $('#page-search-cats-expander-servizi').attr('aria-expanded', true);
-  $('#page-search-cats-expander-servizi').find('.icon-js').addClass('icon-expand').removeClass('left-arrow-tip');
-  $('#page-search-cats-listing-servizi').slideDown(150);
-</script>
-<?php
-  foreach($_GET['servizi_tax'] as $item){
-    ?>
-    <script type="text/javascript">
-    $('#button-check-cat-<?php echo $item; ?>-js').find('.icon-js').addClass('checked icon-check');
-    $('#hidden-input-set-<?php echo $item; ?>-js').prop('checked', true);
-  </script>
-  <?php
-  }
-}
-
-if ( $_GET['category_tax'] ) {
-  ?>
-  <script type="text/javascript">
-  $('#page-search-cats-expander-novita').attr('aria-expanded', true);
-  $('#page-search-cats-expander-novita').find('.icon-js').addClass('icon-expand').removeClass('left-arrow-tip');
-  $('#page-search-cats-listing-novita').slideDown(150);
-</script>
-<?php
-  foreach($_GET['category_tax'] as $item){
-    ?>
-    <script type="text/javascript">
-    $('#button-check-cat-<?php echo $item; ?>-js').find('.icon-js').addClass('checked icon-check');
-    $('#hidden-input-set-<?php echo $item; ?>-js').prop('checked', true);
-  </script>
-  <?php
-  }
-}
-
-if ( $_GET['documenti_tax'] ) {
-  ?>
-  <script type="text/javascript">
-  $('#page-search-cats-expander-documenti').attr('aria-expanded', true);
-  $('#page-search-cats-expander-documenti').find('.icon-js').addClass('icon-expand').removeClass('left-arrow-tip');
-  $('#page-search-cats-listing-documenti').slideDown(150);
-</script>
-<?php
-  foreach($_GET['documenti_tax'] as $item){
-    ?>
-    <script type="text/javascript">
-    $('#button-check-cat-<?php echo $item; ?>-js').find('.icon-js').addClass('checked icon-check');
-    $('#hidden-input-set-<?php echo $item; ?>-js').prop('checked', true);
-  </script>
-  <?php
-  }
-}
-
-if ( $_GET['argomenti_tax'] ) {
-  ?>
-  <script type="text/javascript">
-  $('#page-search-cats-listing-argomenti-rest-js').attr('aria-expanded', true);
-  $('#page-search-cats-listing-argomenti-rest-js').find('.icon-js').removeClass('icon-expand').addClass('icon-collapse-1');
-  $('#page-search-cats-listing-argomenti-rest-js').prev('.page-opening-menu-js').find('div').slideDown(150);
-  $('#page-search-cats-listing-argomenti-rest-js').find('.text-js').text('Nascondi');
-</script>
-<?php
-  foreach($_GET['argomenti_tax'] as $item){
-    ?>
-    <script type="text/javascript">
-    $('#button-check-cat-<?php echo $item; ?>-js').find('.icon-js').addClass('checked icon-check');
-    $('#hidden-input-set-<?php echo $item; ?>-js').prop('checked', true);
-  </script>
-  <?php
-  }
-}
-
-?>
-
-
 <?php get_footer(); ?>

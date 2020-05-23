@@ -1233,6 +1233,13 @@
                 "operator": "==",
                 "value": "progetti_cpt"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 3,
@@ -1245,5 +1252,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590070797
+    "modified": 1590240196
 }

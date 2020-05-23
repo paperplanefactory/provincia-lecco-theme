@@ -50,6 +50,11 @@
             "conditional_logic": [
                 [
                     {
+                        "field": "field_5ec67728f4d36",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
                         "field": "field_5ec67d6b7bd23",
                         "operator": "!=",
                         "value": "1"
@@ -87,5 +92,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590066665
+    "modified": 1590128357
 }

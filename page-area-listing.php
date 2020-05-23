@@ -50,12 +50,36 @@ if ( $listing_page_taxonmy === 'category' ) {
   // termine di tassonomia per listing
   $tax_query = get_field('listing_page_level_second_taxonmy_novita');
 }
+if ( $listing_page_taxonmy === 'argomenti_tax' ) {
+  // contenuti da elencare in evidenza
+  $listing_page_highlight_contents = get_field('listing_page_highlight_argomenti');
+  // custom post type per listing
+  $cpt_query = 'argomento_cpt';
+}
 
 // verifico se è impostato un filtro sui bandi
 $listing_bandi = get_field( 'listing_bandi' );
-$archivio_bandi_scaduti = get_field( 'archivio_bandi_scaduti' );
-if ( $archivio_bandi_scaduti != 1 ) {
+if ( $listing_bandi  == 1 ) {
+  $archivio_bandi_scaduti = get_field( 'archivio_bandi_scaduti' );
   $link_bandi_scaduti = get_field( 'link_bandi_scaduti' );
+}
+else {
+  $listing_bandi = 0;
+  $archivio_bandi_scaduti = 0;
+}
+
+// verifico se è una pagina di primo livello
+if ( $listing_page_level === 'primo-livello' ) {
+  $tax_query_multiple = get_terms( array(
+    'taxonomy' => $listing_page_taxonmy,
+    'hide_empty' => false,
+    //'parent' => 0
+  )
+);
+
+foreach( $tax_query_multiple as $tax ) {
+  $tax_query_longlist .= '<input type="hidden" name="'.$listing_page_taxonmy.'[]" value="'.$tax->term_id.'">';
+}
 }
 ?>
   <div class="wrapper">
@@ -78,6 +102,11 @@ if ( $archivio_bandi_scaduti != 1 ) {
               <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
                 <input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"'  aria-label="Digita una parola chiave per la ricerca" />
                 <input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]" value="<?php echo $tax_query; ?>">
+                <?php
+                if ( $listing_page_level === 'primo-livello' ) {
+                  echo $tax_query_longlist;
+                }
+                 ?>
                 <button class="button-appearance-normalizer" type="submit" aria-label="Cerca"><span class="icon-search"></span></button>
               </form>
             </div>
@@ -232,40 +261,43 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
 
 
 <?php endif; ?>
+
 <?php
 // listing di secondo e terzo livello
-if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo-livello' ) :
+if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo-livello' || $listing_page_taxonmy === 'argomenti_tax' ) :
   ?>
   <?php
+  // verifico se è impostata come pagina per elencare i bandi
   if ( $listing_bandi == 1 ) {
-    $today = date('Y-m-d H:i:s');
-    if ( $archivio_bandi_scaduti != 1 ) {
-      $meta_query_bandi_attivi = array(
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    global $today;
+    // verifico se è impostata come pagina per elencare i bandi in scadenza
+    if ( !$archivio_bandi_scaduti ) {
+      $meta_query_bandi = array(
         array(
           'key' => 'scadenza_bando',
           'value' => $today,
-          'compare' => '>='
-        )
+          'compare' => '>=',
+        ),
       );
       $ordering = 'DESC';
     }
     else {
-      $meta_query_bandi_attivi = array(
+      // verifico se è impostata come pagina per elencare i bandi scaduti
+      $meta_query_bandi = array(
         array(
           'key' => 'scadenza_bando',
           'value' => $today,
-          'compare' => '<'
-        )
+          'compare' => '<',
+        ),
       );
       $ordering = 'ASC';
     }
-
-
-    $page = get_query_var('paged');
+    // compongo la query per i bandi
     $args_all_cpts = array(
       'post_type' => $cpt_query,
       'posts_per_page' => 15,
-      'paged' => $page,
+      'paged' => $paged,
       'tax_query' => array(
         array(
           'taxonomy' => $listing_page_taxonmy,
@@ -276,29 +308,39 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
       'order' => $ordering,
       'orderby' => 'meta_value_num',
       'meta_key' => 'scadenza_bando',
-      'meta_query' => $meta_query_bandi_attivi,
+      'meta_query' => $meta_query_bandi,
     );
-    query_posts( $args_all_cpts );
+    $listing_paged = new WP_Query( $args_all_cpts );
   }
   else {
-    $page = get_query_var('paged');
-    $args_all_cpts = array(
-      'post_type' => $cpt_query,
-      'posts_per_page' => 15,
-      'paged' => $page,
-      'orderby'    => 'menu_order',
-      //'sort_order' => 'asc',
-      'tax_query' => array(
-        array(
-          'taxonomy' => $listing_page_taxonmy,
-          'field' => 'term_ID',
-          'terms' => $tax_query
-        )
-      ),
-    );
-    query_posts( $args_all_cpts );
+    // se non è impostata come pagina per elencare i bandi compongo la query per argomenti_cpt
+    if ( $listing_page_taxonmy === 'argomenti_tax' ) {
+      $compact_argomenti = 1;
+      $args_all_cpts = array(
+        'post_type' => $cpt_query,
+        'posts_per_page' => 15,
+        'paged' => $paged,
+      );
+      $listing_paged = new WP_Query( $args_all_cpts );
+    }
+    // se non è impostata come pagina per elencare i bandi compongo la query predefinita
+    else {
+      $args_all_cpts = array(
+        'post_type' => $cpt_query,
+        'posts_per_page' => 15,
+        'paged' => $paged,
+        'tax_query' => array(
+          array(
+            'taxonomy' => $listing_page_taxonmy,
+            'field' => 'term_ID',
+            'terms' => $tax_query
+          )
+        ),
+      );
+      $listing_paged = new WP_Query( $args_all_cpts );
+    }
   }
-  if ( have_posts() ) :
+  if ( $listing_paged->have_posts() ) :
    ?>
    <div class="wrapper">
      <div class="wrapper-padded">
@@ -306,54 +348,64 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
          <div class="listing-box">
            <div class="flex-hold flex-hold-2 margins-fit verticalize opening-child-right">
              <div class="flex-hold-child">
-               <?php if ( $archivio_bandi_scaduti != 1 ) : ?>
+               <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
                  <h2><?php the_title(); ?> in scadenza</h2>
                <?php else : ?>
                  <h2><?php the_title(); ?></h2>
                <?php endif; ?>
              </div>
              <div class="flex-hold-child">
-               <?php if ( $archivio_bandi_scaduti != 1 ) : ?>
+               <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
                  <a href="<?php echo $link_bandi_scaduti; ?>" class="square-button green filled"><?php the_title(); ?> scaduti</a>
                 <?php endif; ?>
              </div>
            </div>
-
            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
-             <?php while ( have_posts() ) : the_post(); ?>
+             <?php while ( $listing_paged->have_posts() ) : $listing_paged->the_post(); ?>
                <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
              <?php endwhile; wp_reset_postdata(); ?>
            </div>
-           <?php wp_pagenavi(); ?>
+           <?php wp_pagenavi(  array( 'query' => $listing_paged )  ); ?>
          </div>
        </div>
      </div>
    </div>
-  <?php endif; ?>
+ <?php else : ?>
+   <div class="wrapper">
+     <div class="wrapper-padded">
+       <div class="wrapper-padded-more">
+         <div class="listing-box">
+           <h2>Non sono disponibili contenuti in questa area</h2>
+         </div>
+       </div>
+     </div>
+   </div>
+ <?php endif; ?>
 <?php endif; ?>
-
-
 
 
 <?php
-// listing di secondo e terzo livello
-if ( $listing_page_taxonmy != 'argomenti' ) :
-  ?>
-  <div class="wrapper">
-    <div class="wrapper-padded">
-      <div class="wrapper-padded-more">
-        <div class="tag-box">
-          <div class="aligncenter">
-            <h6 class="txt-1 allupper">Altri argomenti</h6>
-            <div class="tags-holder">
-              <?php list_all_argomenti_pills(); ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+if ( $listing_page_taxonmy != 'argomenti_tax' ) :
+ ?>
+ <div class="wrapper">
+   <div class="wrapper-padded">
+     <div class="wrapper-padded-more">
+       <div class="tag-box">
+         <div class="aligncenter">
+           <h6 class="txt-1 allupper">Altri argomenti</h6>
+           <div class="tags-holder">
+             <?php list_all_argomenti_pills(); ?>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 <?php endif; ?>
+
+
+
+
 
 
 

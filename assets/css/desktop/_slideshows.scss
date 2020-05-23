@@ -45,6 +45,10 @@
   width: 100%;
   margin-bottom: 80px;
   //padding-bottom: 78px;
+  .slick-track {
+    min-width: 100% !important;
+  }
+
   .slick-list {
     padding: 8px;
   }

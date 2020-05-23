@@ -5,12 +5,13 @@ get_header();
 
 <?php
 while ( have_posts() ) : the_post();
+//current_page_from_single_cpt();
 $my_id = get_the_ID();
 $post_type = get_post_type();
 // verifico scadenze bando
 if ( get_field( 'scadenza_bando' ) ) {
   $scadenza_bando = get_field( 'scadenza_bando' );
-  $today = date('Y-m-d H:i:s');
+  global $today;
   if ( $scadenza_bando < $today ) {
     $scadenza_check = 'scaduto';
   }
@@ -55,6 +56,7 @@ if ( get_field( 'scadenza_bando' ) ) {
                   </p>
                 </div>
               <?php endif; ?>
+              <?php include( locate_template( 'template-parts/grid/intro-avvisi-warnings.php' ) ); ?>
               <?php if ( $post_type === 'post' ) : ?>
                 <div class="data-holder paragraph-variant-holder">
                   <p>
@@ -75,8 +77,6 @@ if ( get_field( 'scadenza_bando' ) ) {
                 );
                 print_theme_image( $image_data, $image_sizes );
                 ?>
-              <?php else : ?>
-                <?php include( locate_template( 'template-parts/grid/intro-avvisi-warnings.php' ) ); ?>
               <?php endif; ?>
             </div>
             <div class="page-opening-right no-print">
@@ -101,7 +101,7 @@ if ( get_field( 'scadenza_bando' ) ) {
           <div class="flex-hold flex-hold-page-index">
             <div class="page-index-left no-print">
               <div class="sticky-element sticky-columns-js">
-                <button class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="true">
+                <button class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="true" aria-label="Apri l'indice dei contenuti" data-collapsed="Apri l'indice dei contenuti" data-expanded="Chiudi l'indice dei contenuti">
                   Indice della pagina<span class="icon-collapse-1"></span>
                 </button>
                 <div class="index-menu-js">
@@ -147,7 +147,7 @@ if ( get_field( 'scadenza_bando' ) ) {
   if ( get_field( 'related_content_method' ) === 'manually-related ' ) :
     $related_content_handpicked = get_field('related_content_handpicked');
     ?>
-    <div class="wrapper bg-9">
+    <div class="wrapper bg-9 no-print">
       <div class="wrapper-padded">
         <div class="wrapper-padded-more">
           <div class="listing-box">
@@ -183,7 +183,7 @@ if ( get_field( 'scadenza_bando' ) ) {
     );
     $my_related_content = get_posts( $args_related_content );
     if ( !empty ( $my_related_content ) ) : ?>
-    <div class="wrapper bg-9">
+    <div class="wrapper bg-9 no-print">
       <div class="wrapper-padded">
         <div class="wrapper-padded-more">
           <div class="listing-box">

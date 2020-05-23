@@ -28,9 +28,16 @@ elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argom
     ?>
   <?php
   $thumb_id = get_post_thumbnail_id();
-  $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
+  if ( $thumb_id != '' ) {
+    $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
+    $card_bg_image = $thumb_url_desktop[0];
+  }
+  else {
+    $card_bg_image = get_bloginfo('template_directory').'/assets/images/static-images/card-bg-preset.jpg';
+  }
+
   ?>
-  <div class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="<?php echo $thumb_url_desktop[0]; ?>">
+  <div class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="<?php echo $card_bg_image; ?>">
     <div class="card_inner image-card-big">
       <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="absl"></a>
       <div class="image-card-content">
@@ -129,12 +136,12 @@ else :
               $image_data = array(
                   'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
                   'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-                  'size_fallback' => 'full_desk'
+                  'size_fallback' => 'card_listing'
               );
               $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-                  'retina' => 'full_desk_retina',
-                  'desktop' => 'full_desk',
-                  'mobile' => 'content_picture',
+                  'retina' => 'card_listing',
+                  'desktop' => 'card_listing',
+                  'mobile' => 'card_listing',
                   'micro' => 'micro'
               );
               print_theme_image( $image_data, $image_sizes );

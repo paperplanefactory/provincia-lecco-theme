@@ -23,7 +23,7 @@ global $footer_wrapper;
             <h5 class="allupper">Servizi</h5>
             <?php
             if ( has_nav_menu( 'footer-menu-servizi' ) ) {
-              wp_nav_menu( array( 'theme_location-servizi' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+              wp_nav_menu( array( 'theme_location' => 'footer-menu-servizi', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -32,7 +32,7 @@ global $footer_wrapper;
             <h5 class="allupper">Novità</h5>
             <?php
             if ( has_nav_menu( 'footer-menu-novita' ) ) {
-              wp_nav_menu( array( 'theme_location-novita' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+              wp_nav_menu( array( 'theme_location' => 'footer-menu-novita', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>
@@ -41,7 +41,7 @@ global $footer_wrapper;
             <h5 class="allupper">Documenti</h5>
             <?php
             if ( has_nav_menu( 'footer-menu-documenti' ) ) {
-              wp_nav_menu( array( 'theme_location-documenti' => 'footer-menu', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
+              wp_nav_menu( array( 'theme_location' => 'footer-menu-documenti', 'container' => 'ul', 'menu_class' => 'footer-menu' ) );
             }
             ?>
           </div>

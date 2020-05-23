@@ -10,6 +10,7 @@ while ( have_posts() ) : the_post();
 $argomento_area_correlata = get_field( 'argomento_area_correlata' );
 $argomenti_in_evidenza = get_field( 'argomenti_in_evidenza' );
 $argomento_page_listing_term = get_field( 'argomento_page_listing_term' );
+$page_name = get_the_title();
 ?>
   <div class="wrapper">
     <div class="wrapper-padded">
@@ -116,8 +117,13 @@ if ( !empty ( $my_three_amministrazione ) ) :
          </div>
          <?php if ( $count_amministrazione > 3 ) : ?>
            <div class="aligncenter">
-             <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Amministrazione in <?php the_title(); ?>" aria-label="Archivio Amministrazione in <?php the_title(); ?>">Altro (<?php echo $count_novita; ?>)</a>
-           </div>
+             <?php
+             $tax_listed = 'amministrazione_tax';
+             $block_name = 'Amministrazione';
+             $counter = $count_amministrazione;
+             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+              ?>
+            </div>
          <?php endif; ?>
        </div>
      </div>
@@ -165,7 +171,12 @@ if ( !empty ( $my_three_servizi ) ) :
          </div>
          <?php if ( $count_servizi > 3 ) : ?>
            <div class="aligncenter">
-             <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Servizi in <?php the_title(); ?>" aria-label="Archivio Servizi in <?php the_title(); ?>">Altro (<?php echo $count_novita; ?>)</a>
+             <?php
+             $tax_listed = 'servizi_tax';
+             $block_name = 'Servizi';
+             $counter = $count_servizi;
+             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             ?>
            </div>
          <?php endif; ?>
        </div>
@@ -216,7 +227,12 @@ if ( !empty ( $my_three_novita ) ) :
          </div>
          <?php if ( $count_novita > 3 ) : ?>
            <div class="aligncenter">
-             <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Novità in <?php the_title(); ?>" aria-label="Archivio Novità in <?php the_title(); ?>">Altro (<?php echo $count_novita; ?>)</a>
+             <?php
+             $tax_listed = 'category';
+             $block_name = 'Novità';
+             $counter = $count_novita;
+             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             ?>
            </div>
          <?php endif; ?>
        </div>
@@ -266,7 +282,12 @@ if ( !empty ( $my_three_documenti ) ) :
          </div>
          <?php if ( $count_documenti > 3 ) : ?>
            <div class="aligncenter">
-             <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Documenti e dati in <?php the_title(); ?>" aria-label="Archivio Documenti e dati in <?php the_title(); ?>">Altro (<?php echo $count_novita; ?>)</a>
+             <?php
+             $tax_listed = 'documenti_tax';
+             $block_name = 'Documenti e dati';
+             $counter = $count_documenti;
+             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             ?>
            </div>
          <?php endif; ?>
        </div>
@@ -316,7 +337,12 @@ if ( !empty ( $my_three_progetti ) ) :
          </div>
          <?php if ( $count_progetti > 3 ) : ?>
            <div class="aligncenter">
-             <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Progetti in <?php the_title(); ?>" aria-label="Archivio Progetti in <?php the_title(); ?>">Altro (<?php echo $count_novita; ?>)</a>
+             <?php
+             $tax_listed = 'documenti_tax';
+             $block_name = 'Documenti e dati';
+             $counter = $count_documenti;
+             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             ?>
            </div>
          <?php endif; ?>
        </div>

@@ -1,0 +1,228 @@
+{
+    "key": "group_5ec92059c63d5",
+    "title": "Gestione avviso",
+    "fields": [
+        {
+            "key": "field_5ec92084c6792",
+            "label": "Istruzioni",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Gli avvisi vengono pubblicati immediatamente sotto alla navigazione del sito.\r\nOgni avviso deve avere una data di scadenza oltre la quale non sarà più visibile sul sito.\r\nSul sito viene mostrato un solo avviso alla volta, il più recente in base alla data di pubblicazione.",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ec92063c6791",
+            "label": "Scadenza avviso",
+            "name": "scadenza_avviso",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
+        },
+        {
+            "key": "field_5ec9211c6b50f",
+            "label": "Messaggio di avviso",
+            "name": "messaggio_avviso",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5ec9215a8f24f",
+            "label": "Gestione call to action",
+            "name": "avviso_gestione_cta_repeater",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Aggiungi CTA",
+            "sub_fields": [
+                {
+                    "key": "field_5ec921928f250",
+                    "label": "Testo",
+                    "name": "avviso_gestione_cta_repeater_testo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ec921bb8f251",
+                    "label": "Destinazione link",
+                    "name": "avviso_gestione_cta_repeater_destinazione",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "internal-content": "Contenuto interno al sito",
+                        "internal-media": "File",
+                        "external-content": "Contenuto estarno al sito"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ec922078f252",
+                    "label": "Scegli la pagina",
+                    "name": "avviso_gestione_cta_repeater_page",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec921bb8f251",
+                                "operator": "==",
+                                "value": "internal-content"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "page",
+                        "servizi_cpt",
+                        "amministrazione_cpt",
+                        "documenti_cpt",
+                        "progetti_cpt"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 0,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5ec922598f253",
+                    "label": "Scegli il file",
+                    "name": "avviso_gestione_cta_repeater_file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec921bb8f251",
+                                "operator": "==",
+                                "value": "internal-media"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5ec922758f254",
+                    "label": "Inserisci la URL",
+                    "name": "avviso_gestione_cta_repeater_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec921bb8f251",
+                                "operator": "==",
+                                "value": "external-content"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "avviso_cpt"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1590240344
+}

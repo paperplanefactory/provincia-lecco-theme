@@ -600,3 +600,11 @@ a.tag-button:hover {
 	-moz-box-shadow: 0 0 16px 0 rgba(0,43,85,0.1);
 	box-shadow: 0 0 16px 0 rgba(0,43,85,0.1);
 }
+
+.icon-regione-lombardia {
+	&:before {
+		background-color: $color-4;
+		color: $color-9;
+		padding: 4px;
+	}
+}

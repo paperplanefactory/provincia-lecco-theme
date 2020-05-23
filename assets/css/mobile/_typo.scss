@@ -173,8 +173,9 @@ small {
 }
 
 .index-listing {
-  padding: 0 30px 30px;
+  padding: 0 0 30px;
   margin-top: 20px;
+  border-bottom: solid 1px $color-10;
 
   li {
     margin-bottom: 10px;
@@ -186,4 +187,29 @@ small {
   font-weight: $font-weight-1;
   font-size: $h4-size-smartphone;
   line-height: $h4-lineheight-smartphone;
+}
+
+.index-menu-expander {
+  position: relative;
+  width: 100%;
+  padding: 35px 0 20px;
+  border-bottom: solid 5px $color-11;
+  text-align: left;
+
+  span {
+    position: relative;
+    top: -10px;
+    float: right;
+    font-size: 30px;
+    color: $color-4;
+  }
+}
+
+.eraser-btn {
+  margin: 10px 0 0;
+}
+
+.order-results {
+  margin: 10px 0 0;
+  width: 100%;
 }

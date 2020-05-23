@@ -2,112 +2,135 @@
 @import '../global/vars';
 @import '../global/mixin';
 
-.slide-double {
- position: relative;
- width: 100%;
- padding-bottom: 78px;
+.modules-wrapper,
+.page-index-right {
+  .slide-module {
+    position: relative;
+    left: -24px;
+    width: calc(100% + 48px) !important;
+    margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+  }
+}
+
+.slide-one {
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    font-size: 30px;
+  }
+
+  .slick-prev {
+    left: 15px;
+    bottom: 3px;
+  }
+
+  .slick-next {
+    left: 55px;
+    bottom: 4px;
+  }
+
+  .wp-caption-text {
+    padding-left: 100px;
+    background-color: $color-8;
+  }
+
+  .wp-caption-text-fake {
+    height: 50px;
+    background-color: $color-12;
+  }
+}
+
+.slide-four {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+  //padding-bottom: 78px;
+  .slick-track {
+    min-width: 100% !important;
+  }
+
+  .slick-list {
+    padding: 8px;
+  }
+
+  .slick-slide {
+    .card {
+      min-height: 350px;
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
 }
 
 .single-slide {
- .container {
-   padding: 0 0 0 0 !important;
- }
+  .card {
+    position: relative;
+    width: calc(100% + 8px);
+    left: -8px;
+
+    .card_inner {
+      &.regular-card {
+        padding: 20px 28px 35px 20px;
+      }
+    }
+  }
 }
 
 .slide-caption {
- margin-top: 20px;
+  margin-top: 20px;
 }
-
-.slick-prev, .slick-next {
- position: absolute;
-}
-
-.slick-prev {
- bottom: 0;
- left: 50%;
- margin-left: -105px;
- overflow: hidden;
- width: 104px;
- height: 50px;
- .slide-button-shaper {
-   left: 0;
-   i {
-     left: 24px;
-   }
- }
-}
-
-.slick-next {
- bottom: 0;
- left: 50%;
- overflow: hidden;
- width: 104px;
- height: 50px;
- .slide-button-shaper {
-   left: -28px;
-   i {
-     right: 24px;
-   }
- }
-}
-
-.slide-button-shaper {
- position: absolute;
- top: 0;
- @include define-border-radius(24px);
- width: 128px;
- height: 48px;
- @include define-basic-transition(all, 0.15s);
- i {
-   position: absolute;
-   top: 17px;
- }
-}
-
 // navigation
 
 .slick-arrow {
- position: absolute;
- z-index: 2;
- cursor: pointer;
- border: none;
- background-color: transparent;
- margin-top: -5px;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-top: -5px;
 }
 
 .slick-dots {
- text-align: center;
- padding: 10px 0 0 0 !important;
- li {
-   display: inline-block;
-   margin: 0 5px;
-   button {
-     width: 20px;
-     height: 20px;
-     border: none;
-     background-color: $color-3;
-     font-size: 0;
-     margin: 0;
-     padding: 0;
-     @include define-basic-transition(all, 0.3s);
-     @include define-border-radius(20px);
-     cursor: pointer;
-     &:hover {
-       background-color: $color-1;
-     }
-   }
-   &.slick-active {
-     button {
-       background-color: $color-1;
-     }
-   }
- }
+  text-align: center;
+  padding: 15px 0 0 0 !important;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+
+    button {
+      width: 20px;
+      height: 20px;
+      border: none;
+      //background-color: $color-4;
+      border: solid 1px $color-4;
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+      @include define-basic-transition(all, 0.3s);
+      @include define-border-radius(20px);
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-4;
+      }
+    }
+
+    &.slick-active {
+      button {
+        background-color: $color-4;
+      }
+    }
+  }
 }
 
 .paging-info {
- position: relative;
- display: block;
- width: 100%;
- padding: 10px 0 0 0;
- text-align: center;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 0 0;
+  text-align: center;
 }

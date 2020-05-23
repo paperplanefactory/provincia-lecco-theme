@@ -19,7 +19,8 @@
                 "amministrazione_tax": "Amministrazione",
                 "servizi_tax": "Servizi",
                 "documenti_tax": "Documenti",
-                "category": "Novità"
+                "category": "Novità",
+                "argomenti_tax": "Argomenti"
             },
             "default_value": false,
             "allow_null": 0,
@@ -41,7 +42,7 @@
                     {
                         "field": "field_5ea93f2d3e8d6",
                         "operator": "!=",
-                        "value": "argomenti"
+                        "value": "argomenti_tax"
                     }
                 ]
             ],
@@ -293,9 +294,9 @@
                 "id": ""
             },
             "post_type": [
-                "post",
                 "page",
-                "servizi_cpt"
+                "servizi_cpt",
+                "post"
             ],
             "taxonomy": "",
             "filters": [
@@ -332,9 +333,9 @@
                 "id": ""
             },
             "post_type": [
-                "post",
+                "documenti_cpt",
                 "page",
-                "documenti_cpt"
+                "post"
             ],
             "taxonomy": "",
             "filters": [
@@ -415,12 +416,48 @@
                 "id": ""
             },
             "post_type": [
-                "progetti_cpt"
+                "progetti_cpt",
+                "post",
+                "page"
             ],
             "taxonomy": "",
             "filters": [
                 "search",
                 "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ec7b42c73624",
+            "label": "Argomenti in evidenza",
+            "name": "listing_page_highlight_argomenti",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "argomenti_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "argomento_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
                 "taxonomy"
             ],
             "elements": "",
@@ -448,5 +485,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590065165
+    "modified": 1590146223
 }
