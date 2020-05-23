@@ -15,11 +15,11 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#3499EF">
 <!-- Windows Phone -->
-<meta name="msapplication-navbutton-color" content="#000000">
+<meta name="msapplication-navbutton-color" content="#3499EF">
 <!-- iOS Safari -->
-<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3499EF">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -91,7 +91,7 @@ $today = date('Y-m-d H:i:s');
     <div class="<?php echo $header_wrapper; ?>">
       <div id="header-structure">
         <div class="logo">
-          <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
         </div>
         <div class="side-head">
           <ul>
@@ -108,7 +108,7 @@ $today = date('Y-m-d H:i:s');
               <?php endwhile; ?>
             <?php endif; ?>
             <li class="search-menu">
-              <button class="activate-search activate-search-js button-appearance-normalizer"  aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
+              <button class="activate-search activate-search-js button-appearance-normalizer" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
                 <span class="lablel">Cerca</span>
                 <div class="icon-hold">
                   <span class="icon-search"></span>
@@ -152,7 +152,7 @@ $today = date('Y-m-d H:i:s');
     <div class="<?php echo $header_wrapper; ?>">
       <div id="header-structure">
         <div class="logo">
-          <a href="<?php echo home_url(); ?>" rel="bookmark" title="homepage - <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
         </div>
         <nav class="menu navi">
           <?php
@@ -194,7 +194,8 @@ $today = date('Y-m-d H:i:s');
             <button class="search-overlay-title search-overlay-title-js button-appearance-normalizer" aria-label="Chiudi pannello di ricerca"><span class="icon-left-arrow"></span>Cerca</button>
             <div class="search-form overlay-form">
               <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>">
-                <input type="text" name="search-kw" class="search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
+                <label for="search-kw-header-input">Digita una parola chiave per la ricerca:</label>
+                <input id="search-kw-header-input" type="text" name="search-kw" class="search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
                 <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
               </form>
               <button class="search-erase search-erase-js">x</button>

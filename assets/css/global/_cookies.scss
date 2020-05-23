@@ -44,6 +44,7 @@
 		color: $color-12;
 		text-transform: uppercase;
 		font-weight: $font-weight-3;
+		@include define-border-radius(4px);
 	}
 }
 

@@ -198,9 +198,10 @@ $search_query = new WP_Query( $search_query_parameters );
             <h4 class="txt-1">Hai cercato:</h4>
           <?php endif; ?>
           <div class="search-form overlay-form">
-              <input type="text" name="search-kw" class="search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
-              <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
-            <button class="search-erase search-erase-js">x</button>
+            <label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
+            <input id="search-kw-inpage-search-input" type="text" name="search-kw" class="search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
+            <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
+            <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
           </div>
         </div>
       </div>
@@ -287,12 +288,14 @@ $search_query = new WP_Query( $search_query_parameters );
               <div class="flex-hold-child">
                 Ordina per
                 <?php if ( $results_order === 'title' ) : ?>
-                  <select name="results_order" class="order-results order-results-js">
+                  <label for="order-results">Riordina i risultati della ricerca:</label>
+                  <select id="order-results" name="results_order" class="order-results order-results-js">
                     <option value="title">Titolo</option>
                     <option value="date">Data</option>
                   </select>
                 <?php else : ?>
-                  <select name="results_order" class="order-results order-results-js">
+                  <label for="order-results">Riordina i risultati della ricerca:</label>
+                  <select id="order-results" name="results_order" class="order-results order-results-js">
                     <option value="date">Data</option>
                     <option value="title">Titolo</option>
                   </select>

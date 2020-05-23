@@ -109,7 +109,7 @@ else :
   elseif( get_post_type() == 'siti_tematici_cpt' ) :
     ?>
     <div class="flex-hold-child card offsite bg-4">
-      <a href="<?php the_field( 'sito_tematico_url' ); ?>" class="absl" target="_blank"></a>
+      <a href="<?php the_field( 'sito_tematico_url' ); ?>" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
       <div class="card_inner cap-card">
         <div class="category-square title-block cat-fill">
           <span>

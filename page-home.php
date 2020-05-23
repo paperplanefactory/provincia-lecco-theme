@@ -288,8 +288,9 @@ $box_ricerca_immagine_apertura_URL = $box_ricerca_immagine_apertura['sizes']['fu
     <div class="wrapper-padded">
       <div class="wrapper-padded-more-780">
         <form class="banner-form" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>">
-          <input name="search-kw" type="text" placeholder="cerca" />
-          <button class="button-appearance-normalizer"><span class="icon-search"></span></button>
+          <label for="search-kw-home-input">Digita una parola chiave per la ricerca:</label>
+          <input id="search-kw-home-input" name="search-kw" type="text" placeholder="cerca" />
+          <button class="button-appearance-normalizer" aria-label="Cerca nel sito"><span class="icon-search"></span></button>
         </form>
         <?php
         $args_pagine_visitate = array(

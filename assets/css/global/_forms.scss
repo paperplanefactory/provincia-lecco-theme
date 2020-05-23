@@ -2,6 +2,14 @@
 @import 'vars';
 @import 'mixin'; // forms
 
+label {
+	position: absolute !important;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
 select {
 	position: relative;
 	background-color: $color-12;

@@ -1846,6 +1846,14 @@ small {
   content: "\45";
 }
 
+label {
+  position: absolute !important;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 select {
   position: relative;
   background-color: #FFFFFF;
@@ -4328,6 +4336,7 @@ select {
   color: #FFFFFF;
   text-transform: uppercase;
   font-weight: 700;
+  border-radius: 4px;
 }
 
 .paperplane-gdpr-content-message {
