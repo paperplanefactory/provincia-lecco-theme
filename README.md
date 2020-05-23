@@ -1,3 +1,7 @@
 # Tema WordPress per la Provincia di Lecco
-## A starter theme
-Feel free to use this theme a starter for your WordPress projects. Works if you have installed ACF PRO.
+Theme Name: Provincia di Lecco
+Theme URI: https://github.com/paperplanefactory/provincia-lecco-theme
+Author: Paper Plane Factory
+Author URI: https://www.paperplanefactory.com
+Description: Tema per il sito istituzionale della Provincia di Lecco basato sulle linee guida di https://www.agid.gov.it/it
+Version: 1.0.1
