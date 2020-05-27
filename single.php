@@ -114,6 +114,17 @@ if ( get_field( 'scadenza_bando' ) ) {
             </div>
             <div class="page-index-right">
               <div class="padder">
+                <?php if ( $post->post_content == '' ) : ?>
+                  <!-- module-old-site-text -->
+                  <div class="text-module">
+                    <div class="module-separator">
+                      <div class="content-styled last-child-no-margin">
+                        <?php the_content(); ?>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- module-old-site-text -->
+                <?php endif; ?>
                 <?php include( locate_template( 'template-parts/modules/modules-handler.php' ) ); ?>
                 <div class="module-separator">
                   <p class="paragraph-variant"><strong>
@@ -127,6 +138,17 @@ if ( get_field( 'scadenza_bando' ) ) {
         <?php else : ?>
           <div class="wrapper-padded-more-780 modules-wrapper">
             <div class="padder">
+              <?php if ( $post->post_content == '' ) : ?>
+                <!-- module-old-site-text -->
+                <div class="text-module">
+                  <div class="module-separator">
+                    <div class="content-styled last-child-no-margin">
+                      <?php the_content(); ?>
+                    </div>
+                  </div>
+                </div>
+                <!-- module-old-site-text -->
+              <?php endif; ?>
               <?php include( locate_template( 'template-parts/modules/modules-handler.php' ) ); ?>
               <div class="module-separator">
                 <p class="paragraph-variant"><strong>
