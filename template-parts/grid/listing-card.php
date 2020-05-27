@@ -107,8 +107,9 @@ else :
   <?php
   // tipologia di card – sito tematico
   elseif( get_post_type() == 'siti_tematici_cpt' ) :
+    $site_color = get_field( 'sito_tematico_color' );
     ?>
-    <div class="flex-hold-child card offsite bg-4">
+    <div class="flex-hold-child card offsite <?php echo $site_color; ?>">
       <a href="<?php the_field( 'sito_tematico_url' ); ?>" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
       <div class="card_inner cap-card">
         <div class="category-square title-block cat-fill">

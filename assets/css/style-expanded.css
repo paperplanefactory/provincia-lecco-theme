@@ -635,6 +635,30 @@ h6 {
   background-color: #FFFFFF;
 }
 
+.sito-tematico-grigio {
+  background-color: #7C7C7C;
+}
+
+.sito-tematico-arancio {
+  background-color: #D57404;
+}
+
+.sito-tematico-viola {
+  background-color: #7E71B2;
+}
+
+.sito-tematico-turchese {
+  background-color: #0099AD;
+}
+
+.sito-tematico-verde {
+  background-color: #017743;
+}
+
+.sito-tematico-rosso {
+  background-color: #C7260E;
+}
+
 .default-box-shadow {
   -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
