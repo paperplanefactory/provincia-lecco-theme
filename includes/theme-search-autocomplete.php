@@ -79,10 +79,19 @@ function ajax_suggestions() {
     e.preventDefault();
   });
 
-  $('.search-input-kw-js').on('input paste', function() {
+  $('.search-input-kw-js').on('input paste focus mouseenter', function() {
     kwpar = $(this).val();
     getResults(kwpar);
   });
+
+  $('.search-input-kw-js').focusout(function() {
+    $('.search-suggestion-area').removeClass('active');
+  });
+
+  $('.search-suggestion-area').mouseleave(function() {
+    $('.search-suggestion-area').removeClass('active');
+  });
+
   function getResults(kwpar) {
     $.ajax({
       type: 'POST',
@@ -94,12 +103,12 @@ function ajax_suggestions() {
       },
       success: function( response ) {
         if (!response) {
-          $( '.search-suggestion-area' ).removeClass('active');
+          $('.search-suggestion-area').removeClass('active');
         }
         else {
-          $( '.search-suggestion-area' ).addClass('active');
+          $('.search-suggestion-area').addClass('active');
         }
-        $( '.search-suggestion-area' ).html( response );
+        $('.search-suggestion-area').html( response );
       }
     });
   }
