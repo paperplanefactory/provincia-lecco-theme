@@ -84,10 +84,6 @@ function ajax_suggestions() {
     getResults(kwpar);
   });
 
-  $('.search-input-kw-js').focusout(function() {
-    $('.search-suggestion-area').removeClass('active');
-  });
-
   $('.search-suggestion-area').mouseleave(function() {
     $('.search-suggestion-area').removeClass('active');
   });
@@ -95,7 +91,7 @@ function ajax_suggestions() {
   function getResults(kwpar) {
     $.ajax({
       type: 'POST',
-      url: '<?php echo admin_url('admin-ajax.php');?>',
+      url: '<?php echo admin_url('admin-ajax.php'); ?>',
       dataType: "html",
       data: {
         action : 'get_ajax_suggestions',
