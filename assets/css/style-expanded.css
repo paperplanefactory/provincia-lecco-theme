@@ -3239,14 +3239,14 @@ select {
   }
   #header #header-structure .menu ul:first-child li {
     margin-right: 25px;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
   }
   #header #header-structure .menu ul:last-child {
     text-align: right;
   }
   #header #header-structure .menu ul:last-child li {
     margin-left: 25px;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
   #header #header-structure .menu ul li {
     position: relative;
