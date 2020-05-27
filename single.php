@@ -114,7 +114,7 @@ if ( get_field( 'scadenza_bando' ) ) {
             </div>
             <div class="page-index-right">
               <div class="padder">
-                <?php if ( $post->post_content == '' ) : ?>
+                <?php if ( !empty( get_the_content() ) ) : ?>
                   <!-- module-old-site-text -->
                   <div class="text-module">
                     <div class="module-separator">
@@ -138,7 +138,7 @@ if ( get_field( 'scadenza_bando' ) ) {
         <?php else : ?>
           <div class="wrapper-padded-more-780 modules-wrapper">
             <div class="padder">
-              <?php if ( $post->post_content == '' ) : ?>
+              <?php if ( !empty( get_the_content() ) ) : ?>
                 <!-- module-old-site-text -->
                 <div class="text-module">
                   <div class="module-separator">
