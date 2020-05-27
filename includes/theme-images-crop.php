@@ -9,7 +9,8 @@ add_image_size( 'home_box', 593, 436, true);
 add_image_size( 'card_listing', 370, 208, true);
 //add_image_size( 'logo_size', 200, 9999);
 add_image_size( 'column', 500, 9999);
-add_image_size( 'slide', 900, 9999);
+add_image_size( 'slide', 834, 9999);
+add_image_size( 'slide_mobile', 420, 9999);
 add_image_size( 'opening_squared', 960, 960, true);
 add_image_size( 'micro', 10, 9999);
 

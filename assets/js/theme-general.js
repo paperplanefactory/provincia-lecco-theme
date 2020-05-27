@@ -73,7 +73,6 @@ function hamburgerMenu(e) {
 
 function checkWidth() {
   var windowsize = $(window).width();
-  console.log(windowsize);
   if (windowsize > 1024) {
     // close overlay if open when resizing to desktop
     $('.hambuger-element').removeClass('open');
@@ -140,6 +139,32 @@ $('.search-input-kw-js').each(function(index) {
 
 searchInputCheck(input_text);
 
+
+
+/////////////////////////////////////////////
+// local storage
+/////////////////////////////////////////////
+
+function setAvvisoLocalStorage() {
+  sessionStorage.setItem('mostra_avviso', 'no');
+}
+
+function checkAvvisoLocalStorage() {
+  var mostra_avviso = sessionStorage.getItem('mostra_avviso');
+  if (mostra_avviso != 'no') {
+    $('#avviso-visibility-js').addClass('avviso-attivo');
+
+  }
+}
+
+checkAvvisoLocalStorage();
+
+$('.avviso-local-storage-close-js').click(function(e) {
+  setAvvisoLocalStorage();
+  $('#avviso-visibility-js').removeClass('avviso-attivo');
+});
+
+
 /////////////////////////////////////////////
 // menu scroll effect
 /////////////////////////////////////////////
@@ -194,7 +219,7 @@ $('.slide-one').slick({
   infinite: true,
   accessibility: true,
   adaptiveHeight: true,
-  fade: true,
+  //fade: true,
   lazyLoad: 'progressive',
   nextArrow: '<div class="slick-next"><i class="icon-right-arrow" aria-label="next"></i></div>',
   prevArrow: '<div class="slick-prev"><i class="icon-left-arrow" aria-label="previous"></i></div>',
@@ -380,6 +405,7 @@ $('.overlay-menu-mobile-js > .menu-item-has-children').click(function(e) {
   $(this).find('.sub-menu').slideToggle(150);
   e.preventDefault();
 });
+
 
 /////////////////////////////////////////////
 // preload

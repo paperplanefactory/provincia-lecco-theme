@@ -1,4 +1,4 @@
-<div class="wrapper bg-1 txt-12">
+<div id="avviso-visibility-js" class="wrapper bg-1 txt-12 avviso">
   <div class="wrapper-padded">
     <div class="wrapper-padded-more">
       <div class="wrapper-padded-more-924">
@@ -32,7 +32,9 @@
           </div>
         <?php endif; ?>
         </div>
-
+        <button class="chiudi-avviso avviso-local-storage-close-js button-appearance-normalizer" aria-label="Nascondi avviso per il resto della navigazione">
+          nascondi avviso
+        </button>
       </div>
     </div>
   </div>

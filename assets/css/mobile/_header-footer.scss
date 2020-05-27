@@ -190,7 +190,9 @@ $side-head-compact-width: 65px; // header
       }
 
       li {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        border-bottom: $color-2 solid 1px;
+        padding-bottom: 15px !important;
       }
     }
 

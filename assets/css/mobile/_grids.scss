@@ -123,23 +123,16 @@
   margin: 40px 0 0;
 }
 
-.parnter-grid {
-  margin-top: 20px;
-}
+.lined-mobile {
+  .flex-hold-child {
+    border-bottom: $color-2 solid 1px;
+    padding-bottom: 10px !important;
 
-.partner-box {
-  @include flex-wrap;
-  width: 100%;
-}
-
-.partner-label {
-  width: 100%;
-  align-items: flex-start;
-}
-
-.partner-logo {
-  @include flex-wrap;
-  align-items: center;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0 !important;
+    }
+  }
 }
 
 .flex-hold-2,

@@ -124,6 +124,10 @@ h6 {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a:focus {
   outline: thin dotted;
 }
@@ -238,22 +242,19 @@ body {
   display: none !important;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .no-explorer {
-    display: none !important;
-  }
-  .only-explorer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    display: block !important;
-  }
+.avviso {
+  display: none;
+}
+
+.avviso-attivo {
+  display: block;
+}
+
+.chiudi-avviso {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: #F0F0F0;
 }
 
 .verticalize {
@@ -300,6 +301,43 @@ body {
   position: relative;
   top: 2px;
   margin: 0 5px 0 0;
+}
+
+.autocomplete-suggestions {
+  text-align: left;
+  cursor: default;
+  border-top: 0;
+  background: #fff;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.1);
+  /* core styles should not be changed */
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  max-height: 254px;
+  overflow: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.autocomplete-suggestion {
+  position: relative;
+  padding: 10px;
+  line-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-weight: 400;
+  color: #363B3F;
+}
+
+.autocomplete-suggestion b {
+  font-weight: normal;
+  color: #3499EF;
+}
+
+.autocomplete-suggestion.selected {
+  background: #F0F0F0;
 }
 
 #preheader {
@@ -2202,7 +2240,9 @@ select {
     margin-bottom: 60px;
   }
   #head-overlay .menu ul li {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    border-bottom: #2773B3 solid 1px;
+    padding-bottom: 15px !important;
   }
   #head-overlay .menu .overlay-menu-mobile-css {
     width: 100%;
@@ -2370,26 +2410,13 @@ select {
   .grid-separator-2 {
     margin: 40px 0 0;
   }
-  .parnter-grid {
-    margin-top: 20px;
+  .lined-mobile .flex-hold-child {
+    border-bottom: #2773B3 solid 1px;
+    padding-bottom: 10px !important;
   }
-  .partner-box {
-    display: -webkit-flex !important;
-    display: flex !important;
-    -webkit-flex-wrap: wrap !important;
-    flex-wrap: wrap !important;
-    width: 100%;
-  }
-  .partner-label {
-    width: 100%;
-    align-items: flex-start;
-  }
-  .partner-logo {
-    display: -webkit-flex !important;
-    display: flex !important;
-    -webkit-flex-wrap: wrap !important;
-    flex-wrap: wrap !important;
-    align-items: center;
+  .lined-mobile .flex-hold-child:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
   }
   .flex-hold-2.margins-thin .flex-hold-child,
   .flex-hold-3.margins-thin .flex-hold-child,

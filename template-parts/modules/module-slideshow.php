@@ -23,7 +23,7 @@
       $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
           'retina' => 'slide',
           'desktop' => 'slide',
-          'mobile' => 'slide',
+          'mobile' => 'slide_mobile',
           'micro' => 'micro'
       );
       print_theme_image_lazyslick( $image_data, $image_sizes );

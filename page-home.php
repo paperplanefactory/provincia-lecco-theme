@@ -128,7 +128,7 @@ $args_scadenze = array(
   'post_type' => 'documenti_cpt',
   'posts_per_page' => 20,
   'order' => 'ASC',
-  'orderby' => 'meta_value_num',
+  'orderby' => 'meta_value',
   'meta_key' => 'scadenza_bando',
   'meta_query' => $meta_query_bandi_attivi,
 );
@@ -220,7 +220,7 @@ $argomenti_evidenza_contenuti = get_field( 'argomenti_evidenza_contenuti' );
                   <ul>
                      <?php foreach ( $my_list_argomento_content as $post ) : setup_postdata ( $post ); ?>
                        <li>
-                         <?php content_tax_icon(); ?><a href="<?php the_permalink(); ?>" title="<?php the_permalink(); ?>" aria-label="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                         <?php content_tax_icon(); ?><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a>
                        </li>
                      <?php endforeach; wp_reset_postdata(); ?>
                   </ul>
@@ -296,7 +296,7 @@ $box_ricerca_immagine_apertura_URL = $box_ricerca_immagine_apertura['sizes']['fu
         $args_pagine_visitate = array(
           'post_type' => 'page',
           'posts_per_page' => 10,
-          'order' => 'ASC',
+          'order' => 'DESC',
           'orderby' => 'meta_value_num',
           'meta_key' => 'post_views_count'
         );
@@ -317,19 +317,4 @@ $box_ricerca_immagine_apertura_URL = $box_ricerca_immagine_apertura['sizes']['fu
 </div>
 
 <?php endwhile; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php get_footer(); ?>

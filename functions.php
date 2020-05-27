@@ -25,6 +25,9 @@ include_once "includes/theme-embedded-acf-parnters-sponsors.php";
 include_once "includes/theme-taxonomies.php";
 // contantore visualizzazioni pagina
 include_once "includes/theme-view-counter.php";
+// contantore visualizzazioni pagina
+include_once "includes/theme-search-autocomplete.php";
+
 // ruoli aggiuntivi
 // include_once "includes/theme-custom-users.php";
 // transients killer

@@ -8,8 +8,7 @@ global $footer_wrapper;
   <div class="wrapper">
     <div class="wrapper-padded">
       <div class="<?php echo $footer_wrapper; ?>">
-        <div class="flex-hold flex-hold-4 margins-wide footer-block-1">
-
+        <div class="flex-hold flex-hold-4 margins-wide footer-block-1 lined-mobile">
           <div class="flex-hold-child">
             <h5 class="allupper">Amministrazione</h5>
             <?php
@@ -45,25 +44,17 @@ global $footer_wrapper;
             }
             ?>
           </div>
-
-
         </div>
-
-
-        <div class="flex-hold flex-hold-4 margins-wide footer-block-2">
-
+        <div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile">
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>
           </div>
-
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_carta_dei_servizi', $acf_options_parameter ); ?>
           </div>
-
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_contatti', $acf_options_parameter ); ?>
           </div>
-
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
             <h5 class="allupper">Seguici su</h5>
@@ -79,13 +70,10 @@ global $footer_wrapper;
               </ul>
             <?php endif; ?>
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
-
   <div class="wrapper bg-2">
     <div class="wrapper-padded">
       <div class="<?php echo $footer_wrapper; ?>">
@@ -98,7 +86,6 @@ global $footer_wrapper;
     </div>
   </div>
 </footer>
-
 <?php wp_footer(); ?>
 </body>
 </html>

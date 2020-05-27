@@ -185,6 +185,7 @@ $search_query_parameters = array(
 $search_query = new WP_Query( $search_query_parameters );
 ?>
 
+
 <form method="get" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>/" id="search-filters">
 <div class="wrapper">
   <div class="wrapper-padded">
@@ -199,7 +200,7 @@ $search_query = new WP_Query( $search_query_parameters );
           <?php endif; ?>
           <div class="search-form overlay-form">
             <label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
-            <input id="search-kw-inpage-search-input" type="text" name="search-kw" class="search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
+            <input id="search-kw-inpage-search-input" type="text" name="search-kw" class="form-control search-autocomplete search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
             <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
             <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
           </div>
@@ -208,8 +209,6 @@ $search_query = new WP_Query( $search_query_parameters );
     </div>
   </div>
 </div>
-
-
 
 
 <div class="wrapper">

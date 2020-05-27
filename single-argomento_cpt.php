@@ -118,10 +118,11 @@ if ( !empty ( $my_three_amministrazione ) ) :
          <?php if ( $count_amministrazione > 3 ) : ?>
            <div class="aligncenter">
              <?php
+             $tax_queried = 'amministrazione_tax';
              $tax_listed = 'amministrazione_tax';
              $block_name = 'Amministrazione';
              $counter = $count_amministrazione;
-             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
               ?>
             </div>
          <?php endif; ?>
@@ -172,10 +173,11 @@ if ( !empty ( $my_three_servizi ) ) :
          <?php if ( $count_servizi > 3 ) : ?>
            <div class="aligncenter">
              <?php
+             $tax_queried = 'servizi_tax';
              $tax_listed = 'servizi_tax';
              $block_name = 'Servizi';
              $counter = $count_servizi;
-             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
              ?>
            </div>
          <?php endif; ?>
@@ -228,10 +230,11 @@ if ( !empty ( $my_three_novita ) ) :
          <?php if ( $count_novita > 3 ) : ?>
            <div class="aligncenter">
              <?php
+             $tax_queried = 'category_tax';
              $tax_listed = 'category';
              $block_name = 'Novità';
              $counter = $count_novita;
-             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
              ?>
            </div>
          <?php endif; ?>
@@ -283,10 +286,11 @@ if ( !empty ( $my_three_documenti ) ) :
          <?php if ( $count_documenti > 3 ) : ?>
            <div class="aligncenter">
              <?php
+             $tax_queried = 'documenti_tax';
              $tax_listed = 'documenti_tax';
              $block_name = 'Documenti e dati';
              $counter = $count_documenti;
-             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
              ?>
            </div>
          <?php endif; ?>
@@ -338,10 +342,11 @@ if ( !empty ( $my_three_progetti ) ) :
          <?php if ( $count_progetti > 3 ) : ?>
            <div class="aligncenter">
              <?php
+             $tax_queried = 'documenti_tax';
              $tax_listed = 'documenti_tax';
              $block_name = 'Documenti e dati';
              $counter = $count_documenti;
-             from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
+             from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter );
              ?>
            </div>
          <?php endif; ?>

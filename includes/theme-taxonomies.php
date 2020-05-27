@@ -379,7 +379,7 @@ function page_site_map() {
 }
 
 // generazione dei bottoni con link alla pagina dei risultati di ricerca (utilizzato in single-argomento_cpt.php)
-function from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter ) {
+function from_argomento_to_search( $tax_queried, $tax_listed, $argomento_page_listing_term, $block_name, $page_name, $counter ) {
   $search_results_url = get_field( 'archives_url_ricerca', 'any-lang' );
   $category_query_multiple = get_terms(
     array(
@@ -389,7 +389,7 @@ function from_argomento_to_search( $tax_listed, $argomento_page_listing_term, $b
   );
 
   foreach( $category_query_multiple as $category_tax ) {
-    $category_query_longlist .= '&'.$tax_listed.'[]='.$category_tax->term_id.'';
+    $category_query_longlist .= '&'.$tax_queried.'[]='.$category_tax->term_id.'';
   }
   echo $button = '<a href="'.$search_results_url.'?argomenti_tax[]='.$argomento_page_listing_term.''.$category_query_longlist.'" class="square-button green filled" title="Archivio '.$block_name.' in '.$page_name.'" aria-label="Archivio Amministrazione in <?php the_title(); ?>">Altro ('.$counter.')</a>';
 }

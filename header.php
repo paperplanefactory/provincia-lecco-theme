@@ -73,7 +73,6 @@ $today = date('Y-m-d H:i:s');
 </head>
 
 <body>
-
 <div id="preheader"></div>
 <header id="header" class="bg-3 txt-12 white-links paragraph-variant-holder">
   <div class="wrapper bg-2 header-first-stripe">
@@ -113,7 +112,6 @@ $today = date('Y-m-d H:i:s');
                 <div class="icon-hold">
                   <span class="icon-search"></span>
                 </div>
-
               </button>
             </li>
             <li class="hamb-menu">
@@ -195,7 +193,7 @@ $today = date('Y-m-d H:i:s');
             <div class="search-form overlay-form">
               <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>">
                 <label for="search-kw-header-input">Digita una parola chiave per la ricerca:</label>
-                <input id="search-kw-header-input" type="text" name="search-kw" class="search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
+                <input id="search-kw-header-input" type="text" name="search-kw" class="search-autocomplete search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
                 <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
               </form>
               <button class="search-erase search-erase-js">x</button>
@@ -239,7 +237,7 @@ $today = date('Y-m-d H:i:s');
             </ul>
           <?php endif; ?>
 
-          <div class="flex-hold flex-hold-4 margins-wide footer-block-2">
+          <div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile">
 
             <div class="flex-hold-child">
               <?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>

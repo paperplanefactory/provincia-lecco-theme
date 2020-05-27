@@ -280,7 +280,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
           'compare' => '>=',
         ),
       );
-      $ordering = 'DESC';
+      $ordering = 'ASC';
     }
     else {
       // verifico se è impostata come pagina per elencare i bandi scaduti
@@ -291,7 +291,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
           'compare' => '<',
         ),
       );
-      $ordering = 'ASC';
+      $ordering = 'DESC';
     }
     // compongo la query per i bandi
     $args_all_cpts = array(
@@ -306,7 +306,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
         )
       ),
       'order' => $ordering,
-      'orderby' => 'meta_value_num',
+      'orderby' => 'meta_value',
       'meta_key' => 'scadenza_bando',
       'meta_query' => $meta_query_bandi,
     );
