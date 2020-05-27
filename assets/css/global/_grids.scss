@@ -137,3 +137,21 @@
     padding: 24px !important;
   }
 }
+
+.sito-tematico-grid {
+  .flex-hold-child-sito-tematico {
+    width: 60px;
+    margin: 0 10px 0 0;
+  }
+
+  .flex-hold-child-sito-tematico:nth-child(2n) {
+    width: calc(100% - 70px) !important;
+    margin: 0;
+  }
+}
+
+.sito-tematico-image {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}

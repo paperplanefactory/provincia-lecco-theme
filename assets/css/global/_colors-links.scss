@@ -470,53 +470,6 @@ a.tag-button:hover {
 	}
 }
 
-.category-square {
-	min-height: 48px;
-
-	a:active,
-	a:hover,
-	a:link,
-	a:visited,
-	span {
-		position: relative;
-		padding-left: 68px;
-		display: table-cell;
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 48px;
-			height: 48px;
-		}
-	}
-
-	&.cat-fill-a {
-		a:active,
-		a:hover,
-		a:link,
-		a:visited,
-		span {
-			&:before {
-				background-color: $color-2;
-			}
-		}
-	}
-
-	&.cat-fill-b {
-		a:active,
-		a:hover,
-		a:link,
-		a:visited,
-		span {
-			&:before {
-				background-color: $color-8;
-			}
-		}
-	}
-}
-
 .offsite {
 	.category-holder {
 		&.cat-fill {

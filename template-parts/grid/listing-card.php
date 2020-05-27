@@ -109,19 +109,46 @@ else :
   elseif( get_post_type() == 'siti_tematici_cpt' ) :
     $site_color = get_field( 'sito_tematico_color' );
     ?>
-    <div class="flex-hold-child card offsite <?php echo $site_color; ?>">
+    <div class="flex-hold-child card offsite <?php echo $site_color; ?> bg-1">
       <a href="<?php the_field( 'sito_tematico_url' ); ?>" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
       <div class="card_inner cap-card">
-        <div class="category-square title-block cat-fill">
-          <span>
+        <?php if ( get_post_thumbnail_id() ) : ?>
+          <div class="flex-hold sito-tematico-grid">
+            <div class="flex-hold-child-sito-tematico">
+              <div class="sito-tematico-image">
+                <?php
+                $image_data = array(
+                    'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+                    'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+                    'size_fallback' => 'site_preview'
+                );
+                $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+                    'retina' => 'site_preview',
+                    'desktop' => 'site_preview',
+                    'mobile' => 'site_preview',
+                    'micro' => 'micro'
+                );
+                print_theme_image( $image_data, $image_sizes );
+                ?>
+              </div>
+            </div>
+            <div class="flex-hold-child-sito-tematico">
+              <h5><?php the_title(); ?></h5>
+              <?php if ( get_field( 'page_abstract' ) ) : ?>
+                <p>
+                  <?php the_field( 'page_abstract' ); ?>
+                </p>
+              <?php endif; ?>
+            </div>
+          </div>
+        <?php else : ?>
           <h5><?php the_title(); ?></h5>
           <?php if ( get_field( 'page_abstract' ) ) : ?>
             <p>
               <?php the_field( 'page_abstract' ); ?>
             </p>
           <?php endif; ?>
-          </span>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   <?php
