@@ -33,6 +33,11 @@
 ::-moz-placeholder {
 	color: $color-1;
 }
+
+input[type]:focus,
+textarea:focus {
+	border: $color-4 solid 1px !important;
+}
 // txt colors
 
 h1,

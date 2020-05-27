@@ -532,6 +532,11 @@ body {
   color: #363B3F;
 }
 
+input[type]:focus,
+textarea:focus {
+  border: #019E59 solid 1px !important;
+}
+
 h1,
 h2,
 h3,

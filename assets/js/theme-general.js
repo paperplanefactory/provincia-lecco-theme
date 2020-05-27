@@ -99,7 +99,7 @@ function openSearch(e) {
   $('#search-overlay').attr('aria-expanded', true).toggleClass('hidden');
   $('html').css('overflowY', 'hidden');
   $('html').addClass('occupy-scrollbar');
-  $('.search-input-kw-js').focus();
+  $('.search-input-kw-js-ovarlay').focus();
 }
 
 function closeSearch(e) {
