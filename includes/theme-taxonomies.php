@@ -235,7 +235,7 @@ function content_tax() {
   echo $content_tax_list;
 }
 
-// elenco delle sole icone di tutti i link per le altre tassonomie relative al singolo contenuto
+// elenco delle sole icone (mini) di tutti i link per le altre tassonomie relative al singolo contenuto
 // il link ha poi un redirect gestito dalle impostazioni del termine di ogni tassonomia
 function content_tax_icon() {
   global $post;
@@ -263,6 +263,44 @@ function content_tax_icon() {
       $content_tax_list .= '<span class="mini-icon '.$tax_icon.'">';
       $content_tax_list .= '</span>';
       $content_tax_list .= '</a>';
+    }
+  }
+  echo $content_tax_list;
+}
+
+// elenco delle sole icone (maxi) di tutti i link per le altre tassonomie relative al singolo contenuto
+// il link ha poi un redirect gestito dalle impostazioni del termine di ogni tassonomia
+function content_tax_maxi_icon() {
+  global $post;
+  $post_type = get_post_type( $post->ID );
+  switch ( $post_type ) {
+    case 'amministrazione_cpt' :
+    $taxonomy = 'amministrazione_tax';
+    break;
+    case 'post' :
+    $taxonomy = 'category';
+    break;
+    case 'servizi_cpt' :
+    $taxonomy = 'servizi_tax';
+    break;
+    case 'documenti_cpt' :
+    $taxonomy = 'documenti_tax';
+    break;
+    case 'argomento_cpt' :
+    $taxonomy = 'argomenti_tax';
+    break;
+  }
+
+  $icon_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'hide_empty' => false ) );
+  foreach ( $icon_terms as $pterm ) {
+    $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
+    if ( $tax_icon != '' ) {
+      $content_tax_list .= '<div>';
+      $content_tax_list .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
+      $content_tax_list .= '<span class="maxi-icon '.$tax_icon.'">';
+      $content_tax_list .= '</span>';
+      $content_tax_list .= '</a>';
+      $content_tax_list .= '</div>';
     }
   }
   echo $content_tax_list;

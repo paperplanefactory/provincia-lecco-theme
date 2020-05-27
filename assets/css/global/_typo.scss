@@ -228,6 +228,15 @@ small {
   }
 }
 
+.maxi-icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+}
+
 .card {
   &.restricted,
   &.warning {

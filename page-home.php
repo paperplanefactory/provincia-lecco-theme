@@ -189,9 +189,7 @@ $argomenti_evidenza_contenuti = get_field( 'argomenti_evidenza_contenuti' );
             <!-- card singoli contenuti -->
             <div class="flex-hold-child card insite">
               <div class="card_inner regular-card">
-                <div class="category-square cat-fill-a">
-                  <span></span>
-                </div>
+                <?php content_tax_maxi_icon(); ?>
                 <div class="texts-holder compact">
                   <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
                   <?php if ( get_field( 'page_abstract' ) ) : ?>
