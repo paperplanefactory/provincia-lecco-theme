@@ -81,23 +81,24 @@ body {
 	position: absolute;
 	left: 0;
 	top: 54px;
-	z-index: 10;
+	z-index: 5;
 	width: 100%;
 	max-height: 250px;
 	background-color: $color-12;
 	overflow-y: scroll;
 	border-bottom: solid 1px $color-10;
 	opacity: 0;
-	pointer-events: none;
+	visibility: hidden;
 	@include define-basic-transition(all, 0.3s);
 
 	&.active {
 		opacity: 1;
-		pointer-events: all;
+		visibility: visible;
 	}
 }
 
 .search-suggestion {
+	position: relative;
 	padding: 5px;
 
 	&:hover {

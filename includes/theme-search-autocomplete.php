@@ -79,14 +79,17 @@ function ajax_suggestions() {
     e.preventDefault();
   });
 
-  $('.search-input-kw-js').on('input paste focus mouseenter', function() {
+  $('.search-input-kw-js').on('input paste focus', function() {
     kwpar = $(this).val();
     getResults(kwpar);
   });
 
-  $('.search-suggestion-area').mouseleave(function() {
+
+  $('.search-input-kw-js').focusout(function() {
     $('.search-suggestion-area').removeClass('active');
   });
+
+
 
   function getResults(kwpar) {
     $.ajax({
