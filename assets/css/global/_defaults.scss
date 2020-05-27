@@ -77,6 +77,51 @@ body {
 	}
 }
 
+.search-suggestion-area {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	max-height: 250px;
+	background-color: $color-12;
+	overflow-y: scroll;
+	border-bottom: solid 1px $color-10;
+	opacity: 0;
+	pointer-events: none;
+	@include define-basic-transition(all, 0.3s);
+
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+.search-suggestion {
+	padding: 5px;
+
+	&:hover {
+		background-color: $color-11;
+	}
+
+	h4,
+	h5 {
+		display: inline-block;
+	}
+
+	h5 {
+		margin: 0 0 0 10px;
+	}
+
+	.h4-variant {
+		margin: 0 !important;
+
+		.mini-icon {
+			position: relative;
+			top: 3px;
+			margin-right: 5px;
+		}
+	}
+}
+
 .autocomplete-suggestions {
 	text-align: left;
 	cursor: default;

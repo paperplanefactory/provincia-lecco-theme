@@ -303,6 +303,51 @@ body {
   margin: 0 5px 0 0;
 }
 
+.search-suggestion-area {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  max-height: 250px;
+  background-color: #FFFFFF;
+  overflow-y: scroll;
+  border-bottom: solid 1px #C4C8CB;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-suggestion-area.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-suggestion {
+  padding: 5px;
+}
+
+.search-suggestion:hover {
+  background-color: #F0F0F0;
+}
+
+.search-suggestion h4,
+.search-suggestion h5 {
+  display: inline-block;
+}
+
+.search-suggestion h5 {
+  margin: 0 0 0 10px;
+}
+
+.search-suggestion .h4-variant {
+  margin: 0 !important;
+}
+
+.search-suggestion .h4-variant .mini-icon {
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
 .autocomplete-suggestions {
   text-align: left;
   cursor: default;
@@ -1213,6 +1258,10 @@ small {
 
 #footer h5 {
   text-transform: uppercase;
+}
+
+.light {
+  font-weight: 400 !important;
 }
 
 .wrapper {

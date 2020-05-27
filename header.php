@@ -191,12 +191,14 @@ $today = date('Y-m-d H:i:s');
           <div class="search-overlay-structure">
             <button class="search-overlay-title search-overlay-title-js button-appearance-normalizer" aria-label="Chiudi pannello di ricerca"><span class="icon-left-arrow"></span>Cerca</button>
             <div class="search-form overlay-form">
-              <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>">
+              <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" autocomplete="off">
                 <label for="search-kw-header-input">Digita una parola chiave per la ricerca:</label>
                 <input id="search-kw-header-input" type="text" name="search-kw" class="search-autocomplete search-input-kw-js" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
                 <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
+                <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
               </form>
-              <button class="search-erase search-erase-js">x</button>
+              <div class="search-suggestion-area">
+              </div>
             </div>
           </div>
         </div>
