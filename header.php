@@ -90,7 +90,7 @@ $today = date('Y-m-d H:i:s');
     <div class="<?php echo $header_wrapper; ?>">
       <div id="header-structure">
         <div class="logo">
-          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" aria-label="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
         </div>
         <div class="side-head">
           <ul>
@@ -150,7 +150,7 @@ $today = date('Y-m-d H:i:s');
     <div class="<?php echo $header_wrapper; ?>">
       <div id="header-structure">
         <div class="logo">
-          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
+          <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" aria-label="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
         </div>
         <nav class="menu navi">
           <?php
@@ -194,7 +194,7 @@ $today = date('Y-m-d H:i:s');
               <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" autocomplete="off">
                 <label for="search-kw-header-input">Digita una parola chiave per la ricerca:</label>
                 <input id="search-kw-header-input" type="text" name="search-kw" class="search-autocomplete search-input-kw-js search-input-kw-js-ovarlay" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
-                <button type="submit" class="search-submit search-submit-js"><span class="icon-search" aria-label="Cerca nel sito"></span></button>
+                <button type="submit" class="search-submit search-submit-js" aria-label="Cerca nel sito"><span class="icon-search"></span></button>
                 <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
               </form>
               <div class="search-suggestion-area">
