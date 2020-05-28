@@ -2,65 +2,77 @@
 function get_ajax_suggestions() {
     $searchkw =  $_REQUEST['searchkw'];
     $start_search = strlen( $searchkw );
+    $transient_name = "transient_search_suggestion_{$searchkw}";
+
+
 
     if ( $start_search > 2 ) {
-      $args_suggestions = array(
-        'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
-        'posts_per_page' => -1,
-        'posts_per_page' => 40,
-        'nopaging' => true,
-        'order' => 'DESC',
-        'orderby' => 'date',
-        's' => $searchkw,
-      );
-      $my_suggestions = get_posts( $args_suggestions );
-      $response = '';
-      if ( !empty ( $my_suggestions ) ) {
-        foreach ( $my_suggestions as $post ) : setup_postdata ( $post );
-        $response .= '<div class="search-suggestion">';
+      $suggestions_transient = get_transient( $transient_name );
+      if( !empty( $suggestions_transient ) ) {
+        echo $suggestions_transient;
+      }
+      else {
+        $args_suggestions = array(
+          'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
+          'posts_per_page' => -1,
+          'posts_per_page' => 40,
+          'nopaging' => true,
+          'order' => 'DESC',
+          'orderby' => 'date',
+          's' => $searchkw,
+        );
+        $my_suggestions = get_posts( $args_suggestions );
+        $response = '';
+        if ( !empty ( $my_suggestions ) ) {
+          foreach ( $my_suggestions as $post ) : setup_postdata ( $post );
+          $response .= '<div class="search-suggestion">';
 
-        $post_type = get_post_type( $post->ID );
-        switch ( $post_type ) {
-          case 'amministrazione_cpt' :
-          $taxonomy = 'amministrazione_tax';
-          $cpt_name = 'amministrazione';
-          break;
-          case 'post' :
-          $taxonomy = 'category';
-          $cpt_name = 'novità';
-          break;
-          case 'servizi_cpt' :
-          $taxonomy = 'servizi_tax';
-          $cpt_name = 'servizi';
-          break;
-          case 'documenti_cpt' :
-          $taxonomy = 'documenti_tax';
-          $cpt_name = 'documenti e dati';
-          break;
-        }
-        $response .= '<h4 class="h4-variant light">';
-        $icon_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'hide_empty' => false ) );
-        foreach ( $icon_terms as $pterm ) {
-          $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
-          if ( $tax_icon != '' ) {
-            $response .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
-            $response .= '<span class="mini-icon '.$tax_icon.'">';
-            $response .= '</span>';
-            $response .= '</a>';
+          $post_type = get_post_type( $post->ID );
+          switch ( $post_type ) {
+            case 'amministrazione_cpt' :
+            $taxonomy = 'amministrazione_tax';
+            $cpt_name = 'amministrazione';
+            break;
+            case 'post' :
+            $taxonomy = 'category';
+            $cpt_name = 'novità';
+            break;
+            case 'servizi_cpt' :
+            $taxonomy = 'servizi_tax';
+            $cpt_name = 'servizi';
+            break;
+            case 'documenti_cpt' :
+            $taxonomy = 'documenti_tax';
+            $cpt_name = 'documenti e dati';
+            break;
           }
+          $response .= '<h4 class="h4-variant light">';
+          $icon_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'hide_empty' => false ) );
+          foreach ( $icon_terms as $pterm ) {
+            $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
+            if ( $tax_icon != '' ) {
+              $response .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
+              $response .= '<span class="mini-icon '.$tax_icon.'">';
+              $response .= '</span>';
+              $response .= '</a>';
+            }
+          }
+          $response .= '<a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h4><h5 class="allupper txt-10">'.$cpt_name.'</h5>';
+          $response .= '</div>';
+          endforeach; wp_reset_postdata();
+          echo $response;
         }
-        $response .= '<a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></h4><h5 class="allupper txt-10">'.$cpt_name.'</h5>';
-        $response .= '</div>';
-        endforeach; wp_reset_postdata();
+        set_transient( $transient_name, $response, 2 * HOUR_IN_SECONDS );
       }
     }
 
     elseif ( $start_search <= 2 ) {
       $response = '';
+      echo $response;
     }
 
 
-    echo $response;
+
 
     exit; // leave ajax call
 
