@@ -1,6 +1,6 @@
 {
     "key": "group_5ed7b5ee41183",
-    "title": "Gestione avviso",
+    "title": "Gestione avviso (specifico per contenuto)",
     "fields": [
         {
             "key": "field_5ed7b5f9e8d51",
@@ -45,5 +45,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1591195346
+    "modified": 1591195735
 }
