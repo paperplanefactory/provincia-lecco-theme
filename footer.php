@@ -45,7 +45,7 @@ global $footer_wrapper;
             ?>
           </div>
         </div>
-        <div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile">
+        <div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile force-underlined-links">
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>
           </div>

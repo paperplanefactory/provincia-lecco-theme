@@ -41,7 +41,8 @@ function intro_menu_list_subpage_items() {
   $my_intro_menu = get_posts( $args_intro_menu );
   if ( !empty ( $my_intro_menu ) ) {
     $my_intro_menu_items = 0;
-    $my_intro_menu_output = '<ul class="page-opening-menu page-opening-menu-js compact">';
+    $my_intro_menu_output = '<h5 class="allupper">Aree in '.get_the_title().'</h5>';
+    $my_intro_menu_output .= '<ul class="page-opening-menu page-opening-menu-js compact">';
     foreach ( $my_intro_menu as $post ) : setup_postdata ( $post );
     $my_intro_menu_items ++;
     if ( $my_intro_menu_items == 6) {
@@ -74,7 +75,8 @@ function intro_menu_list_parent_subpage_items() {
   $my_intro_menu = get_posts( $args_intro_menu );
   if ( !empty ( $my_intro_menu ) ) {
     $my_intro_menu_items = 0;
-    $my_intro_menu_output = '<ul class="page-opening-menu page-opening-menu-js compact">';
+    $my_intro_menu_output = '<h5 class="allupper">Aree in '.get_the_title($page_parent).'</h5>';
+    $my_intro_menu_output .= '<ul class="page-opening-menu page-opening-menu-js compact">';
     foreach ( $my_intro_menu as $post ) : setup_postdata ( $post );
     $my_intro_menu_items ++;
     if ( $my_intro_menu_items == 6) {
@@ -108,7 +110,8 @@ function intro_menu_list_parent_parent_subpage_items() {
   $my_intro_menu = get_posts( $args_intro_menu );
   if ( !empty ( $my_intro_menu ) ) {
     $my_intro_menu_items = 0;
-    $my_intro_menu_output = '<ul class="page-opening-menu page-opening-menu-js compact">';
+    $my_intro_menu_output = '<h5 class="allupper">Aree in '.get_the_title($page_parent_parent).'</h5>';
+    $my_intro_menu_output .= '<ul class="page-opening-menu page-opening-menu-js compact">';
     foreach ( $my_intro_menu as $post ) : setup_postdata ( $post );
     $my_intro_menu_items ++;
     if ( $my_intro_menu_items == 6) {
@@ -165,7 +168,7 @@ function intro_menu_list_argomenti() {
 function list_argomenti_pills() {
   $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
   if ( $terms_argomenti != null ) {
-    $output = '<h5 class="light">Argomenti</h5>';
+    //$output = '<h5 class="light">Argomenti</h5>';
     $output .= '<div class="tags-holder">';
     foreach( $terms_argomenti as $term_argomenti ) {
     $output .= '<a href="' . esc_url( get_term_link( $term_argomenti ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$term_argomenti->name.'" aria-label="Vedi tutti i contenuti in '.$term_argomenti->name.'">'.$term_argomenti->name.'</a>';
@@ -222,11 +225,12 @@ function content_tax() {
     $content_tax_list .= '</a>';
     $terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => $pterm->term_id, 'orderby' => 'slug', 'hide_empty' => false ) );
     if ( !empty( $terms ) ) {
-      $content_tax_list .= ' > ';
+      $content_tax_list .= ' / ';
       $content_tax_list .= '<span class="child-cats">';
       foreach ( $terms as $term ) {
-        $sub_tax_icon = get_field('taxonomy_term_icon', $term->taxonomy . '_' . $term->term_id);
-        $content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'" class="'.$sub_tax_icon.'">' . $term->name . '</a>';
+        //$sub_tax_icon = get_field('taxonomy_term_icon', $term->taxonomy . '_' . $term->term_id);
+        //$content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'" class="'.$sub_tax_icon.'">' . $term->name . '</a>';
+        $content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'">' . $term->name . '</a>';
       }
       $content_tax_list .=  '</span>';
     }

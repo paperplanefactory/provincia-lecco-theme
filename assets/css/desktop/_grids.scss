@@ -256,6 +256,22 @@
   }
 }
 
+.flex-hold-avviso {
+  .avviso-left {
+    order: 1;
+    width: calc(100% - 300px);
+
+    .padder {
+      padding: 0 20px 0 0;
+    }
+  }
+
+  .avviso-right {
+    order: 2;
+    width: 300px;
+  }
+}
+
 .flex-hold-search-page {
   margin-top: 30px;
   padding-top: 60px;

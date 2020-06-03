@@ -850,7 +850,7 @@
                 },
                 {
                     "key": "field_5eaad83a296b9",
-                    "label": "Scegli area amministrativa",
+                    "label": "Scegli l’area amministrativa o l’ufficio del contenuto da elencare (tassonomia organizzazione)",
                     "name": "module_auto_listing_area_amministrativa_taxterm",
                     "type": "taxonomy",
                     "instructions": "",
@@ -1252,5 +1252,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590240196
+    "modified": 1591192948
 }

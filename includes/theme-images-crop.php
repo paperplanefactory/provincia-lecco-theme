@@ -7,6 +7,7 @@ add_image_size( 'content_picture', 768, 9999);
 add_image_size( 'content_picture_cropped', 768, 400, true);
 add_image_size( 'home_box', 593, 436, true);
 add_image_size( 'card_listing', 370, 208, true);
+add_image_size( 'card_listing_mobile', 480, 270, true);
 add_image_size( 'site_preview', 60, 60, true);
 //add_image_size( 'logo_size', 200, 9999);
 add_image_size( 'column', 500, 9999);

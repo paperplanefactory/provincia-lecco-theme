@@ -174,7 +174,7 @@ function scrollDirectionMenu() {
   var st = $(this).scrollTop();
 
   if (checkWidth > 1024) {
-    if ((st > lastScrollTop) && (st > 100)) {
+    if ((st > lastScrollTop) && (st > 164)) {
       // downscroll code
       $('#header').addClass('hidden');
       $('#header-compact').removeClass('hidden');

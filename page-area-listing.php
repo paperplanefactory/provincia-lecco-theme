@@ -116,7 +116,6 @@ foreach( $tax_query_multiple as $tax ) {
                   <h5 class="allupper">Tutti gli argomenti</h5>
                   <?php intro_menu_list_argomenti(); ?>
                 <?php else : ?>
-                  <h5 class="allupper">Aree in <?php the_title(); ?></h5>
                   <?php if ( $listing_page_level === 'primo-livello' ) {
                     intro_menu_list_subpage_items();
                   }
@@ -163,6 +162,7 @@ if ( $listing_page_highlight_contents && !is_paged() ) :
 <?php
 // listing di primo livello tranne news
 if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'category' ) :
+  $display_h3 = 1;
   ?>
   <?php
   $args_all_subpages = array(

@@ -169,7 +169,7 @@ else :
               $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
                   'retina' => 'card_listing',
                   'desktop' => 'card_listing',
-                  'mobile' => 'card_listing',
+                  'mobile' => 'card_listing_mobile',
                   'micro' => 'micro'
               );
               print_theme_image( $image_data, $image_sizes );
@@ -201,12 +201,13 @@ else :
         <?php endif; ?>
 
         <div class="texts-holder">
-          <?php if ( $slide_listing != 1 ) : ?>
+          <?php if ( $display_h3 == 1 ) : ?>
             <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+          <?php elseif ( $display_h3 == 2 ) : ?>
+            <h4 class="h4-variant"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
           <?php else : ?>
             <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
           <?php endif; ?>
-
           <?php if ( get_field( 'page_abstract' ) ) : ?>
             <p>
               <?php the_field( 'page_abstract' ); ?>

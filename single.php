@@ -5,6 +5,7 @@ get_header();
 
 <?php
 while ( have_posts() ) : the_post();
+$display_h3 = 2;
 //current_page_from_single_cpt();
 $my_id = get_the_ID();
 $post_type = get_post_type();

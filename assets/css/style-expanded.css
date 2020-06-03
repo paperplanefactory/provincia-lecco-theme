@@ -707,6 +707,14 @@ p a {
   text-decoration: underline;
 }
 
+.force-underlined-links a {
+  text-decoration: underline;
+}
+
+.inline-socials a {
+  text-decoration: none;
+}
+
 .white-links a:link,
 .white-links a:visited {
   color: #FFFFFF;
@@ -2483,21 +2491,39 @@ select {
   }
   .flex-hold-2.margins-thin .flex-hold-child,
   .flex-hold-3.margins-thin .flex-hold-child,
-  .flex-hold-4.margins-thin .flex-hold-child {
+  .flex-hold-4.margins-thin .flex-hold-child,
+  .flex-hold-avviso.margins-thin .flex-hold-child {
     width: 100%;
     margin: 0 0 24px;
   }
   .flex-hold-2.margins-wide .flex-hold-child,
   .flex-hold-3.margins-wide .flex-hold-child,
-  .flex-hold-4.margins-wide .flex-hold-child {
+  .flex-hold-4.margins-wide .flex-hold-child,
+  .flex-hold-avviso.margins-wide .flex-hold-child {
     width: 100%;
     margin: 0 0 24px;
   }
   .flex-hold-2.margins-fit .flex-hold-child,
   .flex-hold-3.margins-fit .flex-hold-child,
-  .flex-hold-4.margins-fit .flex-hold-child {
+  .flex-hold-4.margins-fit .flex-hold-child,
+  .flex-hold-avviso.margins-fit .flex-hold-child {
     width: 100%;
     margin: 0 0 24px;
+  }
+  .flex-hold-2 .avviso-left,
+  .flex-hold-3 .avviso-left,
+  .flex-hold-4 .avviso-left,
+  .flex-hold-avviso .avviso-left {
+    width: 100%;
+    order: 2;
+  }
+  .flex-hold-2 .avviso-right,
+  .flex-hold-3 .avviso-right,
+  .flex-hold-4 .avviso-right,
+  .flex-hold-avviso .avviso-right {
+    width: 100%;
+    order: 1;
+    margin: 0 0 20px;
   }
   .still-two-mobile .flex-hold-child {
     width: calc(50% - 12px) !important;
@@ -3627,6 +3653,17 @@ select {
   .flex-hold-page-index .page-index-right .padder {
     padding: 55px 45px 85px;
   }
+  .flex-hold-avviso .avviso-left {
+    order: 1;
+    width: calc(100% - 300px);
+  }
+  .flex-hold-avviso .avviso-left .padder {
+    padding: 0 20px 0 0;
+  }
+  .flex-hold-avviso .avviso-right {
+    order: 2;
+    width: 300px;
+  }
   .flex-hold-search-page {
     margin-top: 30px;
     padding-top: 60px;
@@ -3932,8 +3969,8 @@ select {
     margin-bottom: 24px;
   }
   h3 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 36px;
     margin-bottom: 16px;
   }
   .content-styled h2,
@@ -4155,13 +4192,13 @@ select {
   .overlay-form input[type=number],
   .overlay-form input[type=tel],
   .overlay-form input[type=text] {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 36px;
     margin-bottom: 15px;
   }
   .overlay-form .search-submit span {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 36px;
   }
   .form-hold {
     margin: 10px 0;

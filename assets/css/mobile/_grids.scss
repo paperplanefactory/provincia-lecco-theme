@@ -137,7 +137,8 @@
 
 .flex-hold-2,
 .flex-hold-3,
-.flex-hold-4 {
+.flex-hold-4,
+.flex-hold-avviso {
   &.margins-thin {
     .flex-hold-child {
       width: 100%;
@@ -157,6 +158,17 @@
       width: 100%;
       margin: 0 0 24px;
     }
+  }
+
+  .avviso-left {
+    width: 100%;
+    order: 2;
+  }
+
+  .avviso-right {
+    width: 100%;
+    order: 1;
+    margin: 0 0 20px;
   }
 }
 

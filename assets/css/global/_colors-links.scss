@@ -214,6 +214,18 @@ p {
 	}
 }
 
+.force-underlined-links {
+	a {
+		text-decoration: underline;
+	}
+}
+
+.inline-socials {
+	a {
+		text-decoration: none;
+	}
+}
+
 .white-links {
 	a:link,
 	a:visited {
