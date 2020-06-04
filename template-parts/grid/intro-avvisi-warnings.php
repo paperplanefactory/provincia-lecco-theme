@@ -62,6 +62,13 @@ foreach ( $parent_terms as $pterm ) {
  ?>
 
 <?php
+$meta_query_avvisi_sitewide = array(
+  array(
+    'key' => 'scadenza_avviso_specific_content',
+    'value' => $today,
+    'compare' => '>=',
+  ),
+);
 $args_sitewide_messsages = array(
   'post_type' => 'avviso_content_cpt',
   'posts_per_page' => -1,
@@ -72,6 +79,7 @@ $args_sitewide_messsages = array(
       'terms' => $content_tax_list
     )
   ),
+  'meta_query' => $meta_query_avvisi_sitewide,
 );
 $my_sitewide_messsages = get_posts( $args_sitewide_messsages );
 if ( !empty ( $my_sitewide_messsages ) ) :
