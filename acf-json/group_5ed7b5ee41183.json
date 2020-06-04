@@ -43,6 +43,38 @@
             "display_format": "d\/m\/Y g:i a",
             "return_format": "Y-m-d H:i:s",
             "first_day": 1
+        },
+        {
+            "key": "field_5ed90ffdc3f6c",
+            "label": "Contenuto specifico",
+            "name": "avviso_specific_content",
+            "type": "relationship",
+            "instructions": "Se questo avviso deve comparire solo in uno o un numero ristretto di contenuti è possibile scegliere con questo campo. Per un maggiore controllo è sconsigliato di utilizzare sia questo campo che le categorie a destra.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "servizi_cpt",
+                "amministrazione_cpt",
+                "documenti_cpt",
+                "progetti_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -62,5 +94,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1591264565
+    "modified": 1591285208
 }

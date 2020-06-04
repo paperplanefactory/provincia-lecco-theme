@@ -1,25 +1,7 @@
 <?php
-// avvisi specifici per contenuto
-if ( get_field('intro_avviso_attivo') == 1 && get_field('intro_avviso_messaggio') ) :
+// avvisi specifici per bandi scaduti
+if ( $scadenza_check === 'scaduto' ) :
   ?>
-  <div class="card warning">
-    <div class="card_inner warning-card">
-      <span class="icon icon-warning"></span>
-      <h5 class="allupper"><?php the_field( 'intro_avviso_titolo' ); ?></h5>
-      <?php the_field( 'intro_avviso_messaggio' ); ?>
-    </div>
-  </div>
-<?php endif; ?>
-<?php if ( get_field('intro_warning_attivo') == 1 && get_field('intro_warning_messaggio') ) : ?>
-  <div class="card restricted">
-    <div class="card_inner warning-card">
-      <span class="icon icon-reserved"></span>
-      <h5 class="allupper"><?php the_field( 'intro_warning_titolo' ); ?></h5>
-      <?php the_field( 'intro_warning_messaggio' ); ?>
-    </div>
-  </div>
-<?php endif; ?>
-<?php if ( $scadenza_check === 'scaduto' ) : ?>
   <div class="card warning">
     <div class="card_inner warning-card">
       <span class="icon icon-warning"></span>
@@ -63,6 +45,11 @@ foreach ( $parent_terms as $pterm ) {
 
 <?php
 $meta_query_avvisi_sitewide = array(
+  'relation'		=> 'AND',
+  array(
+    'key' => 'avviso_specific_content',
+    'compare' => 'NOT EXISTS',
+  ),
   array(
     'key' => 'scadenza_avviso_specific_content',
     'value' => $today,
@@ -105,3 +92,66 @@ if ( !empty ( $my_sitewide_messsages ) ) :
  </div>
  <?php endforeach; wp_reset_postdata(); ?>
  <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <?php
+ $meta_query_avvisi_singlecontent = array(
+   'relation'		=> 'AND',
+   array(
+     'key' => 'avviso_specific_content',
+     'value' => $my_id,
+     'compare' => 'LIKE',
+   ),
+   array(
+     'key' => 'scadenza_avviso_specific_content',
+     'value' => $today,
+     'compare' => '>=',
+   ),
+ );
+ $args_singlecontent_messsages = array(
+   'post_type' => 'avviso_content_cpt',
+   'posts_per_page' => -1,
+   'meta_query' => $meta_query_avvisi_singlecontent,
+ );
+ $my_singlecontent_messsage = get_posts( $args_singlecontent_messsages );
+ if ( !empty ( $my_singlecontent_messsage ) ) :
+  ?>
+  <?php
+  foreach ( $my_singlecontent_messsage as $post ) : setup_postdata ( $post );
+  $message_type = get_field( 'message_type' );
+  if ( $message_type === 'warning' ) {
+    $card_class = 'warning';
+    $icon_class = 'icon-warning';
+  }
+  else {
+    $card_class = 'restricted';
+    $icon_class = 'icon-reserved';
+  }
+  ?>
+  <div class="card <?php echo $card_class; ?>">
+    <div class="card_inner warning-card">
+      <span class="icon <?php echo $icon_class; ?>"></span>
+      <h5 class="allupper"><?php the_title(); ?></h5>
+      <?php the_content(); ?>
+    </div>
+  </div>
+  <?php endforeach; wp_reset_postdata(); ?>
+  <?php endif; ?>

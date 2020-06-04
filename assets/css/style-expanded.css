@@ -2889,7 +2889,6 @@ select {
   .page-opening-menu,
   .paragraph-variant,
   .paragraph-variant-holder p,
-  .square-button,
   .tag-button,
   h5 {
     font-size: 16px;
@@ -2936,6 +2935,7 @@ select {
     margin: 0 0 16px;
     padding: 0;
   }
+  .square-button,
   small {
     font-size: 14px;
     line-height: 20px;
@@ -3994,7 +3994,6 @@ select {
   .page-opening-menu,
   .paragraph-variant,
   .paragraph-variant-holder p,
-  .square-button,
   .tag-button,
   h5 {
     font-size: 16px;
@@ -4045,6 +4044,7 @@ select {
     margin: 0 0 16px;
     padding: 0;
   }
+  .square-button,
   small {
     font-size: 14px;
     line-height: 20px;

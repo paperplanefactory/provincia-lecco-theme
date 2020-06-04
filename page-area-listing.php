@@ -82,7 +82,7 @@ foreach( $tax_query_multiple as $tax ) {
 }
 }
 ?>
-  <div class="wrapper">
+  <main class="wrapper">
     <div class="wrapper-padded">
       <div class="wrapper-padded-intro">
         <div class="page-opening-padder">
@@ -134,7 +134,7 @@ foreach( $tax_query_multiple as $tax ) {
         </div>
       </div>
     </div>
-  </div>
+  </main>
 <?php endwhile; ?>
 
 

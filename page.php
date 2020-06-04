@@ -22,7 +22,7 @@ if ( get_field( 'scadenza_bando' ) ) {
 }
 
  ?>
-  <div class="wrapper">
+  <main class="wrapper">
     <div class="wrapper-padded">
       <div class="wrapper-padded-intro">
         <div class="single-content-opening-padder">
@@ -92,7 +92,7 @@ if ( get_field( 'scadenza_bando' ) ) {
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
 
 
