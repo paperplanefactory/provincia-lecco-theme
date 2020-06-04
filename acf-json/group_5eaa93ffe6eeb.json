@@ -715,7 +715,14 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
+                    "post_type": [
+                        "post",
+                        "page",
+                        "servizi_cpt",
+                        "amministrazione_cpt",
+                        "documenti_cpt",
+                        "progetti_cpt"
+                    ],
                     "taxonomy": "",
                     "filters": [
                         "search",
@@ -1252,5 +1259,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591260029
+    "modified": 1591260408
 }
