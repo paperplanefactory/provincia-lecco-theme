@@ -1,5 +1,5 @@
 <!-- module-text-highlight -->
-<div class="card-module">
+<section class="card-module">
   <div class="module-separator">
     <div class="content-styled">
       <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -20,5 +20,5 @@
     </div>
 
   </div>
-</div>
+</section>
 <!-- module-text-highlight -->

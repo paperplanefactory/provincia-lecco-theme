@@ -1,7 +1,7 @@
 <!-- module-documenti -->
 <?php
 if ( $scadenza_check === 'non_scaduto' ) : ?>
-  <div class="text-module">
+  <section class="text-module">
     <div class="module-separator-flex">
       <div class="content-styled">
         <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -40,6 +40,6 @@ if ( $scadenza_check === 'non_scaduto' ) : ?>
         <?php endwhile; endif; ?>
       </div>
     </div>
-  </div>
+  </section>
 <?php endif; ?>
 <!-- module-listing-auto -->

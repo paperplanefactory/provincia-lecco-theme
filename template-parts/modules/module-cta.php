@@ -3,7 +3,7 @@
 $module_call_to_action_link_appearence = get_sub_field( 'module_call_to_action_link_appearence' );
 $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_type' );
  ?>
-<div class="cta-module">
+<section class="cta-module">
   <div class="module-separator">
     <div class="content-styled">
       <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -47,5 +47,5 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
     </div>
 
   </div>
-</div>
+</section>
 <!-- module-cta -->

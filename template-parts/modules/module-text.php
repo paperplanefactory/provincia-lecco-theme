@@ -1,5 +1,5 @@
 <!-- module-text -->
-<div class="text-module">
+<section class="text-module">
   <div class="module-separator">
     <div class="content-styled last-child-no-margin">
       <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -10,5 +10,5 @@
       <?php the_sub_field( 'module_text_content' ); ?>
     </div>
   </div>
-</div>
+</section>
 <!-- module-text -->

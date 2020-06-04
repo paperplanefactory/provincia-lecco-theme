@@ -6,7 +6,7 @@
 <?php else : ?>
   <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 <?php endif; ?>
-<div class="slide-module">
+<section class="slide-module">
 
   <div class="slide-one">
     <?php
@@ -40,5 +40,5 @@
     <!-- singola immagine -->
     <?php endwhile; endif; ?>
   </div>
-</div>
+</section>
 <!-- module-slideshow -->

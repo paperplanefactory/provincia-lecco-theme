@@ -6,7 +6,7 @@
 <?php else : ?>
   <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 <?php endif; ?>
-<div class="card-module">
+<section class="card-module">
   <div class="module-separator">
     <div class="card insite">
       <div class="card_inner regular-card last-child-no-margin">
@@ -14,5 +14,5 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 <!-- module-text-card -->

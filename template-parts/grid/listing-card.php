@@ -2,7 +2,7 @@
 <?php
 // tipologia di card – risultato di ricerca
 if ( $search_result_card == 1 ) : ?>
-<div class="flex-hold-child card insite">
+<article class="flex-hold-child card insite">
   <div class="card_inner regular-card">
     <div class="category-holder cat-fill-a">
       <?php content_tax(); ?>
@@ -19,7 +19,7 @@ if ( $search_result_card == 1 ) : ?>
   <div class="cta-holder">
     <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
   </div>
-</div>
+</article>
 <?php
 // tipologia di card – progetti o argomenti
 elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento_cpt') ) ) :
@@ -37,7 +37,7 @@ elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argom
   }
 
   ?>
-  <div class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="<?php echo $card_bg_image; ?>">
+  <article class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="<?php echo $card_bg_image; ?>">
     <div class="card_inner image-card-big">
       <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="absl"></a>
       <div class="image-card-content">
@@ -45,7 +45,7 @@ elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argom
       </div>
 
     </div>
-  </div>
+  </article>
 <?php
 // tipologia di card – progetti o argomenti estesi
 else :
@@ -66,7 +66,7 @@ else :
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
     ?>
-    <div class="flex-hold-child card insite autonomous-height">
+    <article class="flex-hold-child card insite autonomous-height">
       <div class="image-card-image-side lazy with-bg-image-side" data-bg="<?php echo $thumb_url_desktop[0]; ?>">
         <a class="absl" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"></a>
       </div>
@@ -81,12 +81,12 @@ else :
         </div>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="arrow-button">Leggi di più</a>
       </div>
-    </div>
+    </article>
   <?php
   // card compatta per listing area in pagina argomento
   elseif ( $compact_card == 1 ) :
     ?>
-    <div class="flex-hold-child card insite">
+    <article class="flex-hold-child card insite">
       <div class="card_inner regular-card">
         <div class="category-holder cat-fill-a">
           <?php content_tax(); ?>
@@ -103,13 +103,13 @@ else :
 
         </div>
       </div>
-    </div>
+    </article>
   <?php
   // tipologia di card – sito tematico
   elseif( get_post_type() == 'siti_tematici_cpt' ) :
     $site_color = get_field( 'sito_tematico_color' );
     ?>
-    <div class="flex-hold-child card offsite <?php echo $site_color; ?> bg-1">
+    <article class="flex-hold-child card offsite <?php echo $site_color; ?> bg-1">
       <a href="<?php the_field( 'sito_tematico_url' ); ?>" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
       <div class="card_inner cap-card">
         <?php if ( get_post_thumbnail_id() ) : ?>
@@ -150,12 +150,12 @@ else :
           <?php endif; ?>
         <?php endif; ?>
       </div>
-    </div>
+    </article>
   <?php
   // tipologia di card – tutte le altre card
   else :
     ?>
-    <div class="flex-hold-child card insite">
+    <article class="flex-hold-child card insite">
       <div class="card_inner regular-card">
         <?php if ( get_post_thumbnail_id() ) : ?>
           <div class="cover-image">
@@ -242,7 +242,7 @@ else :
       <div class="cta-holder">
         <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
       </div>
-    </div>
+    </article>
   <?php
   // tipologia di card
   // fine

@@ -6,7 +6,7 @@
 <?php else : ?>
   <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 <?php endif; ?>
-<div class="map-module">
+<section class="map-module">
   <div class="video_frame">
     <?php
     // get iframe HTML
@@ -36,5 +36,5 @@
     echo $iframe;
 ?>
   </div>
-</div>
+</section>
 <!-- module-map -->

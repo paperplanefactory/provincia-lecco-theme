@@ -12,7 +12,7 @@ $argomenti_in_evidenza = get_field( 'argomenti_in_evidenza' );
 $argomento_page_listing_term = get_field( 'argomento_page_listing_term' );
 $page_name = get_the_title();
 ?>
-  <div class="wrapper">
+  <main class="wrapper">
     <div class="wrapper-padded">
       <div class="wrapper-padded-intro">
         <div class="page-opening-padder">
@@ -54,7 +54,7 @@ $page_name = get_the_title();
         </div>
       </div>
     </div>
-  </div>
+  </main>
 <?php endwhile; ?>
 
 <?php

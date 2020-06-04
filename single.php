@@ -22,7 +22,7 @@ if ( get_field( 'scadenza_bando' ) ) {
 }
 
  ?>
-  <div class="wrapper">
+  <main class="wrapper">
     <div class="wrapper-padded">
       <div class="wrapper-padded-intro">
         <div class="single-content-opening-padder">
@@ -91,7 +91,7 @@ if ( get_field( 'scadenza_bando' ) ) {
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
 
 
@@ -117,13 +117,13 @@ if ( get_field( 'scadenza_bando' ) ) {
               <div class="padder">
                 <?php if ( !empty( get_the_content() ) ) : ?>
                   <!-- module-old-site-text -->
-                  <div class="text-module">
+                  <section class="text-module">
                     <div class="module-separator">
                       <div class="content-styled last-child-no-margin">
                         <?php the_content(); ?>
                       </div>
                     </div>
-                  </div>
+                  </section>
                   <!-- module-old-site-text -->
                 <?php endif; ?>
                 <?php include( locate_template( 'template-parts/modules/modules-handler.php' ) ); ?>

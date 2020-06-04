@@ -6,9 +6,9 @@
 <?php else : ?>
   <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 <?php endif; ?>
-<div class="map-module">
+<section class="map-module">
   <div class="video_frame">
     <?php the_sub_field( 'module_map_embed' ); ?>
   </div>
-</div>
+</section>
 <!-- module-map -->

@@ -1,5 +1,5 @@
 <!-- module-scadenze -->
-<div class="card-module">
+<section class="card-module">
   <div class="module-separator">
     <div class="content-styled">
       <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -41,5 +41,5 @@
     <?php endwhile; endif; ?>
     </div>
   </div>
-</div>
+</section>
 <!-- module-scadenze -->

@@ -55,7 +55,7 @@ else {
 
 if ( !empty ( $my_autolisting ) ) :
  ?>
- <div class="text-module">
+ <section class="text-module">
    <div class="module-separator-flex">
      <div class="content-styled">
        <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
@@ -73,7 +73,7 @@ if ( !empty ( $my_autolisting ) ) :
        <?php endforeach; wp_reset_postdata(); ?>
      </div>
    </div>
- </div>
+ </section>
 
 
 
