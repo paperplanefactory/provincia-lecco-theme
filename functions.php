@@ -30,8 +30,6 @@ include_once "includes/theme-search-autocomplete.php";
 
 // ruoli aggiuntivi
 // include_once "includes/theme-custom-users.php";
-// transients killer
-// include_once "includes/theme-transients-killer.php";
 
 // load_theme_textdomain( 'paperplane-theme', '/languages' );
 load_theme_textdomain( 'paperplane-theme', TEMPLATEPATH.'/languages' );

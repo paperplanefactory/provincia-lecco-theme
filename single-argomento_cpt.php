@@ -11,6 +11,7 @@ $argomento_area_correlata = get_field( 'argomento_area_correlata' );
 $argomenti_in_evidenza = get_field( 'argomenti_in_evidenza' );
 $argomento_page_listing_term = get_field( 'argomento_page_listing_term' );
 $page_name = get_the_title();
+$listing_page_cpt_listed = 'argomento_cpt'
 ?>
   <main class="wrapper">
     <div class="wrapper-padded">
@@ -39,13 +40,16 @@ $page_name = get_the_title();
               <div class="padder">
                 <?php
                 // contenuti in evidenza se non c'è paginazione
-                if ( $argomento_area_correlata && !is_paged() ) :
+                if ( $argomento_area_correlata ) :
                   ?>
                   <h5>Questo argomento è gestito da</h5>
                   <?php foreach( $argomento_area_correlata as $post ) : setup_postdata( $post );
                   $compact_card = 1; ?>
                     <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
                   <?php endforeach; wp_reset_postdata(); ?>
+                <?php else : ?>
+                  <h5 class="allupper">Tutti gli argomenti</h5>
+                  <?php intro_menu_list_argomenti(); ?>
                 <?php endif; ?>
               </div>
             </div>
