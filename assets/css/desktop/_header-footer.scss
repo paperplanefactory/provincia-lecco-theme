@@ -67,6 +67,7 @@ $side-head-compact-width: 65px; // header
           display: inline-block;
         }
 
+        .current-menu-item,
         .current-page-ancestor,
         .current_page_item {
           border-bottom: solid 4px $color-12;

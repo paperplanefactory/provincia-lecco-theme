@@ -3278,6 +3278,7 @@ select {
     position: relative;
     display: inline-block;
   }
+  #header #header-structure .menu ul .current-menu-item,
   #header #header-structure .menu ul .current-page-ancestor,
   #header #header-structure .menu ul .current_page_item {
     border-bottom: solid 4px #FFFFFF;
