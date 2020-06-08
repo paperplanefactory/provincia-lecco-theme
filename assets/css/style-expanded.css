@@ -252,8 +252,8 @@ body {
 
 .chiudi-avviso {
   position: absolute;
-  left: 0;
-  bottom: 10px;
+  right: -5px;
+  top: 12px;
   color: #F0F0F0;
 }
 
@@ -1268,6 +1268,11 @@ small {
 
 .light {
   font-weight: 400 !important;
+}
+
+.chiudi-avviso {
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .wrapper {
@@ -2418,6 +2423,9 @@ select {
   .single-content-opening-padder {
     padding: 20px 0 10px;
   }
+  .avviso-top-padder {
+    padding: 40px 0 10px;
+  }
   .intro-news-padder {
     padding: 0;
   }
@@ -3507,6 +3515,7 @@ select {
   .page-opening-padder {
     padding: 40px 0 110px;
   }
+  .avviso-top-padder,
   .single-content-opening-padder {
     padding: 40px 0 10px;
   }

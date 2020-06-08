@@ -1,94 +1,92 @@
 <div id="avviso-visibility-js" class="wrapper bg-1 txt-12 avviso">
   <div class="wrapper-padded">
-    <div class="wrapper-padded-more">
-      <div class="wrapper-padded-more-924">
-        <div class="single-content-opening-padder">
-          <?php if ( get_post_thumbnail_id() ) : ?>
-            <div class="flex-hold flex-hold-avviso">
-              <div class="avviso-left">
-                <div class="padder">
-                  <h3 class="txt-12"><?php the_title(); ?></h3>
-                  <?php if ( get_field( 'messaggio_avviso' ) ) : ?>
-                    <p class="paragraph-variant">
-                      <?php the_field( 'messaggio_avviso' ); ?>
-                    </p>
-                  <?php endif; ?>
-                  <?php
-                  if ( have_rows( 'avviso_gestione_cta_repeater' ) ) : ?>
-                  <div class="tags-holder">
-                    <?php while ( have_rows( 'avviso_gestione_cta_repeater' ) ) : the_row();
-                    $avviso_gestione_cta_repeater_destinazione = get_sub_field( 'avviso_gestione_cta_repeater_destinazione' );
-                    if ( $avviso_gestione_cta_repeater_destinazione === 'internal-content' ) {
-                      $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_page' );
-                      $target = '_self';
-                    }
-                    elseif ( $avviso_gestione_cta_repeater_destinazione === 'internal-media' ) {
-                      $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_file' );
-                      $target = '_blank';
-                    }
-                    elseif ( $avviso_gestione_cta_repeater_destinazione === 'external-content' ) {
-                      $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_url' );
-                      $target = '_blank';
-                    }
-                    ?>
-                    <a href="<?php echo $avviso_gestione_cta_url; ?>" target="<?php echo $target; ?>" class="square-button green filled" title="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>" aria-label="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>"><?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?></a>
-                    <?php endwhile; ?>
-                  </div>
+    <div class="wrapper-padded-intro">
+      <div class="avviso-top-padder">
+        <?php if ( get_post_thumbnail_id() ) : ?>
+          <div class="flex-hold flex-hold-avviso">
+            <div class="avviso-left">
+              <div class="padder">
+                <h3 class="txt-12"><?php the_title(); ?></h3>
+                <?php if ( get_field( 'messaggio_avviso' ) ) : ?>
+                  <p class="paragraph-variant">
+                    <?php the_field( 'messaggio_avviso' ); ?>
+                  </p>
                 <?php endif; ?>
-                </div>
-              </div>
-              <div class="avviso-right">
                 <?php
-                $image_data = array(
-                    'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
-                    'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-                    'size_fallback' => 'card_listing'
-                );
-                $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-                    'retina' => 'card_listing',
-                    'desktop' => 'card_listing',
-                    'mobile' => 'card_listing_mobile',
-                    'micro' => 'micro'
-                );
-                print_theme_image( $image_data, $image_sizes );
-                ?>
+                if ( have_rows( 'avviso_gestione_cta_repeater' ) ) : ?>
+                <div class="tags-holder">
+                  <?php while ( have_rows( 'avviso_gestione_cta_repeater' ) ) : the_row();
+                  $avviso_gestione_cta_repeater_destinazione = get_sub_field( 'avviso_gestione_cta_repeater_destinazione' );
+                  if ( $avviso_gestione_cta_repeater_destinazione === 'internal-content' ) {
+                    $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_page' );
+                    $target = '_self';
+                  }
+                  elseif ( $avviso_gestione_cta_repeater_destinazione === 'internal-media' ) {
+                    $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_file' );
+                    $target = '_blank';
+                  }
+                  elseif ( $avviso_gestione_cta_repeater_destinazione === 'external-content' ) {
+                    $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_url' );
+                    $target = '_blank';
+                  }
+                  ?>
+                  <a href="<?php echo $avviso_gestione_cta_url; ?>" target="<?php echo $target; ?>" class="square-button green filled" title="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>" aria-label="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>"><?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?></a>
+                  <?php endwhile; ?>
+                </div>
+              <?php endif; ?>
               </div>
             </div>
-          <?php else : ?>
-            <h3 class="txt-12"><?php the_title(); ?></h3>
-            <?php if ( get_field( 'messaggio_avviso' ) ) : ?>
-              <p class="paragraph-variant">
-                <?php the_field( 'messaggio_avviso' ); ?>
-              </p>
-            <?php endif; ?>
-            <?php
-            if ( have_rows( 'avviso_gestione_cta_repeater' ) ) : ?>
-            <div class="tags-holder">
-              <?php while ( have_rows( 'avviso_gestione_cta_repeater' ) ) : the_row();
-              $avviso_gestione_cta_repeater_destinazione = get_sub_field( 'avviso_gestione_cta_repeater_destinazione' );
-              if ( $avviso_gestione_cta_repeater_destinazione === 'internal-content' ) {
-                $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_page' );
-                $target = '_self';
-              }
-              elseif ( $avviso_gestione_cta_repeater_destinazione === 'internal-media' ) {
-                $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_file' );
-                $target = '_blank';
-              }
-              elseif ( $avviso_gestione_cta_repeater_destinazione === 'external-content' ) {
-                $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_url' );
-                $target = '_blank';
-              }
+            <div class="avviso-right">
+              <?php
+              $image_data = array(
+                  'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+                  'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+                  'size_fallback' => 'card_listing'
+              );
+              $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+                  'retina' => 'card_listing',
+                  'desktop' => 'card_listing',
+                  'mobile' => 'card_listing_mobile',
+                  'micro' => 'micro'
+              );
+              print_theme_image( $image_data, $image_sizes );
               ?>
-              <a href="<?php echo $avviso_gestione_cta_url; ?>" target="<?php echo $target; ?>" class="square-button green filled" title="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>" aria-label="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>"><?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?></a>
-              <?php endwhile; ?>
             </div>
+          </div>
+        <?php else : ?>
+          <h3 class="txt-12"><?php the_title(); ?></h3>
+          <?php if ( get_field( 'messaggio_avviso' ) ) : ?>
+            <p class="paragraph-variant">
+              <?php the_field( 'messaggio_avviso' ); ?>
+            </p>
           <?php endif; ?>
-          <?php endif; ?>
-        </div>
-        <button class="chiudi-avviso avviso-local-storage-close-js button-appearance-normalizer" aria-label="Nascondi avviso per il resto della navigazione">
-          nascondi avviso
-        </button>
+          <?php
+          if ( have_rows( 'avviso_gestione_cta_repeater' ) ) : ?>
+          <div class="tags-holder">
+            <?php while ( have_rows( 'avviso_gestione_cta_repeater' ) ) : the_row();
+            $avviso_gestione_cta_repeater_destinazione = get_sub_field( 'avviso_gestione_cta_repeater_destinazione' );
+            if ( $avviso_gestione_cta_repeater_destinazione === 'internal-content' ) {
+              $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_page' );
+              $target = '_self';
+            }
+            elseif ( $avviso_gestione_cta_repeater_destinazione === 'internal-media' ) {
+              $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_file' );
+              $target = '_blank';
+            }
+            elseif ( $avviso_gestione_cta_repeater_destinazione === 'external-content' ) {
+              $avviso_gestione_cta_url = get_sub_field( 'avviso_gestione_cta_repeater_url' );
+              $target = '_blank';
+            }
+            ?>
+            <a href="<?php echo $avviso_gestione_cta_url; ?>" target="<?php echo $target; ?>" class="square-button green filled" title="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>" aria-label="<?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?>"><?php the_sub_field( 'avviso_gestione_cta_repeater_testo' ); ?></a>
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+        <?php endif; ?>
       </div>
+      <button class="chiudi-avviso avviso-local-storage-close-js button-appearance-normalizer" aria-label="Nascondi avviso per il resto della navigazione">
+        X
+      </button>
     </div>
   </div>
 </div>

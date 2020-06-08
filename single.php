@@ -20,7 +20,6 @@ if ( get_field( 'scadenza_bando' ) ) {
     $scadenza_check = 'non_scaduto';
   }
 }
-
  ?>
   <main class="wrapper">
     <div class="wrapper-padded">
