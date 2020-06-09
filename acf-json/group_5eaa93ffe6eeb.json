@@ -1038,9 +1038,9 @@
                     },
                     "choices": {
                         "none": "Nessuna",
-                        "icon-administration": "Amministrazione",
-                        "icon-note": "Nota",
-                        "icon-information": "Informazione"
+                        "icon-information": "Informazioni",
+                        "icon-bookmark": "Segnalibro",
+                        "icon-warning": "Alert"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -1311,5 +1311,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591705175
+    "modified": 1591706235
 }
