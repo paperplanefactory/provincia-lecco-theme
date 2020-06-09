@@ -2641,7 +2641,7 @@ select {
     margin-bottom: 0;
   }
   .flex-hold-scadenze .data h5 {
-    line-height: 16px;
+    line-height: 18px;
   }
   .flex-hold-scadenze .info {
     position: relative;
@@ -3725,7 +3725,7 @@ select {
     margin-bottom: 0;
   }
   .card-date-holder .data h5 {
-    line-height: 16px;
+    line-height: 18px;
   }
   .flex-hold-scadenze:last-child .data {
     margin-bottom: 0;
@@ -3751,7 +3751,7 @@ select {
     margin-bottom: 0;
   }
   .flex-hold-scadenze .data h5 {
-    line-height: 16px;
+    line-height: 18px;
   }
   .flex-hold-scadenze .info {
     position: relative;
@@ -4006,8 +4006,8 @@ select {
   .paragraph-variant-holder p,
   .tag-button,
   h5 {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 8px;
   }
   #footer h5 {
@@ -4016,8 +4016,8 @@ select {
   .head-navi-side,
   .index-listing,
   .inner-news-listing {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 0;
   }
   .arrow-button,
@@ -4194,8 +4194,8 @@ select {
   .banner-form input[type=number],
   .banner-form input[type=tel],
   .banner-form input[type=text] {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 15px;
   }
   .overlay-form input[type=email],
@@ -4214,25 +4214,25 @@ select {
     margin: 10px 0;
   }
   .form-hold label {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 5px;
   }
   .form-hold input[type=email],
   .form-hold input[type=number],
   .form-hold input[type=tel],
   .form-hold input[type=text] {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 15px;
   }
   .form-hold textarea {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 18px;
     margin-bottom: 15px;
   }
   .form-hold select {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 18px;
     margin-bottom: 15px;
   }
@@ -4598,7 +4598,7 @@ select {
   display: block;
   width: 100%;
   margin-top: 40px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   text-align: center;
 }
