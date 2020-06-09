@@ -1,5 +1,6 @@
 <!-- module-listing-auto -->
 <?php
+$module_auto_listing_appearence = get_sub_field( 'module_auto_listing_appearence' );
 if ( get_sub_field( 'module_auto_listing_mode' ) === 'manual' ) {
   $my_autolisting = get_sub_field( 'module_auto_listing_manual' );
 }
@@ -67,16 +68,22 @@ if ( !empty ( $my_autolisting ) ) :
          <?php the_sub_field( 'module_cta_intro' ); ?>
        <?php endif; ?>
      </div>
-     <div class="flex-hold flex-hold-2 margins-wide">
-       <?php foreach ( $my_autolisting as $post ) : setup_postdata ( $post ); ?>
-         <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
-       <?php endforeach; wp_reset_postdata(); ?>
-     </div>
+     <?php if ( $module_auto_listing_appearence === 'module-listing-default-card' ) : ?>
+       <div class="flex-hold flex-hold-2 margins-wide">
+         <?php foreach ( $my_autolisting as $post ) : setup_postdata ( $post ); ?>
+           <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+         <?php endforeach; wp_reset_postdata(); ?>
+       </div>
+     <?php else : ?>
+       <div class="tags-holder">
+         <?php foreach ( $my_autolisting as $post ) : setup_postdata ( $post ); ?>
+           <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+         <?php endforeach; wp_reset_postdata(); ?>
+       </div>
+     <?php endif; ?>
+
    </div>
  </section>
-
-
-
 <?php endif; ?>
 
 <!-- module-listing-auto -->

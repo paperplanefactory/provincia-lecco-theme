@@ -60,7 +60,7 @@
                         "module-listing-auto": "Listing contenuti",
                         "module-scadenze": "Listing scadenze (per bandi)",
                         "module-documenti": "Listing documenti (per bandi)",
-                        "module-cta": "Modulo call to action (per elencare persone o referenti)",
+                        "module-cta": "Modulo call to action",
                         "module-slideshow": "Slideshow",
                         "module-map": "Mappa (embed)",
                         "module-video": "Video (embed)"
@@ -495,7 +495,7 @@
                 },
                 {
                     "key": "field_5eaac7808d1d3",
-                    "label": "Modulo call to action (per elencare persone o referenti)",
+                    "label": "Modulo call to action",
                     "name": "",
                     "type": "accordion",
                     "instructions": "",
@@ -928,6 +928,39 @@
                     "return_format": "object"
                 },
                 {
+                    "key": "field_5edf644e70220",
+                    "label": "Scegli la modalità di visualizzazione",
+                    "name": "module_auto_listing_appearence",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "manual"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "module-listing-default-card": "Card",
+                        "module-listing-cta": "CTA - bottone"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5eba569e7ac87",
                     "label": "Testo in evidenza con editor",
                     "name": "",
@@ -1259,5 +1292,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591260408
+    "modified": 1591699303
 }
