@@ -2890,7 +2890,6 @@ select {
     line-height: 24px;
     margin-bottom: 8px;
   }
-  .breadcrumbs-holder,
   .button-typo-normalizer,
   .card p,
   .footer-menu,
@@ -2914,6 +2913,7 @@ select {
     margin-bottom: 0;
   }
   .arrow-button,
+  .breadcrumbs-holder,
   h6 {
     font-size: 14px;
     line-height: 20px;
@@ -3997,7 +3997,6 @@ select {
     line-height: 30px;
     margin-bottom: 8px;
   }
-  .breadcrumbs-holder,
   .button-typo-normalizer,
   .card p,
   .footer-menu,
@@ -4021,6 +4020,7 @@ select {
     margin-bottom: 0;
   }
   .arrow-button,
+  .breadcrumbs-holder,
   h6 {
     font-size: 14px;
     line-height: 20px;
