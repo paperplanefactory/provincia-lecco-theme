@@ -66,12 +66,17 @@ h5 {
 }
 
 .arrow-button,
-.breadcrumbs-holder,
 h6 {
   font-size: $h6-size-smartphone;
   line-height: $h6-lineheight-smartphone;
   margin-bottom: $h6-marginbottom-smartphone;
   letter-spacing: 1px;
+}
+
+.breadcrumbs-holder {
+  font-size: $h6-size-smartphone;
+  line-height: $h6-lineheight-smartphone;
+  margin-bottom: $h6-marginbottom-smartphone;
 }
 
 .wp-caption-text,

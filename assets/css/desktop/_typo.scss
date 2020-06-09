@@ -65,12 +65,17 @@ h5 {
 }
 
 .arrow-button,
-.breadcrumbs-holder,
 h6 {
   font-size: $h6-size-desktop;
   line-height: $h6-lineheight-desktop;
   margin-bottom: $h6-marginbottom-desktop;
   letter-spacing: 1px;
+}
+
+.breadcrumbs-holder {
+  font-size: $h6-size-desktop;
+  line-height: $h6-lineheight-desktop;
+  margin-bottom: $h6-marginbottom-desktop;
 }
 
 select {

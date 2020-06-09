@@ -2913,12 +2913,16 @@ select {
     margin-bottom: 0;
   }
   .arrow-button,
-  .breadcrumbs-holder,
   h6 {
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0;
     letter-spacing: 1px;
+  }
+  .breadcrumbs-holder {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
   }
   .wp-caption-text,
   .wp-caption.aligncenter .wp-caption-text,
@@ -4020,12 +4024,16 @@ select {
     margin-bottom: 0;
   }
   .arrow-button,
-  .breadcrumbs-holder,
   h6 {
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0;
     letter-spacing: 1px;
+  }
+  .breadcrumbs-holder {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
   }
   select {
     font-size: 14px;
