@@ -85,8 +85,8 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 }
 
 
-//add_action('admin_head', 'my_custom_acf');
-function my_custom_acf() {
+add_action('admin_head', 'my_custom_acf_css');
+function my_custom_acf_css() {
   echo '<style>
   [data-name*="choose_module"] {
     background-color: #2867c5 !important;
