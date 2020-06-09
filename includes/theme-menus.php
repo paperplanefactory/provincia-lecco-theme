@@ -89,7 +89,7 @@ add_action('admin_head', 'my_custom_acf_css');
 function my_custom_acf_css() {
   echo '<style>
   [data-name*="choose_module"] {
-    background-color: #2867c5 !important;
+    background-color: #2773B3 !important;
     color: #FFFFFF;
   }
   .acf-label.acf-accordion-title, .acf-label.acf-accordion-title:hover  {
