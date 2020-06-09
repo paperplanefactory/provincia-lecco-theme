@@ -64,8 +64,8 @@ if ( !empty ( $my_autolisting ) ) :
        <?php else : ?>
          <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
        <?php endif; ?>
-       <?php if ( get_sub_field( 'module_cta_intro' ) ) : ?>
-         <?php the_sub_field( 'module_cta_intro' ); ?>
+       <?php if ( get_sub_field( 'module_auto_listing_intro' ) ) : ?>
+         <?php the_sub_field( 'module_auto_listing_intro' ); ?>
        <?php endif; ?>
      </div>
      <?php if ( $module_auto_listing_appearence === 'module-listing-default-card' ) : ?>

@@ -762,6 +762,33 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_5edf6c3e7296e",
+                    "label": "Testo introduttivo",
+                    "name": "module_auto_listing_intro",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3a301e2994",
+                                "operator": "==",
+                                "value": "manual"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
                     "key": "field_5ec3a301e2994",
                     "label": "Scegli contenuti a mano oppure in base alle tassonomie",
                     "name": "module_auto_listing_mode",
@@ -1292,5 +1319,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591699303
+    "modified": 1591700252
 }
