@@ -1,5 +1,5 @@
 <!-- module-documenti -->
-<?php if ( has_term('bandi', 'documenti_tax') || has_term('bandi-di-concorso', 'documenti_tax') || has_term('bandi-di-gara', 'documenti_tax') || has_term('nomine-in-societa-ed-enti', 'documenti_tax') || has_term('bandi-per-contributi', 'documenti_tax') || has_term('bandi-immobiliari', 'documenti_tax') || has_term('altri-bandi', 'documenti_tax') || ) : ?>
+<?php if ( has_term('bandi', 'documenti_tax') || has_term('bandi-di-concorso', 'documenti_tax') || has_term('bandi-di-gara', 'documenti_tax') || has_term('nomine-in-societa-ed-enti', 'documenti_tax') || has_term('bandi-per-contributi', 'documenti_tax') || has_term('bandi-immobiliari', 'documenti_tax') || has_term('altri-bandi', 'documenti_tax') ) : ?>
   <?php
   if ( $scadenza_check === 'non_scaduto' ) : ?>
     <section class="text-module">
