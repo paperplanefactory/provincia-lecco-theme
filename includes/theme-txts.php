@@ -1,40 +1,11 @@
 <?php
-
-function shorten_abstract($page_abstract, $length) {
-	if(strlen($page_abstract) > $length)
-	{
-		$page_abstract = trim(substr($page_abstract, 0, $length))."&hellip;";
+// Accorcio stringhe
+function shorten_abstract( $page_abstract, $length ) {
+  if( strlen( $page_abstract ) > $length ) {
+    $page_abstract = trim( substr( $page_abstract, 0, $length ) )."&hellip;";
+    $page_abstract = preg_replace('`\[[^\]]*\]`', '', $page_abstract);
 	}
 	echo $page_abstract;
-}
-
-
-
-
-
-
-
-
-//conto le parole del content - call in template: echo word_count();
-function word_count() {
-    $content = get_post_field( 'post_content', $post->ID );
-    $word_count = str_word_count( strip_tags( $content ) );
-    return $word_count;
-}
-
-function excerpt($limit) {
-      $excerpt = explode(' ', get_the_excerpt(), $limit);
-
-      if (count($excerpt) >= $limit) {
-          array_pop($excerpt);
-          $excerpt = implode(" ", $excerpt) . '...';
-      } else {
-          $excerpt = implode(" ", $excerpt);
-      }
-
-      $excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
-
-      return $excerpt;
 }
 
 // page title generator
