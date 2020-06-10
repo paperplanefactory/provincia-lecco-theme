@@ -164,7 +164,12 @@ else :
     else :
       ?>
       <article class="flex-hold-child card insite">
-        <div class="card_inner regular-card">
+        <?php if ( $display_h3 == 2 ) : ?>
+          <div class="card_inner compact-card">
+        <?php else : ?>
+          <div class="card_inner regular-card">
+        <?php endif; ?>
+
           <?php if ( get_post_thumbnail_id() ) : ?>
             <div class="cover-image">
               <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">
