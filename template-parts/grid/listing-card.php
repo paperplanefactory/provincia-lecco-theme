@@ -223,7 +223,11 @@ else :
             <?php endif; ?>
             <?php if ( get_field( 'page_abstract' ) ) : ?>
               <p>
-                <?php the_field( 'page_abstract' ); ?>
+                <?php
+                $page_abstract = get_field( 'page_abstract' );
+                shorten_abstract( $page_abstract, 25 );
+                ?>
+                <?php //the_field( 'page_abstract' ); ?>
               </p>
             <?php endif; ?>
           </div>

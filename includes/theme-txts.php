@@ -1,6 +1,15 @@
 <?php
 // Polylang strings
 // pll_register_string("Suggerimenti", "suggerimenti_output");
+function shorten_abstract( $page_abstract, $limit ) {
+  if ( str_word_count( $page_abstract, 0 ) > $limit ) {
+    $words = str_word_count( $page_abstract, 2 );
+    $pos = array_keys( $words );
+    $page_abstract = substr( $page_abstract, 0, $pos[$limit] ) . '...';
+  }
+  echo $page_abstract;
+}
+
 
 //conto le parole del content - call in template: echo word_count();
 function word_count() {
