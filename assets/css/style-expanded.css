@@ -2762,6 +2762,9 @@ select {
   .card_inner.regular-card {
     padding: 20px 20px 35px;
   }
+  .card_inner.compact-card {
+    padding: 20px 20px 0;
+  }
   .card_inner.cap-card {
     padding: 20px;
   }
@@ -3910,6 +3913,9 @@ select {
   }
   .card_inner.regular-card {
     padding: 20px 20px 35px;
+  }
+  .card_inner.compact-card {
+    padding: 20px 20px 0;
   }
   .card_inner.cap-card {
     padding: 20px;
