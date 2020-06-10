@@ -1,18 +1,19 @@
 <?php
 
-function shorten_abstract($page_abstract, $limit, $break = ".", $pad = "...") {
-  if (strlen($page_abstract) <= $limit) {
-    echo $page_abstract;
-  }
-  else {
-    if (false !== ($max = strpos($page_abstract, $break, $limit))) {
-      if ($max < strlen($page_abstract) - 1) {
-        $page_abstract = substr($page_abstract, 0, $max) . $pad;
-      }
-    }
-    echo $page_abstract;
-  }
+function shorten_abstract($page_abstract, $length) {
+	if(strlen($page_abstract) > $length)
+	{
+		$page_abstract = trim(substr($page_abstract, 0, $length))."&hellip;";
+	}
+	echo $page_abstract;
 }
+
+
+
+
+
+
+
 
 //conto le parole del content - call in template: echo word_count();
 function word_count() {
