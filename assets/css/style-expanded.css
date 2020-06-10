@@ -2444,6 +2444,9 @@ select {
     margin-right: 15px;
     margin-bottom: 20px;
   }
+  .listing-module .tags-holder {
+    margin: 10px 0;
+  }
   .intro-box {
     margin: 0 0 20px;
   }
@@ -3562,6 +3565,9 @@ select {
   .tags-holder a {
     margin-right: 15px;
     margin-bottom: 20px;
+  }
+  .listing-module .tags-holder {
+    margin: 10px 0;
   }
   .intro-box {
     margin: 0 0 40px;

@@ -56,7 +56,7 @@ else {
 
 if ( !empty ( $my_autolisting ) ) :
  ?>
- <section class="text-module">
+ <section class="text-module listing-module">
    <div class="module-separator-flex">
      <div class="content-styled">
        <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
