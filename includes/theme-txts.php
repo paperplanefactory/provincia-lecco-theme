@@ -1,11 +1,16 @@
 <?php
 // Polylang strings
 // pll_register_string("Suggerimenti", "suggerimenti_output");
-function shorten_abstract( $page_abstract, $limit ) {
-  if ( str_word_count( $page_abstract, 0 ) > $limit ) {
-    $words = str_word_count( $page_abstract, 2 );
-    $pos = array_keys( $words );
-    $page_abstract = substr( $page_abstract, 0, $pos[$limit] ) . '...';
+
+function shorten_abstract( $page_abstract, $limit, $break = '.', $pad = '...' ) {
+  // return with no change if string is shorter than $limit
+  if ( strlen( $page_abstract ) <= $page_abstract ) echo $page_abstract;
+
+  // is $break present between $limit and the end of the string?
+  if ( false !== ( $breakpoint = strpos( $page_abstract, $break, $limit) ) ) {
+    if( $breakpoint < strlen( $page_abstract ) - 1 ) {
+      $page_abstract = substr( $page_abstract, 0, $breakpoint ) . $pad;
+    }
   }
   echo $page_abstract;
 }
