@@ -6,12 +6,12 @@
       <div class="module-separator-flex">
         <div class="content-styled">
           <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-              <h4><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
+              <h4><span class="title-icon icon-attachement"></span><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
           <?php else : ?>
             <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
           <?php endif; ?>
-          <?php if ( get_sub_field( 'module_cta_intro' ) ) : ?>
-            <?php the_sub_field( 'module_cta_intro' ); ?>
+          <?php if ( get_sub_field( 'module_gestione_documenti_intro' ) ) : ?>
+            <?php the_sub_field( 'module_gestione_documenti_intro' ); ?>
           <?php endif; ?>
         </div>
         <div class="flex-hold flex-hold-2 margins-wide">
@@ -52,8 +52,8 @@
         <?php else : ?>
           <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
         <?php endif; ?>
-        <?php if ( get_sub_field( 'module_cta_intro' ) ) : ?>
-          <?php the_sub_field( 'module_cta_intro' ); ?>
+        <?php if ( get_sub_field( 'module_gestione_documenti_intro' ) ) : ?>
+          <?php the_sub_field( 'module_gestione_documenti_intro' ); ?>
         <?php endif; ?>
       </div>
       <div class="flex-hold flex-hold-2 margins-wide">
