@@ -1275,6 +1275,11 @@ small {
   font-size: 14px;
 }
 
+.title-icon {
+  position: relative;
+  top: 3px;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
