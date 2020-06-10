@@ -225,7 +225,7 @@ else :
               <p>
                 <?php
                 $page_abstract = get_field( 'page_abstract' );
-                shorten_abstract( $page_abstract, 100 );
+                shorten_abstract( $page_abstract, 118 );
                 ?>
                 <?php //the_field( 'page_abstract' ); ?>
               </p>
