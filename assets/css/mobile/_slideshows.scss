@@ -42,7 +42,8 @@
 
 .slide-four {
   position: relative;
-  width: 100%;
+  left: -24px;
+  width: calc(100% + 48px);
   margin-bottom: 80px;
   //padding-bottom: 78px;
   .slick-track {
@@ -54,6 +55,7 @@
   }
 
   .slick-slide {
+    //width: 90vw !important;
     .card {
       min-height: 350px;
     }
@@ -68,7 +70,7 @@
 .single-slide {
   .card {
     position: relative;
-    width: calc(100% + 8px);
+    width: calc(35% + 8px);
     left: -8px;
 
     .card_inner {

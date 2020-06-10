@@ -30,7 +30,7 @@ else :
   </article>
   <?php
   // tipologia di card – progetti o argomenti
-  elseif ( ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento_cpt') ) ) :
+  elseif ( $display_h3 != 2 && ( (get_post_type() == 'progetti_cpt') ) || ( (get_post_type() == 'argomento_cpt') ) ) :
     // tipologia di card – progetti o argomenti compatti
     if ( $compact_argomenti != 1 ) :
       ?>
@@ -207,8 +207,13 @@ else :
               <?php content_tax(); ?>
             </div>
           <?php endif; ?>
-
+          <?php if ( $display_h3 == 2 ) : ?>
+            <div class="texts-holder compact">
+          <?php else : ?>
           <div class="texts-holder">
+          <?php endif; ?>
+
+
             <?php if ( $display_h3 == 1 ) : ?>
               <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
             <?php elseif ( $display_h3 == 2 ) : ?>
@@ -247,9 +252,11 @@ else :
           <?php endif; ?>
 
         </div>
-        <div class="cta-holder">
-          <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
-        </div>
+        <?php if ( $display_h3 != 2 ) : ?>
+          <div class="cta-holder">
+            <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
+          </div>
+        <?php endif; ?>
       </article>
     <?php
     // tipologia di card

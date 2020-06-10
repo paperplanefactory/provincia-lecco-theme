@@ -931,7 +931,8 @@
                         "servizi_cpt",
                         "amministrazione_cpt",
                         "documenti_cpt",
-                        "progetti_cpt"
+                        "progetti_cpt",
+                        "siti_tematici_cpt"
                     ],
                     "taxonomy": "",
                     "filters": [
@@ -1303,5 +1304,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591717061
+    "modified": 1591782058
 }

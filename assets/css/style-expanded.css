@@ -1487,11 +1487,13 @@ small {
 .hambuger-element.open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  width: 26px;
 }
 
 .hambuger-element.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  width: 26px;
 }
 
 .hambuger-element.open span:nth-child(4) {
@@ -2217,7 +2219,7 @@ select {
     top: 0;
     left: 0;
     height: 100%;
-    background-image: url("assets/images/site-logo-header-compact.svg");
+    background-image: url("assets/images/site-logo-header.svg");
     opacity: 0;
   }
   #header #header-structure .menu {
@@ -2530,8 +2532,12 @@ select {
   .flex-hold-4 .avviso-right,
   .flex-hold-avviso .avviso-right {
     width: 100%;
+    height: 60vw;
     order: 1;
     margin: 0 0 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
   .still-two-mobile .flex-hold-child {
     width: calc(50% - 12px) !important;
@@ -2875,6 +2881,10 @@ select {
     line-height: 32px;
     margin-bottom: 16px;
   }
+  .header-menu-mobile {
+    font-size: 24px;
+    line-height: 32px;
+  }
   .content-styled h2,
   .content-styled h3,
   .h2-variant,
@@ -3099,8 +3109,8 @@ select {
   .overlay-form input[type=number],
   .overlay-form input[type=tel],
   .overlay-form input[type=text] {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 21px;
+    line-height: 30px;
     margin-bottom: 15px;
   }
   .overlay-form .search-submit span {
@@ -3167,7 +3177,8 @@ select {
   }
   .slide-four {
     position: relative;
-    width: 100%;
+    left: -24px;
+    width: calc(100% + 48px);
     margin-bottom: 80px;
   }
   .slide-four .slick-track {
@@ -3185,7 +3196,7 @@ select {
   }
   .single-slide .card {
     position: relative;
-    width: calc(100% + 8px);
+    width: calc(35% + 8px);
     left: -8px;
   }
   .single-slide .card .card_inner.regular-card {
@@ -3675,8 +3686,27 @@ select {
     padding: 0 20px 0 0;
   }
   .flex-hold-avviso .avviso-right {
+    position: relative;
     order: 2;
     width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  .flex-hold-avviso .avviso-right .avviso-shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 50%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#363b3f+0,363b3f+100&1+0,0+100 */
+    background: -moz-linear-gradient(left, #363b3f 0%, rgba(54, 59, 63, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #363b3f 0%, rgba(54, 59, 63, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #363b3f 0%, rgba(54, 59, 63, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   .flex-hold-search-page {
     margin-top: 30px;
@@ -4441,8 +4471,8 @@ select {
   font-family: "Titillium Web", sans-serif;
   font-size: 12px;
   line-height: 18px;
-  border: #363B3F solid 3px;
-  background-color: #363B3F;
+  border: #1A4D78 solid 3px;
+  background-color: #1A4D78;
   color: #FFFFFF;
   transition: opacity 1s;
 }

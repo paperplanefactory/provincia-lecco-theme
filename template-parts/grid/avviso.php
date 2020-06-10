@@ -1,3 +1,8 @@
+<!-- avviso iniziale -->
+<?php
+$thumb_id = get_post_thumbnail_id();
+$thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'column', true);
+ ?>
 <div id="avviso-visibility-js" class="wrapper bg-1 txt-12 avviso">
   <div class="wrapper-padded">
     <div class="wrapper-padded-intro">
@@ -36,21 +41,8 @@
               <?php endif; ?>
               </div>
             </div>
-            <div class="avviso-right">
-              <?php
-              $image_data = array(
-                  'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
-                  'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
-                  'size_fallback' => 'card_listing'
-              );
-              $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
-                  'retina' => 'card_listing',
-                  'desktop' => 'card_listing',
-                  'mobile' => 'card_listing_mobile',
-                  'micro' => 'micro'
-              );
-              print_theme_image( $image_data, $image_sizes );
-              ?>
+            <div class="avviso-right lazy" data-bg="<?php echo $thumb_url_desktop[0]; ?>">
+              <div class="avviso-shadow"></div>
             </div>
           </div>
         <?php else : ?>

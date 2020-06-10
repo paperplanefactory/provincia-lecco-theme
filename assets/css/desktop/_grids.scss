@@ -268,8 +268,28 @@
   }
 
   .avviso-right {
+    position: relative;
     order: 2;
     width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    .avviso-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 50%;
+      height: 100%;
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#363b3f+0,363b3f+100&1+0,0+100 */
+      background: -moz-linear-gradient(left, rgba(54,59,63,1) 0%, rgba(54,59,63,0) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(54,59,63,1) 0%,rgba(54,59,63,0) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(54,59,63,1) 0%,rgba(54,59,63,0) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
   }
 }
 

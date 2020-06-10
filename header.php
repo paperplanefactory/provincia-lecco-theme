@@ -217,7 +217,7 @@ $today = date('Y-m-d H:i:s');
           <nav class="menu navi">
             <?php
             if ( has_nav_menu( 'header-menu-left' ) ) {
-              wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
+              wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-mobile header-menu-js' ) );
             }
             ?>
             <?php

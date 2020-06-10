@@ -21,6 +21,11 @@ h3 {
   margin-bottom: $h3-marginbottom-smartphone;
 }
 
+.header-menu-mobile {
+  font-size: $h3-size-smartphone;
+  line-height: $h3-lineheight-smartphone;
+}
+
 .content-styled h2,
 .content-styled h3,
 .h2-variant,

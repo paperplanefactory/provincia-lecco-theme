@@ -49,10 +49,12 @@
 
 .hambuger-element.open span:nth-child(2) {
   @include define-rotate(45);
+  width: 26px;
 }
 
 .hambuger-element.open span:nth-child(3) {
   @include define-rotate(-45);
+  width: 26px;
 }
 
 .hambuger-element.open span:nth-child(4) {
