@@ -227,7 +227,7 @@ else :
               <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
             <?php endif; ?>
             <?php if ( $module_auto_listing_abstract != 'card-title' ) : ?>
-              <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $display_h3 == 2 ) : ?>
+              <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $module_auto_listing_contatti != 'card-contacts-no' ) : ?>
                 <?php the_field( 'ufficio_contatti' ); ?>
               <?php elseif ( get_field( 'page_abstract' ) ) : ?>
                 <p>

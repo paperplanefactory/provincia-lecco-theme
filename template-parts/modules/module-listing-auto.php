@@ -2,6 +2,7 @@
 <?php
 $module_auto_listing_appearence = get_sub_field( 'module_auto_listing_appearence' );
 $module_auto_listing_abstract = get_sub_field( 'module_auto_listing_abstract' );
+$module_auto_listing_contatti = get_sub_field( 'module_auto_listing_contatti' );
 if ( get_sub_field( 'module_auto_listing_mode' ) === 'manual' ) {
   $my_autolisting = get_sub_field( 'module_auto_listing_manual' );
 }
@@ -67,7 +68,7 @@ if ( !empty ( $my_autolisting ) ) :
    <div class="module-separator-flex">
      <div class="content-styled">
        <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-           <h4 class="lighter-h4"><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
+           <h4><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
        <?php else : ?>
          <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
        <?php endif; ?>
