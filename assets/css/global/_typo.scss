@@ -141,6 +141,10 @@ small {
 }
 
 .content-styled {
+  h4 {
+    font-weight: $font-weight-1;
+  }
+
   strong {
     font-weight: $font-weight-3;
   }

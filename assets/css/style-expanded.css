@@ -1175,6 +1175,10 @@ small {
   margin-bottom: 0 !important;
 }
 
+.content-styled h4 {
+  font-weight: 400;
+}
+
 .content-styled strong {
   font-weight: 700;
 }
