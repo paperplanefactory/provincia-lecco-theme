@@ -1146,6 +1146,25 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_5ee213093da7c",
+                    "label": "Testo introduttivo",
+                    "name": "module_gestione_documenti_intro",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
                     "key": "field_5ec688dc14d96",
                     "label": "Gestione documenti",
                     "name": "module_gestione_documenti_repeater",
@@ -1337,5 +1356,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591871075
+    "modified": 1591874333
 }
