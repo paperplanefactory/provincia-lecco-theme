@@ -171,6 +171,17 @@
   }
 }
 
+.flex-hold-single {
+  .flex-hold-child {
+    margin: 0 0 36px;
+  }
+
+  .people-card {
+    width: calc(50% - 18px) !important;
+    margin: 0 36px 36px 0;
+  }
+}
+
 .flex-hold-2 {
   &.margins-thin {
     .flex-hold-child {

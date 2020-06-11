@@ -55,7 +55,7 @@ else {
 }
 $count_for_grid = count($my_autolisting);
 if ( $count_for_grid == 1 ) {
-  $grid_classes = '';
+  $grid_classes = 'flex-hold-single';
 }
 else {
   $grid_classes = 'flex-hold flex-hold-2 margins-wide';

@@ -3655,6 +3655,13 @@ select {
   .opening-child-right .flex-hold-child:nth-child(2n) {
     text-align: right;
   }
+  .flex-hold-single .flex-hold-child {
+    margin: 0 0 36px;
+  }
+  .flex-hold-single .people-card {
+    width: calc(50% - 18px) !important;
+    margin: 0 36px 36px 0;
+  }
   .flex-hold-2.margins-thin .flex-hold-child {
     width: calc(50% - 36px) !important;
     margin: 0 72px 24px 0;
