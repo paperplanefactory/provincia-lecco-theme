@@ -81,6 +81,9 @@ foreach( $tax_query_multiple as $tax ) {
   $tax_query_longlist .= '<input type="hidden" name="'.$listing_page_taxonmy.'[]" value="'.$tax->term_id.'">';
 }
 }
+
+//imposto il colore di sfondo per il primo blocco di card che viene poi annullato se ci sono contenuti in evidenza
+$color_block = 'bg-9';
 ?>
   <main class="wrapper">
     <div class="wrapper-padded">
@@ -113,7 +116,7 @@ foreach( $tax_query_multiple as $tax ) {
             <div class="page-opening-right">
               <div class="padder">
                 <?php if ( $listing_page_taxonmy === 'argomenti' ) : ?>
-                  <h5 class="allupper">Tutti gli argomenti</h5>
+                  <h6 class="allupper">Tutti gli argomenti</h6>
                   <?php intro_menu_list_argomenti(); ?>
                 <?php else : ?>
                   <?php if ( $listing_page_level === 'primo-livello' ) {
@@ -138,10 +141,10 @@ foreach( $tax_query_multiple as $tax ) {
 <?php endwhile; ?>
 
 
-
 <?php
 // contentui in evidenza se non c'è paginazione
 if ( $listing_page_highlight_contents && !is_paged() ) :
+  $color_block = '';
   ?>
   <div class="wrapper bg-9">
     <div class="wrapper-padded">
@@ -175,7 +178,7 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
   $my_all_subpages = get_posts( $args_all_subpages );
   if ( !empty ( $my_all_subpages ) ) :
    ?>
-   <div class="wrapper">
+   <div class="wrapper <?php echo $color_block; ?>">
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">
@@ -217,7 +220,7 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
   $my_all_top_posts = get_posts( $args_all_top_posts );
   if ( !empty ( $my_all_top_posts ) ) :
    ?>
-   <div class="wrapper">
+   <div class="wrapper <?php echo $color_block; ?>">
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">
@@ -241,6 +244,7 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
   <?php
   // contentui in evidenza se non c'è paginazione
   if ( $listing_page_highlight_progetti && !is_paged() ) :
+    $color_block = '';
     ?>
     <div class="wrapper">
       <div class="wrapper-padded">
@@ -342,7 +346,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
   }
   if ( $listing_paged->have_posts() ) :
    ?>
-   <div class="wrapper">
+   <div class="wrapper <?php echo $color_block; ?>">
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">

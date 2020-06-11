@@ -41,7 +41,7 @@ function intro_menu_list_subpage_items() {
   $my_intro_menu = get_posts( $args_intro_menu );
   if ( !empty ( $my_intro_menu ) ) {
     $my_intro_menu_items = 0;
-    $my_intro_menu_output = '<h5 class="allupper">Aree in '.get_the_title().'</h5>';
+    $my_intro_menu_output = '<h6 class="allupper alternate-h6">Aree in '.get_the_title().'</h6>';
     $my_intro_menu_output .= '<ul class="page-opening-menu page-opening-menu-js compact">';
     foreach ( $my_intro_menu as $post ) : setup_postdata ( $post );
     $my_intro_menu_items ++;

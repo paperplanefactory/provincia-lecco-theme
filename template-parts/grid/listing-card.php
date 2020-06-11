@@ -12,7 +12,7 @@ else :
   if ( $search_result_card == 1 ) : ?>
   <article class="flex-hold-child card insite">
     <div class="card_inner regular-card">
-      <div class="category-holder cat-fill-a">
+      <div class="category-holder cat-fill-a grey-green-links">
         <?php content_tax(); ?>
       </div>
       <div class="texts-holder compact">
@@ -74,7 +74,7 @@ else :
       $thumb_id = get_post_thumbnail_id();
       $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'pro_size_card', true);
       ?>
-      <article class="flex-hold-child card insite autonomous-height">
+      <article class="flex-hold-child card insite people-card">
         <div class="image-card-image-side lazy with-bg-image-side" data-bg="<?php echo $thumb_url_desktop[0]; ?>">
           <a class="absl" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"></a>
         </div>
@@ -96,7 +96,7 @@ else :
       ?>
       <article class="flex-hold-child card insite">
         <div class="card_inner regular-card">
-          <div class="category-holder cat-fill-a">
+          <div class="category-holder cat-fill-a grey-green-links">
             <?php content_tax(); ?>
           </div>
           <div class="texts-holder-no-cta">
@@ -208,7 +208,7 @@ else :
           <?php
           // stampo le categorie tranne che per le card scadenze nello slideshow in homepage
           if ( $slide_listing != 1 ) : ?>
-            <div class="category-holder cat-fill-a">
+            <div class="category-holder cat-fill-a grey-green-links">
               <?php content_tax(); ?>
             </div>
           <?php endif; ?>

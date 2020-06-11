@@ -15,6 +15,12 @@ h2 {
   margin-bottom: $h2-marginbottom-desktop;
 }
 
+.people-card {
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+
 h3 {
   font-size: $h3-size-desktop;
   line-height: $h3-lineheight-desktop;
@@ -70,6 +76,14 @@ h6 {
   line-height: $h6-lineheight-desktop;
   margin-bottom: $h6-marginbottom-desktop;
   letter-spacing: 1px;
+}
+
+.alternate-h6 {
+  font-size: $h6-size-desktop;
+  line-height: $h6-lineheight-desktop;
+  margin-bottom: $h5-marginbottom-desktop;
+  color: $color-1;
+  letter-spacing: normal;
 }
 
 .breadcrumbs-holder {

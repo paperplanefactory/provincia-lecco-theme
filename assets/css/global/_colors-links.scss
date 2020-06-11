@@ -250,6 +250,18 @@ p {
 	}
 }
 
+.grey-green-links {
+	a:link,
+	a:visited {
+		color: $color-1;
+	}
+
+	a:active,
+	a:hover {
+		color: $color-4;
+	}
+}
+
 a.absl:active,
 a.absl:hover,
 a.absl:link,

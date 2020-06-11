@@ -15,6 +15,12 @@ h2 {
   margin-bottom: $h2-marginbottom-smartphone;
 }
 
+.people-card {
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+
 h3 {
   font-size: $h3-size-smartphone;
   line-height: $h3-lineheight-smartphone;
@@ -76,6 +82,14 @@ h6 {
   line-height: $h6-lineheight-smartphone;
   margin-bottom: $h6-marginbottom-smartphone;
   letter-spacing: 1px;
+}
+
+.alternate-h6 {
+  font-size: $h6-size-smartphone;
+  line-height: $h6-lineheight-smartphone;
+  margin-bottom: $h5-marginbottom-smartphone;
+  color: $color-1;
+  letter-spacing: normal;
 }
 
 .breadcrumbs-holder {
