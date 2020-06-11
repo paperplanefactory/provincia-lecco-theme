@@ -1027,7 +1027,7 @@
                         "id": ""
                     },
                     "choices": {
-                        "card-contacts-yes: Mostrare i contatti": "card-contacts-yes: Mostrare i contatti",
+                        "card-contacts-yes": "Mostrare i contatti",
                         "card-contacts-no": "Non mostrare i contatti"
                     },
                     "default_value": false,
@@ -1389,5 +1389,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591890828
+    "modified": 1591891540
 }
