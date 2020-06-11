@@ -32,6 +32,9 @@ if ( get_field( 'scadenza_bando' ) ) {
           <div class="flex-hold flex-hold-page-opening">
             <div class="page-opening-left printable">
               <h1><?php the_title(); ?></h1>
+              <?php if( has_term( 'politici', 'amministrazione_tax' ) && get_field( 'ruolo_politico' ) ) : ?>
+                <h2 class="txt-4"><?php the_field( 'ruolo_politico' ); ?></h2>
+              <?php endif; ?>
               <?php if ( get_field( 'page_abstract' ) ) : ?>
                 <p class="paragraph-variant">
                   <?php the_field( 'page_abstract' ); ?>
@@ -63,6 +66,22 @@ if ( get_field( 'scadenza_bando' ) ) {
                     Data: <?php echo get_the_date( 'j F Y' ); ?>
                   </p>
                 </div>
+                <?php
+                $image_data = array(
+                    'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
+                    'image_value' => '', // se utilizzi un custom field indica qui il nome del campo
+                    'size_fallback' => 'full_desk'
+                );
+                $image_sizes = array( // qui sono definiti i ritagli o dimensioni. Devono corrispondere per numero a quanto dedinfito nella funzione nei parametri data-srcset o srcset
+                    'retina' => 'full_desk_retina',
+                    'desktop' => 'full_desk',
+                    'mobile' => 'content_picture',
+                    'micro' => 'micro'
+                );
+                print_theme_image( $image_data, $image_sizes );
+                ?>
+              <?php endif; ?>
+              <?php if ( has_term( 'politici', 'amministrazione_tax' ) ) : ?>
                 <?php
                 $image_data = array(
                     'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
