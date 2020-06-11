@@ -32,7 +32,7 @@ if ( get_field( 'scadenza_bando' ) ) {
           <div class="flex-hold flex-hold-page-opening">
             <div class="page-opening-left printable">
               <h1><?php the_title(); ?></h1>
-              <?php if( has_term( 'politici', 'amministrazione_tax' ) && get_field( 'ruolo_politico' ) ) : ?>
+              <?php if( ( has_term( 'politici', 'amministrazione_tax' ) || has_term( 'personale-amministrativo', 'amministrazione_tax' ) ) && get_field( 'ruolo_politico' ) ) : ?>
                 <h2 class="txt-4"><?php the_field( 'ruolo_politico' ); ?></h2>
               <?php endif; ?>
               <?php if ( get_field( 'page_abstract' ) ) : ?>
