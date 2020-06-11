@@ -207,7 +207,7 @@ else :
           <?php endif; ?>
           <?php
           // stampo le categorie tranne che per le card scadenze nello slideshow in homepage
-          if ( $slide_listing != 1 ) : ?>
+          if ( $slide_listing != 1 && !has_term( 'uffici', 'amministrazione_tax' ) ) : ?>
             <div class="category-holder cat-fill-a grey-green-links">
               <?php content_tax(); ?>
             </div>
