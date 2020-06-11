@@ -7,7 +7,7 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
   <div class="module-separator">
     <div class="content-styled">
       <?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-          <h4><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
+          <h4 class="lighter-h4"><a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a><?php the_sub_field( 'module_index_title' ); ?></h4>
       <?php else : ?>
         <a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
       <?php endif; ?>
