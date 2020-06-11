@@ -207,18 +207,18 @@ else :
           <?php endif; ?>
           <?php
           // stampo le categorie tranne che per le card scadenze nello slideshow in homepage
-          if ( $slide_listing != 1 && !has_term( 'uffici', 'amministrazione_tax' ) ) : ?>
-            <div class="category-holder cat-fill-a grey-green-links">
-              <?php content_tax(); ?>
-            </div>
+          if ( $slide_listing != 1 ) : ?>
+            <?php if ( $module_auto_listing_abstract != 'card-title' ) : ?>
+              <div class="category-holder cat-fill-a grey-green-links">
+                <?php content_tax(); ?>
+              </div>
+            <?php endif; ?>
           <?php endif; ?>
           <?php if ( $display_h3 == 2 ) : ?>
             <div class="texts-holder compact">
           <?php else : ?>
           <div class="texts-holder">
           <?php endif; ?>
-
-
             <?php if ( $display_h3 == 1 ) : ?>
               <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
             <?php elseif ( $display_h3 == 2 ) : ?>
