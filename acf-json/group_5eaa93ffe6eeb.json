@@ -58,7 +58,7 @@
                         "module-text-highlight": "Testo in evidenza con editor",
                         "module-text-card": "Testo in card con editor",
                         "module-listing-auto": "Listing contenuti",
-                        "module-scadenze": "Listing scadenze (per bandi)",
+                        "module-scadenze": "Listing date",
                         "module-documenti": "Listing documenti",
                         "module-cta": "Modulo call to action",
                         "module-slideshow": "Slideshow",
@@ -375,7 +375,7 @@
                 },
                 {
                     "key": "field_5eaab447914df",
-                    "label": "Listing scadenze per bandi",
+                    "label": "Listing date",
                     "name": "",
                     "type": "accordion",
                     "instructions": "",
@@ -419,7 +419,7 @@
                 },
                 {
                     "key": "field_5eaab462914e0",
-                    "label": "Gestione scadenze",
+                    "label": "Gestione date",
                     "name": "module_scadenze_repeater",
                     "type": "repeater",
                     "instructions": "",
@@ -438,7 +438,7 @@
                     "sub_fields": [
                         {
                             "key": "field_5eaab489914e1",
-                            "label": "Data scadenza",
+                            "label": "Data",
                             "name": "module_scadenze_repeater_data",
                             "type": "date_picker",
                             "instructions": "",
@@ -455,7 +455,7 @@
                         },
                         {
                             "key": "field_5eaab4d3914e2",
-                            "label": "Titolo scadenza",
+                            "label": "Titolo",
                             "name": "module_scadenze_repeater_titolo",
                             "type": "text",
                             "instructions": "",
@@ -474,7 +474,7 @@
                         },
                         {
                             "key": "field_5eaab4f0914e3",
-                            "label": "Informazioni scadenza",
+                            "label": "Informazioni",
                             "name": "module_scadenze_repeater_informazioni",
                             "type": "wysiwyg",
                             "instructions": "Formattare il testo utilizzando solo paragrafi.",
@@ -1356,5 +1356,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591874333
+    "modified": 1591878205
 }
