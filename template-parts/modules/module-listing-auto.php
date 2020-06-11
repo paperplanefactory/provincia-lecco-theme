@@ -62,7 +62,6 @@ else {
 
 if ( !empty ( $my_autolisting ) ) :
  ?>
- <?php echo '<h1>conteggio: '.$burba.'</h1>'; ?>
  <section class="text-module listing-module">
    <div class="module-separator-flex">
      <div class="content-styled">
