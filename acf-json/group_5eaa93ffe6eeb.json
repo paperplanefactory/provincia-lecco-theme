@@ -973,6 +973,39 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_5ee2055c199e4",
+                    "label": "Mostrare abstract \/ contatti?",
+                    "name": "module_auto_listing_abstract",
+                    "type": "select",
+                    "instructions": "Selezionare se mostrare solo il titolo della card o anche altre informazioni.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5edf644e70220",
+                                "operator": "==",
+                                "value": "module-listing-default-card"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "card-complete": "Mostra abstract e altre info",
+                        "card-title": "Mostra solo il titolo"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5eba569e7ac87",
                     "label": "Testo in evidenza con editor",
                     "name": "",
@@ -1304,5 +1337,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591782058
+    "modified": 1591871075
 }

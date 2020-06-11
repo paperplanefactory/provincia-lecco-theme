@@ -1,6 +1,7 @@
 <!-- module-listing-auto -->
 <?php
 $module_auto_listing_appearence = get_sub_field( 'module_auto_listing_appearence' );
+$module_auto_listing_abstract = get_sub_field( 'module_auto_listing_abstract' );
 if ( get_sub_field( 'module_auto_listing_mode' ) === 'manual' ) {
   $my_autolisting = get_sub_field( 'module_auto_listing_manual' );
 }

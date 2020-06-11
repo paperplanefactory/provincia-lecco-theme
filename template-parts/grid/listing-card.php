@@ -226,17 +226,19 @@ else :
             <?php else : ?>
               <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
             <?php endif; ?>
-            <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $display_h3 == 2 ) : ?>
-              <?php the_field( 'ufficio_contatti' ); ?>
-            <?php elseif ( get_field( 'page_abstract' ) ) : ?>
-              <p>
-                <?php
-                $page_abstract = get_field( 'page_abstract' );
-                shorten_abstract( $page_abstract, 100 );
-                ?>
-                <?php //the_field( 'page_abstract' ); ?>
-              </p>
+            <?php if ( $module_auto_listing_abstract != 'card-title' ) : ?>
+              <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $display_h3 == 2 ) : ?>
+                <?php the_field( 'ufficio_contatti' ); ?>
+              <?php elseif ( get_field( 'page_abstract' ) ) : ?>
+                <p>
+                  <?php
+                  $page_abstract = get_field( 'page_abstract' );
+                  shorten_abstract( $page_abstract, 100 );
+                  ?>
+                </p>
+              <?php endif; ?>
             <?php endif; ?>
+
           </div>
           <?php
           // stampo le scadenze tranne che per le card scadenze nello slideshow in homepage
