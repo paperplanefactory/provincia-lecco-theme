@@ -52,10 +52,17 @@ else {
 
   $my_autolisting = get_posts( $args_autolisting );
 }
-
+$count_for_grid = count($my_autolisting);
+if ( $count_for_grid == 1 ) {
+  $grid_classes = '';
+}
+else {
+  $grid_classes = 'flex-hold flex-hold-2 margins-wide';
+}
 
 if ( !empty ( $my_autolisting ) ) :
  ?>
+ <?php echo '<h1>conteggio: '.$burba.'</h1>'; ?>
  <section class="text-module listing-module">
    <div class="module-separator-flex">
      <div class="content-styled">
@@ -69,7 +76,7 @@ if ( !empty ( $my_autolisting ) ) :
        <?php endif; ?>
      </div>
      <?php if ( $module_auto_listing_appearence === 'module-listing-default-card' ) : ?>
-       <div class="flex-hold flex-hold-2 margins-wide">
+       <div class="<?php echo $grid_classes; ?>">
          <?php foreach ( $my_autolisting as $post ) : setup_postdata ( $post ); ?>
            <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
          <?php endforeach; wp_reset_postdata(); ?>
