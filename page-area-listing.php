@@ -358,11 +358,11 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
                  <h2><?php the_title(); ?></h2>
                <?php endif; ?>
              </div>
-             <div class="flex-hold-child">
-               <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
+             <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
+               <div class="flex-hold-child">
                  <a href="<?php echo $link_bandi_scaduti; ?>" class="square-button green filled"><?php the_title(); ?> scaduti</a>
-                <?php endif; ?>
-             </div>
+               </div>
+             <?php endif; ?>
            </div>
            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
              <?php while ( $listing_paged->have_posts() ) : $listing_paged->the_post(); ?>
