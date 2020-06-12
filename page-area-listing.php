@@ -84,6 +84,7 @@ foreach( $tax_query_multiple as $tax ) {
 
 //imposto il colore di sfondo per il primo blocco di card che viene poi annullato se ci sono contenuti in evidenza
 $color_block = 'bg-9';
+$listing_page = 1;
 ?>
   <main class="wrapper">
     <div class="wrapper-padded">
