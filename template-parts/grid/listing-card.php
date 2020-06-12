@@ -229,7 +229,7 @@ else :
             <?php if ( $module_auto_listing_abstract != 'card-title' ) : ?>
               <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $module_auto_listing_contatti != 'card-contacts-no' && $listing_page != 1 ) : ?>
                 <?php the_field( 'ufficio_contatti' ); ?>
-              <?php if ( has_term( 'politici', 'amministrazione_tax' ) || has_term( 'personale-amministrativo', 'amministrazione_tax' ) ) : ?>
+              <?php elseif ( has_term( 'politici', 'amministrazione_tax' ) || has_term( 'personale-amministrativo', 'amministrazione_tax' ) ) : ?>
                 <p>
                   <?php the_field( 'ruolo_politico' ); ?>
                 </p>
