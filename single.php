@@ -185,7 +185,7 @@ if ( get_field( 'scadenza_bando' ) ) {
 
 <?php if ( get_field( 'related_content_method' ) != 'no-related' ) : ?>
   <?php
-  if ( get_field( 'related_content_method' ) === 'manually-related ' ) :
+  if ( get_field( 'related_content_method' ) === 'manually-related' ) :
     $related_content_handpicked = get_field('related_content_handpicked');
     ?>
     <div class="wrapper bg-9 no-print">
@@ -202,7 +202,7 @@ if ( get_field( 'scadenza_bando' ) ) {
         </div>
       </div>
     </div>
-  <?php elseif ( get_field( 'related_content_method' ) === 'manually-related ' ) : ?>
+  <?php elseif ( get_field( 'related_content_method' ) === 'organizzazione-related' ) : ?>
     <?php
     $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
     $content_argomenti = array();
