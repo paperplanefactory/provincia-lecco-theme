@@ -136,6 +136,10 @@ small {
 }
 
 .content-styled {
+  h6 {
+    margin: 0 0 $paragraph-marginbottom-desktop;
+  }
+
   ul {
     font-size: $paragraph-size-desktop;
     line-height: $paragraph-lineheight-desktop;

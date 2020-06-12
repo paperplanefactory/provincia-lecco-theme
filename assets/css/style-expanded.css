@@ -3005,6 +3005,9 @@ select {
     font-size: 18px;
     line-height: 30px;
   }
+  .content-styled h6 {
+    margin: 0 0 16px;
+  }
   .content-styled ul {
     font-size: 16px;
     line-height: 24px;
@@ -4166,6 +4169,9 @@ select {
   .navi {
     font-size: 18px;
     line-height: 30px;
+  }
+  .content-styled h6 {
+    margin: 0 0 16px;
   }
   .content-styled ul {
     font-size: 18px;
