@@ -4,8 +4,6 @@ function get_ajax_suggestions() {
     $start_search = strlen( $searchkw );
     $transient_name = "transient_search_suggestion_{$searchkw}";
 
-
-
     if ( $start_search > 2 ) {
       $suggestions_transient = get_transient( $transient_name );
       if( !empty( $suggestions_transient ) ) {
@@ -62,7 +60,7 @@ function get_ajax_suggestions() {
           endforeach; wp_reset_postdata();
           echo $response;
         }
-        set_transient( $transient_name, $response, 2 * HOUR_IN_SECONDS );
+        set_transient( $transient_name, $response, 24 * HOUR_IN_SECONDS );
       }
     }
 
