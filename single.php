@@ -211,7 +211,7 @@ if ( get_field( 'scadenza_bando' ) ) {
     }
     $content_argomenti = implode(', ', $content_argomenti);
     $args_related_content = array(
-      'post_type' => array('post', 'progetti_cpt'),
+      'post_type' => array( 'post', 'progetti_cpt', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt' ),
       'posts_per_page' => 3,
       'post__not_in' => array($my_id),
       'tax_query' => array(
