@@ -1,0 +1,115 @@
+{
+    "key": "group_5ebc17ccc1a63",
+    "title": "Gestione contenuti correlati",
+    "fields": [
+        {
+            "key": "field_5ebc17f0a0b1a",
+            "label": "Scegli come gestire i contenuti correlati",
+            "name": "related_content_method",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no-related": "Nessun contenuto correlato",
+                "auto-related": "Contenuti correlati automatici basati sull'argomento",
+                "organizzazione-related": "Contenuti correlati automatici basati sulla categoria Organizzazione",
+                "manually-related": "Contenuti correlati scelti a mano"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ebc1886a0b1b",
+            "label": "Aggiungi contenuti correlati",
+            "name": "related_content_handpicked",
+            "type": "relationship",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc17f0a0b1a",
+                        "operator": "==",
+                        "value": "manually-related"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "servizi_cpt",
+                "amministrazione_cpt",
+                "documenti_cpt"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 1,
+            "max": 3,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "servizi_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "documenti_cpt"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1591963710
+}

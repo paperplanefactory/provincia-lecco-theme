@@ -183,7 +183,11 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">
-           <h2>Tutto su <?php the_title(); ?></h2>
+           <?php if ( get_field( 'custom_listing_title' ) ) : ?>
+             <h2><?php the_field( 'custom_listing_title' ); ?></h2>
+           <?php else : ?>
+             <h2>Tutto su <?php the_title(); ?></h2>
+           <?php endif; ?>
            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
              <?php foreach ( $my_all_subpages as $post ) : setup_postdata ( $post ); ?>
                <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>

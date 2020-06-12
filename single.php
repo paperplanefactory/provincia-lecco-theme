@@ -202,6 +202,28 @@ if ( get_field( 'scadenza_bando' ) ) {
         </div>
       </div>
     </div>
+  <?php elseif ( get_field( 'related_content_method' ) === 'manually-related ' ) : ?>
+    <?php
+    $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
+    $content_argomenti = array();
+    foreach( $terms_argomenti as $term_argomenti ) {
+      $content_argomenti[] = $term_argomenti->term_id;
+    }
+    $content_argomenti = implode(', ', $content_argomenti);
+    $args_related_content = array(
+      'post_type' => array('post', 'progetti_cpt'),
+      'posts_per_page' => 3,
+      'post__not_in' => array($my_id),
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'aree_amministrative_tax',
+          'field' => 'term_ID',
+          'terms' => array($content_argomenti)
+        )
+      ),
+    );
+    $my_related_content = get_posts( $args_related_content );
+    ?>
   <?php else : ?>
     <?php
     $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
@@ -223,7 +245,9 @@ if ( get_field( 'scadenza_bando' ) ) {
       ),
     );
     $my_related_content = get_posts( $args_related_content );
-    if ( !empty ( $my_related_content ) ) : ?>
+    ?>
+    <?php endif; ?>
+    <?php if ( !empty ( $my_related_content ) ) : ?>
     <div class="wrapper bg-9 no-print">
       <div class="wrapper-padded">
         <div class="wrapper-padded-more">
@@ -239,7 +263,7 @@ if ( get_field( 'scadenza_bando' ) ) {
       </div>
     </div>
     <?php endif; ?>
-  <?php endif; ?>
+
 <?php endif; ?>
 <?php endwhile; ?>
 <?php get_footer(); ?>

@@ -65,6 +65,33 @@
             "placeholder": ""
         },
         {
+            "key": "field_5ee36e8e4f1d1",
+            "label": "Titolo personalizzato per l'elenco dei contenuti",
+            "name": "custom_listing_title",
+            "type": "text",
+            "instructions": "Se lascaito vuoto verrà inserito il testo predefinito \"Tutto su + titolo della pagina\".",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "!=",
+                        "value": "argomenti_tax"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5ea94b270632c",
             "label": "Impostazioni pagina di secondo\/terzo livello",
             "name": "",
@@ -485,5 +512,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590146223
+    "modified": 1591963343
 }

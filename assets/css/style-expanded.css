@@ -3331,6 +3331,7 @@ select {
   }
   #header #header-structure .menu ul:last-child {
     text-align: right;
+    font-weight: 400;
   }
   #header #header-structure .menu ul:last-child li {
     margin-left: 25px;
