@@ -70,6 +70,9 @@ $today = date('Y-m-d H:i:s');
 <link rel="manifest" href="<?php echo $static_bloginfo_stylesheet_directory; ?>/assets/images/favicons/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo $static_bloginfo_stylesheet_directory; ?>/assets/images/favicons/ms-icon-144x144.png">
+<!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="<?php echo $static_bloginfo_stylesheet_directory; ?>/ie-only.min.css" />
+<![endif]-->
 </head>
 
 <body>

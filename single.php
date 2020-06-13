@@ -40,6 +40,11 @@ if ( get_field( 'scadenza_bando' ) ) {
                   <?php the_field( 'page_abstract' ); ?>
                 </p>
               <?php endif; ?>
+              <?php if ( get_field( 'data_di_termine_mandato_politico' ) ) : ?>
+                <p class="paragraph-variant">
+                  Termine mandato:<?php the_field( 'data_di_termine_mandato_politico' ); ?>
+                </p>
+              <?php endif; ?>
               <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>
                 <?php
                 $pubblicazione_bando = get_field( 'pubblicazione_bando' );

@@ -1,0 +1,41 @@
+{
+    "key": "group_5ee376e612cfe",
+    "title": "Informazioni politico\/a",
+    "fields": [
+        {
+            "key": "field_5ee3770341b30",
+            "label": "Data di termine mandato",
+            "name": "data_di_termine_mandato_politico",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:politici"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1591965483
+}
