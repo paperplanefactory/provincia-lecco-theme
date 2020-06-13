@@ -37,6 +37,11 @@
 @media print {
   @import 'global/print';
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .lazy {
+    opacity: 1 !important;
+  }
+}
 @import 'global/cookies'; //@import 'global/libraries/aos';
 @import 'global/libraries/slick'; // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/
 @import 'global/pagenavi'; // @import 'global/visual-debug';

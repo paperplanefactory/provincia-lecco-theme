@@ -4533,6 +4533,12 @@ select {
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .lazy {
+    opacity: 1 !important;
+  }
+}
+
 #paperplane-cookie-notice {
   position: fixed;
   z-index: 9999;
