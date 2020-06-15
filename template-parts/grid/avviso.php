@@ -76,7 +76,7 @@ $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'column', true);
         <?php endif; ?>
         <?php endif; ?>
       </div>
-      <button class="chiudi-avviso avviso-local-storage-close-js button-appearance-normalizer" aria-label="Nascondi avviso per il resto della navigazione">
+      <button onclick="closeAvvisoMain(this)" class="chiudi-avviso avviso-local-storage-close-js button-appearance-normalizer" aria-label="Nascondi avviso per il resto della navigazione">
         X
       </button>
     </div>

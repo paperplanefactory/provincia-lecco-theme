@@ -125,7 +125,7 @@ if ( get_field( 'scadenza_bando' ) ) {
           <div class="flex-hold flex-hold-page-index">
             <div class="page-index-left no-print">
               <div class="sticky-element sticky-columns-js">
-                <button class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="true" aria-label="Apri l'indice dei contenuti" data-collapsed="Apri l'indice dei contenuti" data-expanded="Chiudi l'indice dei contenuti">
+                <button onclick="pageIndexMenuControls(this)" class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="true" aria-label="Apri l'indice dei contenuti" data-collapsed="Apri l'indice dei contenuti" data-expanded="Chiudi l'indice dei contenuti">
                   Indice della pagina<span class="icon-collapse-1"></span>
                 </button>
                 <div class="index-menu-js">

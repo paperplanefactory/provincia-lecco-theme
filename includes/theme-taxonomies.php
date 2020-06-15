@@ -22,7 +22,7 @@ function intro_menu_list_cpt_items( $listing_page_cpt_listed ) {
     }
     $my_intro_menu_output .= '</ul>';
     if ( $my_intro_menu_items > 5) {
-      $my_intro_menu_output .= '<button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+      $my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
     }
 
   }
@@ -55,7 +55,7 @@ function intro_menu_list_subpage_items() {
     }
     $my_intro_menu_output .= '</ul>';
     if ( $my_intro_menu_items > 5) {
-      $my_intro_menu_output .= '<button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+      $my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
     }
 
   }
@@ -89,7 +89,7 @@ function intro_menu_list_parent_subpage_items() {
     }
     $my_intro_menu_output .= '</ul>';
     if ( $my_intro_menu_items > 5) {
-      $my_intro_menu_output .= '<button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+      $my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
     }
 
   }
@@ -124,7 +124,7 @@ function intro_menu_list_parent_parent_subpage_items() {
     }
     $my_intro_menu_output .= '</ul>';
     if ( $my_intro_menu_items > 5) {
-      $my_intro_menu_output .= '<button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+      $my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
     }
 
   }
@@ -334,11 +334,11 @@ function search_results_tax_listing( $tax_name, $tax_slug, $tax_search_parameter
   )
 );
 $output = '<div>';
-$output .= '<button id="page-search-cats-expander-'.$js_name.'" class="page-search-cats-expander page-search-cats-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi filtri di ricerca in '.$tax_name.'"><span class="icon-js icon-left-arrow-tip"></span><span class="text-js">'.$tax_name.'</span></button>';
+$output .= '<button onclick="event.preventDefault(); pageSearchReultsControl(this)" id="page-search-cats-expander-'.$js_name.'" class="page-search-cats-expander page-search-cats-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi filtri di ricerca in '.$tax_name.'"><span class="icon-js icon-left-arrow-tip"></span><span class="text-js">'.$tax_name.'</span></button>';
 $output .= '<ul id="page-search-cats-listing-'.$js_name.'" class="page-search-cats-listing page-search-cats-listing-js">';
 foreach( $taxonomies as $tax ) {
   $output .= '<li>';
-  $output .= '<button id="button-check-cat-'.$tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$tax->name.'"><span class="icon-js"></span>'.$tax->name.'</button>';
+  $output .= '<button onclick="pageSearchElementChecker(this)" id="button-check-cat-'.$tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$tax->name.'"><span class="icon-js"></span>'.$tax->name.'</button>';
   $output .= '<input type="checkbox" name="'.$tax_search_parameter.'" value="'.$tax->term_id.'" id="hidden-input-set-'.$tax->term_id.'-js" class="hidden-input-set-js">';
   $child_taxonomies = get_terms( array(
     'taxonomy' => $tax_slug,
@@ -350,7 +350,7 @@ if ( !empty( $child_taxonomies ) ) {
   $output .= '<ul>';
   foreach( $child_taxonomies as $child_tax ) {
     $output .= '<li>';
-    $output .= '<button id="button-check-cat-'.$child_tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$child_tax->name.'"><span class="icon-js"></span>'.$child_tax->name.'</button>';
+    $output .= '<button onclick="pageSearchElementChecker(this)" id="button-check-cat-'.$child_tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$child_tax->name.'"><span class="icon-js"></span>'.$child_tax->name.'</button>';
     $output .= '<input type="checkbox" name="'.$tax_search_parameter.'" value="'.$child_tax->term_id.'" id="hidden-input-set-'.$child_tax->term_id.'-js" class="hidden-input-set-js">';
     $output .= '</li>';
   }
@@ -378,7 +378,7 @@ foreach( $taxonomies as $tax ) {
     $my_intro_menu_output .= '<div>';
   }
   $my_intro_menu_output .= '<li>';
-  $my_intro_menu_output .= '<button id="button-check-cat-'.$tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$tax->name.'"><span class="icon-js"></span>'.$tax->name.'</button>';
+  $my_intro_menu_output .= '<button onclick="pageSearchElementChecker(this)" id="button-check-cat-'.$tax->term_id.'-js" class="button-check-cat-js button-appearance-normalizer button-typo-normalizer" aria-label="Filtra risultati per la categoria '.$tax->name.'"><span class="icon-js"></span>'.$tax->name.'</button>';
   $my_intro_menu_output .= '<input type="checkbox" name="argomenti_tax[]" value="'.$tax->term_id.'" id="hidden-input-set-'.$tax->term_id.'-js" class="hidden-input-set-js">';
   $my_intro_menu_output .= '</li>';
   }

@@ -110,7 +110,7 @@ $today = date('Y-m-d H:i:s');
               <?php endwhile; ?>
             <?php endif; ?>
             <li class="search-menu">
-              <button class="activate-search activate-search-js button-appearance-normalizer" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
+              <button onclick="openSearch()" class="activate-search activate-search-js button-appearance-normalizer" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
                 <span class="lablel">Cerca</span>
                 <div class="icon-hold">
                   <span class="icon-search"></span>
@@ -118,12 +118,12 @@ $today = date('Y-m-d H:i:s');
               </button>
             </li>
             <li class="hamb-menu">
-              <div type="button" aria-haspopup="true" aria-expanded="false" aria-label="Apri/chiudi il menu di navigazione" data-collapsed="Apri il menu di navigazione" data-expanded="Chiudi il menu di navigazione" class="hambuger-element ham-activator">
+              <button onclick="hamburgerMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Apri/chiudi il menu di navigazione" data-collapsed="Apri il menu di navigazione" data-expanded="Chiudi il menu di navigazione" class="hambuger-element ham-activator">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-              </div>
+              </button>
             </li>
           </ul>
         </div>
@@ -170,7 +170,7 @@ $today = date('Y-m-d H:i:s');
         <div class="side-head">
           <ul>
             <li class="search-menu">
-              <button class="activate-search activate-search-js" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
+              <button onclick="openSearch()" class="activate-search activate-search-js" aria-label="Apri/chiudi pannello di ricerca" data-collapsed="Apri pannello di ricerca" data-expanded="Chiudi pannello di ricerca">
                 <span class="icon-search"></span>
               </button>
             </li>
@@ -192,13 +192,13 @@ $today = date('Y-m-d H:i:s');
       <div class="wrapper-padded">
         <div class="<?php echo $header_wrapper; ?>">
           <div class="search-overlay-structure">
-            <button class="search-overlay-title search-overlay-title-js button-appearance-normalizer" aria-label="Chiudi pannello di ricerca"><span class="icon-left-arrow"></span>Cerca</button>
+            <button onclick="closeSearch()" class="search-overlay-title search-overlay-title-js button-appearance-normalizer" aria-label="Chiudi pannello di ricerca"><span class="icon-left-arrow"></span>Cerca</button>
             <div class="search-form overlay-form">
               <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" autocomplete="off">
                 <label for="search-kw-header-input">Digita una parola chiave per la ricerca:</label>
                 <input id="search-kw-header-input" type="text" name="search-kw" class="search-autocomplete search-input-kw-js search-input-kw-js-ovarlay" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
                 <button type="submit" class="search-submit search-submit-js" aria-label="Cerca nel sito"><span class="icon-search"></span></button>
-                <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
+                <button onclick="searchErase()" class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
               </form>
               <div class="search-suggestion-area">
               </div>

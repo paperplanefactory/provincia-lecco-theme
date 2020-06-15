@@ -157,10 +157,10 @@ function checkAvvisoLocalStorage() {
 
 checkAvvisoLocalStorage();
 
-$('.avviso-local-storage-close-js').click(function(e) {
+function closeAvvisoMain(this_element) {
   setAvvisoLocalStorage();
   $('#avviso-visibility-js').removeClass('avviso-attivo');
-});
+}
 
 
 /////////////////////////////////////////////
@@ -263,30 +263,6 @@ $(document).on('keydown', function(e) {
 });
 
 /////////////////////////////////////////////
-// click header
-/////////////////////////////////////////////
-
-$('.ham-activator').click(function(e) {
-  hamburgerMenu();
-});
-
-$('.activate-search-js').click(function(e) {
-  openSearch();
-});
-
-$('.search-overlay-title-js').click(function(e) {
-  closeSearch();
-});
-
-$('.search-erase-js').click(function(e) {
-  searchErase();
-  e.preventDefault();
-});
-
-
-
-
-/////////////////////////////////////////////
 // expandables
 /////////////////////////////////////////////
 
@@ -302,116 +278,86 @@ $('.expander').click(function(e) {
   }
 });
 
-
-$('.page-opening-menu-expander-js').click(function(e) {
-  if ($(this).find('.icon-js').hasClass('icon-expand')) {
-    $(this).attr('aria-expanded', true);
-    $(this).find('.icon-js').removeClass('icon-expand').addClass('icon-collapse-1');
-    $(this).prev('.page-opening-menu-js').find('div').slideDown(150);
-    $(this).find('.text-js').text('Nascondi');
-
-  } else {
-    $(this).attr('aria-expanded', false);
-    $(this).find('.icon-js').addClass('icon-expand').removeClass('icon-collapse-1');
-    $(this).prev('.page-opening-menu-js').find('div').slideUp(150);
-    $(this).find('.text-js').text('Espandi');
-  }
-  e.preventDefault();
-});
-
-$('.page-search-cats-expander-js').click(function(e) {
-  if ($(this).find('.icon-js').hasClass('icon-expand')) {
-    $(this).attr('aria-expanded', false);
-    $(this).find('.icon-js').removeClass('icon-expand').addClass('icon-left-arrow-tip');
-    $(this).next('.page-search-cats-listing-js').slideUp(150);
+function pageListMenuControl(this_element) {
+  if ($(this_element).find('.icon-js').hasClass('icon-expand')) {
+    $(this_element).attr('aria-expanded', true);
+    $(this_element).find('.icon-js').removeClass('icon-expand').addClass('icon-collapse-1');
+    $(this_element).prev('.page-opening-menu-js').find('div').slideDown(150);
+    $(this_element).find('.text-js').text('Nascondi');
 
   } else {
-    $(this).attr('aria-expanded', true);
-    $(this).find('.icon-js').addClass('icon-expand').removeClass('icon-left-arrow-tip');
-    $(this).next('.page-search-cats-listing-js').slideDown(150);
+    $(this_element).attr('aria-expanded', false);
+    $(this_element).find('.icon-js').addClass('icon-expand').removeClass('icon-collapse-1');
+    $(this_element).prev('.page-opening-menu-js').find('div').slideUp(150);
+    $(this_element).find('.text-js').text('Espandi');
   }
-  e.preventDefault();
-});
+}
 
-$('.button-check-cat-js').click(function(e) {
-  if ($(this).find('.icon-js').hasClass('checked')) {
-    $(this).find('.icon-js').removeClass('checked icon-check');
-    $(this).next('.hidden-input-set-js').prop('checked', false);
+function pageSearchReultsControl(this_element) {
+  if ($(this_element).find('.icon-js').hasClass('icon-expand')) {
+    $(this_element).attr('aria-expanded', false);
+    $(this_element).find('.icon-js').removeClass('icon-expand').addClass('icon-left-arrow-tip');
+    $(this_element).next('.page-search-cats-listing-js').slideUp(150);
 
   } else {
-    $(this).find('.icon-js').addClass('checked icon-check');
-    $(this).next('.hidden-input-set-js').prop('checked', true);
+    $(this_element).attr('aria-expanded', true);
+    $(this_element).find('.icon-js').addClass('icon-expand').removeClass('icon-left-arrow-tip');
+    $(this_element).next('.page-search-cats-listing-js').slideDown(150);
   }
-  e.preventDefault();
+}
+
+function pageSearchElementChecker(this_element) {
+  if ($(this_element).find('.icon-js').hasClass('checked')) {
+    $(this_element).find('.icon-js').removeClass('checked icon-check');
+    $(this_element).next('.hidden-input-set-js').prop('checked', false);
+
+  } else {
+    $(this_element).find('.icon-js').addClass('checked icon-check');
+    $(this_element).next('.hidden-input-set-js').prop('checked', true);
+  }
   $('#search-filters').submit();
-});
+}
 
-$('.share-menu-expander-js').click(function(e) {
-  $(this).parent().find('.actions-holder-js').toggleClass('hidden');
-  e.preventDefault();
-});
+function shareMenuControls() {
+  $('.share-menu-expander-js').parent().find('.actions-holder-js').toggleClass('hidden');
+}
 
-$('.print-menu-expander-js').click(function(e) {
-  $(this).parent().find('.print-holder-js').toggleClass('hidden');
-  e.preventDefault();
-});
-
+function printMenuControls() {
+  $('.print-menu-expander-js').parent().find('.print-holder-js').toggleClass('hidden');
+}
 
 $('.actions-holder-js, .print-holder-js').mouseleave(function(e) {
   $(this).addClass('hidden');
   e.preventDefault();
 });
 
-$('.index-menu-expander-js').click(function(e) {
-  if ($(this).find('span').hasClass('icon-expand')) {
-    $(this).attr('aria-expanded', true);
-    $(this).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
-    $(this).next('.index-menu-js').slideDown(150);
+function pageIndexMenuControls(this_element) {
+  if ($(this_element).find('span').hasClass('icon-expand')) {
+    $(this_element).attr('aria-expanded', true);
+    $(this_element).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
+    $(this_element).next('.index-menu-js').slideDown(150);
 
   } else {
-    $(this).attr('aria-expanded', false);
-    $(this).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
-    $(this).next('.index-menu-js').slideUp(150);
+    $(this_element).attr('aria-expanded', false);
+    $(this_element).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
+    $(this_element).next('.index-menu-js').slideUp(150);
   }
-  e.preventDefault();
-});
+}
 
-$('.index-menu-expander-only-mobile-js').click(function(e) {
-  if ($(this).find('span').hasClass('icon-expand')) {
-    $(this).attr('aria-expanded', true);
-    $(this).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
-    $(this).next('.index-menu-only-mobile-js').slideDown(150);
+function pageIndexMenuControlsMobile(this_element) {
+  if ($(this_element).find('span').hasClass('icon-expand')) {
+    $(this_element).attr('aria-expanded', true);
+    $(this_element).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
+    $(this_element).next('.index-menu-only-mobile-js').slideDown(150);
 
   } else {
-    $(this).attr('aria-expanded', false);
-    $(this).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
-    $(this).next('.index-menu-only-mobile-js').slideUp(150);
+    $(this_element).attr('aria-expanded', false);
+    $(this_element).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
+    $(this_element).next('.index-menu-only-mobile-js').slideUp(150);
   }
-  e.preventDefault();
-});
+}
 
 
 $('.order-results-js').change(function() {
   this.form.submit();
 });
-
-/////////////////////////////////////////////
-// sub menu mobile
-/////////////////////////////////////////////
-
-$('.overlay-menu-mobile-js > .menu-item-has-children').click(function(e) {
-  $(this).find('.sub-menu').slideToggle(150);
-  e.preventDefault();
-});
-
-
-/////////////////////////////////////////////
-// preload
-/////////////////////////////////////////////
-
-function hidePreload() {
-  $('.preload-container').addClass('hidden-preload');
-  //alert('dfg');
-}
-
-//window.addEventListener('load', hidePreload);

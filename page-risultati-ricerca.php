@@ -201,7 +201,7 @@ $search_query = new WP_Query( $search_query_parameters );
             <label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
             <input id="search-kw-inpage-search-input" type="text" name="search-kw" class="form-control search-autocomplete search-input-kw-js" value="<?php echo $search_kw; ?>" placeholder="Cerca informazioni, persone, servizi" aria-label="Digita una parola chiave per la ricerca" />
             <button type="submit" class="search-submit search-submit-js" aria-label="Cerca nel sito"><span class="icon-search"></span></button>
-            <button class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
+            <button onclick="searchErase()" class="search-erase search-erase-js" aria-label="Cancella il contenuto della casella di testo">x</button>
             <div class="search-suggestion-area">
             </div>
           </div>
@@ -219,7 +219,7 @@ $search_query = new WP_Query( $search_query_parameters );
           <div class="sticky-element sticky-columns-js">
             <div class="padder">
                 <div class="sticky-element sticky-columns-js">
-                  <button class="mobile-only index-menu-expander index-menu-expander-only-mobile-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il pannello dei filtri di ricerca" data-collapsed="Apri il pannello dei filtri di ricerca" data-expanded="Chiudi il pannello dei filtri di ricerca">
+                  <button onclick="event.preventDefault(); pageIndexMenuControlsMobile(this)" class="mobile-only index-menu-expander index-menu-expander-only-mobile-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il pannello dei filtri di ricerca" data-collapsed="Apri il pannello dei filtri di ricerca" data-expanded="Chiudi il pannello dei filtri di ricerca">
                     Filtri di ricerca<span class="icon-expand"></span>
                   </button>
                   <div class="index-menu-only-mobile-js">
