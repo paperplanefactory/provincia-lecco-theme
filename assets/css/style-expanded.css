@@ -1191,6 +1191,7 @@ small {
 .content-styled h6 {
   font-weight: 400;
   color: #363B3F;
+  letter-spacing: normal !important;
 }
 
 .content-styled a {
