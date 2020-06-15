@@ -2055,6 +2055,9 @@ select {
   padding: 0 44px;
   height: 52px;
   border: none;
+  border-left: #FFFFFF solid 1px;
+  border-right: #FFFFFF solid 1px;
+  border-top: #FFFFFF solid 1px;
   border-bottom: #C4C8CB solid 1px;
 }
 
@@ -3928,6 +3931,9 @@ select {
   }
   .inline-socials li i {
     font-size: 26px;
+  }
+  .offsite {
+    max-width: calc(50% - 18px) !important;
   }
   .card-outline {
     margin-top: 30px;

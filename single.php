@@ -42,7 +42,7 @@ if ( get_field( 'scadenza_bando' ) ) {
               <?php endif; ?>
               <?php if ( get_field( 'data_di_termine_mandato_politico' ) ) : ?>
                 <p class="paragraph-variant">
-                  Termine mandato:<?php the_field( 'data_di_termine_mandato_politico' ); ?>
+                  Termine mandato: <?php the_field( 'data_di_termine_mandato_politico' ); ?>
                 </p>
               <?php endif; ?>
               <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>

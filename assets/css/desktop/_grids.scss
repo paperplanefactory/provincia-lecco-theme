@@ -544,6 +544,10 @@
 }
 // cards
 
+.offsite {
+  max-width: calc(50% - 18px) !important;
+}
+
 .card-outline {
   margin-top: 30px;
 

@@ -70,6 +70,9 @@ select {
 		padding: 0 44px;
 		height: 52px;
 		border: none;
+		border-left: $color-12 solid 1px;
+		border-right: $color-12 solid 1px;
+		border-top: $color-12 solid 1px;
 		border-bottom: $color-10 solid 1px;
 	}
 

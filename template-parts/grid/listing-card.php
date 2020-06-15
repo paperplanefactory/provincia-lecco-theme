@@ -118,7 +118,7 @@ else :
       $site_color = get_field( 'sito_tematico_color' );
       ?>
       <article class="flex-hold-child card offsite <?php echo $site_color; ?> bg-1">
-        <a href="<?php the_field( 'sito_tematico_url' ); ?>" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
+        <a href="<?php the_field( 'sito_tematico_url' ); ?>" rel="noopener" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
         <div class="card_inner cap-card">
           <?php if ( get_post_thumbnail_id() ) : ?>
             <div class="flex-hold sito-tematico-grid">
