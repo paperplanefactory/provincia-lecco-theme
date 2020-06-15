@@ -1,6 +1,6 @@
 <div class="flex-hold flex-hold-2 still-two-mobile margins-thin">
   <div class="flex-hold-child">
-    <button onclick="shareMenuControls()" class="share-menu-expander share-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il menu di condivisione" data-collapsed="Apri il menu di condivisione" data-expanded="Chiudi il menu di condivisione"><span class="icon-share"></span>Condividi</button>
+    <button onclick="shareMenuControls()" class="alternate-h6 share-menu-expander share-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il menu di condivisione" data-collapsed="Apri il menu di condivisione" data-expanded="Chiudi il menu di condivisione"><span class="icon-share"></span>Condividi</button>
     <div class="actions-holder actions-holder-js hidden">
       <div class="padder">
         <ul class="share-actions grey-links">
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="flex-hold-child">
-    <button onclick="printMenuControls()" class="print-menu-expander print-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il menu delle azioni" data-collapsed="Apri il menu delle azioni" data-expanded="Chiudi il menu delle azioni"><span class="icon-action"></span>Vedi azioni</button>
+    <button onclick="printMenuControls()" class="alternate-h6 print-menu-expander print-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Apri il menu delle azioni" data-collapsed="Apri il menu delle azioni" data-expanded="Chiudi il menu delle azioni"><span class="icon-action"></span>Vedi azioni</button>
     <div class="actions-holder print-holder-js hidden">
       <div class="padder">
         <ul class="share-actions grey-links">

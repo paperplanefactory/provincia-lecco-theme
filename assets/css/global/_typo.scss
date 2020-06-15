@@ -154,6 +154,11 @@ small {
     font-weight: $font-weight-1;
   }
 
+  h6 {
+    font-weight: $font-weight-1;
+    color: $color-1;
+  }
+
   a {
     /* These are technically the same, but use both */
     overflow-wrap: break-word;

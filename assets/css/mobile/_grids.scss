@@ -189,7 +189,7 @@
 .still-two-mobile {
   .flex-hold-child {
     width: calc(50% - 12px) !important;
-    margin: 0 24px 24px 0;
+    margin: 0 12px 12px 0 !important;
   }
 
   .flex-hold-child:nth-child(2n) {

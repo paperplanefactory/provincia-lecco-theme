@@ -49,7 +49,6 @@ h4 {
 .page-opening-menu,
 .paragraph-variant,
 .paragraph-variant-holder p,
-.tag-button,
 h5 {
   font-size: $h5-size-desktop;
   line-height: $h5-lineheight-desktop;
@@ -76,6 +75,12 @@ h6 {
   line-height: $h6-lineheight-desktop;
   margin-bottom: $h6-marginbottom-desktop;
   letter-spacing: 1px;
+}
+
+.tag-button {
+  font-size: $h6-size-desktop;
+  line-height: $h6-lineheight-desktop;
+  margin-bottom: 0;
 }
 
 .alternate-h6 {

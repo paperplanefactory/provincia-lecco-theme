@@ -55,7 +55,6 @@ h4 {
 .page-opening-menu,
 .paragraph-variant,
 .paragraph-variant-holder p,
-.tag-button,
 h5 {
   font-size: $h5-size-smartphone;
   line-height: $h5-lineheight-smartphone;
@@ -82,6 +81,13 @@ h6 {
   line-height: $h6-lineheight-smartphone;
   margin-bottom: $h6-marginbottom-smartphone;
   letter-spacing: 1px;
+}
+
+.tag-button {
+  font-size: $h6-size-smartphone;
+  line-height: $h6-lineheight-smartphone;
+  margin-bottom: 0;
+  padding: 3px 16px;
 }
 
 .alternate-h6 {

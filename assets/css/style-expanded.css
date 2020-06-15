@@ -1188,6 +1188,11 @@ small {
   font-weight: 400;
 }
 
+.content-styled h6 {
+  font-weight: 400;
+  color: #363B3F;
+}
+
 .content-styled a {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
@@ -2608,7 +2613,7 @@ select {
   }
   .still-two-mobile .flex-hold-child {
     width: calc(50% - 12px) !important;
-    margin: 0 24px 24px 0;
+    margin: 0 12px 12px 0 !important;
   }
   .still-two-mobile .flex-hold-child:nth-child(2n) {
     margin-right: 0;
@@ -2979,7 +2984,6 @@ select {
   .page-opening-menu,
   .paragraph-variant,
   .paragraph-variant-holder p,
-  .tag-button,
   h5 {
     font-size: 18px;
     line-height: 26px;
@@ -3001,6 +3005,12 @@ select {
     line-height: 20px;
     margin-bottom: 0;
     letter-spacing: 1px;
+  }
+  .tag-button {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 3px 16px;
   }
   .alternate-h6 {
     font-size: 14px;
@@ -4143,7 +4153,6 @@ select {
   .page-opening-menu,
   .paragraph-variant,
   .paragraph-variant-holder p,
-  .tag-button,
   h5 {
     font-size: 18px;
     line-height: 26px;
@@ -4165,6 +4174,11 @@ select {
     line-height: 20px;
     margin-bottom: 0;
     letter-spacing: 1px;
+  }
+  .tag-button {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
   }
   .alternate-h6 {
     font-size: 14px;
