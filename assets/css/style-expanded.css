@@ -2808,6 +2808,9 @@ select {
   .card-outline .card_inner.regular-card {
     padding: 40px;
   }
+  .card-outline .card_inner.compact-card {
+    padding: 20px 20px 0;
+  }
   .card .cta-holder {
     position: absolute;
     bottom: 25px;
@@ -2880,6 +2883,9 @@ select {
   }
   .card_inner .texts-holder {
     margin-bottom: 50px;
+  }
+  .card_inner .texts-holder.compact {
+    margin-bottom: 25px;
   }
   .card_inner .more-info {
     margin-bottom: 40px;
