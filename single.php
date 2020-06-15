@@ -257,7 +257,7 @@ if ( get_field( 'scadenza_bando' ) ) {
       <div class="wrapper-padded">
         <div class="wrapper-padded-more">
           <div class="listing-box">
-            <h2 class="aligncenter">Contenuti Correlati</h2>
+            <h2 class="aligncenter aligncenter-notmobile">Contenuti Correlati</h2>
             <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
               <?php foreach ( $my_related_content as $post ) : setup_postdata ( $post ); ?>
                  <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>

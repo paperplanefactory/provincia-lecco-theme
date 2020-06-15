@@ -2,6 +2,10 @@
 @import '../global/vars';
 @import '../global/mixin';
 
+.aligncenter-notmobile {
+  text-align: left !important;
+}
+
 .search-overlay-title,
 h1 {
   font-size: $h1-size-smartphone;

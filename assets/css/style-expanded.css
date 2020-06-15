@@ -2947,6 +2947,9 @@ select {
   .expandable-content {
     padding-top: 35px;
   }
+  .aligncenter-notmobile {
+    text-align: left !important;
+  }
   .search-overlay-title,
   h1 {
     font-size: 32px;
