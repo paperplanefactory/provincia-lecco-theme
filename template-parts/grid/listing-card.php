@@ -80,7 +80,7 @@ else :
         </div>
         <div class="card_inner image-card">
           <div class="title-block">
-            <h2 class="h2-variant"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="h4-variant"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
             <?php if ( get_field( 'ruolo_politico' ) ) : ?>
               <p>
                 <?php the_field( 'ruolo_politico' ); ?>

@@ -370,7 +370,7 @@ body {
 .autocomplete-suggestion {
   position: relative;
   padding: 10px;
-  line-height: 30px;
+  line-height: 28px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1186,6 +1186,22 @@ small {
 
 .content-styled h4 {
   font-weight: 400;
+}
+
+.content-styled a {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .content-styled strong {
@@ -2933,7 +2949,7 @@ select {
   h4 {
     font-size: 21px;
     line-height: 30px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
   .content-styled h4,
   .h4-variant {
@@ -4102,7 +4118,7 @@ select {
   }
   .h4-variant {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 28px;
     margin-bottom: 8px;
   }
   .button-typo-normalizer,
