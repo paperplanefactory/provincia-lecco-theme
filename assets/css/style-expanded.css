@@ -1098,6 +1098,10 @@ h6 {
   font-weight: 700;
 }
 
+.rebold {
+  font-weight: 700 !important;
+}
+
 .activate-search,
 .card p strong,
 .index-listing,
