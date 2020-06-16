@@ -1336,9 +1336,19 @@ small {
   font-size: 14px;
 }
 
-.title-icon {
+.iconized {
   position: relative;
-  top: 3px;
+  padding-left: 30px;
+}
+
+.iconized .title-icon {
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.iconized .title-icon:before {
+  font-size: 28px !important;
 }
 
 .wrapper {

@@ -314,7 +314,17 @@ small {
   font-size: $h6-size-desktop;
 }
 
-.title-icon {
+.iconized {
   position: relative;
-  top: 3px;
+  padding-left: 30px;
+
+  .title-icon {
+    position: absolute;
+    left: 0;
+    top: 4px;
+
+    &:before {
+      font-size: 28px !important;
+    }
+  }
 }

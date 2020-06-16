@@ -974,7 +974,7 @@
                 },
                 {
                     "key": "field_5ee2055c199e4",
-                    "label": "Mostrare abstract?",
+                    "label": "Quali contenuti mostrare nella card?",
                     "name": "module_auto_listing_abstract",
                     "type": "select",
                     "instructions": "Selezionare se mostrare solo il titolo della card o anche altre informazioni.",
@@ -995,40 +995,8 @@
                     },
                     "choices": {
                         "card-complete": "Mostra abstract e altre info",
+                        "card-contacts": "Mostra contatti (se presenti nel contenuto originale)",
                         "card-title": "Mostra solo il titolo"
-                    },
-                    "default_value": false,
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5ee2563a801f9",
-                    "label": "Mostrare contatti?",
-                    "name": "module_auto_listing_contatti",
-                    "type": "select",
-                    "instructions": "Selezionare se nella card che richiama un ufficio mostrare i contatti.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5edf644e70220",
-                                "operator": "==",
-                                "value": "module-listing-default-card"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "card-contacts-yes": "Mostrare i contatti",
-                        "card-contacts-no": "Non mostrare i contatti"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -1389,5 +1357,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1591891540
+    "modified": 1592293791
 }

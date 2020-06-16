@@ -117,7 +117,7 @@ else :
     elseif( get_post_type() == 'siti_tematici_cpt' ) :
       $site_color = get_field( 'sito_tematico_color' );
       ?>
-      <article class="flex-hold-child card offsite <?php echo $site_color; ?> bg-1">
+      <article class="flex-hold-child card offsite autonomous-height <?php echo $site_color; ?> bg-1">
         <a href="<?php the_field( 'sito_tematico_url' ); ?>" rel="noopener" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
         <div class="card_inner cap-card">
           <?php if ( get_post_thumbnail_id() ) : ?>
@@ -217,7 +217,7 @@ else :
           <?php if ( $display_h3 == 2 ) : ?>
             <div class="texts-holder compact">
           <?php else : ?>
-          <div class="texts-holder">
+            <div class="texts-holder">
           <?php endif; ?>
             <?php if ( $display_h3 == 1 ) : ?>
               <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
@@ -226,14 +226,8 @@ else :
             <?php else : ?>
               <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
             <?php endif; ?>
-            <?php if ( $module_auto_listing_abstract != 'card-title' ) : ?>
-              <?php if ( has_term( 'uffici', 'amministrazione_tax' ) && get_field( 'ufficio_contatti' ) && $module_auto_listing_contatti != 'card-contacts-no' && $listing_page != 1 ) : ?>
-                <?php the_field( 'ufficio_contatti' ); ?>
-              <?php elseif ( has_term( 'politici', 'amministrazione_tax' ) || has_term( 'personale-amministrativo', 'amministrazione_tax' ) ) : ?>
-                <p>
-                  <?php the_field( 'ruolo_politico' ); ?>
-                </p>
-              <?php elseif ( get_field( 'page_abstract' ) ) : ?>
+            <?php if ( $module_auto_listing_abstract === 'card-complete' ) : ?>
+              <?php if ( get_field( 'page_abstract' ) ) : ?>
                 <p>
                   <?php
                   $page_abstract = get_field( 'page_abstract' );
@@ -241,8 +235,15 @@ else :
                   ?>
                 </p>
               <?php endif; ?>
+            <?php elseif ( $module_auto_listing_abstract === 'card-contacts' && get_field( 'ufficio_contatti' ) ) : ?>
+              <?php the_field( 'ufficio_contatti' ); ?>
+            <?php elseif ( has_term( 'politici', 'amministrazione_tax' ) || has_term( 'personale-amministrativo', 'amministrazione_tax' ) ) : ?>
+              <?php if ( get_field( 'ruolo_politico' ) ) : ?>
+                <p>
+                  <?php the_field( 'ruolo_politico' ); ?>
+                </p>
+              <?php endif; ?>
             <?php endif; ?>
-
           </div>
           <?php
           // stampo le scadenze tranne che per le card scadenze nello slideshow in homepage
