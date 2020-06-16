@@ -510,7 +510,8 @@
   }
 
   &.image-card-big {
-    padding-bottom: 150%;
+    //padding-bottom: 150%;
+    min-height: 80vw;
   }
 
   &.image-card-big,

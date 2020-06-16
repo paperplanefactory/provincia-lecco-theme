@@ -1072,6 +1072,7 @@ h3,
 h4,
 h5,
 h6,
+input[type=date],
 input[type=email],
 input[type=number],
 input[type=tel],
@@ -2133,6 +2134,16 @@ select {
   width: 100%;
 }
 
+.form-hold label {
+  position: relative !important;
+  width: 100%;
+  display: block;
+  font-size: auto;
+  width: auto;
+  height: auto;
+}
+
+.form-hold input[type=date],
 .form-hold input[type=email],
 .form-hold input[type=number],
 .form-hold input[type=tel],
@@ -2140,7 +2151,20 @@ select {
 .form-hold select,
 .form-hold textarea {
   position: relative;
-  background-color: transparent;
+  background-color: #FFFFFF;
+  width: calc(100% - 88px);
+  margin-bottom: 44px !important;
+  padding: 10px 44px;
+  border: none;
+  border-left: #FFFFFF solid 1px;
+  border-right: #FFFFFF solid 1px;
+  border-top: #FFFFFF solid 1px;
+  border-bottom: #C4C8CB solid 1px;
+}
+
+.form-hold .wpcf7-radio {
+  display: block !important;
+  margin: 12px 0 44px 0 !important;
 }
 
 .form-hold input[type=email],
@@ -2170,18 +2194,24 @@ select {
 .form-hold input[type=submit] {
   position: relative;
   display: inline-block;
-  padding: 14px 22px;
-  border-radius: 24px;
-  text-align: center;
   text-decoration: none !important;
-  min-width: 100px;
-  max-width: 250px;
-  margin: 20px 0 0;
-  border: none;
+  border-radius: 16px;
+  padding: 6px 32px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   white-space: normal;
   text-transform: uppercase;
+  color: #019E59 !important;
+  border: #EBF7F2 solid 2px !important;
+  background-color: #EBF7F2;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  margin: 44px 0 0 0 !important;
+}
+
+.form-hold input[type=submit]:hover {
+  color: #EBF7F2 !important;
+  background-color: #019E59;
 }
 
 .form-hold input[type=submit]:disabled {
@@ -2865,7 +2895,7 @@ select {
     padding-bottom: 70%;
   }
   .card_inner.image-card-big {
-    padding-bottom: 150%;
+    min-height: 80vw;
   }
   .card_inner.image-card-big .image-card-content, .card_inner.image-card-normal .image-card-content {
     position: absolute;
@@ -4377,6 +4407,7 @@ select {
     -ms-filter: blur(0);
     opacity: 1 !important;
   }
+  .banner-form input[type=date],
   .banner-form input[type=email],
   .banner-form input[type=number],
   .banner-form input[type=tel],
@@ -4385,6 +4416,7 @@ select {
     line-height: 26px;
     margin-bottom: 15px;
   }
+  .overlay-form input[type=date],
   .overlay-form input[type=email],
   .overlay-form input[type=number],
   .overlay-form input[type=tel],
@@ -4403,25 +4435,22 @@ select {
   .form-hold label {
     font-size: 18px;
     line-height: 26px;
-    margin-bottom: 5px;
   }
+  .form-hold input[type=date],
   .form-hold input[type=email],
   .form-hold input[type=number],
   .form-hold input[type=tel],
   .form-hold input[type=text] {
     font-size: 18px;
     line-height: 26px;
-    margin-bottom: 15px;
   }
   .form-hold textarea {
     font-size: 18px;
     line-height: 18px;
-    margin-bottom: 15px;
   }
   .form-hold select {
     font-size: 18px;
     line-height: 18px;
-    margin-bottom: 15px;
   }
   .form-hold input[type=submit] {
     font-size: 18px;
