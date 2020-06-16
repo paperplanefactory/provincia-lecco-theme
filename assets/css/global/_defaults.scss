@@ -22,13 +22,6 @@ body {
 	display: block;
 }
 
-.chiudi-avviso {
-	position: absolute;
-	right: -5px;
-	top: 12px;
-	color: $color-11;
-}
-
 .verticalize {
 	@include flex-verticalize;
 }
@@ -68,6 +61,16 @@ body {
 }
 
 .iconized {
+	position: relative;
+
+	span {
+		position: relative;
+		top: 2px;
+		margin: 0 5px 0 0;
+	}
+}
+
+.iconized-top {
 	position: relative;
 
 	span {

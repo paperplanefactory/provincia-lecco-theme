@@ -277,17 +277,21 @@
 .flex-hold-avviso {
   .avviso-left {
     order: 1;
-    width: calc(100% - 300px);
+    width: calc(100% - 490px);
 
     .padder {
-      padding: 0 20px 0 0;
+      padding: 0 40px 0 0;
+
+      h3 {
+        padding-left: 30px;
+      }
     }
   }
 
   .avviso-right {
     position: relative;
     order: 2;
-    width: 300px;
+    width: 490px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -299,14 +303,25 @@
       display: block;
       width: 50%;
       height: 100%;
-      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#363b3f+0,363b3f+100&1+0,0+100 */
-      background: -moz-linear-gradient(left, rgba(54,59,63,1) 0%, rgba(54,59,63,0) 100%);
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1a4d78+0,1a4d78+100&1+0,0+100 */
+      background: -moz-linear-gradient(left, rgba(26,77,120,1) 0%, rgba(26,77,120,0) 100%);
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(left, rgba(54,59,63,1) 0%,rgba(54,59,63,0) 100%);
+      background: -webkit-linear-gradient(left, rgba(26,77,120,1) 0%,rgba(26,77,120,0) 100%);
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, rgba(54,59,63,1) 0%,rgba(54,59,63,0) 100%);
+      background: linear-gradient(to right, rgba(26,77,120,1) 0%,rgba(26,77,120,0) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
+  }
+}
+
+.chiudi-avviso {
+  position: absolute;
+  left: -15px;
+  top: 45px;
+  color: $color-11;
+
+  span {
+    font-size: 28px;
   }
 }
 
