@@ -567,3 +567,37 @@ function check_my_checkboxes() {
   }
 }
 add_action('wp_footer', 'check_my_checkboxes');
+
+// aggiungo filtro per listing in back end amministrazione_cpt / amministrazione_tax 
+add_action('restrict_manage_posts','add_amministrazione_tax_filter');
+function add_amministrazione_tax_filter() {
+	global $typenow;
+	global $wp_query;
+	if ($typenow=='amministrazione_cpt') {
+		$taxonomy = 'amministrazione_tax';
+		$business_taxonomy = get_taxonomy($taxonomy);
+		wp_dropdown_categories(array(
+			'show_option_all' =>  __("Mostra tutte {$business_taxonomy->label}"),
+			'taxonomy'        =>  $taxonomy,
+			'name'            =>  'Categorie amministrazione',
+			'orderby'         =>  'name',
+			'selected'        =>  $wp_query->query['term'],
+			'hierarchical'    =>  true,
+			'depth'           =>  3,
+			'show_count'      =>  true,  // This will give a view
+			'hide_empty'      =>  true,   // This will give false positives, i.e. one's not empty related to the other terms. TODO: Fix that
+		));
+	}
+}
+
+add_filter('parse_query','convert_amministrazione_tax_id_to_taxonomy_term_in_query');
+function convert_amministrazione_tax_id_to_taxonomy_term_in_query($query) {
+	global $pagenow;
+	$qv = &$query->query_vars;
+	if ($pagenow=='edit.php' &&
+			isset($qv['taxonomy']) && $qv['taxonomy']=='amministrazione_tax' &&
+			isset($qv['term']) && is_numeric($qv['term'])) {
+		$term = get_term_by('id',$qv['term'],'amministrazione_tax');
+		$qv['term'] = $term->slug;
+	}
+}
