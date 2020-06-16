@@ -568,36 +568,29 @@ function check_my_checkboxes() {
 }
 add_action('wp_footer', 'check_my_checkboxes');
 
-// aggiungo filtro per listing in back end amministrazione_cpt / amministrazione_tax 
-add_action('restrict_manage_posts','add_amministrazione_tax_filter');
-function add_amministrazione_tax_filter() {
+// aggiungo filtro per listing in back end amministrazione_cpt / amministrazione_tax
+function amministrazione_tax_filter_amministrazione_cpt() {
 	global $typenow;
-	global $wp_query;
-	if ($typenow=='amministrazione_cpt') {
-		$taxonomy = 'amministrazione_tax';
-		$business_taxonomy = get_taxonomy($taxonomy);
-		wp_dropdown_categories(array(
-			'show_option_all' =>  __("Mostra tutte {$business_taxonomy->label}"),
-			'taxonomy'        =>  $taxonomy,
-			'name'            =>  'Categorie amministrazione',
-			'orderby'         =>  'name',
-			'selected'        =>  $wp_query->query['term'],
-			'hierarchical'    =>  true,
-			'depth'           =>  3,
-			'show_count'      =>  true,  // This will give a view
-			'hide_empty'      =>  true,   // This will give false positives, i.e. one's not empty related to the other terms. TODO: Fix that
-		));
-	}
-}
 
-add_filter('parse_query','convert_amministrazione_tax_id_to_taxonomy_term_in_query');
-function convert_amministrazione_tax_id_to_taxonomy_term_in_query($query) {
-	global $pagenow;
-	$qv = &$query->query_vars;
-	if ($pagenow=='edit.php' &&
-			isset($qv['taxonomy']) && $qv['taxonomy']=='amministrazione_tax' &&
-			isset($qv['term']) && is_numeric($qv['term'])) {
-		$term = get_term_by('id',$qv['term'],'amministrazione_tax');
-		$qv['term'] = $term->slug;
+	// an array of all the taxonomyies you want to display. Use the taxonomy name or slug
+	$taxonomies = array('amministrazione_tax');
+
+	// must set this to the post type you want the filter(s) displayed on
+	if( $typenow == 'amministrazione_cpt' ){
+
+		foreach ($taxonomies as $tax_slug) {
+			$tax_obj = get_taxonomy($tax_slug);
+			$tax_name = $tax_obj->labels->name;
+			$terms = get_terms($tax_slug);
+			if(count($terms) > 0) {
+				echo "<select name='$tax_slug' id='$tax_slug' class='postform'>";
+				echo "<option value=''>Show All $tax_name</option>";
+				foreach ($terms as $term) {
+					echo '<option value='. $term->slug, $_GET[$tax_slug] == $term->slug ? ' selected="selected"' : '','>' . $term->name .' (' . $term->count .')</option>';
+				}
+				echo "</select>";
+			}
+		}
 	}
 }
+add_action( 'restrict_manage_posts', 'amministrazione_tax_filter_amministrazione_cpt' );
