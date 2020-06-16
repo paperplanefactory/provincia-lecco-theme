@@ -21,20 +21,18 @@
 }
 
 .form-hold {
-  margin: 10px 0;
-
   label {
-    font-size: $h4-size-smartphone;
-    line-height: $h4-lineheight-smartphone;
-    margin-bottom: 5px;
+    font-size: $h5-size-smartphone;
+    line-height: $h5-lineheight-smartphone;
   }
 
+  input[type=date],
   input[type=email],
   input[type=number],
   input[type=tel],
   input[type=text] {
-    font-size: $h1-size-smartphone;
-    line-height: $h1-lineheight-smartphone;
+    font-size: $h5-size-smartphone;
+    line-height: $h5-lineheight-smartphone;
     margin-bottom: 15px;
   }
 
