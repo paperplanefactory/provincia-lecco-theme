@@ -1534,7 +1534,7 @@ small {
   height: 4px;
   width: 100%;
   opacity: 1;
-  left: 0;
+  right: 0;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   transition: all 0.15s ease-in-out;
@@ -1543,15 +1543,18 @@ small {
 
 .hambuger-element span:nth-child(1) {
   top: 0;
+  width: 30px;
 }
 
 .hambuger-element span:nth-child(2),
 .hambuger-element span:nth-child(3) {
   top: 9px;
+  width: 24px;
 }
 
 .hambuger-element span:nth-child(4) {
   bottom: 0;
+  width: 18px;
 }
 
 .hambuger-element.open span:nth-child(1) {
@@ -2283,7 +2286,7 @@ select {
     transition: all 0.15s ease-in-out;
   }
   #header.compact {
-    height: 60px;
+    height: 80px;
   }
   #header.compact .header-first-stripe {
     opacity: 0;
@@ -2291,10 +2294,10 @@ select {
     height: 0;
   }
   #header.compact #header-structure {
-    margin: 7px 0 0;
+    margin: 5px 0 0;
   }
   #header.compact #header-structure .logo {
-    height: 45px;
+    height: calc(80px - 10px);
   }
   #header.compact #header-structure .logo:before {
     opacity: 0;
@@ -2309,8 +2312,7 @@ select {
   }
   #header #header-structure .logo {
     width: 150px;
-    height: 70px;
-    transition: all 0.15s ease-in-out;
+    height: calc(80px - 10px);
   }
   #header #header-structure .logo:before {
     top: 0;
@@ -2348,19 +2350,19 @@ select {
   #header #header-structure .side-head ul li.hamb-menu .hambuger-element {
     position: absolute;
     left: 0;
-    top: 5px;
+    top: -2px;
   }
   #header #header-structure .side-head ul li.search-menu {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     margin-right: 25px;
   }
   #header #header-structure .side-head .activate-search {
     position: absolute;
     left: 0;
     top: 2px;
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     color: #FFFFFF;
     overflow: hidden;
     margin: 0 !important;
@@ -2373,17 +2375,17 @@ select {
     position: absolute;
     right: 0;
     top: 0;
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     background-color: #EBF7F2;
-    border-radius: 30px;
+    border-radius: 48px;
     overflow: hidden;
   }
   #header #header-structure .side-head .activate-search .icon-hold span {
     position: relative;
-    top: 6px;
+    top: 12px;
     color: #019E59;
-    font-size: 20px;
+    font-size: 25px;
   }
   #header #header-structure .side-head .header-social {
     display: none;
@@ -2409,8 +2411,8 @@ select {
     padding: 10px 0 0;
   }
   #head-overlay {
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 80px;
+    height: calc(100vh - 80px);
   }
   #head-overlay .menu {
     width: 100%;
@@ -2478,7 +2480,7 @@ select {
     width: calc(100% - 18px);
   }
   .scroll-opportunity {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
   }
   #footer {
     padding-top: 45px;

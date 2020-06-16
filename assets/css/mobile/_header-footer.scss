@@ -30,10 +30,10 @@ $side-head-compact-width: 65px; // header
     }
 
     #header-structure {
-      margin: 7px 0 0;
+      margin: 5px 0 0;
 
       .logo {
-        height: 45px;
+        height: calc(#{$header-smartphone-height-compact} - 10px);
 
         &:before {
           opacity: 0;
@@ -53,8 +53,7 @@ $side-head-compact-width: 65px; // header
 
     .logo {
       width: $logo-width;
-      height: 70px;
-      @include define-basic-transition(all, 0.15s);
+      height: calc(#{$header-smartphone-height-compact} - 10px);
 
       &:before {
         top: 0;
@@ -96,13 +95,13 @@ $side-head-compact-width: 65px; // header
             .hambuger-element {
               position: absolute;
               left: 0;
-              top: 5px;
+              top: -2px;
             }
           }
 
           &.search-menu {
-            width: 30px;
-            height: 30px;
+            width: 48px;
+            height: 48px;
             margin-right: 25px;
           }
         }
@@ -112,8 +111,8 @@ $side-head-compact-width: 65px; // header
         position: absolute;
         left: 0;
         top: 2px;
-        width: 30px;
-        height: 30px;
+        width: 48px;
+        height: 48px;
         color: $color-12;
         overflow: hidden;
         margin: 0 !important;
@@ -127,17 +126,17 @@ $side-head-compact-width: 65px; // header
           position: absolute;
           right: 0;
           top: 0;
-          width: 30px;
-          height: 30px;
+          width: 48px;
+          height: 48px;
           background-color: $color-8;
-          @include define-border-radius(30px);
+          @include define-border-radius(48px);
           overflow: hidden;
 
           span {
             position: relative;
-            top: 6px;
+            top: 12px;
             color: $color-4;
-            font-size: 20px;
+            font-size: 25px;
           }
         }
       }

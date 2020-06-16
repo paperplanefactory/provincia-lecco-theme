@@ -5,7 +5,7 @@ $thumb_url_desktop = wp_get_attachment_image_src($thumb_id, 'column', true);
  ?>
 <div id="avviso-visibility-js" class="wrapper bg-7 txt-12 avviso">
   <div class="wrapper-padded">
-    <div class="wrapper-padded-intro">
+    <div class="wrapper-padded-more">
       <?php if ( get_post_thumbnail_id() ) : ?>
         <div class="flex-hold flex-hold-avviso">
           <div class="avviso-left">
