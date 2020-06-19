@@ -37,8 +37,15 @@
   padding: 20px 0 10px;
 }
 
+.avviso-padder,
 .avviso-top-padder {
   padding: 40px 0 10px;
+}
+
+.avviso-padder {
+  h3 {
+    padding-left: 30px;
+  }
 }
 
 .intro-news-padder {

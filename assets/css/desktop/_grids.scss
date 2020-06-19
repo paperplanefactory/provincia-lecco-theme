@@ -49,9 +49,16 @@
   padding: 40px 0 110px;
 }
 
+.avviso-padder,
 .avviso-top-padder,
 .single-content-opening-padder {
   padding: 40px 0 10px;
+}
+
+.avviso-padder {
+  h3 {
+    padding-left: 30px;
+  }
 }
 
 .intro-search-results-padder {
