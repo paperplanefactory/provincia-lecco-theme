@@ -1,12 +1,12 @@
 {
-    "key": "group_5ea98cf93cd10",
-    "title": "Abstract",
+    "key": "group_5ef1dab3c3ede",
+    "title": "Editor testo",
     "fields": [
         {
-            "key": "field_5ea98d075e4b4",
-            "label": "Abstract",
-            "name": "page_abstract",
-            "type": "textarea",
+            "key": "field_5ef1dae905c34",
+            "label": "Attenzione",
+            "name": "",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,28 +15,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br"
+            "message": "Utilizzare l'editor di testo qui sotto solo per riorganizzarei contenuti del vecchio sito!\r\nPer i nuovi contenuti utilizzare i moduli sopra.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "page-area-listing.php"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "amministrazione_cpt"
-            }
-        ],
         [
             {
                 "param": "post_type",
@@ -48,7 +32,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
                 "value": "servizi_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
             }
         ],
         [
@@ -78,9 +76,23 @@
                 "operator": "==",
                 "value": "siti_tematici_cpt"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "avviso_cpt"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "avviso_content_cpt"
+            }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 200,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -88,5 +100,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1592894072
+    "modified": 1592908585
 }
