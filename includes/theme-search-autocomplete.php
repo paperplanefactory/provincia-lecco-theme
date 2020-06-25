@@ -12,9 +12,9 @@ function get_ajax_suggestions() {
       else {
         $args_suggestions = array(
           'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
-          'posts_per_page' => -1,
+          //'posts_per_page' => -1,
           'posts_per_page' => 40,
-          'nopaging' => true,
+          //'nopaging' => true,
           'order' => 'DESC',
           'orderby' => 'date',
           's' => $searchkw,
