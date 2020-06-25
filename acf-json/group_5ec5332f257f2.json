@@ -44,6 +44,48 @@
                 "operator": "==",
                 "value": "documenti_tax:bandi"
             }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:bandi-di-concorso"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:bandi-di-gara"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:nomine-in-societa-ed-enti"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:bandi-per-contributi"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:bandi-immobiliari"
+            }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:altri-bandi"
+            }
         ]
     ],
     "menu_order": 0,
@@ -56,5 +98,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1590065653
+    "modified": 1593099387
 }
