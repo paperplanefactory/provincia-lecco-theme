@@ -248,7 +248,7 @@ else :
           <?php
           // stampo le scadenze tranne che per le card scadenze nello slideshow in homepage
           if ( $slide_listing != 1 ) : ?>
-            <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>
+            <?php if( has_term( 'bandi', 'documenti_tax' ) && get_field( 'bando_mostrare_le_date_in_front_end' ) == 1 ) : ?>
               <?php
               $pubblicazione_bando = get_field( 'pubblicazione_bando' );
               $giorno_pubblicazione = date_i18n( 'j',  strtotime( $pubblicazione_bando ) );

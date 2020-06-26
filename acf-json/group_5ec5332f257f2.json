@@ -17,7 +17,12 @@
             },
             "display_format": "Y-m-d H:i:s",
             "return_format": "Y-m-d H:i:s",
-            "first_day": 1
+            "first_day": 1,
+            "show_column": 1,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1
         },
         {
             "key": "field_5ec5334c5f484",
@@ -34,7 +39,36 @@
             },
             "display_format": "Y-m-d H:i:s",
             "return_format": "Y-m-d H:i:s",
-            "first_day": 1
+            "first_day": 1,
+            "show_column": 1,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1
+        },
+        {
+            "key": "field_5ef5988ac7a14",
+            "label": "Mostrare le date in front end?",
+            "name": "bando_mostrare_le_date_in_front_end",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 2,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1
         }
     ],
     "location": [
@@ -98,5 +132,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593099387
+    "modified": 1593154420
 }

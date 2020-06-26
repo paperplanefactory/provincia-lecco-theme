@@ -45,7 +45,7 @@ if ( get_field( 'scadenza_bando' ) ) {
                   Termine mandato: <?php the_field( 'data_di_termine_mandato_politico' ); ?>
                 </p>
               <?php endif; ?>
-              <?php if( has_term( 'bandi', 'documenti_tax' ) ) : ?>
+              <?php if( has_term( 'bandi', 'documenti_tax' ) && get_field( 'bando_mostrare_le_date_in_front_end' ) == 1 ) : ?>
                 <?php
                 $pubblicazione_bando = get_field( 'pubblicazione_bando' );
                 $giorno_pubblicazione = date_i18n( 'j',  strtotime( $pubblicazione_bando ) );
