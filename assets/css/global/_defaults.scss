@@ -165,3 +165,21 @@ body {
 .autocomplete-suggestion.selected {
 	background: $color-11;
 }
+
+body.admin-bar {
+	margin-top: -32px;
+	padding-bottom: 32px;
+}
+
+#wpadminbar {
+	top: auto !important;
+	bottom: 0;
+}
+
+#wpadminbar .quicklinks > ul > li {
+	position: relative;
+}
+
+#wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+	bottom: 32px;
+}

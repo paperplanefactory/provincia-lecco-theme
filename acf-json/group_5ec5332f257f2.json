@@ -120,6 +120,13 @@
                 "operator": "==",
                 "value": "documenti_tax:altri-bandi"
             }
+        ],
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "documenti_tax:bandi-di-abilitazione-alla-professione"
+            }
         ]
     ],
     "menu_order": 0,
@@ -127,10 +134,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1593154420
+    "modified": 1593182254
 }
