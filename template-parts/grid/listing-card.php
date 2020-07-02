@@ -19,7 +19,10 @@ else :
         <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
         <?php if ( get_field( 'page_abstract' ) ) : ?>
           <p>
-            <?php the_field( 'page_abstract' ); ?>
+            <?php
+            $page_abstract = get_field( 'page_abstract' );
+            shorten_abstract( $page_abstract, 100 );
+            ?>
           </p>
         <?php endif; ?>
       </div>
