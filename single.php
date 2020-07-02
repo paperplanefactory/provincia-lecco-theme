@@ -188,78 +188,36 @@ if ( get_field( 'scadenza_bando' ) ) {
   </div>
 
 
-<?php if ( get_field( 'related_content_method' ) != 'no-related' ) : ?>
+<?php if ( $post_type === 'progetti_cpt' ) : ?>
   <?php
-  if ( get_field( 'related_content_method' ) === 'manually-related' ) :
-    $related_content_handpicked = get_field('related_content_handpicked');
-    ?>
-    <div class="wrapper bg-9 no-print">
-      <div class="wrapper-padded">
-        <div class="wrapper-padded-more">
-          <div class="listing-box">
-            <h2 class="aligncenter">Contenuti Correlati</h2>
-            <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
-              <?php foreach( $related_content_handpicked as $post ) : setup_postdata( $post ); ?>
-                <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
-              <?php endforeach; wp_reset_postdata(); ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php elseif ( get_field( 'related_content_method' ) === 'organizzazione-related' ) : ?>
-    <?php
-    $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
-    $content_argomenti = array();
-    foreach( $terms_argomenti as $term_argomenti ) {
-      $content_argomenti[] = $term_argomenti->term_id;
-    }
-    $content_argomenti = implode(', ', $content_argomenti);
-    $args_related_content = array(
-      'post_type' => array( 'post', 'progetti_cpt', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt' ),
-      'posts_per_page' => 3,
-      'post__not_in' => array($my_id),
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'aree_amministrative_tax',
-          'field' => 'term_ID',
-          'terms' => array($content_argomenti)
-        )
-      ),
-    );
-    $my_related_content = get_posts( $args_related_content );
-    ?>
-  <?php else : ?>
-    <?php
-    $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
-    $content_argomenti = array();
-    foreach( $terms_argomenti as $term_argomenti ) {
-      $content_argomenti[] = $term_argomenti->term_id;
-    }
-    $content_argomenti = implode(', ', $content_argomenti);
-    $args_related_content = array(
-      'post_type' => array('post', 'progetti_cpt'),
-      'posts_per_page' => 3,
-      'post__not_in' => array($my_id),
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'argomenti_tax',
-          'field' => 'term_ID',
-          'terms' => array($content_argomenti)
-        )
-      ),
-    );
-    $my_related_content = get_posts( $args_related_content );
-    ?>
-    <?php endif; ?>
-    <?php if ( !empty ( $my_related_content ) ) : ?>
+  $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
+  $content_argomenti = array();
+  foreach( $terms_argomenti as $term_argomenti ) {
+    $content_argomenti[] = $term_argomenti->term_id;
+  }
+  $content_argomenti = implode(', ', $content_argomenti);
+  $args_related_content_progetto = array(
+    //'post_type' => array('post', 'progetti_cpt'),
+    'posts_per_page' => -1,
+    'post__not_in' => array($my_id),
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'argomenti_tax',
+        'field' => 'term_ID',
+        'terms' => array($content_argomenti)
+      )
+    ),
+  );
+  $my_related_content_progetto = get_posts( $args_related_content_progetto );
+   ?>
+   <?php if ( !empty ( $my_related_content_progetto ) ) : ?>
     <div class="wrapper bg-9 no-print">
       <div class="wrapper-padded">
         <div class="wrapper-padded-more">
           <div class="listing-box">
             <h2 class="aligncenter aligncenter-notmobile">Contenuti Correlati</h2>
             <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
-              <?php foreach ( $my_related_content as $post ) : setup_postdata ( $post ); ?>
+              <?php foreach ( $my_related_content_progetto as $post ) : setup_postdata ( $post ); ?>
                  <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
                <?php endforeach; wp_reset_postdata(); ?>
             </div>
@@ -267,8 +225,94 @@ if ( get_field( 'scadenza_bando' ) ) {
         </div>
       </div>
     </div>
-    <?php endif; ?>
+  <?php endif; ?>
 
+<?php else : ?>
+  <?php if ( get_field( 'related_content_method' ) != 'no-related' ) : ?>
+    <?php
+    if ( get_field( 'related_content_method' ) === 'manually-related' ) :
+      $related_content_handpicked = get_field('related_content_handpicked');
+      ?>
+      <div class="wrapper bg-9 no-print">
+        <div class="wrapper-padded">
+          <div class="wrapper-padded-more">
+            <div class="listing-box">
+              <h2 class="aligncenter">Contenuti Correlati</h2>
+              <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+                <?php foreach( $related_content_handpicked as $post ) : setup_postdata( $post ); ?>
+                  <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+                <?php endforeach; wp_reset_postdata(); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php elseif ( get_field( 'related_content_method' ) === 'organizzazione-related' ) : ?>
+      <?php
+      $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
+      $content_argomenti = array();
+      foreach( $terms_argomenti as $term_argomenti ) {
+        $content_argomenti[] = $term_argomenti->term_id;
+      }
+      $content_argomenti = implode(', ', $content_argomenti);
+      $args_related_content = array(
+        'post_type' => array( 'post', 'progetti_cpt', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt' ),
+        'posts_per_page' => 3,
+        'post__not_in' => array($my_id),
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'aree_amministrative_tax',
+            'field' => 'term_ID',
+            'terms' => array($content_argomenti)
+          )
+        ),
+      );
+      $my_related_content = get_posts( $args_related_content );
+      ?>
+    <?php else : ?>
+      <?php
+      $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
+      $content_argomenti = array();
+      foreach( $terms_argomenti as $term_argomenti ) {
+        $content_argomenti[] = $term_argomenti->term_id;
+      }
+      $content_argomenti = implode(', ', $content_argomenti);
+      $args_related_content = array(
+        'post_type' => array('post', 'progetti_cpt'),
+        'posts_per_page' => 3,
+        'post__not_in' => array($my_id),
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'argomenti_tax',
+            'field' => 'term_ID',
+            'terms' => array($content_argomenti)
+          )
+        ),
+      );
+      $my_related_content = get_posts( $args_related_content );
+      ?>
+      <?php endif; ?>
+      <?php if ( !empty ( $my_related_content ) ) : ?>
+      <div class="wrapper bg-9 no-print">
+        <div class="wrapper-padded">
+          <div class="wrapper-padded-more">
+            <div class="listing-box">
+              <h2 class="aligncenter aligncenter-notmobile">Contenuti Correlati</h2>
+              <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+                <?php foreach ( $my_related_content as $post ) : setup_postdata ( $post ); ?>
+                   <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+                 <?php endforeach; wp_reset_postdata(); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endif; ?>
+
+  <?php endif; ?>
 <?php endif; ?>
+
+
+
 <?php endwhile; ?>
 <?php get_footer(); ?>
