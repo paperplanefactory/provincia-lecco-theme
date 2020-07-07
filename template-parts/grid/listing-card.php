@@ -28,7 +28,7 @@ else :
       </div>
     </div>
     <div class="cta-holder">
-      <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
+      <a href="<?php the_permalink(); ?>" class="arrow-button" title="Leggi di più su <?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>">Leggi di più</a>
     </div>
   </article>
   <?php
@@ -90,7 +90,7 @@ else :
               </p>
             <?php endif; ?>
           </div>
-          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="arrow-button">Leggi di più</a>
+          <a href="<?php the_permalink(); ?>" title="Leggi di più su <?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>" class="arrow-button">Leggi di più</a>
         </div>
       </article>
     <?php
@@ -275,7 +275,7 @@ else :
         </div>
         <?php if ( $display_h3 != 2 ) : ?>
           <div class="cta-holder">
-            <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
+            <a href="<?php the_permalink(); ?>" class="arrow-button" title="Leggi di più su <?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>">Leggi di più</a>
           </div>
         <?php endif; ?>
       </article>

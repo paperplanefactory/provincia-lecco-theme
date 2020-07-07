@@ -127,7 +127,7 @@ $today = date('Y-m-d H:i:s');
             </li>
           </ul>
         </div>
-        <nav class="menu navi">
+        <nav class="menu navi" aria-label="Navigazione principale del sito - menu espanso">
           <?php
           if ( has_nav_menu( 'header-menu-left' ) ) {
             wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
@@ -155,7 +155,7 @@ $today = date('Y-m-d H:i:s');
         <div class="logo">
           <a href="<?php echo home_url(); ?>" rel="bookmark" title="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" aria-label="Homepage | Sito istituzionale della <?php echo get_bloginfo( 'name' ); ?>" class="absl"></a>
         </div>
-        <nav class="menu navi">
+        <nav class="menu navi" aria-label="Navigazione principale del sito - menu compresso">
           <?php
           if ( has_nav_menu( 'header-menu-left' ) ) {
             wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-js' ) );
@@ -217,7 +217,7 @@ $today = date('Y-m-d H:i:s');
     <div class="wrapper">
       <div class="wrapper-padded">
         <div class="<?php echo $header_wrapper; ?>">
-          <nav class="menu navi">
+          <nav class="menu navi" aria-label="Navigazione principale del sito - menu oaverlay">
             <?php
             if ( has_nav_menu( 'header-menu-left' ) ) {
               wp_nav_menu( array( 'theme_location' => 'header-menu-left', 'container' => 'ul', 'menu_class' => 'header-menu header-menu-mobile header-menu-js' ) );

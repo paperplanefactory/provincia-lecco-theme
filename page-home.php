@@ -43,7 +43,7 @@ else {
                    <?php the_field( 'page_abstract' ); ?>
                  </p>
                <?php endif; ?>
-               <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>">Leggi di più</a>
+               <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>">Leggi di più</a>
                <div class="tags-holder">
                  <?php list_argomenti_pills(); ?>
                </div>
@@ -288,7 +288,7 @@ $box_ricerca_immagine_apertura_URL = $box_ricerca_immagine_apertura['sizes']['fu
         <form class="banner-form" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" autocomplete="off">
           <label for="search-kw-home-input">Digita una parola chiave per la ricerca:</label>
           <input id="search-kw-home-input" class="search-input-kw-js" name="search-kw" type="text" placeholder="cerca" />
-          <button class="button-appearance-normalizer" aria-label="Cerca nel sito"><span class="icon-search"></span></button>
+          <button class="button-appearance-normalizer" aria-label="Cerca nel sito partendo dalla homepage"><span class="icon-search"></span></button>
         </form>
         <div class="search-suggestion-area">
         </div>
