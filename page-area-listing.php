@@ -173,8 +173,10 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
     'post_type' => 'page',
     'posts_per_page' => -1,
     'post_parent'    => $post->ID,
-    'orderby'    => 'menu_order',
+    //'orderby'    => 'menu_order',
     //'sort_order' => 'asc'
+    'orderby' => 'title',
+    'order' => 'ASC'
   );
   $my_all_subpages = get_posts( $args_all_subpages );
   if ( !empty ( $my_all_subpages ) ) :
@@ -345,6 +347,8 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
             'terms' => $tax_query
           )
         ),
+        'orderby' => 'title',
+        'order' => 'ASC',
       );
       $listing_paged = new WP_Query( $args_all_cpts );
     }
