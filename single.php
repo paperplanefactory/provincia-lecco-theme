@@ -190,6 +190,7 @@ if ( get_field( 'scadenza_bando' ) ) {
 
 <?php if ( $post_type === 'progetti_cpt' ) : ?>
   <?php
+  $module_auto_listing_appearence = '';
   $count_related = 0;
   $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
   $content_argomenti = array();
@@ -247,6 +248,7 @@ if ( get_field( 'scadenza_bando' ) ) {
   <?php if ( get_field( 'related_content_method' ) != 'no-related' ) : ?>
     <?php
     if ( get_field( 'related_content_method' ) === 'manually-related' ) :
+      $module_auto_listing_appearence = '';
       $related_content_handpicked = get_field('related_content_handpicked');
       ?>
       <div class="wrapper bg-9 no-print">
@@ -265,6 +267,7 @@ if ( get_field( 'scadenza_bando' ) ) {
       </div>
     <?php elseif ( get_field( 'related_content_method' ) === 'organizzazione-related' ) : ?>
       <?php
+      $module_auto_listing_appearence = '';
       $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
       $content_argomenti = array();
       foreach( $terms_argomenti as $term_argomenti ) {
@@ -287,6 +290,7 @@ if ( get_field( 'scadenza_bando' ) ) {
       ?>
     <?php else : ?>
       <?php
+      $module_auto_listing_appearence = '';
       $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
       $content_argomenti = array();
       foreach( $terms_argomenti as $term_argomenti ) {
@@ -327,7 +331,6 @@ if ( get_field( 'scadenza_bando' ) ) {
 
   <?php endif; ?>
 <?php endif; ?>
-
 
 
 <?php endwhile; ?>
