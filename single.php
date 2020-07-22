@@ -199,7 +199,7 @@ if ( get_field( 'scadenza_bando' ) ) {
   $content_argomenti = implode(', ', $content_argomenti);
   $args_related_content_progetto = array(
     //'post_type' => array('post', 'progetti_cpt'),
-    'posts_per_page' => -1,
+    'posts_per_page' => 3,
     'post__not_in' => array($my_id),
     'tax_query' => array(
       array(
