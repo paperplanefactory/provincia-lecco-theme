@@ -190,6 +190,7 @@ if ( get_field( 'scadenza_bando' ) ) {
 
 <?php if ( $post_type === 'progetti_cpt' ) : ?>
   <?php
+  $count_related = 0;
   $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
   $content_argomenti = array();
   foreach( $terms_argomenti as $term_argomenti ) {
@@ -217,11 +218,16 @@ if ( get_field( 'scadenza_bando' ) ) {
           <div class="listing-box">
             <h2 class="aligncenter aligncenter-notmobile">Contenuti Correlati</h2>
             <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
-              <?php foreach ( $my_related_content_progetto as $post ) : setup_postdata ( $post ); ?>
+              <?php foreach ( $my_related_content_progetto as $post ) : setup_postdata ( $post ); $count_related++; ?>
                  <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
                <?php endforeach; wp_reset_postdata(); ?>
             </div>
           </div>
+          <?php if ( $count_related > 3 ) : ?>
+            <div class="aligncenter">
+              <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?argomenti_tax[]=<?php echo $content_argomenti; ?>&results_order=title" class="square-button green filled">Altri contenuti correlati</a>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
