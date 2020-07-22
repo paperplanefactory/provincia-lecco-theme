@@ -387,7 +387,7 @@ foreach( $taxonomies as $tax ) {
   }
   $my_intro_menu_output .= '</ul>';
   if ( $my_intro_menu_items > 5) {
-    $my_intro_menu_output .= '<button id="page-search-cats-listing-argomenti-rest-js" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+    $my_intro_menu_output .= '<button onclick="event.preventDefault(); pageListMenuControl(this)" id="page-search-cats-listing-argomenti-rest-js" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
   }
 echo $my_intro_menu_output;
 }

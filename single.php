@@ -193,10 +193,20 @@ if ( get_field( 'scadenza_bando' ) ) {
   $count_related = 0;
   $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
   $content_argomenti = array();
+  $content_argomenti_link = array();
+  $aromenti_counter = 0;
   foreach( $terms_argomenti as $term_argomenti ) {
+    $aromenti_counter++;
     $content_argomenti[] = $term_argomenti->term_id;
+    if ( $aromenti_counter == 1 ) {
+      $content_argomenti_link[] = '?argomenti_tax[]='.$term_argomenti->term_id.'';
+    }
+    else {
+      $content_argomenti_link[] = '&argomenti_tax[]='.$term_argomenti->term_id.'';
+    }
   }
   $content_argomenti = implode(', ', $content_argomenti);
+  $content_argomenti_link = implode('', $content_argomenti_link);
   $args_related_content_progetto = array(
     //'post_type' => array('post', 'progetti_cpt'),
     'posts_per_page' => 3,
@@ -222,12 +232,12 @@ if ( get_field( 'scadenza_bando' ) ) {
                  <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
                <?php endforeach; wp_reset_postdata(); ?>
             </div>
+            <?php if ( $count_related >= 3 ) : ?>
+              <div class="aligncenter">
+                <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?><?php echo $content_argomenti_link; ?>&results_order=title" class="square-button green filled allupper">Altri contenuti correlati</a>
+              </div>
+            <?php endif; ?>
           </div>
-          <?php if ( $count_related > 3 ) : ?>
-            <div class="aligncenter">
-              <a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?argomenti_tax[]=<?php echo $content_argomenti; ?>&results_order=title" class="square-button green filled">Altri contenuti correlati</a>
-            </div>
-          <?php endif; ?>
         </div>
       </div>
     </div>
