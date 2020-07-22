@@ -106,9 +106,10 @@ else :
             <div class="last-child-no-margin">
               <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
               <?php if ( get_field( 'page_abstract' ) ) : ?>
-                <p>
-                  <?php the_field( 'page_abstract' ); ?>
-                </p>
+                <?php
+                $page_abstract = get_field( 'page_abstract' );
+                shorten_abstract( $page_abstract, 100 );
+                ?>
               <?php endif; ?>
             </div>
 
@@ -147,7 +148,10 @@ else :
                 <h5><?php the_title(); ?></h5>
                 <?php if ( get_field( 'page_abstract' ) ) : ?>
                   <p>
-                    <?php the_field( 'page_abstract' ); ?>
+                    <?php
+                    $page_abstract = get_field( 'page_abstract' );
+                    shorten_abstract( $page_abstract, 100 );
+                    ?>
                   </p>
                 <?php endif; ?>
               </div>
@@ -156,7 +160,10 @@ else :
             <h5><?php the_title(); ?></h5>
             <?php if ( get_field( 'page_abstract' ) ) : ?>
               <p>
-                <?php the_field( 'page_abstract' ); ?>
+                <?php
+                $page_abstract = get_field( 'page_abstract' );
+                shorten_abstract( $page_abstract, 100 );
+                ?>
               </p>
             <?php endif; ?>
           <?php endif; ?>
@@ -229,7 +236,7 @@ else :
             <?php else : ?>
               <h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
             <?php endif; ?>
-            <?php if ( $module_auto_listing_abstract === 'card-complete' ) : ?>
+            <?php if ( $module_auto_listing_abstract === 'card-complete' || $listing_page == 1 ) : ?>
               <?php if ( get_field( 'page_abstract' ) ) : ?>
                 <p>
                   <?php
