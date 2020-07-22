@@ -21,7 +21,7 @@ else :
           <p>
             <?php
             $page_abstract = get_field( 'page_abstract' );
-            shorten_abstract( $page_abstract, 100 );
+            shorten_abstract( $page_abstract, 150 );
             ?>
           </p>
         <?php endif; ?>
@@ -108,7 +108,7 @@ else :
               <?php if ( get_field( 'page_abstract' ) ) : ?>
                 <?php
                 $page_abstract = get_field( 'page_abstract' );
-                shorten_abstract( $page_abstract, 100 );
+                shorten_abstract( $page_abstract, 150 );
                 ?>
               <?php endif; ?>
             </div>
@@ -150,7 +150,7 @@ else :
                   <p>
                     <?php
                     $page_abstract = get_field( 'page_abstract' );
-                    shorten_abstract( $page_abstract, 100 );
+                    shorten_abstract( $page_abstract, 150 );
                     ?>
                   </p>
                 <?php endif; ?>
@@ -162,7 +162,7 @@ else :
               <p>
                 <?php
                 $page_abstract = get_field( 'page_abstract' );
-                shorten_abstract( $page_abstract, 100 );
+                shorten_abstract( $page_abstract, 150 );
                 ?>
               </p>
             <?php endif; ?>
@@ -241,7 +241,7 @@ else :
                 <p>
                   <?php
                   $page_abstract = get_field( 'page_abstract' );
-                  shorten_abstract( $page_abstract, 100 );
+                  shorten_abstract( $page_abstract, 150 );
                   ?>
                 </p>
               <?php endif; ?>
