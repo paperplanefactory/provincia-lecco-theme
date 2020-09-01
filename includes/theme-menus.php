@@ -85,14 +85,38 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 }
 
 
-add_action('admin_head', 'my_custom_acf_css');
-function my_custom_acf_css() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+add_action('admin_head', 'my_custom_acf');
+function my_custom_acf() {
   echo '<style>
   [data-name*="choose_module"] {
     background-color: #2773B3 !important;
     color: #FFFFFF;
   }
   .acf-label.acf-accordion-title, .acf-label.acf-accordion-title:hover  {
+    background-color: #989898 !important;
+    color: #000000;
+  }
+
+  .acf-label.acf-accordion-title p, .acf-label.acf-accordion-title:hover p  {
     background-color: #989898 !important;
     color: #000000;
   }
