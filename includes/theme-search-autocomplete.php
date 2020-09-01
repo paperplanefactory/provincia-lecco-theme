@@ -24,6 +24,7 @@ function get_ajax_suggestions() {
         if ( !empty ( $my_suggestions ) ) {
           foreach ( $my_suggestions as $post ) : setup_postdata ( $post );
           $response .= '<div class="search-suggestion">';
+          $response .= '<a href="'.get_permalink($post->ID).'" class="absl"></a>';
 
           $post_type = get_post_type( $post->ID );
           switch ( $post_type ) {
