@@ -55,7 +55,7 @@ else {
   $my_autolisting = get_posts( $args_autolisting );
 }
 $count_for_grid = count($my_autolisting);
-
+foreach ( $my_autolisting as $post ) : setup_postdata ( $post );
 if ( $count_for_grid == 1 && get_post_type() == 'progetti_cpt' ) {
   $grid_classes = 'flex-hold flex-hold-2 margins-wide';
 }
@@ -65,9 +65,12 @@ elseif ( $count_for_grid == 1 ) {
 else {
   $grid_classes = 'flex-hold flex-hold-2 margins-wide';
 }
+endforeach; wp_reset_postdata();
+
 
 if ( !empty ( $my_autolisting ) ) :
  ?>
+
  <section class="text-module listing-module">
    <div class="module-separator-flex">
      <div class="content-styled">
