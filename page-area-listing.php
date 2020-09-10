@@ -166,18 +166,29 @@ if ( $listing_page_highlight_contents && !is_paged() ) :
 <?php
 // listing di primo livello tranne news
 if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'category' ) :
+  $listing_page_level_first_listing_order = get_field( 'listing_page_level_first_listing_order' );
   $display_h3 = 1;
   ?>
   <?php
-  $args_all_subpages = array(
-    'post_type' => 'page',
-    'posts_per_page' => -1,
-    'post_parent'    => $post->ID,
-    //'orderby'    => 'menu_order',
-    //'sort_order' => 'asc'
-    'orderby' => 'title',
-    'order' => 'ASC'
-  );
+  if ( $listing_page_level_first_listing_order === 'alpha-order' ) {
+    $args_all_subpages = array(
+      'post_type' => 'page',
+      'posts_per_page' => -1,
+      'post_parent'    => $post->ID,
+      'orderby' => 'title',
+      'order' => 'ASC'
+    );
+  }
+  else {
+    $args_all_subpages = array(
+      'post_type' => 'page',
+      'posts_per_page' => -1,
+      'post_parent'    => $post->ID,
+      'orderby'    => 'menu_order',
+      'sort_order' => 'ASC'
+    );
+  }
+
   $my_all_subpages = get_posts( $args_all_subpages );
   if ( !empty ( $my_all_subpages ) ) :
    ?>

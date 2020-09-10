@@ -78,6 +78,13 @@
                 "operator": "==",
                 "value": "siti_tematici_cpt"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 1,
@@ -86,7 +93,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1592894072
+    "modified": 1599745848
 }

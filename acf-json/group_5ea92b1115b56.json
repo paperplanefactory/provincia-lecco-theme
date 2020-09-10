@@ -69,7 +69,7 @@
             "label": "Titolo personalizzato per l'elenco dei contenuti",
             "name": "custom_listing_title",
             "type": "text",
-            "instructions": "Se lascaito vuoto verrà inserito il testo predefinito \"Tutto su + titolo della pagina\".",
+            "instructions": "Se lasciato vuoto verrà inserito il testo predefinito \"Tutto su + titolo della pagina\".",
             "required": 0,
             "conditional_logic": [
                 [
@@ -89,7 +89,67 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5f5a3fc38682f",
+            "label": "Impostazioni pagina di primo livello",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93eac3e8d4",
+                        "operator": "==",
+                        "value": "primo-livello"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f5a3fe486830",
+            "label": "Ordinamento listing contenuti",
+            "name": "listing_page_level_first_listing_order",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "alpha-order": "Ordine alfabetico",
+                "manual-order": "Ordinamento Manuale"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5ea94b270632c",
@@ -507,10 +567,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
-    "active": 1,
+    "hide_on_screen": "",
+    "active": true,
     "description": "",
-    "modified": 1591963343
+    "modified": 1599750288
 }
