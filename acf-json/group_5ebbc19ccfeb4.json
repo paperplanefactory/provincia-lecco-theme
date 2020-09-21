@@ -1,0 +1,66 @@
+{
+    "key": "group_5ebbc19ccfeb4",
+    "title": "Gestione archivio per termine di tassonomia",
+    "fields": [
+        {
+            "key": "field_5ebbc1d905e90",
+            "label": "Pagina di archivio",
+            "name": "term_archive_page",
+            "type": "page_link",
+            "instructions": "Le pagine di archivio predefinite di WordPress vengono rimpiazzate dalle pagine personalizzate che permettono di gestire i contenuti in evidenza e altri elementi. Scegli la pagina di archivio relativa a questo termine e, se non è presente nell'elenco, creala.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "servizi_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "documenti_tax"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1599750631
+}

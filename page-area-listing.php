@@ -365,20 +365,40 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
     }
     // se non è impostata come pagina per elencare i bandi compongo la query predefinita
     else {
-      $args_all_cpts = array(
-        'post_type' => $cpt_query,
-        'posts_per_page' => 15,
-        'paged' => $paged,
-        'tax_query' => array(
-          array(
-            'taxonomy' => $listing_page_taxonmy,
-            'field' => 'term_ID',
-            'terms' => $tax_query
-          )
-        ),
-        'orderby' => 'title',
-        'order' => 'ASC',
-      );
+      $listing_page_level_second_listing_order = get_field( 'listing_page_level_second_listing_order' );
+      if ( $listing_page_level_second_listing_order === 'alpha-order' ) {
+        $args_all_cpts = array(
+          'post_type' => $cpt_query,
+          'posts_per_page' => 15,
+          'paged' => $paged,
+          'tax_query' => array(
+            array(
+              'taxonomy' => $listing_page_taxonmy,
+              'field' => 'term_ID',
+              'terms' => $tax_query
+            )
+          ),
+          'orderby' => 'title',
+          'order' => 'ASC',
+        );
+      }
+      else {
+        $args_all_cpts = array(
+          'post_type' => $cpt_query,
+          'posts_per_page' => 15,
+          'paged' => $paged,
+          'tax_query' => array(
+            array(
+              'taxonomy' => $listing_page_taxonmy,
+              'field' => 'term_ID',
+              'terms' => $tax_query
+            )
+          ),
+          'orderby' => 'menu_order',
+          'order' => 'ASC',
+        );
+      }
+
       $listing_paged = new WP_Query( $args_all_cpts );
     }
   }

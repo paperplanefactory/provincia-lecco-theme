@@ -1528,6 +1528,10 @@ small {
   height: 60px;
 }
 
+.no-index {
+  border-top: solid 1px #C4C8CB;
+}
+
 .module-spacer {
   position: relative;
 }
@@ -3011,6 +3015,9 @@ select {
     width: calc(100% + 48px) !important;
     height: auto;
     margin-bottom: calc(16px * 2);
+  }
+  .no-index {
+    padding-top: 24px;
   }
   .page-opening-simple-spacer {
     padding: 72px 0 48px;

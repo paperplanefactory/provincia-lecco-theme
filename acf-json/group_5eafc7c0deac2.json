@@ -1,0 +1,84 @@
+{
+    "key": "group_5eafc7c0deac2",
+    "title": "Icone per categorie",
+    "fields": [
+        {
+            "key": "field_5eafc7e79b5a8",
+            "label": "Scegli un'icona",
+            "name": "taxonomy_term_icon",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "icon-none": "Nessuna icona",
+                "icon-administration": "Amministrazione - organi di governo, aree amministrative, uffici",
+                "icon-pinpoint": "Amministrazione - luoghi",
+                "icon-profile": "Amministrazione - personale amministrativo, politici",
+                "icon-settings": "Servizi - tutti i servizi",
+                "icon-pin": "Notizie",
+                "icon-note": "Comunicati",
+                "icon-notice": "Avvisi, Progetti",
+                "icon-files": "Documenti e dati - tutti i documenti e dati"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "servizi_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "documenti_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "argomenti_tax"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1599750636
+}

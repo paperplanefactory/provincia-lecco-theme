@@ -1,0 +1,45 @@
+{
+    "key": "group_5ebd53d64e8c9",
+    "title": "Gestione archivio per termine di argomento",
+    "fields": [
+        {
+            "key": "field_5ebd53d653617",
+            "label": "Pagina di archivio",
+            "name": "term_archive_page",
+            "type": "page_link",
+            "instructions": "Le pagine di archivio predefinite di WordPress vengono rimpiazzate dalle pagine personalizzate che permettono di gestire i contenuti in evidenza e altri elementi. Scegli la pagina di archivio relativa a questo termine e, se non è presente nell'elenco, creala.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "argomento_cpt"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "argomenti_tax"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1599750641
+}

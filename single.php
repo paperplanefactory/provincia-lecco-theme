@@ -160,7 +160,7 @@ if ( get_field( 'scadenza_bando' ) ) {
             </div>
           </div>
         <?php else : ?>
-          <div class="wrapper-padded-more-780 modules-wrapper">
+          <div class="wrapper-padded-more-780 modules-wrapper no-index">
             <div class="padder">
               <?php if ( !empty( get_the_content() ) ) : ?>
                 <!-- module-old-site-text -->
