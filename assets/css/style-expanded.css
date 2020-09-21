@@ -4595,6 +4595,18 @@ select {
   .slide-four .slick-next {
     right: 0;
   }
+  .single-slide img {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+  .single-slide img:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
   .single-slide .card {
     position: relative;
     width: calc(100% + 8px);

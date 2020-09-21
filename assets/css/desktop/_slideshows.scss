@@ -76,6 +76,20 @@
 }
 
 .single-slide {
+  img {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &:active {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+  }
+
   .card {
     position: relative;
     width: calc(100% + 8px);
