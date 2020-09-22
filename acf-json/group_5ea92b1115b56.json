@@ -191,7 +191,8 @@
             },
             "choices": {
                 "alpha-order": "Ordine alfabetico",
-                "manual-order": "Ordinamento Manuale"
+                "manual-order": "Ordinamento Manuale",
+                "publication-date": "Data di pubblicazione"
             },
             "default_value": false,
             "allow_null": 0,
@@ -625,5 +626,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600685772
+    "modified": 1600764366
 }
