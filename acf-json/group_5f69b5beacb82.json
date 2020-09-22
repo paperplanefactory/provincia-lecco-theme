@@ -1,0 +1,89 @@
+{
+    "key": "group_5f69b5beacb82",
+    "title": "Cognome",
+    "fields": [
+        {
+            "key": "field_5f69b67fa536d",
+            "label": "Cognome",
+            "name": "cognome_order",
+            "type": "text",
+            "instructions": "Viene utilizzato per ordinare gli elementi in base al cognome.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:politici"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:dirigenti"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:personale-amministrativo"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:posizione-organizzativa"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1600763566
+}
