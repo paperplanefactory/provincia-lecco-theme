@@ -75,6 +75,18 @@
                 "operator": "==",
                 "value": "amministrazione_tax:posizione-organizzativa"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amministrazione_cpt"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "amministrazione_tax:personale"
+            }
         ]
     ],
     "menu_order": 0,
@@ -85,5 +97,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600763566
+    "modified": 1600779706
 }

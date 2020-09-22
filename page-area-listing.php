@@ -396,6 +396,23 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
           ),
         );
       }
+      elseif ( $listing_page_level_second_listing_order === 'last-name' ) {
+        $args_all_cpts = array(
+          'post_type' => $cpt_query,
+          'posts_per_page' => 15,
+          'paged' => $paged,
+          'tax_query' => array(
+            array(
+              'taxonomy' => $listing_page_taxonmy,
+              'field' => 'term_ID',
+              'terms' => $tax_query
+            )
+          ),
+          'meta_key' => 'cognome_order',
+          'orderby' => 'meta_value',
+          'order' => 'ASC',
+        );
+      }
       else {
         $args_all_cpts = array(
           'post_type' => $cpt_query,

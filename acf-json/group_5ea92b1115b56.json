@@ -153,7 +153,7 @@
         },
         {
             "key": "field_5f6885d5e62d1",
-            "label": "Impostazioni ordinamento contenuti pagina di secondo livello",
+            "label": "Impostazioni ordinamento contenuti pagina di secondo\/terzo livello",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -164,6 +164,13 @@
                         "field": "field_5ea93eac3e8d4",
                         "operator": "==",
                         "value": "secondo-livello"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93eac3e8d4",
+                        "operator": "==",
+                        "value": "terzo-livello"
                     }
                 ]
             ],
@@ -192,7 +199,8 @@
             "choices": {
                 "alpha-order": "Ordine alfabetico",
                 "manual-order": "Ordinamento Manuale",
-                "publication-date": "Data di pubblicazione"
+                "publication-date": "Data di pubblicazione",
+                "last-name": "Cognome"
             },
             "default_value": false,
             "allow_null": 0,
@@ -626,5 +634,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600764366
+    "modified": 1600780307
 }
