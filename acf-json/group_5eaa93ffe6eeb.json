@@ -937,7 +937,8 @@
                         "amministrazione_cpt",
                         "documenti_cpt",
                         "progetti_cpt",
-                        "siti_tematici_cpt"
+                        "siti_tematici_cpt",
+                        "amm_trasp_cpt"
                     ],
                     "taxonomy": "",
                     "filters": [
@@ -950,7 +951,9 @@
                     ],
                     "min": "",
                     "max": "",
-                    "return_format": "object"
+                    "return_format": "object",
+                    "show_column": 0,
+                    "show_column_weight": 1000
                 },
                 {
                     "key": "field_5edf644e70220",
@@ -1000,7 +1003,6 @@
                     },
                     "choices": {
                         "card-complete": "Mostra abstract e altre info",
-                        "card-contacts": "Mostra contatti (se presenti nel contenuto originale)",
                         "card-title": "Mostra solo il titolo"
                     },
                     "default_value": false,
@@ -1008,6 +1010,11 @@
                     "multiple": 0,
                     "ui": 0,
                     "return_format": "value",
+                    "show_column": 0,
+                    "show_column_sortable": 0,
+                    "show_column_weight": 1000,
+                    "allow_quickedit": 0,
+                    "allow_bulkedit": 0,
                     "ajax": 0,
                     "placeholder": ""
                 },
@@ -1350,6 +1357,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "amm_trasp_cpt"
+            }
         ]
     ],
     "menu_order": 3,
@@ -1360,5 +1374,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598948785
+    "modified": 1602600199
 }
