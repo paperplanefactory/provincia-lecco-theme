@@ -151,7 +151,7 @@ $listing_page = 1;
   $args_all_subpages = array(
     'post_type' => 'amm_trasp_cpt',
     'posts_per_page' => -1,
-    'post_parent'    => $post->ID,
+    'post_parent' => 0,
     'orderby' => 'title',
     'order' => 'ASC'
   );

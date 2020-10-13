@@ -11,7 +11,7 @@ function get_ajax_suggestions() {
       }
       else {
         $args_suggestions = array(
-          'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
+          'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt', 'amm_trasp_cpt' ),
           //'posts_per_page' => -1,
           'posts_per_page' => 40,
           //'nopaging' => true,
@@ -43,6 +43,10 @@ function get_ajax_suggestions() {
             case 'documenti_cpt' :
             $taxonomy = 'documenti_tax';
             $cpt_name = 'documenti e dati';
+            break;
+            case 'amm_trasp_cpt' :
+            $taxonomy = '';
+            $cpt_name = 'Amministrazione trasparente';
             break;
           }
           $response .= '<h4 class="h4-variant light">';
