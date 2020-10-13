@@ -200,7 +200,7 @@
                 "alpha-order": "Ordine alfabetico",
                 "manual-order": "Ordinamento Manuale",
                 "publication-date": "Data di pubblicazione",
-                "last-name": "Cognome"
+                "last-name": "Cognome (si applica solo a Politici, Dirigenti, Personale amministrativo, Posizione organizzativa e Personale)"
             },
             "default_value": false,
             "allow_null": 0,
@@ -634,5 +634,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600780307
+    "modified": 1600781150
 }
