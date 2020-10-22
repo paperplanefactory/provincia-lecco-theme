@@ -123,9 +123,9 @@ else :
     <?php
     // tipologia di card – sito tematico
     elseif( get_post_type() == 'siti_tematici_cpt' ) :
-      $site_color = get_field( 'sito_tematico_color' );
+      //$site_color = get_field( 'sito_tematico_color' );
       ?>
-      <article class="flex-hold-child card offsite autonomous-height <?php echo $site_color; ?> bg-1">
+      <article class="flex-hold-child card offsite autonomous-height sito-tematico-colors">
         <a href="<?php the_field( 'sito_tematico_url' ); ?>" rel="noopener" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" class="absl" target="_blank"></a>
         <div class="card_inner cap-card">
           <?php if ( get_post_thumbnail_id() ) : ?>

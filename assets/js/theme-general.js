@@ -361,3 +361,21 @@ function pageIndexMenuControlsMobile(this_element) {
 $('.order-results-js').change(function() {
   this.form.submit();
 });
+
+if ($('.sito-tematico-colors')[0]) {
+  function random_color() {
+    myArray = [
+      "sito-tematico-grigio",
+      "sito-tematico-arancio",
+      "sito-tematico-viola",
+      "sito-tematico-turchese",
+      "sito-tematico-verde"
+    ];
+    randomItem = myArray[Math.floor(Math.random() * myArray.length)];
+  }
+  //$('.sito-tematico-colors').addClass(randomItem);
+  $('.sito-tematico-colors').each(function() {
+    random_color();
+    $(this).addClass(randomItem);
+  });
+}
