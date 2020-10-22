@@ -234,6 +234,75 @@ small {
   }
 }
 
+.content-styled-card {
+  a {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  strong {
+    font-weight: $font-weight-3;
+  }
+
+  ul {
+    list-style-position: inside;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: table-row;
+
+      &:before {
+        position: relative;
+        display: table-cell;
+        content: '●';
+        font-weight: $font-weight-3;
+        color: $color-2;
+        padding: 0 10px 0 0;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    list-style-type: decimal;
+    padding: 0;
+    counter-reset: li-counter;
+  }
+
+  ol > li {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: table-row;
+
+    &:before {
+      position: relative;
+      display: table-cell;
+      top: 0;
+      left: 0;
+      font-weight: $font-weight-3;
+      color: $color-2;
+      text-align: right;
+      content: counter(li-counter)". ";
+      counter-increment: li-counter;
+      padding: 0 15px 0 0;
+    }
+  }
+}
+
 .inner-news-listing {
   ul {
     list-style-position: inside;

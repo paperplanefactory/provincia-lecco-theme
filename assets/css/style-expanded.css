@@ -1294,6 +1294,73 @@ small {
   padding: 0 15px 0 0;
 }
 
+.content-styled-card a {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.content-styled-card strong {
+  font-weight: 700;
+}
+
+.content-styled-card ul {
+  list-style-position: inside;
+  list-style: none;
+  padding: 0;
+}
+
+.content-styled-card ul li {
+  display: table-row;
+}
+
+.content-styled-card ul li:before {
+  position: relative;
+  display: table-cell;
+  content: '●';
+  font-weight: 700;
+  color: #2773B3;
+  padding: 0 10px 0 0;
+}
+
+.content-styled-card ol {
+  list-style-type: none;
+  list-style-type: decimal;
+  padding: 0;
+  counter-reset: li-counter;
+}
+
+.content-styled-card ol > li {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: table-row;
+}
+
+.content-styled-card ol > li:before {
+  position: relative;
+  display: table-cell;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  color: #2773B3;
+  text-align: right;
+  content: counter(li-counter) ". ";
+  counter-increment: li-counter;
+  padding: 0 15px 0 0;
+}
+
 .inner-news-listing ul {
   list-style-position: inside;
   list-style: none;
@@ -3175,27 +3242,33 @@ select {
     font-size: 18px;
     line-height: 30px;
   }
-  .content-styled h6 {
+  .content-styled h6,
+  .content-styled-card h6 {
     margin: 0 0 16px;
   }
-  .content-styled ul {
+  .content-styled ul,
+  .content-styled-card ul {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px;
   }
-  .content-styled ul li {
+  .content-styled ul li,
+  .content-styled-card ul li {
     display: table-row;
   }
-  .content-styled ul li:before {
+  .content-styled ul li:before,
+  .content-styled-card ul li:before {
     font-size: 20px;
     font-weight: 400;
   }
-  .content-styled ol {
+  .content-styled ol,
+  .content-styled-card ol {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px;
   }
-  .content-styled ol > li:before {
+  .content-styled ol > li:before,
+  .content-styled-card ol > li:before {
     font-family: "Titillium Web", sans-serif;
     font-size: 16px;
   }
@@ -4362,27 +4435,33 @@ select {
     font-size: 18px;
     line-height: 30px;
   }
-  .content-styled h6 {
+  .content-styled h6,
+  .content-styled-card h6 {
     margin: 0 0 16px;
   }
-  .content-styled ul {
+  .content-styled ul,
+  .content-styled-card ul {
     font-size: 18px;
     line-height: 28px;
     margin-bottom: 16px;
   }
-  .content-styled ul li {
+  .content-styled ul li,
+  .content-styled-card ul li {
     display: table-row;
   }
-  .content-styled ul li:before {
+  .content-styled ul li:before,
+  .content-styled-card ul li:before {
     font-size: 20px;
     font-weight: 400;
   }
-  .content-styled ol {
+  .content-styled ol,
+  .content-styled-card ol {
     font-size: 18px;
     line-height: 28px;
     margin-bottom: 16px;
   }
-  .content-styled ol > li:before {
+  .content-styled ol > li:before,
+  .content-styled-card ol > li:before {
     font-family: "Titillium Web", sans-serif;
     font-size: 18px;
   }

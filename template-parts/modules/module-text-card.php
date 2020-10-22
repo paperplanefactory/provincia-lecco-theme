@@ -9,7 +9,7 @@
 <section class="card-module">
   <div class="module-separator">
     <div class="card insite">
-      <div class="card_inner regular-card last-child-no-margin">
+      <div class="card_inner regular-card last-child-no-margin content-styled-card">
         <?php the_sub_field( 'module_card_text_content' ); ?>
       </div>
     </div>

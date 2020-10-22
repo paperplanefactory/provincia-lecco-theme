@@ -140,7 +140,8 @@ small {
   line-height: $cta1-lineheight-desktop;
 }
 
-.content-styled {
+.content-styled,
+.content-styled-card {
   h6 {
     margin: 0 0 $paragraph-marginbottom-desktop;
   }

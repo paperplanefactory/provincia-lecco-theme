@@ -29,8 +29,8 @@ else {
     			'terms'		=> $module_auto_listing_area_amministrativa_taxterm
     		)
     	),
-      'orderby'    => 'menu_order',
-      //'sort_order' => 'asc'
+      'orderby' => 'title',
+      'order' => 'ASC'
     );
   }
 
@@ -47,8 +47,8 @@ else {
           'terms' => $module_auto_listing_area_amministrativa_taxterm
         )
       ),
-      'orderby'    => 'title',
-      'sort_order' => 'asc'
+      'orderby' => 'title',
+      'order' => 'ASC'
     );
   }
 

@@ -213,29 +213,37 @@ function content_tax() {
     case 'documenti_cpt' :
     $taxonomy = 'documenti_tax';
     break;
+    case 'page' :
+    $taxonomy = 'page_cpt';
+    break;
   }
+  if ( $taxonomy === 'page_cpt' ) {
 
-  $parent_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'orderby' => 'slug', 'hide_empty' => false ) );
-
-  foreach ( $parent_terms as $pterm ) {
-    $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
-    $content_tax_list = '<h6 class="allupper">';
-    $content_tax_list .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="'.$tax_icon.'">';
-    $content_tax_list .= $pterm->name;
-    $content_tax_list .= '</a>';
-    $terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => $pterm->term_id, 'orderby' => 'slug', 'hide_empty' => false ) );
-    if ( !empty( $terms ) ) {
-      $content_tax_list .= ' / ';
-      $content_tax_list .= '<span class="child-cats">';
-      foreach ( $terms as $term ) {
-        //$sub_tax_icon = get_field('taxonomy_term_icon', $term->taxonomy . '_' . $term->term_id);
-        //$content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'" class="'.$sub_tax_icon.'">' . $term->name . '</a>';
-        $content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'">' . $term->name . '</a>';
+  }
+  else {
+    //$parent_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'orderby' => 'slug', 'hide_empty' => false ) );
+    $parent_terms = wp_get_post_terms( $post->ID, $taxonomy );
+    foreach ( $parent_terms as $pterm ) {
+      $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
+      $content_tax_list = '<h6 class="allupper">';
+      $content_tax_list .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="'.$tax_icon.'">';
+      $content_tax_list .= $pterm->name;
+      $content_tax_list .= '</a>';
+      $terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => $pterm->term_id, 'orderby' => 'slug', 'hide_empty' => false ) );
+      if ( !empty( $terms ) ) {
+        $content_tax_list .= ' / ';
+        $content_tax_list .= '<span class="child-cats">';
+        foreach ( $terms as $term ) {
+          //$sub_tax_icon = get_field('taxonomy_term_icon', $term->taxonomy . '_' . $term->term_id);
+          //$content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'" class="'.$sub_tax_icon.'">' . $term->name . '</a>';
+          $content_tax_list .= '<a href="' . get_term_link( $term ) . '" title="Archivio '.$term->name.'" aria-label="Archivio '.$term->name.'">' . $term->name . '</a>';
+        }
+        $content_tax_list .=  '</span>';
       }
-      $content_tax_list .=  '</span>';
+      $content_tax_list .=  '</h6>';
     }
-    $content_tax_list .=  '</h6>';
   }
+
   echo $content_tax_list;
 }
 
@@ -258,7 +266,6 @@ function content_tax_icon() {
     $taxonomy = 'documenti_tax';
     break;
   }
-
   $icon_terms = wp_get_post_terms( $post->ID, $taxonomy, array( 'parent' => 0, 'hide_empty' => false ) );
   foreach ( $icon_terms as $pterm ) {
     $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
@@ -269,6 +276,7 @@ function content_tax_icon() {
       $content_tax_list .= '</a>';
     }
   }
+
   echo $content_tax_list;
 }
 

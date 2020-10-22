@@ -2,7 +2,11 @@
 <?php
 // visualizzo sotto forma di CTA se impostato nel modulo di listing dei conteuti
 if ( $module_auto_listing_appearence === 'module-listing-cta' ) : ?>
-  <a href="<?php the_permalink(); ?>" class="tag-button filled-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a>
+  <?php if( get_post_type() === 'siti_tematici_cpt' ) : ?>
+    <a href="<?php the_field( 'sito_tematico_url' ); ?>" class="tag-button filled-button" rel="noopener" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" target="_blank"><?php the_title(); ?></a>
+  <?php else : ?>
+    <a href="<?php the_permalink(); ?>" class="tag-button filled-button" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>"><?php the_title(); ?></a>
+  <?php endif; ?>
 <?php
 // altrimenti visualizzo la card classica
 else :
