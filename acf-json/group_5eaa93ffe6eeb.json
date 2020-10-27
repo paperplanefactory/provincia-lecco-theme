@@ -1064,10 +1064,10 @@
                 },
                 {
                     "key": "field_5eba57087ac89",
-                    "label": "Associare questo box ad una tassonomia?",
+                    "label": "Inserire un'icona sopra questo box?",
                     "name": "module_highlight_text_icon",
                     "type": "select",
-                    "instructions": "Scegli una tassonomia per associare il box ad essa e utilizzare la sua icona.",
+                    "instructions": "Scegli un'icona dal menu a tendina.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -1086,6 +1086,11 @@
                     "multiple": 0,
                     "ui": 0,
                     "return_format": "value",
+                    "show_column": 0,
+                    "show_column_sortable": 0,
+                    "show_column_weight": 1000,
+                    "allow_quickedit": 0,
+                    "allow_bulkedit": 0,
                     "ajax": 0,
                     "placeholder": ""
                 },
@@ -1374,5 +1379,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603816266
+    "modified": 1603816637
 }
