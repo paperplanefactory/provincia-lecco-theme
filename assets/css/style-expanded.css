@@ -3073,7 +3073,7 @@ select {
     bottom: 35px;
     padding: 0;
   }
-  .page-index-right .video_frame {
+  .map-module .video_frame {
     position: relative;
     left: -24px;
     padding-bottom: 56.25%;
@@ -4273,7 +4273,7 @@ select {
   .people-card .title-block {
     margin-bottom: 20px;
   }
-  .page-index-right .video_frame {
+  .map-module .video_frame {
     position: relative;
     left: -45px;
     padding-bottom: 70%;

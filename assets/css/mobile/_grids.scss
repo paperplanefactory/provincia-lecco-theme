@@ -618,7 +618,7 @@
   }
 }
 
-.page-index-right {
+.map-module {
   .video_frame {
     position: relative;
     left: -24px;
@@ -627,7 +627,7 @@
     overflow: hidden;
     width: calc(100% + 48px) !important;
     height: auto;
-    margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+    margin-bottom: calc(#{$paragraph-marginbottom-smartphone} * 2);
   }
 }
 
