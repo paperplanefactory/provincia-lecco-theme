@@ -156,7 +156,7 @@ function intro_menu_list_argomenti() {
     }
     $my_intro_menu_output .= '</ul>';
     if ( $my_intro_menu_items > 5) {
-      $my_intro_menu_output .= '<button class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
+      $my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" aria-expanded="false" aria-label="Espandi/comprimi voci di menu" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
     }
 
   }
