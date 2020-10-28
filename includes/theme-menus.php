@@ -84,26 +84,6 @@ function for_editors_flamingo_map_meta_cap( $meta_caps ) {
 	return $meta_caps;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 add_action('admin_head', 'my_custom_acf');
 function my_custom_acf() {
   echo '<style>
