@@ -56,6 +56,12 @@ if ( $listing_page_taxonmy === 'argomenti_tax' ) {
   // custom post type per listing
   $cpt_query = 'argomento_cpt';
 }
+if ( $listing_page_taxonmy === 'progetti_cpt' ) {
+  // contenuti da elencare in evidenza
+  $listing_page_highlight_contents = get_field('listing_page_highlight_progetti');
+  // custom post type per listing
+  $cpt_query = 'progetti_cpt';
+}
 
 // verifico se è impostato un filtro sui bandi
 $listing_bandi = get_field( 'listing_bandi' );
@@ -102,17 +108,19 @@ $listing_page = 1;
                   <?php the_field( 'page_abstract' ); ?>
                 </p>
               <?php endif; ?>
+              <?php if( $listing_page_taxonmy != 'progetti_cpt' ) : ?>
+                <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
+                  <input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"'  aria-label="Digita una parola chiave per la ricerca" />
+                  <input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]" value="<?php echo $tax_query; ?>">
+                  <?php
+                  if ( $listing_page_level === 'primo-livello' ) {
+                    echo $tax_query_longlist;
+                  }
+                   ?>
+                  <button class="button-appearance-normalizer" type="submit" aria-label="Cerca"><span class="icon-search"></span></button>
+                </form>
+              <?php endif; ?>
 
-              <form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
-                <input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"'  aria-label="Digita una parola chiave per la ricerca" />
-                <input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]" value="<?php echo $tax_query; ?>">
-                <?php
-                if ( $listing_page_level === 'primo-livello' ) {
-                  echo $tax_query_longlist;
-                }
-                 ?>
-                <button class="button-appearance-normalizer" type="submit" aria-label="Cerca"><span class="icon-search"></span></button>
-              </form>
             </div>
             <div class="page-opening-right">
               <div class="padder">
@@ -164,8 +172,57 @@ if ( $listing_page_highlight_contents && !is_paged() ) :
 <?php endif; ?>
 
 <?php
+// listing progetti
+if ( $listing_page_taxonmy === 'progetti_cpt' ) :
+$listing_page_level_progetti_listing_order = get_field( 'listing_page_level_progetti_listing_order' );
+$display_h3 = 1;
+?>
+<?php
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+if ( $listing_page_level_progetti_listing_order === 'alpha-order' ) {
+  $args_all_progetti = array(
+    'post_type' => 'progetti_cpt',
+    'posts_per_page' => 15,
+    'orderby' => 'title',
+    'order' => 'ASC',
+    'paged' => $paged,
+  );
+}
+else {
+  $args_all_progetti = array(
+    'post_type' => 'progetti_cpt',
+    'posts_per_page' => 15,
+    'orderby'    => 'menu_order',
+    'sort_order' => 'ASC',
+    'paged' => $paged,
+  );
+}
+$all_progetti = new WP_Query( $args_all_progetti );
+if ( $all_progetti->have_posts() ) :
+ ?>
+ <div class="wrapper <?php echo $color_block; ?>">
+   <div class="wrapper-padded">
+     <div class="wrapper-padded-more">
+       <div class="listing-box">
+         <?php if ( get_field( 'custom_listing_title' ) ) : ?>
+           <h2><?php the_field( 'custom_listing_title' ); ?></h2>
+         <?php else : ?>
+           <h2>Tutti i <?php the_title(); ?></h2>
+         <?php endif; ?>
+         <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+           <?php while ( $all_progetti->have_posts() ) : $all_progetti->the_post(); ?>
+             <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+           <?php endwhile; wp_reset_postdata(); ?>
+         </div>
+         <?php wp_pagenavi(  array( 'query' => $all_progetti )  ); ?>
+       </div>
+     </div>
+   </div>
+ </div>
+<?php endif; ?>
+<?php
 // listing di primo livello tranne news
-if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'category' ) :
+elseif ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'category' ) :
   $listing_page_level_first_listing_order = get_field( 'listing_page_level_first_listing_order' );
   $display_h3 = 1;
   ?>
@@ -258,6 +315,37 @@ if ( $listing_page_level === 'primo-livello' && $listing_page_taxonmy != 'catego
    </div>
   <?php endif; ?>
   <?php endforeach; ?>
+
+
+
+  <?php
+  // progetti
+  $args_all_top_posts = array(
+    'post_type' => 'progetti_cpt',
+    'posts_per_page' => 3,
+  );
+  $my_all_top_posts = get_posts( $args_all_top_posts );
+  if ( !empty ( $my_all_top_posts ) ) :
+   ?>
+   <div class="wrapper <?php echo $color_block; ?>">
+     <div class="wrapper-padded">
+       <div class="wrapper-padded-more">
+         <div class="listing-box">
+           <h2>Progetti</h2>
+           <div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+             <?php foreach ( $my_all_top_posts as $post ) : setup_postdata ( $post ); ?>
+               <?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+             <?php endforeach; wp_reset_postdata(); ?>
+           </div>
+           <div class="aligncenter">
+             <a href="<?php the_field( 'archives_url_progetti', 'any-lang' ); ?>" class="square-button green filled" title="Archivio Progetti" aria-label="Archivio Progetti">Vedi tutti</a>
+           </div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+  <?php endif; ?>
 
   <?php
   // contentui in evidenza se non c'è paginazione

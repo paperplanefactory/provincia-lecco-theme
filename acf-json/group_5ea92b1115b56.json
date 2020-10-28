@@ -20,13 +20,19 @@
                 "servizi_tax": "Servizi",
                 "documenti_tax": "Documenti",
                 "category": "Novità",
-                "argomenti_tax": "Argomenti"
+                "argomenti_tax": "Argomenti",
+                "progetti_cpt": "Progetti"
             },
             "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -41,8 +47,29 @@
                 [
                     {
                         "field": "field_5ea93f2d3e8d6",
-                        "operator": "!=",
-                        "value": "argomenti_tax"
+                        "operator": "==",
+                        "value": "amministrazione_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "servizi_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "documenti_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "category"
                     }
                 ]
             ],
@@ -61,6 +88,11 @@
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -75,8 +107,29 @@
                 [
                     {
                         "field": "field_5ea93f2d3e8d6",
-                        "operator": "!=",
-                        "value": "argomenti_tax"
+                        "operator": "==",
+                        "value": "amministrazione_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "servizi_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "documenti_tax"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "category"
                     }
                 ]
             ],
@@ -95,6 +148,44 @@
             "show_column_weight": 1000,
             "allow_quickedit": 0,
             "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5f99a497de339",
+            "label": "Ordinamento listing progetti",
+            "name": "listing_page_level_progetti_listing_order",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "progetti_cpt"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "alpha-order": "Ordine alfabetico",
+                "manual-order": "Ordinamento Manuale"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5f5a3fc38682f",
@@ -559,6 +650,13 @@
                         "operator": "==",
                         "value": "primo-livello"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5ea93f2d3e8d6",
+                        "operator": "==",
+                        "value": "progetti_cpt"
+                    }
                 ]
             ],
             "wrapper": {
@@ -580,7 +678,9 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "show_column": 0,
+            "show_column_weight": 1000
         },
         {
             "key": "field_5ec7b42c73624",
@@ -634,5 +734,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600781150
+    "modified": 1603904731
 }
