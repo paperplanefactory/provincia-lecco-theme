@@ -216,7 +216,7 @@ $('.slide-one').slick({
   draggable: true,
   infinite: true,
   accessibility: true,
-  adaptiveHeight: true,
+  //adaptiveHeight: true,
   //fade: true,
   lazyLoad: 'progressive',
   nextArrow: '<div class="slick-next"><i class="icon-right-arrow" aria-label="next"></i></div>',

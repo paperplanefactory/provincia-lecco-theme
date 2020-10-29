@@ -13,10 +13,29 @@
 }
 
 .slide-one {
+  background-color: $color-8;
+
+  .image-holder {
+    position: relative;
+    width: 100vw;
+    height: 85vw;
+    background-color: $color-12;
+
+    img {
+      width: 100vw;
+      height: 85vw;
+      -o-object-fit: contain;
+      object-fit: contain;
+      -o-object-position: 50% 50%;
+      object-position: 50% 50%;
+    }
+  }
+
   .slick-next,
   .slick-prev {
     position: absolute;
     font-size: 30px;
+    background-color: $color-8;
   }
 
   .slick-prev {
