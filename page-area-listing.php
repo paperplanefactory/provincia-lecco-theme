@@ -12,6 +12,7 @@ get_header();
 while ( have_posts() ) : the_post();
 // aggiorno le visualizzazioni
 provincia_lecco_set_post_view();
+// verifico il tipo di contenuto da elencare
 $listing_page_cpt_listed = get_field('listing_page_cpt_listed');
 // verifico se è una pagina di primo o di secondo livello
 $listing_page_level = get_field('listing_page_level');
@@ -99,7 +100,6 @@ $listing_page = 1;
           <div class="breadcrumbs-holder grey-links undelinked-links" typeof="BreadcrumbList" vocab="http://schema.org/">
             <?php bcn_display(); ?>
           </div>
-
           <div class="flex-hold flex-hold-page-opening">
             <div class="page-opening-left">
               <h1><?php the_title(); ?></h1>

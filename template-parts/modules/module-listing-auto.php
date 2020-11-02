@@ -60,7 +60,8 @@ if ( $count_for_grid == 1 && get_post_type() == 'progetti_cpt' ) {
   $grid_classes = 'flex-hold flex-hold-2 margins-wide';
 }
 elseif ( $count_for_grid == 1 ) {
-  $grid_classes = 'flex-hold-single';
+  //$grid_classes = 'flex-hold-single';
+  $grid_classes = 'flex-hold flex-hold-2 margins-wide';
 }
 else {
   $grid_classes = 'flex-hold flex-hold-2 margins-wide';
