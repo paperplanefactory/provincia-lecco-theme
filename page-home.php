@@ -43,7 +43,7 @@ else {
                    <?php the_field( 'page_abstract' ); ?>
                  </p>
                <?php endif; ?>
-               <a href="<?php the_permalink(); ?>" class="arrow-button" title="<?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>">Leggi di più</a>
+               <a href="<?php the_permalink(); ?>" class="arrow-button" title="Leggi di più su <?php the_title(); ?>" aria-label="Leggi di più su <?php the_title(); ?>">Leggi di più</a>
                <div class="tags-holder">
                  <?php list_argomenti_pills(); ?>
                </div>
