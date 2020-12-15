@@ -188,9 +188,7 @@ function list_all_argomenti_pills() {
     'number' => 10
   )
 );
-shuffle( $taxonomies );
-$random_terms = array_slice( $terms, 0, 6 );
-foreach( $random_terms as $tax ) {
+foreach( $taxonomies as $tax ) {
   $output .= '<a href="' . esc_url( get_term_link( $tax ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$tax->name.'" aria-label="Vedi tutti i contenuti in '.$tax->name.'">'.$tax->name.'</a>';
 }
 echo $output;
