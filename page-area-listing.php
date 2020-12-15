@@ -430,6 +430,8 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
         'post_type' => $cpt_query,
         'posts_per_page' => 15,
         'paged' => $paged,
+        'orderby' => 'title',
+        'order' => 'ASC'
       );
       $listing_paged = new WP_Query( $args_all_cpts );
     }
