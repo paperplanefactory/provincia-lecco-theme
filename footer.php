@@ -57,7 +57,7 @@ global $footer_wrapper;
           </div>
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
-            <h5 class="allupper">Seguici su</h5>
+            <!--<h5 class="allupper">Seguici su</h5>-->
             <?php if ( have_rows( 'global_socials', 'option' ) ) : ?>
               <ul class="inline-socials">
                 <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
