@@ -185,9 +185,21 @@ function list_all_argomenti_pills() {
   $taxonomies = get_terms( array(
     'taxonomy' => 'argomenti_tax',
     'hide_empty' => true,
-    'number' => 10
+    //'number' => 10
   )
 );
+
+// Random order
+shuffle($taxonomies);
+
+// Get first $max items
+$taxonomies = array_slice($taxonomies, 0, 10);
+
+// Sort by name
+usort($taxonomies, function($a, $b){
+  return strcasecmp($a->name, $b->name);
+});
+
 foreach( $taxonomies as $tax ) {
   $output .= '<a href="' . esc_url( get_term_link( $tax ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$tax->name.'" aria-label="Vedi tutti i contenuti in '.$tax->name.'">'.$tax->name.'</a>';
 }
