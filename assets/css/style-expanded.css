@@ -403,15 +403,11 @@ div#wpadminbar {
 
 html[lang] {
   margin-top: 0 !important;
-  margin-bottom: 32px !important;
 }
 
 @media screen and (max-width: 782px) {
   .ab-sub-wrapper {
     bottom: 46px;
-  }
-  html[lang] {
-    margin-bottom: 46px !important;
   }
 }
 
@@ -3588,7 +3584,7 @@ select {
   }
   #header #header-structure .menu ul:first-child li {
     margin-right: 25px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
   }
   #header #header-structure .menu ul:last-child {
     text-align: right;
@@ -3596,7 +3592,7 @@ select {
   }
   #header #header-structure .menu ul:last-child li {
     margin-left: 25px;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
   }
   #header #header-structure .menu ul li {
     position: relative;
