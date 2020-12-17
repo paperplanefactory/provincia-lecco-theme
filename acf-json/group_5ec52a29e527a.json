@@ -222,9 +222,11 @@
                 "taxonomy"
             ],
             "elements": "",
-            "min": 3,
+            "min": 1,
             "max": 3,
-            "return_format": "object"
+            "return_format": "object",
+            "show_column": 0,
+            "show_column_weight": 1000
         },
         {
             "key": "field_5ec65541083b1",
@@ -325,10 +327,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
-    "active": 1,
+    "hide_on_screen": "",
+    "active": true,
     "description": "",
-    "modified": 1590217694
+    "modified": 1608197598
 }
