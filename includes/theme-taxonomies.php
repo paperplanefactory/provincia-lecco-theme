@@ -137,7 +137,9 @@ function intro_menu_list_argomenti() {
   $args_intro_menu = array(
     'post_type' => 'argomento_cpt',
     'posts_per_page' => -1,
-    'orderby'    => 'menu_order',
+    'orderby' => 'title',
+    'order' => 'ASC',
+    //'orderby'    => 'menu_order',
     //'sort_order' => 'asc'
   );
   $my_intro_menu = get_posts( $args_intro_menu );
