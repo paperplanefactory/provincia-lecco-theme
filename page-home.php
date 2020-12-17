@@ -204,7 +204,7 @@ $argomenti_evidenza_contenuti = get_field( 'argomenti_evidenza_contenuti' );
                   $args_list_argomento_content = array(
                     'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt' ),
                     'posts_per_page' => 3,
-                    'order' => 'ASC',
+                    //'order' => 'ASC',
                     'tax_query' => array(
                       array(
                         'taxonomy' => 'argomenti_tax',
