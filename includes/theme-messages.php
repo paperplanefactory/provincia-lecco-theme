@@ -27,6 +27,7 @@ wp_add_dashboard_widget('custom_help_widget', 'Supporto per il tuo sito', 'custo
 }
 function custom_dashboard_help() {
 echo '<a href="http://www.paperplanefactory.com" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/admin-images/logo-paper.jpg" width="200" /></a><h2>Benvenuto nelll&rsquo;area di amministrazione del tuo sito!</h2><p>Il sito <strong>' . get_bloginfo('name') . '</strong> è basato su <a href="https://wordpress.org/" target="_blank">WordPress</a> e utilizza un tema appositamente creato da <a href="http://www.paperplanefactory.com" target="_blank">Paper Plane Factory.</a><br />
+Puoi consulare il Manuale di uso del sito istituzionale della Provincia di Lecco a <a href="https://manuale.provincia.lecco.it/wp-login.php" target="_blank"><strong>questo link</strong></a>.<br />
 <strong>Hai bisogno di aiuto? <a href="mailto:info@paperplanefactory.com">Contattaci</a>!!</strong></p>';
 }
 
