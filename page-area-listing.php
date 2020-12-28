@@ -541,6 +541,20 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
      <div class="wrapper-padded">
        <div class="wrapper-padded-more">
          <div class="listing-box">
+           <div class="flex-hold flex-hold-2 margins-fit verticalize opening-child-right">
+             <div class="flex-hold-child">
+               <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
+                 <h2><?php the_title(); ?> in scadenza</h2>
+               <?php else : ?>
+                 <h2><?php the_title(); ?></h2>
+               <?php endif; ?>
+             </div>
+             <?php if ( $listing_bandi == 1 && $archivio_bandi_scaduti == 0 ) : ?>
+               <div class="flex-hold-child">
+                 <a href="<?php echo $link_bandi_scaduti; ?>" class="square-button green filled"><?php the_title(); ?> scaduti</a>
+               </div>
+             <?php endif; ?>
+           </div>
            <h2>Non sono disponibili contenuti in questa area</h2>
          </div>
        </div>
