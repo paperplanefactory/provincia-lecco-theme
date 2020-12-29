@@ -277,23 +277,27 @@ if ( get_field( 'scadenza_bando' ) ) {
       $module_auto_listing_appearence = '';
       $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
       $content_argomenti = array();
-      foreach( $terms_argomenti as $term_argomenti ) {
-        $content_argomenti[] = $term_argomenti->term_id;
+      if ( $terms_argomenti != '' ) {
+        foreach( $terms_argomenti as $term_argomenti ) {
+          $content_argomenti[] = $term_argomenti->term_id;
+        }
+        $content_argomenti = implode(', ', $content_argomenti);
+        $args_related_content = array(
+          'post_type' => array('post', 'progetti_cpt'),
+          'posts_per_page' => 3,
+          'post__not_in' => array($my_id),
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'argomenti_tax',
+              'field' => 'term_ID',
+              'terms' => array($content_argomenti)
+            )
+          ),
+        );
+        $my_related_content = get_posts( $args_related_content );
+
       }
-      $content_argomenti = implode(', ', $content_argomenti);
-      $args_related_content = array(
-        'post_type' => array('post', 'progetti_cpt'),
-        'posts_per_page' => 3,
-        'post__not_in' => array($my_id),
-        'tax_query' => array(
-          array(
-            'taxonomy' => 'argomenti_tax',
-            'field' => 'term_ID',
-            'terms' => array($content_argomenti)
-          )
-        ),
-      );
-      $my_related_content = get_posts( $args_related_content );
+
       ?>
       <?php endif; ?>
       <?php if ( !empty ( $my_related_content ) ) : ?>
