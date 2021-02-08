@@ -268,8 +268,10 @@
             ],
             "elements": "",
             "min": 1,
-            "max": 6,
-            "return_format": "object"
+            "max": 12,
+            "return_format": "object",
+            "show_column": 0,
+            "show_column_weight": 1000
         },
         {
             "key": "field_5ec8cb7c233c4",
@@ -330,5 +332,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1608197598
+    "modified": 1612796360
 }

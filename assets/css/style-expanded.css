@@ -3578,6 +3578,16 @@ select {
   #header #header-structure .menu ul {
     display: inline-block;
     width: calc(50% - 4px);
+    overflow: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    cursor: grab;
+  }
+  #header #header-structure .menu ul::-webkit-scrollbar {
+    display: none;
   }
   #header #header-structure .menu ul:first-child {
     text-align: left;

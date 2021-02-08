@@ -44,6 +44,17 @@ $side-head-compact-width: 65px; // header
       ul {
         display: inline-block;
         width: calc(50% - 4px);
+        overflow: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        cursor: grab;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         &:first-child {
           text-align: left;
