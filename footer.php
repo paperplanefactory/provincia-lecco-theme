@@ -82,6 +82,11 @@ global $footer_wrapper;
           wp_nav_menu( array( 'theme_location' => 'footer-menu-legal', 'container' => 'ul', 'menu_class' => 'footer-menu-bottom' ) );
         }
         ?>
+        <ul class="footer-menu-bottom">
+          <li>
+             Sito realizzato da <a href="https://www.paperplanefactory.com/" target="_blank">PaperPlane</a> basato su <a href="https://wordpress.org/" target="_blank">WordPress</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
