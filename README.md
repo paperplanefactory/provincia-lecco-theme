@@ -1,6 +1,7 @@
 # Tema WordPress per la Provincia di Lecco
 Tema WordPress per il sito istituzionale della Provincia di Lecco basato sulle linee guida di https://www.agid.gov.it/
 
+## CPT necessari:
 
 function cptui_register_my_cpts() {
 
@@ -362,3 +363,176 @@ function cptui_register_my_cpts() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+## Custom taxonomies necessare:
+
+function cptui_register_my_taxes() {
+
+	/**
+	 * Taxonomy: Categorie servizi.
+	 */
+
+	$labels = [
+		"name" => __( "Categorie servizi", "custom-post-type-ui" ),
+		"singular_name" => __( "Categoria servizi", "custom-post-type-ui" ),
+		"menu_name" => __( "Categorie servizi", "custom-post-type-ui" ),
+		"all_items" => __( "Tutte le categorie servizi", "custom-post-type-ui" ),
+		"edit_item" => __( "Modifica categoria servizi", "custom-post-type-ui" ),
+		"view_item" => __( "Visualizza  categoria servizi", "custom-post-type-ui" ),
+		"update_item" => __( "Aggiorna categoria servizi", "custom-post-type-ui" ),
+		"add_new_item" => __( "Aggiungi categoria servizi", "custom-post-type-ui" ),
+		"parent_item" => __( "Categoria servizi genitore", "custom-post-type-ui" ),
+		"search_items" => __( "Cerca categoria servizi", "custom-post-type-ui" ),
+		"popular_items" => __( "Categorie servizi popolari", "custom-post-type-ui" ),
+		"add_or_remove_items" => __( "Rimuovi categoria servizi", "custom-post-type-ui" ),
+		"choose_from_most_used" => __( "Scegli tra le categorie servizi più utilizzate", "custom-post-type-ui" ),
+		"not_found" => __( "Categoria servizi non trovata", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Categorie servizi", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'categorie-servizi', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "servizi_tax",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "servizi_tax", [ "servizi_cpt" ], $args );
+
+	/**
+	 * Taxonomy: Categorie amministrazione.
+	 */
+
+	$labels = [
+		"name" => __( "Categorie amministrazione", "custom-post-type-ui" ),
+		"singular_name" => __( "Categoria amministrazione", "custom-post-type-ui" ),
+		"menu_name" => __( "Categorie amministrazione", "custom-post-type-ui" ),
+		"all_items" => __( "Tutte le categorie amministrazione", "custom-post-type-ui" ),
+		"edit_item" => __( "Modifica categoria amministrazione", "custom-post-type-ui" ),
+		"view_item" => __( "Visualizza categoria amministrazione", "custom-post-type-ui" ),
+		"update_item" => __( "Aggiorna categoria amministrazione", "custom-post-type-ui" ),
+		"add_new_item" => __( "Aggiungi nuova categoria amministrazione", "custom-post-type-ui" ),
+		"parent_item" => __( "Categoria amministrazione genitore", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Categorie amministrazione", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'categorie-amministrazione', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "amministrazione_tax",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "amministrazione_tax", [ "amministrazione_cpt" ], $args );
+
+	/**
+	 * Taxonomy: Categorie documenti.
+	 */
+
+	$labels = [
+		"name" => __( "Categorie documenti", "custom-post-type-ui" ),
+		"singular_name" => __( "Categoria documenti", "custom-post-type-ui" ),
+		"menu_name" => __( "Categorie documenti", "custom-post-type-ui" ),
+		"all_items" => __( "Tutte le categorie documenti", "custom-post-type-ui" ),
+		"edit_item" => __( "Modifica categoria documenti", "custom-post-type-ui" ),
+		"view_item" => __( "Visualizza categoria documenti", "custom-post-type-ui" ),
+		"update_item" => __( "Aggiorna documenti categoria documenti", "custom-post-type-ui" ),
+		"add_new_item" => __( "Aggiungi categoria documenti", "custom-post-type-ui" ),
+		"parent_item" => __( "Categoria documenti genitore", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Categorie documenti", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'categorie-documenti', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "documenti_tax",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "documenti_tax", [ "documenti_cpt", "temporary_cpt" ], $args );
+
+	/**
+	 * Taxonomy: Argomenti.
+	 */
+
+	$labels = [
+		"name" => __( "Argomenti", "custom-post-type-ui" ),
+		"singular_name" => __( "Argomento", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Argomenti", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'argomenti', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "argomenti_tax",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "argomenti_tax", [ "post", "servizi_cpt", "amministrazione_cpt", "documenti_cpt", "progetti_cpt", "argomento_cpt" ], $args );
+
+	/**
+	 * Taxonomy: Organizzazione.
+	 */
+
+	$labels = [
+		"name" => __( "Organizzazione", "custom-post-type-ui" ),
+		"singular_name" => __( "Organizzazione", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Organizzazione", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'aree_amministrative_tax', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "aree_amministrative_tax",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "aree_amministrative_tax", [ "post", "servizi_cpt", "amministrazione_cpt", "documenti_cpt" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes' );
+
