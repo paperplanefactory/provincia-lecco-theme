@@ -3,6 +3,7 @@ Tema WordPress per il sito istituzionale della Provincia di Lecco basato sulle l
 
 ## CPT necessari:
 
+```
 function cptui_register_my_cpts() {
 
 	/**
@@ -363,9 +364,9 @@ function cptui_register_my_cpts() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
-
+```
 ## Custom taxonomies necessare:
-
+```
 function cptui_register_my_taxes() {
 
 	/**
@@ -535,4 +536,4 @@ function cptui_register_my_taxes() {
 	register_taxonomy( "aree_amministrative_tax", [ "post", "servizi_cpt", "amministrazione_cpt", "documenti_cpt" ], $args );
 }
 add_action( 'init', 'cptui_register_my_taxes' );
-
+```
