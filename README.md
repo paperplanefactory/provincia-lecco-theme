@@ -1,7 +1,7 @@
 # Tema WordPress per la Provincia di Lecco
 Tema WordPress per il Sito Istituzionale della Provincia di Lecco basato sulle linee guida di https://www.agid.gov.it/
 
-La gestione dei singoli contenuti e delle opzioni del sito è basata su Advanced Custom Fields PRO.
+La gestione dei singoli contenuti e delle opzioni del sito è basata su Advanced Custom Fields PRO. Tutti i campi gestiti da ACF PRO sono inclusi nella cartella acf-json e sono pronti per la sincronizzazione.
 
 ## CPT necessari:
 
