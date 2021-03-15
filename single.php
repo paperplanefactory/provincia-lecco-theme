@@ -255,9 +255,9 @@ if ( get_field( 'scadenza_bando' ) ) {
       $terms_argomenti = get_the_terms( $post->ID , 'aree_amministrative_tax' );
       $content_argomenti = array();
       foreach( $terms_argomenti as $term_argomenti ) {
-        $content_argomenti[] = $term_argomenti->term_id;
+        $content_argomenti[] = $term_argomenti->slug;
       }
-      $content_argomenti = implode(',', $content_argomenti);
+      //$content_argomenti = implode(',', $content_argomenti);
       $args_related_content = array(
         'post_type' => array( 'post', 'progetti_cpt', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt' ),
         'posts_per_page' => 3,
@@ -267,9 +267,8 @@ if ( get_field( 'scadenza_bando' ) ) {
         'tax_query' => array(
           array(
             'taxonomy' => 'aree_amministrative_tax',
-            'field' => 'term_ID',
-            'terms' => array($content_argomenti),
-            'operator' => 'OR'
+            'field' => 'slug',
+            'terms' => $content_argomenti,
           )
         ),
       );
@@ -282,7 +281,7 @@ if ( get_field( 'scadenza_bando' ) ) {
       $content_argomenti = array();
       if ( $terms_argomenti != '' ) {
         foreach( $terms_argomenti as $term_argomenti ) {
-          $content_argomenti[] = $term_argomenti->term_id;
+          $content_argomenti[] = $term_argomenti->slug;
         }
         $content_argomenti = implode(', ', $content_argomenti);
         $args_related_content = array(
@@ -292,9 +291,8 @@ if ( get_field( 'scadenza_bando' ) ) {
           'tax_query' => array(
             array(
               'taxonomy' => 'argomenti_tax',
-              'field' => 'term_ID',
-              'terms' => array($content_argomenti),
-              'operator' => 'OR'
+              'field' => 'slug',
+              'terms' => $content_argomenti
             )
           ),
         );
