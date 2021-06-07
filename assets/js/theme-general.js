@@ -387,8 +387,7 @@ if ($('.sito-tematico-colors')[0]) {
 
 
 
-
-$('.header-menu').mousedown(function(event) {
+$('body').on('mousedown', '.header-menu', function(event) {
   $(this)
     .data('down', true)
     .data('x', event.clientX)
@@ -396,20 +395,26 @@ $('.header-menu').mousedown(function(event) {
     .addClass("dragging");
 
   return false;
-}).mouseup(function(event) {
+});
+$('body').on('mouseup', '.header-menu', function(event) {
+
   $(this)
     .data('down', false)
     .removeClass("dragging");
-}).mousemove(function(event) {
+});
+$('body').on('mousemove', '.header-menu', function(event) {
   if ($(this).data('down') == true) {
     this.scrollLeft = $(this).data('scrollLeft') + $(this).data('x') - event.clientX;
   }
-}).mousewheel(function(event, delta) {
+});
+$('body').on('mousewheel', '.header-menu', function(event, delta) {
+
   this.scrollLeft -= (delta * 30);
 }).css({
   'overflow': 'hidden',
   'cursor': '-moz-grab'
 });
+
 $(window).mouseout(function(event) {
   if ($('.team-form-data').data('down')) {
     try {
