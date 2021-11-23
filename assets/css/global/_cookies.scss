@@ -5,7 +5,7 @@
 #paperplane-cookie-notice {
 	position: fixed;
 	z-index: 9999;
-	width: calc(100% - 6px);
+	width: 100%;
 	bottom: 0;
 	left: 0;
 	font-weight: normal;
@@ -16,6 +16,8 @@
 	background-color: $color-1;
 	color: $color-12;
 	transition: opacity 1s;
+	pointer-events: none;
+	opacity: 0;
 
 	&.shown {
 		pointer-events: all;

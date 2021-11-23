@@ -4865,7 +4865,7 @@ select {
 #paperplane-cookie-notice {
   position: fixed;
   z-index: 9999;
-  width: calc(100% - 6px);
+  width: 100%;
   bottom: 0;
   left: 0;
   font-weight: normal;
@@ -4876,6 +4876,8 @@ select {
   background-color: #363B3F;
   color: #FFFFFF;
   transition: opacity 1s;
+  pointer-events: none;
+  opacity: 0;
 }
 
 #paperplane-cookie-notice.shown {
@@ -5105,3 +5107,5 @@ select {
   border: #019E59 solid 1px;
   border-radius: 4px;
 }
+
+/*# sourceMappingURL=style-expanded.css.map */
