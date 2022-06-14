@@ -18,7 +18,7 @@ include_once "includes/theme-messages.php";
 // custom menus
 include_once "includes/theme-menus.php";
 // embedded ACF social
-include_once "includes/theme-embedded-acf-social.php";
+//include_once "includes/theme-embedded-acf-social.php";
 // embedded ACF parnters and sponsors
 include_once "includes/theme-embedded-acf-parnters-sponsors.php";
 // gestione tassonomie

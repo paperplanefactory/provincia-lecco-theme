@@ -57,13 +57,12 @@ global $footer_wrapper;
           </div>
           <div class="flex-hold-child">
             <?php the_field( 'informazioni_newsletter', $acf_options_parameter ); ?>
-            <!--<h5 class="allupper">Seguici su</h5>-->
+            <h5 class="allupper">Seguici su</h5>
             <?php if ( have_rows( 'global_socials', 'option' ) ) : ?>
               <ul class="inline-socials">
                 <?php while ( have_rows( 'global_socials', 'option' ) ) : the_row(); ?>
                   <li>
-                    <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
-                      <i class="<?php the_sub_field( 'global_socials_icona' ); ?>" aria-hidden="true"></i>
+                    <a href="<?php the_sub_field( 'global_socials_profile_url' ); ?>" class="social-icorn <?php the_sub_field( 'global_socials_icon' ); ?>" target="_blank" aria-label="Visit <?php the_sub_field( 'global_socials_profile_url' ); ?>" rel="noopener">
                     </a>
                   </li>
                 <?php endwhile; ?>
