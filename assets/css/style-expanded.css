@@ -521,6 +521,7 @@ html[lang] {
   display: block;
   width: 100%;
   overflow: hidden;
+  word-wrap: break-word;
 }
 
 ::-moz-selection {
