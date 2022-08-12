@@ -84,6 +84,7 @@ video {
 body {
 	font-family: $font-main;
 	line-height: 1;
+	overflow: visible !important;
 }
 
 *:focus {
