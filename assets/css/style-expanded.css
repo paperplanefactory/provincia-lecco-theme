@@ -481,7 +481,7 @@ html[lang] {
   font-style: italic;
   font-weight: 400;
   src: url("assets/google-fonts/lora-v25-latin-italic.eot");
-  src: local(""), url("assets/google-fonts/lora-v25-latin-italic.eot?#iefix") format("embedded-opentype"), url("assets/google-fonts/lora-v25-latin-italic.woff2") format("woff2"), /url("assets/google-fonts/lora-v25-latin-italic.woff") format("woff"), url("assets/google-fonts/lora-v25-latin-italic.ttf") format("truetype"), url("assets/google-fonts/lora-v25-latin-italic.svg#Lora") format("svg");
+  src: local(""), url("assets/google-fonts/lora-v25-latin-italic.eot?#iefix") format("embedded-opentype"), url("assets/google-fonts/lora-v25-latin-italic.woff2") format("woff2"), url("assets/google-fonts/lora-v25-latin-italic.woff") format("woff"), url("assets/google-fonts/lora-v25-latin-italic.ttf") format("truetype"), url("assets/google-fonts/lora-v25-latin-italic.svg#Lora") format("svg");
 }
 
 @font-face {
@@ -3141,7 +3141,7 @@ select {
     margin-bottom: 40px;
   }
   .search-results .regular-card {
-    padding: 0;
+    padding: 0 0 35px;
     border-bottom: solid 1px #C4C8CB;
   }
   .search-results .cta-holder {
