@@ -83,9 +83,8 @@ if ( $listing_page_level === 'primo-livello' ) {
     //'parent' => 0
   )
 );
-
 foreach( $tax_query_multiple as $tax ) {
-  $tax_query_longlist .= '<input type="hidden" name="'.$listing_page_taxonmy.'[]" value="'.$tax->term_id.'">';
+  $tax_query_longlist = '<input type="hidden" name="'.$listing_page_taxonmy.'[]" value="'.$tax->term_id.'">';
 }
 }
 

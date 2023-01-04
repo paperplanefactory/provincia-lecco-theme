@@ -1,4 +1,7 @@
 <?php
+if ( !isset($scadenza_check) ) {
+  $scadenza_check = '';
+}
 // avvisi specifici per bandi scaduti
 if ( $scadenza_check === 'scaduto' ) :
   ?>

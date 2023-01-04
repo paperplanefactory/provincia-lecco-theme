@@ -173,7 +173,7 @@ else {
 $search_query_parameters = array(
   'post_type' => array( 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt', 'amm_trasp_cpt' ),
   's' => $search_kw,
-  'tax_query' => $tax_query_good,
+  //'tax_query' => $tax_query_good,
   'paged' => $page,
   'orderby' => $orderby,
   'order' => $order,

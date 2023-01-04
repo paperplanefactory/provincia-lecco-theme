@@ -1,7 +1,22 @@
 <!-- card singoli contenuti -->
 <?php
+if ( !isset($display_h3) ) {
+  $display_h3 = '';
+}
+if ( !isset($compact_card) ) {
+  $compact_card = '';
+}
+if ( !isset($slide_listing) ) {
+  $slide_listing = '';
+}
+if ( !isset($module_auto_listing_abstract) ) {
+  $module_auto_listing_abstract = '';
+}
+if ( !isset($listing_page) ) {
+  $listing_page = '';
+}
 // visualizzo sotto forma di CTA se impostato nel modulo di listing dei conteuti
-if ( $module_auto_listing_appearence === 'module-listing-cta' ) : ?>
+if ( isset($module_auto_listing_appearence) && $module_auto_listing_appearence === 'module-listing-cta' ) : ?>
   <?php if( get_post_type() === 'siti_tematici_cpt' ) : ?>
     <a href="<?php the_field( 'sito_tematico_url' ); ?>" class="tag-button filled-button" rel="noopener" title="Visita il sito <?php the_title(); ?>" aria-label="Visita il sito <?php the_title(); ?>" target="_blank"><?php the_title(); ?></a>
   <?php else : ?>
@@ -13,7 +28,7 @@ else :
   ?>
   <?php
   // tipologia di card – risultato di ricerca
-  if ( $search_result_card == 1 ) : ?>
+  if ( isset($search_result_card) && $search_result_card == 1 ) : ?>
   <article class="flex-hold-child card insite">
     <div class="card_inner regular-card">
       <div class="category-holder cat-fill-a grey-green-links">

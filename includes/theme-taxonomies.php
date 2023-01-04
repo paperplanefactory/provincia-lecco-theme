@@ -168,10 +168,11 @@ function intro_menu_list_argomenti() {
 // elenco di link argomento_tax relativi al singolo contenuto
 // il link ha poi un redirect gestito dalle impostazioni del termine di argomento_tax
 function list_argomenti_pills() {
+  global $post;
   $terms_argomenti = get_the_terms( $post->ID , 'argomenti_tax' );
   if ( $terms_argomenti != null ) {
     //$output = '<h5 class="light">Argomenti</h5>';
-    $output .= '<div class="tags-holder">';
+    $output = '<div class="tags-holder">';
     foreach( $terms_argomenti as $term_argomenti ) {
     $output .= '<a href="' . esc_url( get_term_link( $term_argomenti ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$term_argomenti->name.'" aria-label="Vedi tutti i contenuti in '.$term_argomenti->name.'">'.$term_argomenti->name.'</a>';
     unset($term_activity);
@@ -203,7 +204,7 @@ usort($taxonomies, function($a, $b){
 });
 
 foreach( $taxonomies as $tax ) {
-  $output .= '<a href="' . esc_url( get_term_link( $tax ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$tax->name.'" aria-label="Vedi tutti i contenuti in '.$tax->name.'">'.$tax->name.'</a>';
+  $output = '<a href="' . esc_url( get_term_link( $tax ) ) . '" class="tag-button filled-button" title="Vedi tutti i contenuti in '.$tax->name.'" aria-label="Vedi tutti i contenuti in '.$tax->name.'">'.$tax->name.'</a>';
 }
 echo $output;
 
@@ -258,8 +259,10 @@ function content_tax() {
       $content_tax_list .=  '</h6>';
     }
   }
+  if( isset($content_tax_list) ) {
+    echo $content_tax_list;
+  }
 
-  echo $content_tax_list;
 }
 
 // elenco delle sole icone (mini) di tutti i link per le altre tassonomie relative al singolo contenuto
@@ -285,7 +288,7 @@ function content_tax_icon() {
   foreach ( $icon_terms as $pterm ) {
     $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
     if ( $tax_icon != '' ) {
-      $content_tax_list .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
+      $content_tax_list = '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
       $content_tax_list .= '<span class="mini-icon '.$tax_icon.'">';
       $content_tax_list .= '</span>';
       $content_tax_list .= '</a>';
@@ -322,7 +325,7 @@ function content_tax_maxi_icon() {
   foreach ( $icon_terms as $pterm ) {
     $tax_icon = get_field('taxonomy_term_icon', $pterm->taxonomy . '_' . $pterm->term_id);
     if ( $tax_icon != '' ) {
-      $content_tax_list .= '<div>';
+      $content_tax_list = '<div>';
       $content_tax_list .= '<a href="' . get_term_link( $pterm ) . '" title="Archivio '.$pterm->name.'" aria-label="Archivio '.$pterm->name.'" class="green-link">';
       $content_tax_list .= '<span class="maxi-icon '.$tax_icon.'">';
       $content_tax_list .= '</span>';
@@ -498,7 +501,7 @@ add_action('wp_footer', 'current_page_from_single_cpt');
 
 // grande fiction - marco i filtri di ricerca nella pagina dei risultati di ricerca in base ai parametri URL presenti
 function check_my_checkboxes() {
-  if ( $_GET['amministrazione_tax'] ) {
+  if ( isset($_GET['amministrazione_tax']) ) {
     ?>
     <script type="text/javascript">
     $('#page-search-cats-expander-amministrazione').attr('aria-expanded', true);
@@ -516,7 +519,7 @@ function check_my_checkboxes() {
     }
   }
 
-  if ( $_GET['servizi_tax'] ) {
+  if ( isset($_GET['servizi_tax']) ) {
     ?>
     <script type="text/javascript">
     $('#page-search-cats-expander-servizi').attr('aria-expanded', true);
@@ -534,7 +537,7 @@ function check_my_checkboxes() {
     }
   }
 
-  if ( $_GET['category_tax'] ) {
+  if ( isset($_GET['category_tax']) ) {
     ?>
     <script type="text/javascript">
     $('#page-search-cats-expander-novita').attr('aria-expanded', true);
@@ -552,7 +555,7 @@ function check_my_checkboxes() {
     }
   }
 
-  if ( $_GET['documenti_tax'] ) {
+  if ( isset($_GET['documenti_tax']) ) {
     ?>
     <script type="text/javascript">
     $('#page-search-cats-expander-documenti').attr('aria-expanded', true);
@@ -570,7 +573,7 @@ function check_my_checkboxes() {
     }
   }
 
-  if ( $_GET['argomenti_tax'] ) {
+  if ( isset($_GET['argomenti_tax']) ) {
     ?>
     <script type="text/javascript">
     $('#page-search-cats-listing-argomenti-rest-js').attr('aria-expanded', true);
