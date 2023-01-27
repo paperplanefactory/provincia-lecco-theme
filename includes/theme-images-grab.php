@@ -15,7 +15,7 @@ function print_theme_image( $image_data, $image_sizes ) {
       $post_id = get_the_ID(); // retrieve post/page ID
       $thumb_id = get_post_thumbnail_id( $post_id ); // retrieve the image ID
     }
-    if ( $thumb_id != '' ) {
+    if ( $thumb_id != 0 ) {
       $attachment_title = get_the_title( $thumb_id ); // image title
       $attachment_alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ); // image alt text
       if( count( $image_sizes ) > 0 ) {
