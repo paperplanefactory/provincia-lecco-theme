@@ -56,18 +56,3 @@ function namespace_login_style() {
     echo '<style>.login h1 a { background-image: url( ' . get_template_directory_uri() . '/assets/images/admin-images/logo-login.png ) !important; }</style>';
 }
 add_action( 'login_head', 'namespace_login_style' );
-
-add_filter('rest_endpoints', function(){
-    $toRemove = ['users', 'posts', 'comments'];
-    foreach($toRemove as $val)
-    {
-        if (isset($endpoints['/wp/v2/'.$val])) {
-            unset($endpoints['/wp/v2/'.$val]);
-        }
-
-        if(isset($endpoints['/wp/v2/'.$val.'/(?P<id>[\d]+)'])) {
-            unset($endpoints['/wp/v2/'.$val.'/(?P<id>[\d]+)']);
-        }
-    }
-    return $endpoints;
-});

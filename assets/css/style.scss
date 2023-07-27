@@ -1,4 +1,3 @@
-// compileExpanded: style-expanded.css, compileCompressed: ../../style.min.css
 // imports
 @import 'global/vars';
 @import 'global/mixin';
@@ -14,6 +13,7 @@
 @import 'global/images';
 @import 'global/icons';
 @import 'global/forms'; // imports mobile
+
 @media screen and (min-width: $break-mobile-start) and (max-width: $break-tablet-end) {
   @import 'mobile/header-footer';
   @import 'mobile/grids';
@@ -23,7 +23,9 @@
   @import 'mobile/effects';
   @import 'mobile/forms';
   @import 'mobile/slideshows';
+  @import 'mobile/maps';
 }
+
 // imports desktop
 @media screen and (min-width: $break-desktop) {
   @import 'desktop/header-footer';
@@ -34,15 +36,20 @@
   @import 'desktop/effects';
   @import 'desktop/forms';
   @import 'desktop/slideshows';
+  @import 'desktop/maps';
 }
+
 @media print {
   @import 'global/print';
 }
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
   .lazy {
     opacity: 1 !important;
   }
 }
+
 @import 'global/font-social-icons';
 @import 'global/cookies'; //@import 'global/libraries/aos';
 @import 'global/libraries/slick'; // rimuovere il commento se si usa pagenavi - https://wordpress.org/plugins/wp-pagenavi/

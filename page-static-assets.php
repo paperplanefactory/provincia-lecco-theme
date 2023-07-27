@@ -1,8 +1,8 @@
 <?php
 /**
-*  Paperplane _blankTheme
+ *  Paperplane _blankTheme
  * Template Name: Static assets
-*/
+ */
 get_header();
 ?>
 <div class="wrapper module-highlighted-sentence">
@@ -18,7 +18,7 @@ get_header();
             </div>
             <div class="flex-hold-child-texts">
               <div class="last-child-no-margin">
-                <h2>Associare alla homepage del sito una pagian statica.</h2>
+                <h2>Associare alla homepage del sito una pagina statica.</h2>
               </div>
             </div>
           </div>
@@ -49,11 +49,13 @@ get_header();
             Titillium web Regular - 24pt - interlinea 32 - spazio dopo 16</h3>
           <h4>Pagina listing<br />
             H4 - Titolo card singolo contenuto listing</h4>
-            <h4 class="h4-variant">Pagina contenth4 - Titolo card in pagina<br />
-              Titillium web Regular - 20pt - interlinea 30 - spazio dopo 8</h4>
-          <h5>Pagina content e pagina listingh5 - navigazione e footer - menu laterale pagina content  - menu laterale pagina listing -  sottotitoli pagina - tag<br />
+          <h4 class="h4-variant">Pagina contenth4 - Titolo card in pagina<br />
+            Titillium web Regular - 20pt - interlinea 30 - spazio dopo 8</h4>
+          <h5>Pagina content e pagina listingh5 - navigazione e footer - menu laterale pagina content - menu laterale
+            pagina listing - sottotitoli pagina - tag<br />
             Titillium web Semibold - 16pt - interlinea 24 - spazio dopo 8<br />
-            <a href="">link underline e azzurro chiaro</a></h5>
+            <a href="">link underline e azzurro chiaro</a>
+          </h5>
           <h6>h6 - categorie e cta<br />
             Titillium web Bold ALL CAPS - kerning 50 - 14pt - interlinea 20<br />
             h6 - cta su bottone<br />
@@ -102,9 +104,11 @@ get_header();
                 <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Uffici">Uffici</a></h6>
               </div>
               <div class="texts-holder">
-                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
 
@@ -118,7 +122,8 @@ get_header();
           <div class="flex-hold-child card insite">
             <div class="card_inner regular-card">
               <div class="cover-image">
-                <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">
+                <a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                  aria-label="Lorem ipsum dolor sit amen consectetur">
                   <div class="no-the-100">
                     <img src="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg" />
                   </div>
@@ -128,9 +133,11 @@ get_header();
                 <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
               </div>
               <div class="texts-holder">
-                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
             </div>
@@ -141,12 +148,15 @@ get_header();
           <!-- card singoli contenuti -->
           <!-- card singoli contenuti -->
           <div class="flex-hold-child card insite autonomous-height">
-            <div class="image-card-image-side lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg"></div>
+            <div class="image-card-image-side lazy with-bg-image"
+              data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg"></div>
             <div class="card_inner image-card">
               <div class="title-block">
-                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
               <a href="#" class="arrow-button" title="xxxx" aria-label="xxxx">Leggi di più</a>
@@ -160,9 +170,11 @@ get_header();
                 <h6 class="allupper"><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Notizie</a></h6>
               </div>
               <div class="texts-holder">
-                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
+                <h2 class="h2-variant"><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
               <div class="more-info">
@@ -184,21 +196,27 @@ get_header();
                 <span></span>
               </div>
               <div class="texts-holder">
-                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
               <div class="inner-news-listing">
                 <ul>
                   <li>
-                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                      aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a>
                   </li>
                   <li>
-                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit</a>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                      aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit</a>
                   </li>
                   <li>
-                    <a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur orem ipsum dolor sit amen consectetur</a>
+                    <a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                      aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur orem
+                      ipsum dolor sit amen consectetur</a>
                   </li>
                 </ul>
               </div>
@@ -212,9 +230,11 @@ get_header();
           <div class="flex-hold-child card insite">
             <div class="card_inner regular-card">
               <div class="texts-holder">
-                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur" aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <h3><a href="#" title="Lorem ipsum dolor sit amen consectetur"
+                    aria-label="Lorem ipsum dolor sit amen consectetur">Lorem ipsum dolor sit amen consectetur</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
                 </p>
               </div>
             </div>
@@ -227,7 +247,8 @@ get_header();
           <div class="flex-hold-child card insite">
             <div class="card_inner cap-card">
               <div class="category-square title-block cat-fill-a">
-                <h3><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Lorem ipsum dolor sit amen consectetur</a></h3>
+                <h3><a href="#" title="Archivio Notizie" aria-label="Archivio Notizie">Lorem ipsum dolor sit amen
+                    consectetur</a></h3>
               </div>
             </div>
           </div>
@@ -242,26 +263,28 @@ get_header();
           </div>
           <!-- card singoli contenuti -->
           <!-- card singoli contenuti -->
-          <div class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
+          <div class="flex-hold-child card autonomous-height insite lazy with-bg-image"
+            data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
             <div class="card_inner image-card-big">
               <div class="image-card-content">
                 <div class="category-square cat-fill-a">
                   <span></span>
                 </div>
-                  <h3>Lorem ipsum dolor sit amen consectetur</h3>
+                <h3>Lorem ipsum dolor sit amen consectetur</h3>
               </div>
 
             </div>
           </div>
           <!-- card singoli contenuti -->
           <!-- card singoli contenuti -->
-          <div class="flex-hold-child card autonomous-height insite lazy with-bg-image" data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
+          <div class="flex-hold-child card autonomous-height insite lazy with-bg-image"
+            data-bg="http://provincia-di-lecco.local/pr-lecco-media/2019/06/stw-02.jpg">
             <div class="card_inner image-card-normal">
               <div class="image-card-content">
                 <div class="category-square cat-fill-a">
                   <span></span>
                 </div>
-                  <h3>Lorem ipsum dolor sit amen consectetur</h3>
+                <h3>Lorem ipsum dolor sit amen consectetur</h3>
               </div>
 
             </div>
@@ -272,10 +295,10 @@ get_header();
             <div class="card_inner cap-card">
               <div class="category-square title-block cat-fill">
                 <span>
-                <h5>Sito tematico</h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
-                </p>
+                  <h5>Sito tematico</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor…
+                  </p>
                 </span>
               </div>
             </div>

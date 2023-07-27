@@ -1,0 +1,101 @@
+// main: ../style.scss
+@import '../global/vars';
+@import '../global/mixin';
+
+.map-module-plugin {
+    position: relative;
+    width: 100%;
+
+    .wpgmza_map {
+        height: auto !important;
+        min-height: 744px !important;
+    }
+
+    .video_frame {
+        position: relative;
+        padding-bottom: 0 !important;
+
+        overflow: hidden;
+        width: 100% !important;
+        height: auto;
+    }
+}
+
+.wpgmza_infowindow_link,
+.wpgmza-link {
+    a {
+        position: relative;
+        font-size: $h6-size-desktop;
+        line-height: $h6-lineheight-desktop;
+        margin-bottom: $h6-marginbottom-desktop;
+        letter-spacing: 1px;
+        color: $color-4;
+        font-weight: $font-weight-3;
+        font-family: $font-main;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $color-1;
+        }
+
+        &:after {
+            position: relative;
+            display: inline-block;
+            text-decoration: none !important;
+            position: relative;
+            top: 2px;
+            margin-left: 8px;
+            font-family: "provincia-di-lecco" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\62";
+        }
+    }
+}
+
+.wpgmza-link {
+    margin-top: 5px;
+}
+
+.wpgmza_marker_title {
+    font-size: $h6-size-desktop;
+    line-height: $h6-lineheight-desktop;
+    margin-bottom: $h6-marginbottom-desktop;
+    color: $color-4;
+    font-weight: $font-weight-3;
+    font-family: $font-main;
+    color: $color-2;
+}
+
+.wpgmza_gallery_placeholder {
+    margin-bottom: 10px;
+}
+
+.wpgmza_infowindow_address,
+.wpgmza_infowindow_description p {
+    font-size: $h6-size-desktop;
+    line-height: $h6-lineheight-desktop;
+    margin-bottom: $h6-marginbottom-desktop;
+}
+
+.wpgmza_infowindow_address {
+    font-weight: $font-weight-2;
+    font-family: $font-main;
+    margin-bottom: 10px;
+}
+
+.wpgmza_infowindow_title,
+.wpgmza_div_title {
+    font-size: $h5-size-desktop;
+    line-height: $h5-lineheight-desktop;
+    margin-bottom: $h5-marginbottom-desktop;
+    color: $color-4;
+    font-weight: $font-weight-3;
+    font-family: $font-main;
+    color: $color-2;
+}

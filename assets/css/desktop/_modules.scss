@@ -56,3 +56,29 @@
 .expandable-content {
   padding-top: 35px;
 }
+
+.module-dati-progetto {
+  .module-dati-progetto-string {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: solid 1px $color-13;
+    @include flex-wrap;
+    font-size: $paragraph-size-desktop;
+    line-height: $paragraph-lineheight-desktop;
+
+
+    .label {
+      width: 220px;
+      margin-right: 10px;
+      color: $color-2;
+      font-weight: $font-weight-2;
+    }
+
+    .data {
+      width: calc(100% - 230px);
+      font-family: $font-sub;
+    }
+  }
+}

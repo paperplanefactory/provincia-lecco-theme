@@ -159,6 +159,7 @@
 .data-holder {
   margin: 20px 0 40px;
 }
+
 // flex boxes
 // per calcolare la larghezza degli elementi flex:
 // valore margin right - (valore margin right / numero elmenti per riga)
@@ -311,11 +312,11 @@
       width: 50%;
       height: 100%;
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1a4d78+0,1a4d78+100&1+0,0+100 */
-      background: -moz-linear-gradient(left, rgba(26,77,120,1) 0%, rgba(26,77,120,0) 100%);
+      background: -moz-linear-gradient(left, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(left, rgba(26,77,120,1) 0%,rgba(26,77,120,0) 100%);
+      background: -webkit-linear-gradient(left, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, rgba(26,77,120,1) 0%,rgba(26,77,120,0) 100%);
+      background: linear-gradient(to right, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
   }
@@ -335,6 +336,7 @@
 .flex-hold-search-page {
   margin-top: 30px;
   padding-top: 60px;
+
   //border-top: solid 1px $color-10;
   .search-page-left {
     order: 1;
@@ -384,9 +386,9 @@
     padding-top: 4px;
     margin-right: 25px;
     margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
-    box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -418,9 +420,9 @@
     padding-top: 4px;
     margin-right: 25px;
     margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
-    box-shadow: 0 0 8px 0 rgba(0,43,85,0.1);
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -545,6 +547,7 @@
     }
   }
 }
+
 // social list
 
 .inline-socials {
@@ -561,6 +564,7 @@
     font-size: 28px;
   }
 }
+
 // cards
 
 .offsite {
@@ -693,5 +697,42 @@
     width: calc(100% + 90px) !important;
     height: auto;
     margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+  }
+}
+
+.rmp-widgets-container {
+  text-align: left !important;
+
+  .rmp-heading--title {
+    font-family: $font-main;
+    font-size: $h5-size-desktop;
+    line-height: $h5-lineheight-desktop;
+    margin-bottom: $h5-marginbottom-desktop;
+    font-weight: $font-weight-3;
+  }
+
+  .rmp-heading--subtitle {
+    font-family: $font-main;
+    font-size: $h6-size-desktop;
+    line-height: $h6-lineheight-desktop;
+    margin-bottom: $h6-marginbottom-desktop;
+    font-weight: $font-weight-1;
+  }
+
+  .rmp-rating-widget__results,
+  .rmp-rating-widget__not-rated {
+    font-family: $font-main;
+    font-size: $h5-size-desktop;
+    line-height: $h5-lineheight-desktop;
+    margin-bottom: $h5-marginbottom-desktop;
+    font-weight: $font-weight-3;
+  }
+
+  .rmp-rating-widget__msg {
+    font-family: $font-main;
+    font-size: $h6-size-desktop;
+    line-height: $h6-lineheight-desktop;
+    margin-bottom: $h6-marginbottom-desktop;
+    font-weight: $font-weight-1;
   }
 }
