@@ -53,6 +53,7 @@
             "max": 0,
             "layout": "block",
             "button_label": "Aggiungi modulo",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "show_column_filter": 0,
@@ -329,6 +330,8 @@
                     "max": 0,
                     "layout": "block",
                     "button_label": "Aggiungi slide",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_5eaa952287981",
                     "sub_fields": [
                         {
                             "show_column_filter": false,
@@ -389,9 +392,7 @@
                             "maxlength": "",
                             "parent_repeater": "field_5eaaaa0c54e7f"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_5eaa952287981"
+                    ]
                 },
                 {
                     "show_column_filter": false,
@@ -595,6 +596,8 @@
                     "max": 0,
                     "layout": "block",
                     "button_label": "Aggiungi scadenza",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_5eaa952287981",
                     "sub_fields": [
                         {
                             "show_column_filter": false,
@@ -675,9 +678,7 @@
                             "delay": 0,
                             "parent_repeater": "field_5eaab462914e0"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_5eaa952287981"
+                    ]
                 },
                 {
                     "show_column_filter": false,
@@ -846,6 +847,8 @@
                     "max": 0,
                     "layout": "block",
                     "button_label": "Aggiungi CTA",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_5eaa952287981",
                     "sub_fields": [
                         {
                             "show_column_filter": false,
@@ -941,9 +944,7 @@
                             "mime_types": "",
                             "parent_repeater": "field_5eaac7928d1d4"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_5eaa952287981"
+                    ]
                 },
                 {
                     "show_column_filter": false,
@@ -993,7 +994,8 @@
                     "min": "",
                     "max": "",
                     "return_format": "object",
-                    "parent_repeater": "field_5eaa952287981"
+                    "parent_repeater": "field_5eaa952287981",
+                    "bidirectional_target": []
                 },
                 {
                     "show_column_filter": false,
@@ -1171,7 +1173,8 @@
                     "load_terms": 0,
                     "return_format": "id",
                     "multiple": 0,
-                    "parent_repeater": "field_5eaa952287981"
+                    "parent_repeater": "field_5eaa952287981",
+                    "bidirectional_target": []
                 },
                 {
                     "show_column_filter": false,
@@ -1209,7 +1212,8 @@
                     "load_terms": 0,
                     "return_format": "id",
                     "multiple": 0,
-                    "parent_repeater": "field_5eaa952287981"
+                    "parent_repeater": "field_5eaa952287981",
+                    "bidirectional_target": []
                 },
                 {
                     "show_column_filter": false,
@@ -1261,7 +1265,8 @@
                     "min": "",
                     "max": "",
                     "return_format": "object",
-                    "parent_repeater": "field_5eaa952287981"
+                    "parent_repeater": "field_5eaa952287981",
+                    "bidirectional_target": []
                 },
                 {
                     "show_column_filter": false,
@@ -1577,6 +1582,8 @@
                     "max": 0,
                     "layout": "block",
                     "button_label": "Aggiungi documento",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_5eaa952287981",
                     "sub_fields": [
                         {
                             "show_column_filter": false,
@@ -1732,9 +1739,7 @@
                             "new_lines": "br",
                             "parent_repeater": "field_5ec688dc14d96"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_5eaa952287981"
+                    ]
                 },
                 {
                     "show_column_filter": false,
@@ -2115,9 +2120,9 @@
                 },
                 {
                     "show_column_filter": false,
-                    "allow_bulkedit": false,
-                    "allow_quickedit": false,
-                    "show_column": false,
+                    "allow_bulkedit": 0,
+                    "allow_quickedit": 0,
+                    "show_column": 0,
                     "show_column_weight": 1000,
                     "show_column_sortable": false,
                     "key": "field_6453801445806",
@@ -2126,7 +2131,7 @@
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "In caso di informazioni non disponibili inserire un testo segnaposto, ad esempio \"-\".",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -2140,9 +2145,9 @@
                 },
                 {
                     "show_column_filter": false,
-                    "allow_bulkedit": false,
-                    "allow_quickedit": false,
-                    "show_column": false,
+                    "allow_bulkedit": 0,
+                    "allow_quickedit": 0,
+                    "show_column": 0,
                     "show_column_weight": 1000,
                     "show_column_sortable": false,
                     "key": "field_6453801e45807",
@@ -2151,7 +2156,7 @@
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "In caso di informazioni non disponibili inserire un testo segnaposto, ad esempio \"-\".",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -2165,18 +2170,18 @@
                 },
                 {
                     "show_column_filter": false,
-                    "allow_bulkedit": false,
-                    "allow_quickedit": false,
-                    "show_column": false,
+                    "allow_bulkedit": 0,
+                    "allow_quickedit": 0,
+                    "show_column": 0,
                     "show_column_weight": 1000,
                     "show_column_sortable": false,
-                    "key": "field_6453802d45808",
+                    "key": "field_65449e8485229",
                     "label": "Entrata in esercizio",
                     "name": "entrata_in_esercizio",
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "In caso di informazioni non disponibili inserire un testo segnaposto, ad esempio \"-\".",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -2350,8 +2355,7 @@
                     "esc_html": 0,
                     "parent_repeater": "field_5eaa952287981"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         }
     ],
     "location": [
@@ -2414,5 +2418,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683202672
+    "modified": 1698995954
 }
