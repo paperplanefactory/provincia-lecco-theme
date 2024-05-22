@@ -3,6 +3,7 @@
     "title": "Gestione homepage",
     "fields": [
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -27,6 +28,7 @@
             "endpoint": 0
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -59,6 +61,7 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -103,6 +106,7 @@
             "bidirectional_target": []
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -127,6 +131,7 @@
             "endpoint": 0
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -159,6 +164,7 @@
             "placeholder": ""
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -203,6 +209,7 @@
             "bidirectional_target": []
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -227,6 +234,7 @@
             "endpoint": 0
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -258,6 +266,7 @@
             "mime_types": ""
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -293,6 +302,7 @@
             "bidirectional_target": []
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -317,6 +327,7 @@
             "endpoint": 0
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -347,12 +358,13 @@
             ],
             "return_format": "object",
             "min": 1,
-            "max": 15,
+            "max": 30,
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -377,6 +389,7 @@
             "endpoint": 0
         },
         {
+            "allow_backendsearch": false,
             "show_column_filter": false,
             "allow_bulkedit": false,
             "allow_quickedit": false,
@@ -426,5 +439,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698758633
+    "qef_simple_location_rules": 0,
+    "modified": 1716374466
 }
