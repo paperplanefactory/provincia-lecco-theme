@@ -3,8 +3,8 @@
 @import 'mixin'; // hamburger
 
 .hambuger-element {
-  width: 30px;
-  height: 22px;
+  width: rem(30);
+  height: rem(22);
   position: relative;
   display: inline-block;
   z-index: 9998;
@@ -20,7 +20,7 @@
 .hambuger-element span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: rem(4);
   width: 100%;
   opacity: 1;
   right: 0;
@@ -31,38 +31,38 @@
 
 .hambuger-element span:nth-child(1) {
   top: 0;
-  width: 30px;
+  width: rem(30);
 }
 
 .hambuger-element span:nth-child(2),
 .hambuger-element span:nth-child(3) {
-  top: 9px;
-  width: 24px;
+  top: rem(9);
+  width: rem(24);
 }
 
 .hambuger-element span:nth-child(4) {
   bottom: 0;
-  width: 18px;
+  width: rem(18);
 }
 
 .hambuger-element.open span:nth-child(1) {
-  top: 18px;
+  top: rem(18);
   width: 0;
   left: 50%;
 }
 
 .hambuger-element.open span:nth-child(2) {
   @include define-rotate(45);
-  width: 26px;
+  width: rem(26);
 }
 
 .hambuger-element.open span:nth-child(3) {
   @include define-rotate(-45);
-  width: 26px;
+  width: rem(26);
 }
 
 .hambuger-element.open span:nth-child(4) {
-  top: 18px;
+  top: rem(18);
   width: 0;
   left: 50%;
 }
@@ -74,8 +74,8 @@
 
   &:after {
     position: relative;
-    top: 2px;
-    margin-left: 8px;
+    top: rem(2);
+    margin-left: rem(8);
     font-family: "provincia-di-lecco" !important;
     font-style: normal !important;
     font-weight: normal !important;
@@ -92,17 +92,17 @@
   position: relative;
   display: inline-block;
   text-decoration: none !important;
-  @include define-border-radius(4px);
-  border: solid 1px;
-  padding: 8px 24px;
+  @include define-border-radius(rem(4));
+  border: solid rem(1);
+  padding: rem(8) rem(24);
 }
 
 .tag-button {
   position: relative;
   display: inline-block;
   text-decoration: none !important;
-  @include define-border-radius(16px);
-  padding: 4px 22px;
+  @include define-border-radius(rem(16));
+  padding: rem(4) rem(22);
 }
 
 .button-appearance-normalizer {
@@ -119,8 +119,8 @@
 
   .icon-js {
     position: relative;
-    top: 3px;
-    font-size: 20px;
+    top: rem(3);
+    font-size: rem(20);
   }
 }
 
@@ -131,23 +131,23 @@
 
   .icon-js {
     position: relative;
-    top: 3px;
-    font-size: 20px;
+    top: rem(3);
+    font-size: rem(20);
     color: $color-4;
   }
 }
 
 .page-search-cats-listing {
   display: none;
-  margin: 0 0 10px;
-  padding: 0 0 0 15px;
+  margin: 0 0 rem(10);
+  padding: 0 0 0 rem(15);
 
   li {
     position: relative;
-    margin: 0 0 5px;
+    margin: 0 0 rem(5);
 
     ul {
-      margin-left: 20px;
+      margin-left: rem(20);
     }
 
     input[type='checkbox'] {
@@ -156,8 +156,8 @@
       top: 0;
       left: 0;
       overflow: hidden;
-      width: 1px;
-      height: 1px;
+      width: rem(1);
+      height: rem(1);
     }
 
     button {
@@ -171,22 +171,22 @@
 
       span {
         position: relative;
-        top: 2px;
+        top: rem(2);
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        border: solid 1px $color-2;
-        @include define-border-radius(4px);
-        margin: 0 10px 0 0;
+        width: rem(16);
+        height: rem(16);
+        border: solid rem(1) $color-2;
+        @include define-border-radius(rem(4));
+        margin: 0 rem(10) 0 0;
 
         &.checked {
           background-color: $color-2;
 
           &:before {
             position: absolute;
-            left: 2px;
-            top: 2px;
-            font-size: 13px;
+            left: rem(2);
+            top: rem(2);
+            font-size: rem(13);
             color: $color-12;
           }
         }
@@ -207,9 +207,9 @@
 
   span {
     position: relative;
-    top: 4px;
-    margin-right: 5px;
-    font-size: 20px;
+    top: rem(4);
+    margin-right: rem(5);
+    font-size: rem(20);
     color: $color-4;
   }
 }
@@ -221,9 +221,9 @@
 
   span {
     position: relative;
-    top: 4px;
-    margin-right: 5px;
-    font-size: 20px;
+    top: rem(4);
+    margin-right: rem(5);
+    font-size: rem(20);
     color: $color-4;
   }
 }
@@ -231,8 +231,8 @@
 .index-menu-expander {
   position: relative;
   width: 100%;
-  padding: 35px 50px 20px 32px;
-  border-bottom: solid 5px $color-11;
+  padding: rem(35) rem(50) rem(20) rem(32);
+  border-bottom: solid rem(5) $color-11;
   text-align: left;
   text-transform: uppercase;
 
@@ -240,17 +240,17 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px;
-    width: 48px;
-    height: 5px;
+    bottom: rem(-4);
+    width: rem(48);
+    height: rem(5);
     background-color: $color-4;
   }
 
   span {
     position: relative;
-    top: -1px;
+    top: rem(-1);
     float: right;
-    font-size: 30px;
+    font-size: rem(30);
     color: $color-4;
   }
 }
@@ -265,41 +265,42 @@
 
   span {
     position: relative;
-    top: 8px;
+    top: rem(8);
     color: $color-4;
-    margin-right: 10px;
+    margin-right: rem(10);
   }
 }
 
 .search-form {
+
   .search-erase,
   .search-submit {
     display: inline-block;
     text-align: center;
     text-decoration: none !important;
-    width: 44px;
-    height: 44px;
+    width: rem(44);
+    height: rem(44);
     margin: 0;
     border: none;
     cursor: pointer;
     @include define-basic-transition(all, 0.3s);
     background-color: transparent;
-    font-size: 25px;
+    font-size: rem(25);
     color: $color-4;
 
     span {
       position: absolute;
-      top: 11px;
-      right: 9px;
+      top: rem(11);
+      right: rem(9);
     }
   }
 }
 
 .expander {
   position: relative;
-  line-height: 17px !important;
+  line-height: rem(17) !important;
   font-weight: $font-weight-2 !important;
-  padding-left: 25px !important;
+  padding-left: rem(25) !important;
   text-align: left;
   @include reset-button;
 
@@ -320,4 +321,82 @@
       content: '\f146';
     }
   }
+}
+
+
+
+.card {
+
+  &:has(a:focus-visible) {
+    z-index: 99999 !important;
+
+  }
+
+  &:has(.card-link:focus-visible) {
+
+    .element-hover {
+      text-decoration: underline;
+    }
+
+    .arrow-button {
+      text-decoration: underline !important;
+    }
+  }
+
+
+  &:hover {
+
+    &.no-underline {
+
+      .element-hover,
+      .arrow-button {
+        text-decoration: none !important;
+      }
+    }
+
+    .element-hover {
+      text-decoration: underline;
+    }
+
+    .arrow-button {
+      text-decoration: underline !important;
+    }
+  }
+
+
+
+  .card-link {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .preserve-text {
+    position: relative;
+    z-index: 11;
+  }
+
+  .elent-with-link {
+    position: relative;
+    z-index: 11;
+  }
+
+  a {
+    &:not(.card-link) {
+      position: relative;
+      z-index: 11;
+    }
+  }
+}
+
+.all-results {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $color-2;
+  margin-bottom: 0 !important;
 }

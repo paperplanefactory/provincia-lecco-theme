@@ -12,62 +12,62 @@
 }
 
 .wrapper-padded-more {
-  max-width: 1185px;
+  max-width: rem(1185);
 }
 
 .wrapper-padded-intro {
-  max-width: 1125px;
+  max-width: rem(1125);
 }
 
 .wrapper-padded-more-924 {
-  max-width: 924px;
+  max-width: rem(924);
 }
 
 .wrapper-padded-more-780 {
-  max-width: 780px;
+  max-width: rem(780);
 }
 
 .wrapper-padded-more-650 {
-  max-width: 650px;
+  max-width: rem(650);
 }
 
 .wrapper-padded-more-500 {
-  max-width: 500px;
+  max-width: rem(500);
 }
 
 .modules-wrapper {
   .padder {
-    padding: 55px 45px 85px;
+    padding: rem(55) rem(45) rem(85);
   }
 }
 
 .inpage-searchform {
-  margin-top: 60px;
+  margin-top: rem(60);
 }
 
 .page-opening-padder {
-  padding: 40px 0 110px;
+  padding: rem(40) rem(0) rem(110);
 }
 
 .avviso-padder,
 .avviso-top-padder,
 .single-content-opening-padder {
-  padding: 40px 0 10px;
+  padding: rem(40) 0 rem(10);
 }
 
 .avviso-padder {
   h3 {
-    padding-left: 30px;
+    padding-left: rem(30);
   }
 }
 
 .intro-search-results-padder {
-  margin: 0 0 30px;
+  margin: 0 0 rem(30);
 
   .flex-hold-child {
-    h5 {
+    .eraser-btn {
       display: inline-block;
-      margin: 0 0 0 20px;
+      margin: 0 0 0 rem(20);
     }
   }
 
@@ -77,32 +77,38 @@
 }
 
 .intro-news-padder {
-  padding: 15px 65px 0 30px;
+  padding: rem(15) rem(65) 0 rem(30);
 }
 
 .tags-holder {
   width: 100%;
-  margin: 30px 0 10px;
+  margin: rem(30) 0 rem(10);
 
-  a {
-    margin-right: 15px;
-    margin-bottom: 20px;
+  li {
+    display: inline-block;
+    margin-right: rem(15);
+    margin-bottom: rem(20);
   }
 }
 
 .listing-module {
   .tags-holder {
-    margin: 10px 0;
+    margin: rem(10) 0;
   }
 }
 
 .intro-box {
-  margin: 0 0 40px;
+  margin: 0 0 rem(40);
+
+  &.card {
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .intro-news-padder {
   .category-holder {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 }
 
@@ -112,7 +118,7 @@
   left: 0;
   display: block;
   width: 100%;
-  height: 50px;
+  height: rem(50);
 }
 
 .wrapper-step-image {
@@ -121,43 +127,43 @@
   left: 0;
   display: block;
   width: 100%;
-  height: 300px;
+  height: rem(300);
 }
 
 .highlight-box {
-  margin: 60px 0 0;
+  margin: rem(60) 0 0;
 }
 
 .thematic-box {
-  margin: 60px 0;
+  margin: rem(60) 0;
 }
 
 .search-banner {
-  margin: 110px 0;
+  margin: rem(110) 0;
 }
 
 .listing-box {
-  margin: 60px 0 40px;
+  margin: rem(60) 0 rem(40);
 }
 
 .tag-box {
-  margin: 60px 0 90px;
+  margin: rem(60) 0 rem(90);
 }
 
 .module-separator {
-  margin-bottom: 35px;
+  margin-bottom: rem(35);
 }
 
 .module-separator-flex {
-  margin-bottom: 16px;
+  margin-bottom: rem(16);
 }
 
 .scadenze-wrapper {
-  margin-top: 40px;
+  margin-top: rem(40);
 }
 
 .data-holder {
-  margin: 20px 0 40px;
+  margin: rem(20) 0 rem(40);
 }
 
 // flex boxes
@@ -166,11 +172,11 @@
 // es. 16 - (16/2) = 8
 
 .grid-separator-1 {
-  margin: 0 0 54px;
+  margin: 0 0 rem(54);
 }
 
 .grid-separator-2 {
-  margin: 40px 0 0;
+  margin: rem(40) 0 0;
 }
 
 .opening-child-right {
@@ -181,20 +187,20 @@
 
 .flex-hold-single {
   .flex-hold-child {
-    margin: 0 0 36px;
+    margin: 0 0 rem(36);
   }
 
   .people-card {
-    width: calc(50% - 18px) !important;
-    margin: 0 36px 36px 0;
+    width: calc(50% - rem(18)) !important;
+    margin: 0 rem(36) rem(36) 0;
   }
 }
 
 .flex-hold-2 {
   &.margins-thin {
     .flex-hold-child {
-      width: calc(50% - 36px) !important;
-      margin: 0 72px 24px 0;
+      width: calc(50% - rem(36)) !important;
+      margin: 0 rem(72) rem(24) 0;
     }
 
     .flex-hold-child:nth-child(2n) {
@@ -204,8 +210,8 @@
 
   &.margins-wide {
     .flex-hold-child {
-      width: calc(50% - 18px) !important;
-      margin: 0 36px 36px 0;
+      width: calc(50% - rem(18)) !important;
+      margin: 0 rem(36) rem(36) 0;
     }
 
     .flex-hold-child:nth-child(2n) {
@@ -221,18 +227,18 @@
 }
 
 .flex-hold-page-opening {
-  margin-top: 60px;
+  margin-top: rem(60);
 
   .page-opening-left {
     order: 1;
     width: 60%;
 
     .banner-form {
-      margin-top: 30px;
+      margin-top: rem(30);
     }
 
     .card {
-      margin-top: 30px;
+      margin-top: rem(30);
     }
   }
 
@@ -241,26 +247,26 @@
     width: 40%;
 
     .padder {
-      padding-left: 160px;
+      padding-left: rem(160);
 
       .card {
-        margin-top: 20px;
+        margin-top: rem(20);
       }
     }
 
     .tags-holder {
-      margin-top: 10px;
+      margin-top: rem(10);
     }
   }
 }
 
 .flex-hold-page-index {
-  margin-top: 30px;
-  border-top: solid 1px $color-10;
+  margin-top: rem(30);
+  border-top: solid rem(1) $color-10;
 
   .page-index-left {
     order: 1;
-    width: 350px;
+    width: rem(350);
 
     .sticky-element-compact {
       top: $header-desktop-height-compact;
@@ -273,11 +279,11 @@
 
   .page-index-right {
     order: 2;
-    width: calc(100% - 351px);
-    border-left: solid 1px $color-10;
+    width: calc(100% - rem(351));
+    border-left: solid rem(1) $color-10;
 
     .padder {
-      padding: 55px 45px 85px;
+      padding: rem(55) rem(45) rem(85);
     }
   }
 }
@@ -285,13 +291,14 @@
 .flex-hold-avviso {
   .avviso-left {
     order: 1;
-    width: calc(100% - 490px);
+    width: calc(100% - rem(490));
 
     .padder {
-      padding: 0 40px 0 0;
+      padding: 0 rem(40) 0 0;
 
+      h2,
       h3 {
-        padding-left: 30px;
+        padding-left: rem(30);
       }
     }
   }
@@ -299,7 +306,7 @@
   .avviso-right {
     position: relative;
     order: 2;
-    width: 490px;
+    width: rem(490);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -324,38 +331,38 @@
 
 .chiudi-avviso {
   position: absolute;
-  left: -15px;
-  top: 45px;
+  left: rem(-15);
+  top: rem(45);
   color: $color-11;
 
   span {
-    font-size: 28px;
+    font-size: rem(28);
   }
 }
 
 .flex-hold-search-page {
-  margin-top: 30px;
-  padding-top: 60px;
+  margin-top: rem(30);
+  padding-top: rem(60);
 
   //border-top: solid 1px $color-10;
   .search-page-left {
     order: 1;
     //width: 350px;
-    width: 200px;
+    width: rem(300);
 
     .sticky-element-compact {
-      top: calc(#{$header-desktop-height-compact} + 30px);
+      top: calc(#{$header-desktop-height-compact} + rem(30));
     }
 
     .sticky-element-expanded {
-      top: calc(#{$header-desktop-height} + 30px);
+      top: calc(#{$header-desktop-height} + rem(30));
     }
 
     .padder {
-      padding: 0 0 30px;
+      padding: 0 0 rem(30);
 
       h5 {
-        margin-top: 30px;
+        margin-top: rem(30);
 
         &:first-child {
           margin-top: 0;
@@ -366,10 +373,10 @@
 
   .search-page-right {
     order: 2;
-    width: calc(100% - 200px);
+    width: calc(100% - rem(300));
 
     .padder {
-      padding: 0 0 85px 24px;
+      padding: 0 0 rem(85) rem(24);
     }
   }
 }
@@ -377,18 +384,18 @@
 .card-date-holder {
   .data {
     order: 1;
-    width: 90px;
-    height: 85px;
+    width: rem(90);
+    height: rem(85);
     overflow: hidden;
-    @include define-border-radius(8px);
+    @include define-border-radius(rem(8));
     background-color: $color-8;
     text-align: center;
-    padding-top: 4px;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    padding-top: rem(4);
+    margin-right: rem(25);
+    margin-bottom: rem(25);
+    -webkit-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -397,7 +404,7 @@
     }
 
     h5 {
-      line-height: $h5-size-desktop;
+      line-height: rem($h5-size-desktop);
     }
   }
 }
@@ -411,18 +418,18 @@
 
   .data {
     order: 1;
-    width: 90px;
-    height: 85px;
+    width: rem(90);
+    height: rem(85);
     overflow: hidden;
-    @include define-border-radius(8px);
+    @include define-border-radius(rem(8));
     background-color: $color-8;
     text-align: center;
-    padding-top: 4px;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    padding-top: rem(4);
+    margin-right: rem(25);
+    margin-bottom: rem(25);
+    -webkit-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -431,29 +438,29 @@
     }
 
     h5 {
-      line-height: $h5-size-desktop;
+      line-height: rem($h5-size-desktop);
     }
   }
 
   .info {
     position: relative;
     order: 2;
-    width: calc(100% - 116px);
-    border-left: solid 1px $color-4;
+    width: calc(100% - rem(116));
+    border-left: solid rem(1) $color-4;
 
     &:before {
       content: "";
       position: absolute;
-      left: -4px;
-      top: 41px;
-      width: 8px;
-      height: 8px;
+      left: rem(-4);
+      top: rem(41);
+      width: rem(8);
+      height: rem(8);
       background-color: $color-4;
-      @include define-border-radius(8px);
+      @include define-border-radius(rem(8));
     }
 
     .padder {
-      padding: 0 0 0 30px;
+      padding: 0 0 0 rem(30);
     }
   }
 }
@@ -461,8 +468,8 @@
 .flex-hold-3 {
   &.margins-thin {
     .flex-hold-child {
-      width: calc(33.333333% - 12px);
-      margin: 0 18px 18px 0;
+      width: calc(33.333333% - rem(12));
+      margin: 0 rem(18) rem(18) 0;
     }
 
     .flex-hold-child:nth-child(3n) {
@@ -472,8 +479,8 @@
 
   &.margins-wide {
     .flex-hold-child {
-      width: calc(33.333333% - 24px);
-      margin: 0 36px 36px 0;
+      width: calc(33.333333% - rem(24));
+      margin: 0 rem(36) rem(36) 0;
     }
 
     .flex-hold-child:nth-child(3n) {
@@ -492,13 +499,13 @@
   &.left-fix {
     .fix {
       order: 1;
-      width: calc(33.333333% - 48px);
-      margin: 0 72px 48px 0;
+      width: calc(33.333333% - rem(48));
+      margin: 0 rem(72) rem(48) 0;
     }
 
     .nofix {
       order: 2;
-      width: calc(66.666666% - 48px);
+      width: calc(66.666666% - rem(48));
       margin-right: 0;
     }
   }
@@ -506,13 +513,13 @@
   &.right-fix {
     .fix {
       order: 2;
-      width: calc(33.333333% - 48px);
-      margin: 0 0 48px 72px;
+      width: calc(33.333333% - rem(48));
+      margin: 0 0 rem(48) rem(72);
     }
 
     .nofix {
       order: 1;
-      width: calc(66.666666% - 48px);
+      width: calc(66.666666% - rem(48));
       margin-right: 0;
     }
   }
@@ -521,8 +528,8 @@
 .flex-hold-4 {
   &.margins-thin {
     .flex-hold-child {
-      width: calc(25% - 12px) !important;
-      margin: 0 16px 16px 0;
+      width: calc(25% - rem(12)) !important;
+      margin: 0 rem(16) rem(16) 0;
     }
 
     .flex-hold-child:nth-child(4n) {
@@ -532,8 +539,8 @@
 
   &.margins-wide {
     .flex-hold-child {
-      width: calc(25% - 36px) !important;
-      margin: 0 48px 48px 0;
+      width: calc(25% - rem(36)) !important;
+      margin: 0 rem(48) rem(48) 0;
     }
 
     .flex-hold-child:nth-child(4n) {
@@ -557,40 +564,46 @@
   li {
     text-align: center !important;
     display: inline-block;
-    width: 28px;
-    height: 28px;
-    margin: 0 0 10px 15px;
+    width: rem(28);
+    height: rem(28);
+    margin: 0 0 rem(10) rem(15);
     overflow: hidden;
-    font-size: 28px;
+    font-size: rem(28);
   }
 }
 
 // cards
 
 .offsite {
-  max-width: calc(50% - 18px) !important;
+  max-width: calc(50% - rem(18)) !important;
 }
 
 .card-outline {
-  margin-top: 30px;
+  margin-top: rem(30);
 
   .card_inner {
     position: relative;
 
     &.regular-card {
-      padding: 40px;
+      padding: rem(40);
     }
   }
 }
 
 .card {
+  article {
+    position: relative;
+    height: 100%;
+  }
+
+
   .cta-holder {
     position: absolute;
-    bottom: 25px;
+    bottom: rem(25);
     left: 0;
     display: block;
-    width: calc(100% - 40px);
-    padding: 0 20px;
+    width: calc(100% - rem(40));
+    padding: 0 rem(20);
   }
 
   .image-card-image-side {
@@ -604,32 +617,31 @@
 }
 
 .card_inner {
-  position: relative;
 
   &.regular-card {
-    padding: 20px 20px 35px;
+    padding: rem(20) rem(20) rem(35);
   }
 
   &.compact-card {
-    padding: 20px 20px 0;
+    padding: rem(20) rem(20) 0;
   }
 
   &.cap-card {
-    padding: 20px;
+    padding: rem(20);
   }
 
   &.image-card {
-    width: calc(60% - 30px);
-    padding: 20px 0 20px 20px;
+    width: calc(60% - rem(30));
+    padding: rem(20) 0 rem(20) rem(20);
   }
 
   &.warning-card {
-    padding: 20px 20px 20px 65px;
+    padding: rem(20)rem(20) rem(20) rem(65);
 
     .icon {
       position: absolute;
-      top: 22px;
-      left: 20px;
+      top: rem(22);
+      left: rem(20);
     }
   }
 
@@ -645,58 +657,56 @@
   &.image-card-normal {
     .image-card-content {
       position: absolute;
-      bottom: 24px;
+      bottom: rem(24);
       left: 0;
-      width: calc(100% - 40px);
-      padding: 0 20px;
+      width: calc(100% - rem(40));
+      padding: 0 rem(20);
     }
   }
 
   .cover-image {
     position: relative;
-    margin-top: -20px;
-    left: -20px;
-    width: calc(100% + 40px);
-    margin-bottom: 15px;
+    margin-top: rem(-20);
+    left: rem(-20);
+    width: calc(100% + rem(40));
+    margin-bottom: rem(15);
   }
 
   .category-holder {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 
   .texts-holder {
-    margin-bottom: 50px;
+    margin-bottom: rem(50);
 
     &.compact {
-      margin-bottom: 25px;
+      margin-bottom: rem(25);
     }
   }
 
-  .texts-holder-no-cta {
-    //margin-bottom: 50px;
-  }
+  .texts-holder-no-cta {}
 
   .more-info {
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
   }
 }
 
 .people-card {
   .title-block {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 }
 
 .map-module {
   .video_frame {
     position: relative;
-    left: -45px;
+    left: rem(-45);
     padding-bottom: 70%;
     height: 0;
     overflow: hidden;
-    width: calc(100% + 90px) !important;
+    width: calc(100% + rem(90)) !important;
     height: auto;
-    margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+    margin-bottom: calc(#{rem($paragraph-marginbottom-desktop)} * 2);
   }
 }
 
@@ -705,34 +715,34 @@
 
   .rmp-heading--title {
     font-family: $font-main;
-    font-size: $h5-size-desktop;
-    line-height: $h5-lineheight-desktop;
-    margin-bottom: $h5-marginbottom-desktop;
+    font-size: rem($h5-size-desktop);
+    line-height: rem($h5-lineheight-desktop);
+    margin-bottom: rem($h5-marginbottom-desktop);
     font-weight: $font-weight-3;
   }
 
   .rmp-heading--subtitle {
     font-family: $font-main;
-    font-size: $h6-size-desktop;
-    line-height: $h6-lineheight-desktop;
-    margin-bottom: $h6-marginbottom-desktop;
+    font-size: rem($h6-size-desktop);
+    line-height: rem($h6-lineheight-desktop);
+    margin-bottom: rem($h6-marginbottom-desktop);
     font-weight: $font-weight-1;
   }
 
   .rmp-rating-widget__results,
   .rmp-rating-widget__not-rated {
     font-family: $font-main;
-    font-size: $h5-size-desktop;
-    line-height: $h5-lineheight-desktop;
-    margin-bottom: $h5-marginbottom-desktop;
+    font-size: rem($h5-size-desktop);
+    line-height: rem($h5-lineheight-desktop);
+    margin-bottom: rem($h5-marginbottom-desktop);
     font-weight: $font-weight-3;
   }
 
   .rmp-rating-widget__msg {
     font-family: $font-main;
-    font-size: $h6-size-desktop;
-    line-height: $h6-lineheight-desktop;
-    margin-bottom: $h6-marginbottom-desktop;
+    font-size: rem($h6-size-desktop);
+    line-height: rem($h6-lineheight-desktop);
+    margin-bottom: rem($h6-marginbottom-desktop);
     font-weight: $font-weight-1;
   }
 }

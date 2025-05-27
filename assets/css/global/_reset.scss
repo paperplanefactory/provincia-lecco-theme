@@ -85,10 +85,12 @@ body {
 	font-family: $font-main;
 	line-height: 1;
 	overflow: visible !important;
+
+	&[data-user-zoom="max-zoom"] {}
 }
 
 *:focus {
-	//outline: 0;
+	outline: 0;
 }
 
 ol,
@@ -206,6 +208,7 @@ img {
 	vertical-align: middle;
 	-ms-interpolation-mode: bicubic;
 }
+
 /* Clearing floats */
 .clear:after,
 .format-status .entry-header:after,
@@ -236,4 +239,95 @@ a {
 	border: none;
 	//outline:none !important;
 	@include define-basic-transition(all, 0.3s);
+}
+
+html {
+	*:focus-visible {
+
+		&:not(.absl,
+			.card-link,
+			.square-button,
+			.hambuger-element) {
+			z-index: 99999 !important;
+			background-color: $color-12 !important;
+			color: $color-1 !important;
+			box-shadow: 0 0 0 2px $color-1, 0 0 0 4px $color-12;
+			transition-duration: 0ms !important;
+			transition-property: none !important;
+			animation: none 0 !important;
+			outline-style: solid;
+			outline-color: transparent;
+			outline-width: 10px;
+		}
+
+	}
+
+	.square-button,
+	.hambuger-element {
+		&:focus-visible {
+			z-index: 99999 !important;
+			box-shadow: 0 0 0 2px $color-1, 0 0 0 4px $color-12;
+		}
+	}
+
+	.absl {
+		&:focus-visible {
+			z-index: 99999 !important;
+			background-color: transparent !important;
+			color: $color-12 !important;
+			box-shadow: 0 0 0 2px $color-1, 0 0 0 4px $color-12;
+			transition-duration: 0ms !important;
+			transition-property: none !important;
+			animation: none 0 !important;
+			outline-style: solid;
+			outline-color: transparent;
+			outline-width: 10px;
+		}
+	}
+
+	.card {
+		.card-link {
+			&:focus-visible {
+				box-shadow: inset 0 0 0 4px $color-1, 0 0 0 4px $color-12;
+			}
+		}
+	}
+}
+
+.focus-trap-end {
+	border: none;
+	background-color: transparent;
+	width: 0;
+	height: 0;
+}
+
+.new-window {
+	position: relative;
+
+	&:after {
+		width: 18px;
+		height: 18px;
+		position: relative;
+		//top: -2px;
+		display: inline-block;
+		margin: 0 0 0 4px;
+		color: $color-1;
+		background-color: $color-12;
+		border: solid 1px $color-1;
+		font-family: "provincia-di-lecco" !important;
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		speak: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "b";
+		font-size: 16px;
+		line-height: 16px;
+		padding: 2px;
+		border-radius: 50%;
+		text-align: center;
+		transform: rotate(-45deg);
+	}
 }

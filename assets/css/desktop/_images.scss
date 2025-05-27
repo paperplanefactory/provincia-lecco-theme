@@ -4,34 +4,35 @@
 
 .modules-wrapper,
 .page-index-right {
+
 	.wp-caption.aligncenter,
 	.wp-caption.alignnone {
 		position: relative;
-		left: -45px;
-		width: calc(100% + 90px) !important;
-		margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+		left: rem(-45);
+		width: calc(100% + rem(90)) !important;
+		margin-bottom: calc(#{rem($paragraph-marginbottom-desktop)} * 2);
 	}
 }
 
 .wp-caption.aligncenter,
 .wp-caption.alignnone {
-	margin-bottom: 15px;
+	margin-bottom: rem(15);
 }
 
 .wp-caption.alignleft,
 .wp-caption.alignright {
 	width: 50% !important;
-	margin-bottom: 15px;
+	margin-bottom: rem(15);
 }
 
 .wp-caption.alignleft {
 	float: left;
-	margin-right: 20px;
+	margin-right: rem(20);
 }
 
 .wp-caption.alignright {
 	float: right;
-	margin-left: 20px;
+	margin-left: rem(20);
 }
 
 .wp-caption-text,
@@ -39,7 +40,7 @@
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignnone .wp-caption-text,
 .wp-caption.alignright .wp-caption-text {
-	padding: 15px;
+	padding: rem(15);
 	background-color: $color-8;
 	text-align: left;
 }

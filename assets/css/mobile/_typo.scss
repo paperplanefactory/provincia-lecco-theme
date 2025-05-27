@@ -1,58 +1,65 @@
 // main: ../style.scss
 @import '../global/vars';
 @import '../global/mixin';
+@import '../global/typo';
 
 .aligncenter-notmobile {
   text-align: left !important;
 }
 
+.as-h1,
 .search-overlay-title,
 h1 {
-  font-size: $h1-size-smartphone;
-  line-height: $h1-lineheight-smartphone;
-  margin-bottom: $h1-marginbottom-smartphone;
+  font-size: rem($h1-size-smartphone);
+  line-height: rem($h1-lineheight-smartphone);
+  margin-bottom: rem($h1-marginbottom-smartphone);
 }
 
+.as-h2,
 h2 {
-  font-size: $h2-size-smartphone;
-  line-height: $h2-lineheight-smartphone;
-  margin-bottom: $h2-marginbottom-smartphone;
+  font-size: rem($h2-size-smartphone);
+  line-height: rem($h2-lineheight-smartphone);
+  margin-bottom: rem($h2-marginbottom-smartphone);
 }
 
 .people-card {
   h2 {
-    margin-bottom: 12px;
+    margin-bottom: rem(12);
   }
 }
 
+.as-h3,
 h3 {
-  font-size: $h3-size-smartphone;
-  line-height: $h3-lineheight-smartphone;
-  margin-bottom: $h3-marginbottom-smartphone;
+  font-size: rem($h3-size-smartphone);
+  line-height: rem($h3-lineheight-smartphone);
+  margin-bottom: rem($h3-marginbottom-smartphone);
 }
 
 .header-menu-mobile {
-  font-size: $h3-size-smartphone;
-  line-height: $h3-lineheight-smartphone;
+  font-size: rem($h3-size-smartphone);
+  line-height: rem($h3-lineheight-smartphone);
 }
 
+.as-h4,
 .content-styled h2,
 .content-styled h3,
 .h2-variant,
 .h3-variant,
 h4 {
-  font-size: $h4-size-smartphone;
-  line-height: $h4-lineheight-smartphone;
-  margin-bottom: $h4-marginbottom-smartphone;
+  font-size: rem($h4-size-smartphone);
+  line-height: rem($h4-lineheight-smartphone);
+  margin-bottom: rem($h4-marginbottom-smartphone);
 }
 
 .content-styled h4,
 .h4-variant {
-  font-size: $h4-size-variant-smartphone;
-  line-height: $h4-lineheight-variant-smartphone;
-  margin-bottom: $h4-marginbottom-variant-smartphone;
+  font-size: rem($h4-size-variant-smartphone);
+  line-height: rem($h4-lineheight-variant-smartphone);
+  margin-bottom: rem($h4-marginbottom-variant-smartphone);
 }
 
+.h2-as-h5 h2,
+.as-h5,
 .button-typo-normalizer,
 .card p,
 .footer-menu,
@@ -60,51 +67,58 @@ h4 {
 .paragraph-variant,
 .paragraph-variant-holder p,
 h5 {
-  font-size: $h5-size-smartphone;
-  line-height: $h5-lineheight-smartphone;
-  margin-bottom: $h5-marginbottom-smartphone;
+  font-size: rem($h5-size-smartphone);
+  line-height: rem($h5-lineheight-smartphone);
+  margin-bottom: rem($h5-marginbottom-smartphone);
 }
 
 #footer {
   h5 {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 }
 
 .head-navi-side,
 .index-listing,
 .inner-news-listing {
-  font-size: $h5-size-smartphone;
-  line-height: $h5-lineheight-smartphone;
+  font-size: rem($h5-size-smartphone);
+  line-height: rem($h5-lineheight-smartphone);
   margin-bottom: 0;
 }
 
 .arrow-button,
 h6 {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
-  margin-bottom: $h6-marginbottom-smartphone;
-  letter-spacing: 1px;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
+  margin-bottom: rem($h6-marginbottom-smartphone);
+  letter-spacing: rem(1);
+}
+
+.as-h6 {
+  font-size: rem($h6-size-smartphone) !important;
+  line-height: rem($h6-lineheight-smartphone) !important;
+  margin-bottom: rem($h6-marginbottom-smartphone) !important;
+  letter-spacing: rem(1) !important;
 }
 
 .tag-button {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
   margin-bottom: 0;
-  padding: 3px 16px;
+  padding: rem(3) rem(16);
 }
 
 .alternate-h6 {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
-  margin-bottom: $h5-marginbottom-smartphone;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
+  margin-bottom: rem($h5-marginbottom-smartphone);
   color: $color-1;
   letter-spacing: normal;
 }
 
 .breadcrumbs-holder {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
 }
 
 .wp-caption-text,
@@ -112,90 +126,93 @@ h6 {
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignnone .wp-caption-text,
 .wp-caption.alignright .wp-caption-text {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
 }
 
 .index-menu-expander {
-  font-size: $h6-size-smartphone;
-  line-height: $h6-lineheight-smartphone;
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
   font-weight: $font-weight-3;
 }
 
 .square-button {
-  letter-spacing: 1px;
+  letter-spacing: rem(1);
 }
 
+.as-p,
 .activate-search,
 p {
-  font-size: $paragraph-size-smartphone;
-  line-height: $paragraph-lineheight-smartphone;
-  margin: 0 0 $paragraph-marginbottom-smartphone;
+  font-size: rem($paragraph-size-smartphone);
+  line-height: rem($paragraph-lineheight-smartphone);
+  margin: 0 0 rem($paragraph-marginbottom-smartphone);
   padding: 0;
 }
 
 .square-button,
 small {
-  font-size: $small-size-smartphone;
-  line-height: $small-lineheight-smartphone;
+  font-size: rem($small-size-smartphone);
+  line-height: rem($small-lineheight-smartphone);
 }
 
 .navi {
-  font-size: $cta1-size-smartphone;
-  line-height: $cta1-lineheight-smartphone;
+  font-size: rem($cta1-size-smartphone);
+  line-height: rem($cta1-lineheight-smartphone);
 }
 
 .content-styled,
 .content-styled-card {
   h6 {
-    margin: 0 0 $paragraph-marginbottom-smartphone;
+    margin: 0 0 rem($paragraph-marginbottom-smartphone);
   }
 
   ul {
-    font-size: $paragraph-size-smartphone;
-    line-height: $paragraph-lineheight-smartphone;
-    margin-bottom: $paragraph-marginbottom-smartphone;
+    font-size: rem($paragraph-size-smartphone);
+    line-height: rem($paragraph-lineheight-smartphone);
+    margin-bottom: rem($paragraph-marginbottom-smartphone);
 
     li {
       display: table-row;
 
       &:before {
-        font-size: 20px;
+        font-size: rem(20);
         font-weight: $font-weight-1;
       }
     }
   }
 
   ol {
-    font-size: $paragraph-size-smartphone;
-    line-height: $paragraph-lineheight-smartphone;
-    margin-bottom: $paragraph-marginbottom-smartphone;
+    font-size: rem($paragraph-size-smartphone);
+    line-height: rem($paragraph-lineheight-smartphone);
+    margin-bottom: rem($paragraph-marginbottom-smartphone);
   }
 
-  ol > li {
+  ol>li {
     &:before {
       font-family: $font-main;
-      font-size: $paragraph-size-smartphone;
+      font-size: rem($paragraph-size-smartphone);
     }
   }
 }
 
 .page-opening-menu {
+  margin-top: rem(10);
+
   div {
     display: none;
   }
 
   li {
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
   }
 }
 
 .share-actions {
-  font-size: $small-size-smartphone;
-  line-height: $small-lineheight-smartphone;
+  font-size: rem($small-size-smartphone);
+  line-height: rem($small-lineheight-smartphone);
 
   li {
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
 
     &:last-child {
       margin-bottom: 0;
@@ -203,51 +220,62 @@ small {
 
     span {
       position: relative;
-      top: 4px;
-      margin-right: 10px;
-      font-size: 22px;
+      top: rem(4);
+      margin-right: rem(10);
+      font-size: rem(22);
     }
   }
 }
 
+.index-menu-js {
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
 .index-listing {
-  padding: 0 0 30px;
-  margin-top: 20px;
-  border-bottom: solid 1px $color-10;
+  padding: 0 0 rem(30);
+  margin-top: rem(20);
+  border-bottom: solid rem(1) $color-10;
 
   li {
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
   }
 }
 
 .expander {
   font-family: $font-main;
   font-weight: $font-weight-1;
-  font-size: $h4-size-smartphone;
-  line-height: $h4-lineheight-smartphone;
+  font-size: rem($h4-size-smartphone);
+  line-height: rem($h4-lineheight-smartphone);
 }
 
 .index-menu-expander {
   position: relative;
   width: 100%;
-  padding: 35px 0 20px;
-  border-bottom: solid 5px $color-11;
+  padding: rem(35) 0 rem(20);
+  border-bottom: solid rem(5) $color-11;
   text-align: left;
 
   span {
     position: relative;
-    top: -10px;
+    top: rem(-10);
     float: right;
-    font-size: 30px;
+    font-size: rem(30);
     color: $color-4;
   }
 }
 
 .eraser-btn {
-  margin: 10px 0 0;
+  margin: rem(10) 0 0;
 }
 
 .order-results {
-  margin: 10px 0 0;
+  margin: rem(10) 0 0;
   width: 100%;
+}
+
+.header-first-stripe {
+  font-size: rem($h6-size-smartphone);
+  line-height: rem($h6-lineheight-smartphone);
 }

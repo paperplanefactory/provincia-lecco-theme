@@ -56,3 +56,10 @@ function namespace_login_style() {
 	echo '<style>.login h1 a { background-image: url( ' . get_template_directory_uri() . '/assets/images/admin-images/logo-login.png ) !important; }</style>';
 }
 add_action( 'login_head', 'namespace_login_style' );
+
+
+add_filter( 'rmp_is_show_for_post_edit_screen', function ($check, $post) {
+	if ( isset( $post->post_type ) && $post->post_type == 'servizi_cpt' )
+		return true;
+	return $check;
+}, 10, 2 );

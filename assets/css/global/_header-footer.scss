@@ -2,6 +2,22 @@
 @import '../global/vars';
 @import '../global/mixin'; // header
 
+.accessible-navi-container {
+  position: relative;
+}
+
+.accessible-navi {
+  position: fixed !important;
+  z-index: 9999;
+  top: 2vh;
+  left: $wrapper-padded-desktop;
+  transform: translateY(-40vh);
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
 #preheader {
   position: relative;
   display: block;
@@ -16,13 +32,15 @@
   left: 0;
   display: block;
   width: 100vw;
-  -webkit-transition: all 0.2s linear, width 0s;
-  -moz-transition: all 0.2s linear, width 0s;
-  -o-transition: all 0.2s linear, width 0s;
-  transition: all 0.2s linear, width 0s;
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
 
   &.hidden {
+    opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 }
 
@@ -39,6 +57,7 @@
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 }
 
@@ -55,11 +74,12 @@
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 }
 
 .occupy-scrollbar {
-  width: calc(100% - 18px);
+  width: calc(100% - rem(18));
 }
 
 .hide-y-overflow {
@@ -102,6 +122,7 @@
     -webkit-box-flex: 1;
   }
 }
+
 // footer
 
 #footer {
@@ -110,4 +131,9 @@
   width: 100%;
   overflow: hidden;
   word-wrap: break-word;
+
+  h2 {
+    color: $color-12;
+    text-transform: uppercase;
+  }
 }

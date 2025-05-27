@@ -72,9 +72,9 @@ if ( ! empty( $my_autolisting ) ) :
 	<section class="text-module listing-module">
 		<div class="module-separator-flex">
 			<div class="content-styled">
-				<?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-					<h4 class="rebold"><a name="indice-<?php echo $module_count; ?>"
-							class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h4>
+				<?php if ( get_sub_field( 'module_index_title' ) != '' ) : ?>
+					<h2 class="as-h4 rebold"><a name="indice-<?php echo $module_count; ?>"
+							class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h2>
 				<?php else : ?>
 					<a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 				<?php endif; ?>
@@ -83,21 +83,21 @@ if ( ! empty( $my_autolisting ) ) :
 				<?php endif; ?>
 			</div>
 			<?php if ( $module_auto_listing_appearence === 'module-listing-default-card' ) : ?>
-				<div class="<?php echo $grid_classes; ?>">
+				<ul class="<?php echo $grid_classes; ?>">
 					<?php foreach ( $my_autolisting as $post ) :
 						setup_postdata( $post ); ?>
-						<?php include ( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+						<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 					<?php endforeach;
 					wp_reset_postdata(); ?>
-				</div>
+				</ul>
 			<?php else : ?>
-				<div class="tags-holder">
+				<ul class="tags-holder">
 					<?php foreach ( $my_autolisting as $post ) :
 						setup_postdata( $post ); ?>
-						<?php include ( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+						<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 					<?php endforeach;
 					wp_reset_postdata(); ?>
-				</div>
+				</ul>
 			<?php endif; ?>
 
 		</div>

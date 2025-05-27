@@ -3,9 +3,17 @@
     "title": "Editor testo",
     "fields": [
         {
+            "allow_backendsearch": false,
+            "show_column_filter": false,
+            "allow_bulkedit": false,
+            "allow_quickedit": false,
+            "show_column": false,
+            "show_column_weight": 1000,
+            "show_column_sortable": false,
             "key": "field_5ef1dae905c34",
             "label": "Attenzione",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -15,7 +23,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Utilizzare l'editor di testo qui sotto solo per riorganizzarei contenuti del vecchio sito!\r\nPer i nuovi contenuti utilizzare i moduli sopra.",
+            "message": "Utilizzare l'editor di testo qui sotto solo per riorganizzare i contenuti del vecchio sito!\r\nPer i nuovi contenuti utilizzare i moduli sopra.",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -98,7 +106,9 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1592908585
+    "show_in_rest": 0,
+    "qef_simple_location_rules": 0,
+    "modified": 1747982137
 }

@@ -30,21 +30,21 @@
 }
 
 .page-opening-padder {
-  padding: 40px 0 80px;
+  padding: rem(40) 0 rem(80);
 }
 
 .single-content-opening-padder {
-  padding: 20px 0 10px;
+  padding: rem(20) 0 rem(10);
 }
 
 .avviso-padder,
 .avviso-top-padder {
-  padding: 40px 0 10px;
+  padding: rem(40) 0 rem(10);
 }
 
 .avviso-padder {
   h3 {
-    padding-left: 30px;
+    padding-left: rem(30);
   }
 }
 
@@ -54,27 +54,33 @@
 
 .tags-holder {
   width: 100%;
-  margin: 30px 0 10px;
+  margin: rem(30) 0 rem(10);
 
-  a {
-    margin-right: 15px;
-    margin-bottom: 20px;
+  li {
+    display: inline-block;
+    margin-right: rem(15);
+    margin-bottom: rem(20);
   }
 }
 
 .listing-module {
   .tags-holder {
-    margin: 10px 0;
+    margin: rem(10) 0;
   }
 }
 
 .intro-box {
-  margin: 0 0 20px;
+  margin: 0 0 rem(20);
+
+  &.card {
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .intro-news-padder {
   .category-holder {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 }
 
@@ -84,7 +90,7 @@
   left: 0;
   display: block;
   width: 100%;
-  height: 50px;
+  height: rem(50);
 }
 
 .wrapper-step-image {
@@ -93,39 +99,39 @@
   left: 0;
   display: block;
   width: 100%;
-  height: 300px;
+  height: rem(300);
 }
 
 .highlight-box {
-  margin: 60px 0 0;
+  margin: rem(60) 0 0;
 }
 
 .thematic-box {
-  margin: 60px 0;
+  margin: rem(60) 0;
 }
 
 .search-banner {
-  margin: 55px 0;
+  margin: rem(55) 0;
 }
 
 .listing-box {
-  margin: 30px 0;
+  margin: rem(30) 0;
 }
 
 .tag-box {
-  margin: 30px 0;
+  margin: rem(30) 0;
 }
 
 .module-separator {
-  margin-bottom: 35px;
+  margin-bottom: rem(35);
 }
 
 .module-separator-flex {
-  margin-bottom: 16px;
+  margin-bottom: rem(16);
 }
 
 .scadenze-wrapper {
-  margin-top: 40px;
+  margin-top: rem(40);
 }
 
 // flex boxes
@@ -134,17 +140,17 @@
 // es. 16 - (16/2) = 8
 
 .grid-separator-1 {
-  margin: 0 0 54px;
+  margin: 0 0 rem(54);
 }
 
 .grid-separator-2 {
-  margin: 10px 0 0;
+  margin: rem(10) 0 0;
 }
 
 .lined-mobile {
   .flex-hold-child {
-    border-bottom: $color-2 solid 1px;
-    padding-bottom: 10px !important;
+    border-bottom: $color-2 solid rem(1);
+    padding-bottom: rem(10) !important;
 
     &:last-child {
       border-bottom: none;
@@ -160,21 +166,31 @@
   &.margins-thin {
     .flex-hold-child {
       width: 100%;
-      margin: 0 0 24px;
+      margin: 0 0 rem(24);
     }
   }
 
   &.margins-wide {
     .flex-hold-child {
       width: 100%;
-      margin: 0 0 24px;
+      margin: 0 0 rem(24);
     }
   }
 
   &.margins-fit {
     .flex-hold-child {
       width: 100%;
-      margin: 0 0 24px;
+      margin: 0 0 rem(24);
+    }
+  }
+
+  &.keep-2-mobile {
+    &.margins-wide {
+      .flex-hold-child {
+        width: 50% !important;
+        margin: 0;
+      }
+
     }
   }
 
@@ -183,8 +199,9 @@
     order: 1;
     z-index: 3;
 
+    h2,
     h3 {
-      padding-left: 30px;
+      padding-left: rem(30);
     }
   }
 
@@ -192,7 +209,7 @@
     position: absolute;
     z-index: 2;
     top: 0;
-    right: -24px;
+    right: rem(-24);
     display: block;
     width: 100%;
     height: 100%;
@@ -209,32 +226,27 @@
       display: block;
       width: 100%;
       height: 100%;
-      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1a4d78+0,1a4d78+100&1+0,0+100 */
-      background: -moz-linear-gradient(left, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(left, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0) 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      background: #1A4D78;
+      background: linear-gradient(90deg, rgba(26, 77, 120, 1) 0%, rgba(26, 77, 120, 0.9) 100%);
     }
   }
 }
 
 .chiudi-avviso {
   position: absolute;
-  left: -15px;
-  top: 43px;
+  left: rem(-15);
+  top: rem(43);
   color: $color-11;
 
   span {
-    font-size: 28px;
+    font-size: rem(28);
   }
 }
 
 .still-two-mobile {
   .flex-hold-child {
-    width: calc(50% - 12px) !important;
-    margin: 0 12px 12px 0 !important;
+    width: calc(50% - rem(12)) !important;
+    margin: 0 rem(12) rem(12) 0 !important;
   }
 
   .flex-hold-child:nth-child(2n) {
@@ -253,18 +265,18 @@
 }
 
 .flex-hold-page-opening {
-  margin-top: 10px;
+  margin-top: rem(10);
 
   .page-opening-left {
     order: 1;
     width: 100%;
 
     .banner-form {
-      margin-top: 30px;
+      margin-top: rem(30);
     }
 
     .card {
-      margin-top: 30px;
+      margin-top: rem(30);
     }
   }
 
@@ -273,27 +285,27 @@
     width: 100%;
 
     .padder {
-      padding-top: 30px;
+      padding-top: rem(30);
 
       .card {
-        margin-top: 20px;
+        margin-top: rem(20);
       }
     }
 
     .tags-holder {
-      margin-top: 10px;
+      margin-top: rem(10);
     }
   }
 }
 
 .flex-hold-page-index {
-  margin-top: 10px;
-  border-top: solid 1px $color-10;
+  margin-top: rem(10);
+  border-top: solid rem(1) $color-10;
 
   .page-index-left {
     order: 1;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: rem(30);
 
     .sticky-element-compact {
       top: $header-smartphone-height-compact;
@@ -329,10 +341,10 @@
     width: 100%;
 
     .padder {
-      padding: 0 0 30px;
+      padding: 0 0 rem(30);
 
       h5 {
-        margin-top: 30px;
+        margin-top: rem(30);
 
         &:first-child {
           margin-top: 0;
@@ -346,7 +358,7 @@
     width: 100%;
 
     .padder {
-      padding: 0 0 85px;
+      padding: 0 0 rem(85);
     }
   }
 }
@@ -360,18 +372,18 @@
 
   .data {
     order: 1;
-    width: 90px;
-    height: 85px;
+    width: rem(90);
+    height: rem(85);
     overflow: hidden;
     @include define-border-radius(8px);
     background-color: $color-8;
     text-align: center;
-    padding-top: 4px;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    padding-top: rem(4);
+    margin-right: rem(25);
+    margin-bottom: rem(25);
+    -webkit-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -380,29 +392,29 @@
     }
 
     h5 {
-      line-height: $h5-size-smartphone;
+      line-height: rem($h5-size-smartphone);
     }
   }
 
   .info {
     position: relative;
     order: 2;
-    width: calc(100% - 116px);
-    border-left: solid 1px $color-4;
+    width: calc(100% - rem(116));
+    border-left: solid rem(1) $color-4;
 
     &:before {
       content: "";
       position: absolute;
-      left: -4px;
-      top: 41px;
-      width: 8px;
-      height: 8px;
+      left: rem(-4);
+      top: rem(41);
+      width: rem(8);
+      height: rem(8);
       background-color: $color-4;
-      @include define-border-radius(8px);
+      @include define-border-radius(rem(8));
     }
 
     .padder {
-      padding: 0 0 0 30px;
+      padding: 0 0 0 rem(30);
     }
   }
 }
@@ -411,13 +423,13 @@
   &.left-fix {
     .fix {
       order: 1;
-      width: calc(33.333333% - 48px);
-      margin: 0 72px 48px 0;
+      width: calc(33.333333% - rem(48));
+      margin: 0 rem(72) rem(48) 0;
     }
 
     .nofix {
       order: 2;
-      width: calc(66.666666% - 48px);
+      width: calc(66.666666% - rem(48));
       margin-right: 0;
     }
   }
@@ -425,13 +437,13 @@
   &.right-fix {
     .fix {
       order: 2;
-      width: calc(33.333333% - 48px);
-      margin: 0 0 48px 72px;
+      width: calc(33.333333% - rem(48));
+      margin: 0 0 rem(48) rem(72);
     }
 
     .nofix {
       order: 1;
-      width: calc(66.666666% - 48px);
+      width: calc(66.666666% - rem(48));
       margin-right: 0;
     }
   }
@@ -440,18 +452,18 @@
 .card-date-holder {
   .data {
     order: 1;
-    width: 90px;
-    height: 85px;
+    width: rem(90);
+    height: rem(85);
     overflow: hidden;
-    @include define-border-radius(8px);
+    @include define-border-radius(rem(8));
     background-color: $color-8;
     text-align: center;
-    padding-top: 4px;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    -webkit-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    -moz-box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
-    box-shadow: 0 0 8px 0 rgba(0, 43, 85, 0.1);
+    padding-top: rem(4);
+    margin-right: rem(25);
+    margin-bottom: rem(25);
+    -webkit-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    -moz-box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
+    box-shadow: 0 0 rem(8) 0 rgba(0, 43, 85, 0.1);
 
     h3,
     h5 {
@@ -460,7 +472,7 @@
     }
 
     h5 {
-      line-height: $h5-size-smartphone;
+      line-height: rem($h5-size-smartphone);
     }
   }
 }
@@ -474,28 +486,28 @@
   li {
     text-align: center !important;
     display: inline-block;
-    width: 28px;
-    height: 28px;
-    margin: 0 0 10px 15px;
+    width: rem(28);
+    height: rem(28);
+    margin: 0 0 rem(10) rem(15);
     overflow: hidden;
-    font-size: 28px;
+    font-size: rem(28);
   }
 }
 
 // cards
 
 .card-outline {
-  margin-top: 30px;
+  margin-top: rem(30);
 
   .card_inner {
     position: relative;
 
     &.regular-card {
-      padding: 40px;
+      padding: rem(40);
     }
 
     &.compact-card {
-      padding: 20px 20px 0;
+      padding: rem(20) rem(20) rem(0);
     }
   }
 }
@@ -503,11 +515,11 @@
 .card {
   .cta-holder {
     position: absolute;
-    bottom: 25px;
+    bottom: rem(25);
     left: 0;
     display: block;
-    width: calc(100% - 40px);
-    padding: 0 20px;
+    width: calc(100% - rem(40));
+    padding: 0 rem(20);
   }
 
   .image-card-image-side {
@@ -524,29 +536,29 @@
   position: relative;
 
   &.regular-card {
-    padding: 20px 20px 35px;
+    padding: rem(20) rem(20) rem(35);
   }
 
   &.compact-card {
-    padding: 20px 20px 0;
+    padding: rem(20) rem(20) 0;
   }
 
   &.cap-card {
-    padding: 20px;
+    padding: rem(20);
   }
 
   &.image-card {
-    width: calc(60% - 30px);
-    padding: 20px 0 20px 20px;
+    width: calc(60% - rem(30));
+    padding: rem(20) 0 rem(20) rem(20);
   }
 
   &.warning-card {
-    padding: 20px 20px 20px 55px;
+    padding: rem(20) rem(20) rem(20) rem(55);
 
     .icon {
       position: absolute;
-      top: 22px;
-      left: 20px;
+      top: rem(22);
+      left: rem(20);
     }
   }
 
@@ -563,27 +575,27 @@
   &.image-card-normal {
     .image-card-content {
       position: absolute;
-      bottom: 24px;
+      bottom: rem(24);
       left: 0;
-      width: calc(100% - 40px);
-      padding: 0 20px;
+      width: calc(100% - rem(40));
+      padding: 0 rem(20);
     }
   }
 
   .cover-image {
     position: relative;
-    margin-top: -20px;
-    left: -20px;
-    width: calc(100% + 40px);
-    margin-bottom: 15px;
+    margin-top: rem(-20);
+    left: rem(-20);
+    width: calc(100% + rem(40));
+    margin-bottom: rem(15);
   }
 
   .category-holder {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
   }
 
   .category-square {
-    margin-bottom: 25px;
+    margin-bottom: rem(25);
 
     &.title-block,
     &.title-block h3 {
@@ -592,29 +604,29 @@
   }
 
   .texts-holder {
-    margin-bottom: 50px;
+    margin-bottom: rem(50);
 
     &.compact {
-      margin-bottom: 25px;
+      margin-bottom: rem(25);
     }
   }
 
   .texts-holder-no-cta {}
 
   .more-info {
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
   }
 }
 
 .search-results {
   .regular-card {
-    padding: 0 0 35px;
-    border-bottom: solid 1px $color-10;
+    padding: 0 0 rem(35);
+    border-bottom: solid rem(1) $color-10;
   }
 
   .cta-holder {
     position: relative;
-    bottom: 35px;
+    bottom: rem(35);
     padding: 0;
   }
 }
@@ -622,18 +634,18 @@
 .map-module {
   .video_frame {
     position: relative;
-    left: -24px;
+    left: rem(-24);
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    width: calc(100% + 48px) !important;
+    width: calc(100% + rem(48)) !important;
     height: auto;
-    margin-bottom: calc(#{$paragraph-marginbottom-smartphone} * 2);
+    margin-bottom: calc(#{rem($paragraph-marginbottom-smartphone)} * 2);
   }
 }
 
 .no-index {
-  padding-top: 24px;
+  padding-top: rem(24);
 }
 
 .rmp-widgets-container {
@@ -641,16 +653,16 @@
 
   .rmp-heading--title {
     font-family: $font-main;
-    font-size: $h5-size-smartphone;
-    line-height: $h5-lineheight-smartphone;
-    margin-bottom: $h5-marginbottom-smartphone;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem($h5-lineheight-smartphone);
+    margin-bottom: rem($h5-marginbottom-smartphone);
     font-weight: $font-weight-3;
   }
 
   .rmp-heading--subtitle {
     font-family: $font-main;
-    font-size: $h6-size-smartphone;
-    line-height: $h6-lineheight-smartphone;
+    font-size: rem($h6-size-smartphone);
+    line-height: rem($h6-lineheight-smartphone);
     margin-bottom: $h6-marginbottom-smartphone;
     font-weight: $font-weight-1;
   }
@@ -658,16 +670,16 @@
   .rmp-rating-widget__results,
   .rmp-rating-widget__not-rated {
     font-family: $font-main;
-    font-size: $h5-size-smartphone;
-    line-height: $h5-lineheight-smartphone;
-    margin-bottom: $h5-marginbottom-smartphone;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem($h5-lineheight-smartphone);
+    margin-bottom: rem($h5-marginbottom-smartphone);
     font-weight: $font-weight-3;
   }
 
   .rmp-rating-widget__msg {
     font-family: $font-main;
-    font-size: $h6-size-smartphone;
-    line-height: $h6-lineheight-smartphone;
+    font-size: rem($h6-size-smartphone);
+    line-height: rem($h6-lineheight-smartphone);
     margin-bottom: $h6-marginbottom-smartphone;
     font-weight: $font-weight-1;
   }

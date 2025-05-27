@@ -1,7 +1,7 @@
 // main: ../style.scss
 @import '../global/vars';
 @import '../global/mixin';
-$logo-width: 150px;
+$side-navi-width: 130px;
 $logo-compact-width: 33px;
 $hamburger-width: 45px;
 $side-head-compact-width: 65px; // header
@@ -30,17 +30,20 @@ $side-head-compact-width: 65px; // header
     }
 
     #header-structure {
-      margin: 5px 0 0;
+      margin: rem(5) 0 0;
 
       .logo {
-        height: calc(#{$header-smartphone-height-compact} - 10px);
+        height: calc(#{$header-smartphone-height-compact} - rem(10));
 
         &:before {
           opacity: 0;
+          background-color: red;
         }
 
         &:after {
           opacity: 1;
+          top: rem(10);
+          height: calc(100% - rem(10));
         }
       }
     }
@@ -48,12 +51,12 @@ $side-head-compact-width: 65px; // header
 
   #header-structure {
     width: 100%;
-    margin: 14px 0 0;
+    margin: rem(14) 0 0;
     @include define-basic-transition(all, 0.15s);
 
     .logo {
-      width: $logo-width;
-      height: calc(#{$header-smartphone-height-compact} - 10px);
+      width: calc(100% - #{$side-navi-width});
+      height: calc(#{$header-smartphone-height-compact} - rem(10));
 
       &:before {
         top: 0;
@@ -77,7 +80,7 @@ $side-head-compact-width: 65px; // header
     }
 
     .side-head {
-      width: calc(100% - #{$logo-width});
+      width: $side-navi-width;
       text-align: right;
 
       ul {
@@ -89,20 +92,20 @@ $side-head-compact-width: 65px; // header
           margin: 0;
 
           &.hamb-menu {
-            width: 30px;
-            height: 30px;
+            width: rem(30);
+            height: rem(30);
 
             .hambuger-element {
               position: absolute;
               left: 0;
-              top: -2px;
+              top: rem(-2);
             }
           }
 
           &.search-menu {
-            width: 48px;
-            height: 48px;
-            margin-right: 25px;
+            width: rem(48);
+            height: rem(48);
+            margin-right: rem(5);
           }
         }
       }
@@ -110,9 +113,9 @@ $side-head-compact-width: 65px; // header
       .activate-search {
         position: absolute;
         left: 0;
-        top: 2px;
-        width: 48px;
-        height: 48px;
+        top: rem(8);
+        width: rem(36);
+        height: rem(36);
         color: $color-12;
         overflow: hidden;
         margin: 0 !important;
@@ -126,17 +129,17 @@ $side-head-compact-width: 65px; // header
           position: absolute;
           right: 0;
           top: 0;
-          width: 48px;
-          height: 48px;
+          width: rem(36);
+          height: rem(36);
           background-color: $color-8;
-          @include define-border-radius(48px);
+          @include define-border-radius(rem(36));
           overflow: hidden;
 
           span {
             position: relative;
-            top: 12px;
+            top: rem(8);
             color: $color-4;
-            font-size: 25px;
+            font-size: rem(20);
           }
         }
       }
@@ -148,11 +151,11 @@ $side-head-compact-width: 65px; // header
   }
 
   .header-menu-top {
-    margin: 10px 0;
+    margin: rem(10) 0;
 
     li {
       display: inline-block;
-      margin-right: 30px;
+      margin-right: rem(30);
 
       &:last-child {
         margin-right: 0;
@@ -170,7 +173,11 @@ $side-head-compact-width: 65px; // header
   height: 100vh;
 
   .search-overlay-structure {
-    padding: 10px 0 0;
+    padding: rem(10) 0 0;
+
+    .search-overlay-title {
+      right: -10px;
+    }
   }
 }
 
@@ -182,16 +189,16 @@ $side-head-compact-width: 65px; // header
     width: 100%;
 
     ul {
-      margin-top: 30px;
+      margin-top: rem(30);
 
       &:first-child {
-        margin-bottom: 60px;
+        margin-bottom: rem(60);
       }
 
       li {
-        margin-bottom: 15px;
-        border-bottom: $color-2 solid 1px;
-        padding-bottom: 15px !important;
+        margin-bottom: rem(15);
+        border-bottom: $color-2 solid rem(1);
+        padding-bottom: rem(15) !important;
       }
     }
 
@@ -206,7 +213,7 @@ $side-head-compact-width: 65px; // header
         a {
           display: block;
           width: calc(100% - (#{$wrapper-padded-smartphone} * 2));
-          padding: 20px $wrapper-padded-smartphone 20px calc(#{$wrapper-padded-smartphone} - 15px);
+          padding: rem(20) $wrapper-padded-smartphone rem(20) calc(#{$wrapper-padded-smartphone} - rem(15));
         }
 
         &.menu-item-has-children {
@@ -214,9 +221,9 @@ $side-head-compact-width: 65px; // header
             &:after {
               position: absolute;
               right: 0;
-              top: 20px;
+              top: rem(20);
               content: "▼";
-              font-size: 15px;
+              font-size: rem(15);
               margin-right: $wrapper-padded-smartphone;
             }
           }
@@ -253,46 +260,51 @@ $side-head-compact-width: 65px; // header
   }
 
   .inline-socials {
-    margin-top: 60px;
+    margin-top: rem(10);
   }
 
   .footer-block-2 {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: solid 1px $color-9;
+    margin-top: rem(60);
+    padding-top: rem(30);
+    border-top: solid rem(1) $color-9;
   }
 }
 
 .occupy-scrollbar {
-  width: calc(100% - 18px);
+  width: calc(100% - rem(18));
 }
 
 .scroll-opportunity {
   height: calc(100vh - #{$header-smartphone-height-compact});
+
+  .wrapper {
+    margin-bottom: rem(100);
+  }
 }
+
 // footer
 
 #footer {
-  padding-top: 45px;
+  padding-top: rem(45);
   padding-bottom: 0;
 
   .footer-block-1 {
-    border-bottom: solid 1px $color-9;
-    margin-bottom: 30px;
+    border-bottom: solid rem(1) $color-9;
+    margin-bottom: rem(30);
   }
 
   .footer-menu {
     li {
-      margin-bottom: 15px;
+      margin-bottom: rem(15);
     }
   }
 
   .footer-menu-bottom {
-    margin: 30px 0 10px;
+    margin: rem(30) 0 rem(10);
 
     li {
       display: inline-block;
-      margin: 0 30px 20px 0;
+      margin: 0 rem(30) rem(20) 0;
 
       &:last-child {
         margin-right: 0;

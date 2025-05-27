@@ -10,19 +10,26 @@ label {
 	overflow: hidden;
 }
 
+.order-filter {
+	select {
+		width: 100%;
+		margin: rem(5) 0 rem(10) 0;
+	}
+}
+
 select {
 	position: relative;
 	background-color: $color-12;
-	width: 200px;
-	margin: 0 0 0 10px;
-	padding: 10px 0 10px 10px;
-	border: $color-10 solid 1px;
-	@include define-border-radius(4px);
+	width: rem(200);
+	margin: 0 0 0 rem(10);
+	padding: rem(10) 0 rem(10) rem(10);
+	border: $color-10 solid rem(1);
+	@include define-border-radius(rem(4));
 }
 
 .banner-form {
 	position: relative;
-	height: 44px;
+	height: rem(44);
 
 	input[type=email],
 	input[type=number],
@@ -32,10 +39,10 @@ select {
 	textarea {
 		position: relative;
 		background-color: $color-8;
-		width: calc(100% - 22px);
+		width: calc(100% - rem(22));
 		margin: 0;
-		padding: 10px;
-		height: 24px;
+		padding: rem(10);
+		height: rem(24);
 		border: none;
 	}
 
@@ -43,13 +50,13 @@ select {
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 44px;
-		height: 44px;
+		width: rem(44);
+		height: rem(44);
 
 		span {
 			position: relative;
-			top: 3px;
-			font-size: 24px;
+			top: rem(3);
+			font-size: rem(24);
 			color: $color-4;
 		}
 	}
@@ -65,28 +72,51 @@ select {
 	textarea {
 		position: relative;
 		background-color: $color-12;
-		width: calc(100% - 88px);
+		width: calc(100% - rem(88));
 		margin: 0;
-		padding: 0 44px;
-		height: 52px;
+		padding: 0 rem(44) 0 0;
+		height: rem(52);
 		border: none;
-		border-left: $color-12 solid 1px;
-		border-right: $color-12 solid 1px;
-		border-top: $color-12 solid 1px;
-		border-bottom: $color-10 solid 1px;
+		border-left: $color-12 solid rem(1);
+		border-right: $color-12 solid rem(1);
+		border-top: $color-12 solid rem(1);
+		border-bottom: $color-10 solid rem(1);
 	}
 
 	.search-erase {
 		position: absolute;
-		top: 3px;
+		top: rem(3);
 		right: 0;
 		display: none;
 	}
 
 	.search-submit {
 		position: absolute;
-		top: 3px;
-		left: 0;
+		top: rem(3);
+		right: 0;
+	}
+}
+
+.search-def-submit {
+	position: relative;
+	display: inline-block;
+	text-decoration: none !important;
+	@include define-border-radius(rem(16));
+	padding: rem(6) rem(32);
+	cursor: pointer;
+	@include define-basic-transition(all, 0.3s);
+	white-space: normal;
+	text-transform: uppercase;
+	color: $color-8 !important;
+	border: $color-4 solid rem(2) !important;
+	background-color: $color-4;
+	font-family: $font-main;
+	font-weight: $font-weight-2;
+	margin: rem(22) 0 0 0 !important;
+
+	&:hover {
+		color: $color-4 !important;
+		background-color: $color-8;
 	}
 }
 
@@ -94,7 +124,7 @@ select {
 	position: relative;
 	display: block;
 	width: 100%;
-	padding-bottom: 44px;
+	padding-bottom: rem(44);
 
 	label {
 		position: relative !important;
@@ -114,53 +144,53 @@ select {
 	textarea {
 		position: relative;
 		background-color: $color-12;
-		width: calc(100% - 22px);
-		margin-bottom: 44px !important;
-		padding: 10px;
+		width: calc(100% - rem(22));
+		margin-bottom: rem(44) !important;
+		padding: rem(10);
 		//height: 52px;
 		border: none;
-		border-left: $color-12 solid 1px;
-		border-right: $color-12 solid 1px;
-		border-top: $color-12 solid 1px;
-		border-bottom: $color-10 solid 1px;
+		border-left: $color-12 solid rem(1);
+		border-right: $color-12 solid rem(1);
+		border-top: $color-12 solid rem(1);
+		border-bottom: $color-10 solid rem(1);
 	}
 
 	.wpcf7-radio {
 		display: block !important;
-		margin: 12px 0 44px 0 !important;
+		margin: rem(12) 0 rem(44) 0 !important;
 	}
 
 	textarea {
-		width: calc(100% - 22px);
-		height: 100px;
-		margin: 10px 0 0;
-		padding: 10px;
+		width: calc(100% - rem(22));
+		height: rem(100);
+		margin: rem(10) 0 0;
+		padding: rem(10);
 		resize: none;
 	}
 
 	select {
 		width: 100%;
-		height: 40px;
-		margin: 10px 0 0;
-		padding: 0 5px;
+		height: rem(40);
+		margin: rem(10) 0 0;
+		padding: 0 rem(5);
 	}
 
 	input[type=submit] {
 		position: relative;
 		display: inline-block;
 		text-decoration: none !important;
-		@include define-border-radius(16px);
-		padding: 6px 32px;
+		@include define-border-radius(rem(16));
+		padding: rem(6) rem(32);
 		cursor: pointer;
 		@include define-basic-transition(all, 0.3s);
 		white-space: normal;
 		text-transform: uppercase;
 		color: $color-8 !important;
-		border: $color-4 solid 2px !important;
+		border: $color-4 solid rem(2) !important;
 		background-color: $color-4;
 		font-family: $font-main;
 		font-weight: $font-weight-2;
-		margin: 22px 0 0 0 !important;
+		margin: rem(22) 0 0 0 !important;
 
 		&:hover {
 			color: $color-4 !important;
@@ -189,15 +219,15 @@ select {
 	.wpcf7-not-valid-tip {
 		display: block !important;
 		z-index: 99 !important;
-		width: calc(100% - 20px) !important;
+		width: calc(100% - rem(20)) !important;
 		background-color: $color-form-error !important;
 		color: $color-12 !important;
 		border: none !important;
 		left: 0 !important;
-		font-size: $cta1-size-desktop !important;
+		font-size: rem($cta1-size-desktop) !important;
 		font-weight: $font-weight-1 !important;
 		text-transform: uppercase;
-		padding: 10px !important;
+		padding: rem(10) !important;
 	}
 }
 
@@ -205,27 +235,27 @@ select {
 .wpcf7-validation-errors {
 	display: block !important;
 	z-index: 99 !important;
-	width: calc(100% - 40px) !important;
+	width: calc(100% - rem(40)) !important;
 	background-color: $color-form-error !important;
 	color: $color-12 !important;
 	border: none !important;
 	left: 0 !important;
-	font-size: $cta1-size-desktop !important;
+	font-size: rem($cta1-size-desktop) !important;
 	font-weight: $font-weight-1 !important;
 	text-transform: uppercase;
-	padding: 20px !important;
+	padding: rem(20) !important;
 }
 
 .wpcf7-mail-sent-ok {
 	display: block !important;
 	z-index: 99 !important;
-	width: calc(100% - 40px) !important;
+	width: calc(100% - rem(40)) !important;
 	background-color: $color-4 !important;
 	color: $color-12 !important;
 	border: none !important;
 	left: 0 !important;
-	font-size: $cta1-size-desktop !important;
+	font-size: rem($cta1-size-desktop) !important;
 	font-weight: $font-weight-1 !important;
 	text-transform: uppercase;
-	padding: 20px !important;
+	padding: rem(20) !important;
 }

@@ -7,28 +7,28 @@
 .page-opening {}
 
 .page-opening-simple-spacer {
-  padding: 72px 0 48px;
+  padding: rem(72) 0 rem(48);
 
   .cta-holder {
-    margin: 35px 0 0;
+    margin: rem(35) 0 0;
   }
 }
 
 .opening-text-image {
   .cta-holder {
-    margin: 32px 0 0;
+    margin: rem(32) 0 0;
   }
 }
 
 .breadcrumbs-holder {
-  margin-bottom: 32px;
+  margin-bottom: rem(32);
 }
 
 .categories-holder {
-  margin: 32px 0 0;
+  margin: rem(32) 0 0;
 
   a {
-    margin: 0 16px;
+    margin: 0 rem(16);
 
     &:first-child {
       margin-left: 0;
@@ -41,7 +41,7 @@
 }
 
 .module-spacer {
-  padding: 72px 0;
+  padding: rem(72) 0;
 }
 
 .sticky-element {
@@ -54,7 +54,7 @@
 }
 
 .expandable-content {
-  padding-top: 35px;
+  padding-top: rem(35);
 }
 
 .module-dati-progetto {
@@ -62,22 +62,22 @@
     position: relative;
     display: block;
     width: 100%;
-    padding: 10px 0;
-    border-bottom: solid 1px $color-13;
+    padding: rem(10) 0;
+    border-bottom: solid rem(1) $color-13;
     @include flex-wrap;
-    font-size: $paragraph-size-desktop;
-    line-height: $paragraph-lineheight-desktop;
+    font-size: rem($paragraph-size-desktop);
+    line-height: rem($paragraph-lineheight-desktop);
 
 
     .label {
-      width: 220px;
-      margin-right: 10px;
+      width: rem(220);
+      margin-right: rem(10);
       color: $color-2;
       font-weight: $font-weight-2;
     }
 
     .data {
-      width: calc(100% - 230px);
+      width: calc(100% - rem(230));
       font-family: $font-sub;
     }
   }

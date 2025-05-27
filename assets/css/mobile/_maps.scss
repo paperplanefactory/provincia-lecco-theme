@@ -29,10 +29,10 @@
 .wpgmza-link {
     a {
         position: relative;
-        font-size: $h6-size-smartphone;
-        line-height: $h6-lineheight-smartphone;
-        margin-bottom: $h6-marginbottom-smartphone;
-        letter-spacing: 1px;
+        font-size: rem($h6-size-smartphone);
+        line-height: rem($h6-lineheight-smartphone);
+        margin-bottom: rem($h6-marginbottom-smartphone);
+        letter-spacing: rem(1);
         color: $color-4;
         font-weight: $font-weight-3;
         font-family: $font-main;
@@ -47,8 +47,8 @@
             display: inline-block;
             text-decoration: none !important;
             position: relative;
-            top: 2px;
-            margin-left: 8px;
+            top: rem(2);
+            margin-left: rem(8);
             font-family: "provincia-di-lecco" !important;
             font-style: normal !important;
             font-weight: normal !important;
@@ -63,12 +63,12 @@
 }
 
 .wpgmza-link {
-    margin-top: 5px;
+    margin-top: rem(5);
 }
 
 .wpgmza_marker_title {
-    font-size: $h6-size-smartphone;
-    line-height: $h6-lineheight-smartphone;
+    font-size: rem($h6-size-smartphone);
+    line-height: rem($h6-lineheight-smartphone);
     margin-bottom: $h6-marginbottom-smartphone;
     color: $color-4;
     font-weight: $font-weight-3;
@@ -83,22 +83,22 @@
 
 .wpgmza_infowindow_address,
 .wpgmza_infowindow_description p {
-    font-size: $h6-size-smartphone;
-    line-height: $h6-lineheight-smartphone;
+    font-size: rem($h6-size-smartphone);
+    line-height: rem($h6-lineheight-smartphone);
     margin-bottom: $h6-marginbottom-smartphone;
 }
 
 .wpgmza_infowindow_address {
     font-weight: $font-weight-2;
     font-family: $font-main;
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
 }
 
 .wpgmza_infowindow_title,
 .wpgmza_div_title {
-    font-size: $h5-size-smartphone;
-    line-height: $h5-lineheight-smartphone;
-    margin-bottom: $h5-marginbottom-smartphone;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem($h5-lineheight-smartphone);
+    margin-bottom: rem($h5-marginbottom-smartphone);
     color: $color-4;
     font-weight: $font-weight-3;
     font-family: $font-main;

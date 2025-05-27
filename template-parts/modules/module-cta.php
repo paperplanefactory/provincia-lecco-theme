@@ -6,9 +6,9 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
 <section class="cta-module">
 	<div class="module-separator">
 		<div class="content-styled">
-			<?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-				<h4 class="rebold"><a name="indice-<?php echo $module_count; ?>"
-						class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h4>
+			<?php if ( get_sub_field( 'module_index_title' ) != '' ) : ?>
+				<h2 class="as-h4 rebold"><a name="indice-<?php echo $module_count; ?>"
+						class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h2>
 			<?php else : ?>
 				<a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 			<?php endif; ?>
@@ -16,7 +16,7 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
 				<?php echo get_sub_field( 'module_cta_intro' ); ?>
 			<?php endif; ?>
 		</div>
-		<div class="tags-holder">
+		<ul class="tags-holder">
 			<?php
 			if ( $module_call_to_action_link_type === 'link-interno' ) :
 				$module_call_to_action_link_internal = get_sub_field( 'module_call_to_action_link_internal' );
@@ -24,11 +24,9 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
 				<?php foreach ( $module_call_to_action_link_internal as $post ) :
 					setup_postdata( $post ); ?>
 					<?php if ( $module_call_to_action_link_appearence === 'link-button' ) : ?>
-						<a href="<?php the_permalink(); ?>" class="square-button green filled" title="<?php the_title(); ?>"
-							aria-label="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<li><a href="<?php the_permalink(); ?>" class="square-button green filled"><?php the_title(); ?></a></li>
 					<?php else : ?>
-						<a href="<?php the_permalink(); ?>" class="tag-button filled-button" title="<?php the_title(); ?>"
-							aria-label="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<li><a href="<?php the_permalink(); ?>" class="tag-button filled-button"><?php the_title(); ?></a></li>
 					<?php endif; ?>
 				<?php endforeach;
 				wp_reset_postdata(); ?>
@@ -44,19 +42,17 @@ $module_call_to_action_link_type = get_sub_field( 'module_call_to_action_link_ty
 						}
 						?>
 						<?php if ( $module_call_to_action_link_appearence === 'link-button' ) : ?>
-							<a href="<?php echo $module_call_to_action_repeater_destination; ?>" class="square-button green filled"
-								title="<?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?>"
-								aria-label="<?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?>" target="_blank"
-								rel="nofollow"><?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?></a>
+							<li><a href="<?php echo $module_call_to_action_repeater_destination; ?>" class="square-button green filled"
+									target="_blank" rel="nofollow"><?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?></a>
+							</li>
 						<?php else : ?>
-							<a href="<?php echo $module_call_to_action_repeater_destination; ?>" class="tag-button filled-button"
-								title="<?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?>"
-								aria-label="<?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?>" target="_blank"
-								rel="nofollow"><?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?></a>
+							<li><a href="<?php echo $module_call_to_action_repeater_destination; ?>" class="tag-button filled-button"
+									target="_blank" rel="nofollow"><?php the_sub_field( 'module_call_to_action_repeater_testo' ); ?></a>
+							</li>
 						<?php endif; ?>
 					<?php endwhile; endif; ?>
 			<?php endif; ?>
-		</div>
+		</ul>
 
 	</div>
 </section>

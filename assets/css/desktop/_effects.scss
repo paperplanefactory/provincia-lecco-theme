@@ -21,7 +21,7 @@ video {
 }
 
 .lazy-loading {
-	@include define-blur(20px);
+	@include define-blur(rem(20));
 }
 
 .lazy-loaded {

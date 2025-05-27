@@ -6,9 +6,9 @@
 .page-index-right {
   .slide-module {
     position: relative;
-    left: -24px;
-    width: calc(100% + 48px) !important;
-    margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+    left: rem(-24);
+    width: calc(100% + rem(48)) !important;
+    margin-bottom: calc(#{rem($paragraph-marginbottom-desktop)} * 2);
   }
 }
 
@@ -34,74 +34,93 @@
   .slick-next,
   .slick-prev {
     position: absolute;
-    font-size: 30px;
+    font-size: rem(60);
   }
 
   .slick-prev {
-    left: 15px;
-    bottom: 3px;
+    left: rem(15);
+    bottom: rem(3);
   }
 
   .slick-next {
-    left: 55px;
-    bottom: 4px;
+    left: rem(55);
+    bottom: rem(4);
   }
 
   .wp-caption-text {
-    padding-left: 100px;
+    padding-left: rem(100);
     background-color: $color-8;
   }
 
   .wp-caption-text-fake {
-    height: 50px;
+    height: rem(50);
     background-color: $color-12;
   }
 }
 
 .slide-four {
   position: relative;
-  left: -24px;
-  width: calc(100% + 48px);
-  margin-bottom: 80px;
+  left: rem(-24);
+  width: calc(100% + rem(48));
+  margin-bottom: rem(80);
+
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    font-size: rem(30);
+  }
+
+  .slick-prev {
+    left: rem(15);
+    bottom: rem(-45);
+  }
+
+  .slick-next {
+    left: rem(55);
+    bottom: rem(-44);
+  }
+
   //padding-bottom: 78px;
   .slick-track {
     min-width: 100% !important;
   }
 
   .slick-list {
-    padding: 8px;
+    padding: rem(8);
   }
 
   .slick-slide {
+
     //width: 90vw !important;
     .card {
-      min-height: 350px;
+      min-height: rem(350);
     }
   }
 
   .slick-next,
   .slick-prev {
-    display: none !important;
+    //display: none !important;
   }
 }
 
 .single-slide {
   .card {
     position: relative;
-    width: calc(35% + 8px);
-    left: -8px;
+    width: calc(35% + rem(8));
+    left: rem(-8);
 
     .card_inner {
       &.regular-card {
-        padding: 20px 28px 35px 20px;
+        padding: rem(20) rem(28) rem(35) rem(20);
       }
     }
   }
 }
 
 .slide-caption {
-  margin-top: 20px;
+  margin-top: rem(20);
 }
+
 // navigation
 
 .slick-arrow {
@@ -110,28 +129,28 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  margin-top: -5px;
+  margin-top: rem(-5);
 }
 
 .slick-dots {
   text-align: center;
-  padding: 15px 0 0 0 !important;
+  padding: rem(15) 0 0 0 !important;
 
   li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 rem(5);
 
     button {
-      width: 20px;
-      height: 20px;
+      width: rem(20);
+      height: rem(20);
       border: none;
       //background-color: $color-4;
-      border: solid 1px $color-4;
+      border: solid rem(1) $color-4;
       font-size: 0;
       margin: 0;
       padding: 0;
       @include define-basic-transition(all, 0.3s);
-      @include define-border-radius(20px);
+      @include define-border-radius(rem(20));
       cursor: pointer;
 
       &:hover {
@@ -151,6 +170,6 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 10px 0 0;
+  padding: rem(10) 0 0;
   text-align: center;
 }

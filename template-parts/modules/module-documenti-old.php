@@ -5,9 +5,9 @@
 		<section class="text-module">
 			<div class="module-separator-flex">
 				<div class="content-styled">
-					<?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-						<h4><a name="indice-<?php echo $module_count; ?>"
-								class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h4>
+					<?php if ( get_sub_field( 'module_index_title' ) != '' ) : ?>
+						<h2 class="as-h4 rebold"><a name="indice-<?php echo $module_count; ?>"
+								class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h2>
 					<?php else : ?>
 						<a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
 					<?php endif; ?>
@@ -29,7 +29,6 @@
 							?>
 							<div class="flex-hold-child card insite">
 								<a href="<?php echo $doc_link; ?>" class="absl" target="_blank"
-									title="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"
 									aria-label="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"></a>
 								<div class="card_inner compact-card">
 									<div class="texts-holder compact">
@@ -77,7 +76,6 @@
 						?>
 						<div class="flex-hold-child card insite">
 							<a href="<?php echo $doc_link; ?>" class="absl" target="_blank"
-								title="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"
 								aria-label="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"></a>
 							<div class="card_inner compact-card">
 								<div class="texts-holder compact">

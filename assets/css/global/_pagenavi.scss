@@ -5,8 +5,8 @@
 .wp-pagenavi {
 	display: block;
 	width: 100%;
-	margin-top: 40px;
-	font-size: $h5-size-desktop;
+	margin-top: rem(40);
+	font-size: rem($h5-size-desktop);
 	font-weight: $font-weight-1;
 	text-align: center;
 }
@@ -23,23 +23,23 @@
 
 .wp-pagenavi .previouspostslink {
 	display: inline-block;
-	margin: 0 20px 0 0;
+	margin: 0 rem(20) 0 0;
 	color: $color-2;
 }
 
 .wp-pagenavi .nextpostslink {
 	display: inline-block;
-	margin: 0 20px 0 0;
+	margin: 0 rem(20) 0 0;
 	color: $color-4 !important;
 }
 
 .wp-pagenavi a {
 	display: inline-block;
-	width: 46px;
-	height: 46px;
+	width: rem(46);
+	height: rem(46);
 	text-align: center;
-	line-height: 46px;
-	margin: 0 20px 0 0;
+	line-height: rem(46);
+	margin: 0 rem(20) 0 0;
 	color: $color-1;
 	border: none;
 }
@@ -58,19 +58,19 @@
 
 .wp-pagenavi .page {
 	display: inline-block;
-	margin: 0 20px 0 0;
+	margin: 0 rem(20) 0 0;
 	color: $color-2;
 }
 
 .wp-pagenavi span.current {
 	display: inline-block;
 	display: inline-block;
-	width: 46px;
-	height: 46px;
+	width: rem(46);
+	height: rem(46);
 	text-align: center;
-	line-height: 46px;
-	margin: 0 20px 0 0;
+	line-height: rem(46);
+	margin: 0 rem(20) 0 0;
 	color: $color-4;
-	border: $color-4 solid 1px;
-	@include define-border-radius(4px);
+	border: $color-4 solid rem(1);
+	@include define-border-radius(rem(4));
 }

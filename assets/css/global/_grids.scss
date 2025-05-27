@@ -63,8 +63,9 @@
 
 .card {
   position: relative;
-  @include define-border-radius(8px);
+  @include define-border-radius(rem(8));
   overflow: hidden;
+
   //
   &.autonomous-height {
     align-self: flex-start;
@@ -73,10 +74,10 @@
 
 .card-outline {
   position: relative;
-  @include define-border-radius(8px);
+  @include define-border-radius(rem(8));
   //overflow: hidden;
   border-style: solid;
-  border-width: 1px;
+  border-width: rem(1);
 
   &.green {
     border-color: $color-4;
@@ -93,6 +94,7 @@
       color: $color-3;
     }
   }
+
   //
   &.autonomous-height {
     align-self: flex-start;
@@ -100,20 +102,20 @@
 
   .icon-box {
     position: absolute;
-    left: 40px;
-    top: -12px;
-    width: 72px;
-    height: 24px;
+    left: rem(40);
+    top: rem(-12);
+    width: rem(72);
+    height: rem(24);
     background-color: $color-12;
     text-align: center;
-    font-size: 24px;
+    font-size: rem(24);
   }
 }
 
 .actions-holder {
   position: absolute;
   z-index: 10;
-  top: 40px;
+  top: rem(40);
   left: 0;
   text-align: left;
   opacity: 1;
@@ -123,39 +125,40 @@
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 
   &:before {
     content: "▲";
     color: $color-12;
     position: absolute;
-    top: -14px;
-    left: 20px;
+    top: rem(-14);
+    left: rem(20);
   }
 
   .padder {
-    padding: 24px !important;
+    padding: rem(24) !important;
   }
 }
 
 .sito-tematico-grid {
   .flex-hold-child-sito-tematico {
-    width: 60px;
-    margin: 0 10px 0 0;
+    width: rem(60);
+    margin: 0 rem(10) 0 0;
   }
 
   .flex-hold-child-sito-tematico:nth-child(2n) {
-    width: calc(100% - 70px) !important;
+    width: calc(100% - rem(70)) !important;
     margin: 0;
   }
 }
 
 .sito-tematico-image {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: rem(60);
+  height: rem(60);
 }
 
 .no-index {
-  border-top: solid 1px $color-10;
+  border-top: solid rem(1) $color-10;
 }

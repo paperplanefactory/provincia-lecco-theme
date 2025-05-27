@@ -4,20 +4,21 @@
 
 .modules-wrapper,
 .page-index-right {
+
 	.wp-caption.aligncenter,
 	.wp-caption.alignleft,
 	.wp-caption.alignnone,
 	.wp-caption.alignright {
 		position: relative;
-		left: -24px;
-		width: calc(100% + 48px) !important;
-		margin-bottom: calc(#{$paragraph-marginbottom-desktop} * 2);
+		left: rem(-24);
+		width: calc(100% + rem(48)) !important;
+		margin-bottom: calc(#{rem($paragraph-marginbottom-desktop)} * 2);
 	}
 }
 
 .wp-caption.aligncenter,
 .wp-caption.alignnone {
-	margin-bottom: 15px;
+	margin-bottom: rem(15);
 }
 
 .wp-caption-text,
@@ -25,7 +26,7 @@
 .wp-caption.alignleft .wp-caption-text,
 .wp-caption.alignnone .wp-caption-text,
 .wp-caption.alignright .wp-caption-text {
-	padding: 15px;
+	padding: rem(15);
 	background-color: $color-8;
 	text-align: left;
 }

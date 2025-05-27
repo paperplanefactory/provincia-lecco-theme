@@ -77,32 +77,33 @@ while ( have_posts() ) :
 
 	// verifico se è una pagina di primo livello
 	if ( $listing_page_level === 'primo-livello' ) {
-		$tax_query_longlist;
 		$tax_query_multiple = get_terms( array(
 			'taxonomy' => $listing_page_taxonmy,
 			'hide_empty' => true,
 			//'parent' => 0
 		)
 		);
+		$tax_terms = '';
 		foreach ( $tax_query_multiple as $tax ) {
 			//$tax_query_longlist .= '<input type="hidden" name="' . $listing_page_taxonmy . '[]" value="' . $tax->term_id . '">';
 			$tax_terms .= $tax->term_id . ',';
 			//$tax_query_longlist .= $tax->term_id;
 		}
-		$tax_query_longlist .= '<input type="hidden" name="' . $listing_page_taxonmy . '[]" value="' . $tax_terms . '">';
 	}
 
 	//imposto il colore di sfondo per il primo blocco di card che viene poi annullato se ci sono contenuti in evidenza
 	$color_block = 'bg-9';
 	$listing_page = 1;
 	?>
-	<main class="wrapper">
-		<div class="wrapper-padded">
+
+	<section class="wrapper">
+		<section class="wrapper-padded">
 			<div class="wrapper-padded-intro">
 				<div class="page-opening-padder">
-					<div class="breadcrumbs-holder grey-links undelinked-links" typeof="BreadcrumbList" vocab="http://schema.org/">
+					<nav class="breadcrumbs-holder grey-links undelinked-links" aria-label="Percorso"
+						typeof="BreadcrumbList" vocab="http://schema.org/">
 						<?php bcn_display(); ?>
-					</div>
+					</nav>
 					<div class="flex-hold flex-hold-page-opening">
 						<div class="page-opening-left">
 							<h1>
@@ -114,13 +115,17 @@ while ( have_posts() ) :
 								</p>
 							<?php endif; ?>
 							<?php if ( $listing_page_taxonmy != 'progetti_cpt' ) : ?>
-								<form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" class="search-form banner-form">
-									<input type="text" name="search-kw" placeholder='Cerca in "<?php the_title(); ?>"'
-										aria-label="Digita una parola chiave per la ricerca" />
-
+								<form action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>"
+									class="search-form banner-form">
+									<label for="keyword">Parola chiave</label>
+									<input type="text" name="search-kw" id="keyword"
+										placeholder='Cerca in "<?php the_title(); ?>"' />
 									<?php if ( $listing_page_level === 'primo-livello' ) : ?>
+										<input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]"
+											value="<?php echo $tax_terms; ?>">
 									<?php else : ?>
-										<input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]" value="<?php echo $tax_query; ?>">
+										<input type="hidden" name="<?php echo $listing_page_taxonmy; ?>[]"
+											value="<?php echo $tax_query; ?>">
 									<?php endif; ?>
 									<button class="button-appearance-normalizer" type="submit" aria-label="Cerca"><span
 											class="icon-search"></span></button>
@@ -131,7 +136,7 @@ while ( have_posts() ) :
 						<div class="page-opening-right">
 							<div class="padder">
 								<?php if ( $listing_page_taxonmy === 'argomenti' ) : ?>
-									<h6 class="allupper">Tutti gli argomenti</h6>
+									<h2 class="as-h6 txt-1 allupper">Tutti gli argomenti</h2>
 									<?php intro_menu_list_argomenti(); ?>
 								<?php else : ?>
 									<?php if ( $listing_page_level === 'primo-livello' ) {
@@ -149,8 +154,8 @@ while ( have_posts() ) :
 
 				</div>
 			</div>
-		</div>
-	</main>
+		</section>
+	</section>
 <?php endwhile; ?>
 
 
@@ -159,22 +164,22 @@ while ( have_posts() ) :
 if ( $listing_page_highlight_contents && ! is_paged() ) :
 	$color_block = '';
 	?>
-	<div class="wrapper bg-9">
+	<section class="wrapper bg-9">
 		<div class="wrapper-padded">
 			<div class="wrapper-padded-more">
 				<div class="listing-box">
 					<h2>In evidenza</h2>
-					<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+					<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 						<?php foreach ( $listing_page_highlight_contents as $post ) :
 							setup_postdata( $post ); ?>
 							<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 						<?php endforeach;
 						wp_reset_postdata(); ?>
-					</div>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 <?php endif; ?>
 
 <?php
@@ -205,7 +210,7 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 	$all_progetti = new WP_Query( $args_all_progetti );
 	if ( $all_progetti->have_posts() ) :
 		?>
-		<div class="wrapper <?php echo $color_block; ?>">
+		<section class="wrapper <?php echo $color_block; ?>">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
@@ -218,18 +223,18 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 								<?php the_title(); ?>
 							</h2>
 						<?php endif; ?>
-						<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+						<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 							<?php while ( $all_progetti->have_posts() ) :
 								$all_progetti->the_post(); ?>
 								<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 							<?php endwhile;
 							wp_reset_postdata(); ?>
-						</div>
+						</ul>
 						<?php wp_pagenavi( array( 'query' => $all_progetti ) ); ?>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php endif; ?>
 <?php
 		// listing di primo livello tranne news
@@ -259,7 +264,7 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 	$my_all_subpages = get_posts( $args_all_subpages );
 	if ( ! empty( $my_all_subpages ) ) :
 		?>
-		<div class="wrapper <?php echo $color_block; ?>">
+		<section class="wrapper <?php echo $color_block; ?>">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
@@ -272,17 +277,17 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 								<?php the_title(); ?>
 							</h2>
 						<?php endif; ?>
-						<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+						<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 							<?php foreach ( $my_all_subpages as $post ) :
 								setup_postdata( $post ); ?>
 								<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 							<?php endforeach;
 							wp_reset_postdata(); ?>
-						</div>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php endif; ?>
 
 	<?php
@@ -311,30 +316,31 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 		$my_all_top_posts = get_posts( $args_all_top_posts );
 		if ( ! empty( $my_all_top_posts ) ) :
 			?>
-			<div class="wrapper <?php echo $color_block; ?>">
+			<section class="wrapper <?php echo $color_block; ?>">
 				<div class="wrapper-padded">
 					<div class="wrapper-padded-more">
 						<div class="listing-box">
 							<h2>
 								<?php echo $category->name; ?>
 							</h2>
-							<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+							<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 								<?php foreach ( $my_all_top_posts as $post ) :
 									setup_postdata( $post ); ?>
 									<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 								<?php endforeach;
 								wp_reset_postdata(); ?>
-							</div>
+							</ul>
 							<div class="aligncenter">
-								<a href="<?php echo esc_url( get_term_link( $category ) ); ?>" class="square-button green filled"
-									title="Archivio <?php echo $category->name; ?>" aria-label="Archivio <?php echo $category->name; ?>">Vedi
-									tutte</a>
+								<a href="<?php echo esc_url( get_term_link( $category ) ); ?>" class="square-button green filled">
+									Vedi tutti <span class="screen-reader-text">i contenuti in
+										<?php echo $category->name; ?></span>
+								</a>
 							</div>
 						</div>
 
 					</div>
 				</div>
-			</div>
+			</section>
 		<?php endif; ?>
 	<?php endforeach; ?>
 
@@ -349,27 +355,29 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 	$my_all_top_posts = get_posts( $args_all_top_posts );
 	if ( ! empty( $my_all_top_posts ) ) :
 		?>
-		<div class="wrapper <?php echo $color_block; ?>">
+		<section class="wrapper <?php echo $color_block; ?>">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
 						<h2>Progetti</h2>
-						<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+						<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 							<?php foreach ( $my_all_top_posts as $post ) :
 								setup_postdata( $post ); ?>
 								<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 							<?php endforeach;
 							wp_reset_postdata(); ?>
-						</div>
+						</ul>
 						<div class="aligncenter">
-							<a href="<?php the_field( 'archives_url_progetti', 'any-lang' ); ?>" class="square-button green filled"
-								title="Archivio Progetti" aria-label="Archivio Progetti">Vedi tutti</a>
+							<a href="<?php the_field( 'archives_url_progetti', 'any-lang' ); ?>"
+								class="square-button green filled">
+								Vedi tutti <span class="screen-reader-text">i progetti</span>
+							</a>
 						</div>
 					</div>
 
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php endif; ?>
 
 	<?php
@@ -377,22 +385,22 @@ if ( $listing_page_taxonmy === 'progetti_cpt' ) :
 	if ( $listing_page_highlight_progetti && ! is_paged() ) :
 		$color_block = '';
 		?>
-		<div class="wrapper">
+		<section class="wrapper">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
 						<h2>Progetti</h2>
-						<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+						<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 							<?php foreach ( $listing_page_highlight_progetti as $post ) :
 								setup_postdata( $post ); ?>
 								<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 							<?php endforeach;
 							wp_reset_postdata(); ?>
-						</div>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php endif; ?>
 
 
@@ -530,7 +538,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
 	}
 	if ( $listing_paged->have_posts() ) :
 		?>
-		<div class="wrapper <?php echo $color_block; ?>">
+		<section class="wrapper <?php echo $color_block; ?>">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
@@ -554,20 +562,20 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
 								</div>
 							<?php endif; ?>
 						</div>
-						<div class="flex-hold flex-hold-3 margins-wide grid-separator-2">
+						<ul class="flex-hold flex-hold-3 margins-wide grid-separator-2">
 							<?php while ( $listing_paged->have_posts() ) :
 								$listing_paged->the_post(); ?>
 								<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
 							<?php endwhile;
 							wp_reset_postdata(); ?>
-						</div>
+						</ul>
 						<?php wp_pagenavi( array( 'query' => $listing_paged ) ); ?>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php else : ?>
-		<div class="wrapper">
+		<section class="wrapper">
 			<div class="wrapper-padded">
 				<div class="wrapper-padded-more">
 					<div class="listing-box">
@@ -595,7 +603,7 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	<?php endif; ?>
 <?php endif; ?>
 
@@ -603,29 +611,19 @@ if ( $listing_page_level === 'secondo-livello' || $listing_page_level === 'terzo
 <?php
 if ( $listing_page_taxonmy != 'argomenti_tax' ) :
 	?>
-	<div class="wrapper">
+	<section class="wrapper">
 		<div class="wrapper-padded">
 			<div class="wrapper-padded-more">
 				<div class="tag-box">
 					<div class="aligncenter">
-						<h6 class="txt-1 allupper">Altri argomenti</h6>
-						<div class="tags-holder">
+						<p class="as-h6 txt-1 allupper">Altri argomenti</p>
+						<ul class="tags-holder">
 							<?php list_all_argomenti_pills(); ?>
-						</div>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 <?php endif; ?>
-
-
-
-
-
-
-
-
-
-
 <?php get_footer(); ?>

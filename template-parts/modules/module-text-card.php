@@ -1,13 +1,13 @@
 <!-- module-text-card -->
-<?php if ( get_sub_field( 'module_index_title_in_module' ) == 1 ) : ?>
-	<div class="content-styled">
-		<h4 class="rebold"><a name="indice-<?php echo $module_count; ?>"
-				class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h4>
-	</div>
-<?php else : ?>
-	<a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
-<?php endif; ?>
 <section class="card-module">
+	<?php if ( get_sub_field( 'module_index_title' ) != '' ) : ?>
+		<div class="content-styled">
+			<h2 class="as-h4 rebold"><a name="indice-<?php echo $module_count; ?>"
+					class="anchor-head"></a><?php echo get_sub_field( 'module_index_title' ); ?></h2>
+		</div>
+	<?php else : ?>
+		<a name="indice-<?php echo $module_count; ?>" class="anchor-head"></a>
+	<?php endif; ?>
 	<div class="module-separator">
 		<div class="card insite">
 			<div class="card_inner regular-card last-child-no-margin content-styled-card">

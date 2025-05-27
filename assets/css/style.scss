@@ -1,3 +1,4 @@
+@use "sass:math";
 // imports
 @import 'global/vars';
 @import 'global/mixin';
@@ -47,6 +48,70 @@
 (-ms-high-contrast: active) {
   .lazy {
     opacity: 1 !important;
+  }
+}
+
+@media (min-resolution: 4dppx) {
+  html {
+    overflow-y: auto !important;
+
+    &.occupy-scrollbar {
+      width: 100%;
+    }
+  }
+
+  body {
+    overflow-y: auto !important;
+
+    * {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      hyphens: auto !important;
+    }
+
+    #preheader {
+      display: none;
+    }
+
+    #head-overlay {
+      position: relative;
+      height: auto;
+      top: auto;
+
+      &.hidden {
+        height: 0;
+      }
+    }
+
+    #header {
+      position: relative;
+      height: auto;
+
+      #header-structure {
+
+        .logo,
+        .side-head {
+          width: 100%;
+        }
+      }
+    }
+
+    .flex-hold-avviso {
+      .chiudi-avviso {
+        position: relative;
+        left: auto;
+        top: auto;
+      }
+
+      .avviso-left,
+      .avviso-right {
+        width: 100%;
+
+        h2 {
+          padding-left: 0;
+        }
+      }
+    }
   }
 }
 

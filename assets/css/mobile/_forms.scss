@@ -3,27 +3,28 @@
 @import '../global/mixin'; // forms
 
 .overlay-form {
+
   input[type=email],
   input[type=number],
   input[type=tel],
   input[type=text] {
-    font-size: $h4-size-smartphone;
-    line-height: $h4-lineheight-smartphone;
-    margin-bottom: 15px;
+    font-size: rem($h4-size-smartphone);
+    line-height: rem($h4-lineheight-smartphone);
+    margin-bottom: rem(15);
   }
 
   .search-submit {
     span {
-      font-size: $h3-size-smartphone;
-      line-height: $h3-lineheight-smartphone;
+      font-size: rem($h3-size-smartphone);
+      line-height: rem($h3-lineheight-smartphone);
     }
   }
 }
 
 .form-hold {
   label {
-    font-size: $h5-size-smartphone;
-    line-height: $h5-lineheight-smartphone;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem($h5-lineheight-smartphone);
   }
 
   input[type=date],
@@ -31,25 +32,41 @@
   input[type=number],
   input[type=tel],
   input[type=text] {
-    font-size: $h5-size-smartphone;
-    line-height: $h5-lineheight-smartphone;
-    margin-bottom: 15px;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem($h5-lineheight-smartphone);
+    margin-bottom: rem(15);
   }
 
   textarea {
-    font-size: $h5-size-smartphone;
-    line-height: 18px;
-    margin-bottom: 15px;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem(18);
+    margin-bottom: rem(15);
   }
 
   select {
-    font-size: $h5-size-smartphone;
-    line-height: 18px;
-    margin-bottom: 15px;
+    font-size: rem($h5-size-smartphone);
+    line-height: rem(18);
+    margin-bottom: rem(15);
   }
 
   input[type=submit] {
-    font-size: $paragraph-size-smartphone;
+    font-size: rem($paragraph-size-smartphone);
     font-weight: $font-weight-3;
+  }
+}
+
+.search-column {
+  padding-bottom: 50px;
+
+  .filters-submit-hold {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-12;
+
+    button {
+      width: 100%;
+    }
   }
 }

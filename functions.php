@@ -25,11 +25,13 @@ include_once "includes/theme-embedded-acf-parnters-sponsors.php";
 include_once "includes/theme-taxonomies.php";
 // contantore visualizzazioni pagina
 include_once "includes/theme-view-counter.php";
-// contantore visualizzazioni pagina
+// suggerimenti di ricerca
 include_once "includes/theme-search-autocomplete.php";
+// ricerca semplice
+include_once "includes/theme-search.php";
 
 // ruoli aggiuntivi
 // include_once "includes/theme-custom-users.php";
 
 // load_theme_textdomain( 'paperplane-theme', '/languages' );
-load_theme_textdomain( 'paperplane-theme', TEMPLATEPATH.'/languages' );
+load_theme_textdomain( 'paperplane-theme', TEMPLATEPATH . '/languages' );
