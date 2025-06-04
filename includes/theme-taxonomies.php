@@ -13,15 +13,16 @@ function intro_menu_list_cpt_items( $listing_page_cpt_listed ) {
 		foreach ( $my_intro_menu as $post ) :
 			setup_postdata( $post );
 			$my_intro_menu_items++;
-			if ( $my_intro_menu_items == 6 ) {
-				$my_intro_menu_output .= '<div>';
+			if ( $my_intro_menu_items < 6 ) {
+				$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 			}
-			$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
+			if ( $my_intro_menu_items >= 6 ) {
+				$my_intro_menu_output .= '<li class="hidden"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
+			}
+
+			//$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 		endforeach;
 		wp_reset_postdata();
-		if ( $my_intro_menu_items > 5 ) {
-			$my_intro_menu_output .= '</div>';
-		}
 		$my_intro_menu_output .= '</ul>';
 		if ( $my_intro_menu_items > 5 ) {
 			$my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
@@ -155,15 +156,15 @@ function intro_menu_list_argomenti() {
 		foreach ( $my_intro_menu as $post ) :
 			setup_postdata( $post );
 			$my_intro_menu_items++;
-			if ( $my_intro_menu_items == 6 ) {
-				$my_intro_menu_output .= '<div>';
+			if ( $my_intro_menu_items < 6 ) {
+				$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 			}
-			$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
+			if ( $my_intro_menu_items >= 6 ) {
+				$my_intro_menu_output .= '<li class="hidden"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
+			}
+			//$my_intro_menu_output .= '<li><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 		endforeach;
 		wp_reset_postdata();
-		if ( $my_intro_menu_items > 5 ) {
-			$my_intro_menu_output .= '</div>';
-		}
 		$my_intro_menu_output .= '</ul>';
 		if ( $my_intro_menu_items > 5 ) {
 			$my_intro_menu_output .= '<button onclick="pageListMenuControl(this)" class="page-opening-menu-expander page-opening-menu-expander-js button-appearance-normalizer button-typo-normalizer" data-collapsed="Espandi voci di menu" data-expanded="Comprimi voci di menu"><span class="icon-js icon-expand"></span><span class="text-js">Espandi</span></button>';
@@ -481,9 +482,11 @@ function page_site_map() {
 	);
 	$my_sitemap = get_posts( $args_sitemap );
 	if ( ! empty( $my_sitemap ) ) {
+		$my_intro_menu_output .= '<nav aria-label="Mappa del sito">';
+		$my_intro_menu_output .= '<ul>';
 		foreach ( $my_sitemap as $post ) :
 			setup_postdata( $post );
-			$my_intro_menu_output .= '<h2 class="as-h4"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></h2>';
+			$my_intro_menu_output .= '<li class="as-h4"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 			$args_child_itemap = array(
 				'post_type' => 'page',
 				'posts_per_page' => -1,
@@ -491,11 +494,13 @@ function page_site_map() {
 				'post_parent' => $post->ID
 			);
 			$my_child_sitemap_pages = get_posts( $args_child_itemap );
+
 			foreach ( $my_child_sitemap_pages as $post ) :
 				setup_postdata( $post );
-				$my_intro_menu_output .= '<h3 class="as-h5">- <a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></h3>';
+				$my_intro_menu_output .= '<li class="as-h4"><a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a></li>';
 			endforeach;
 		endforeach;
+		$my_intro_menu_output .= '</ul>';
 		wp_reset_postdata();
 	}
 	$my_intro_menu_output .= '</div>';

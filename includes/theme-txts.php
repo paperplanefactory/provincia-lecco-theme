@@ -1,9 +1,9 @@
 <?php
 // Accorcio stringhe
 function shorten_abstract( $page_abstract, $length ) {
-  if( strlen( $page_abstract ) > $length ) {
-    $page_abstract = trim( substr( $page_abstract, 0, $length ) )."&hellip;";
-    $page_abstract = preg_replace('`\[[^\]]*\]`', '', $page_abstract);
+	if ( strlen( $page_abstract ) > $length ) {
+		$page_abstract = trim( substr( $page_abstract, 0, $length ) ) . "&hellip;";
+		$page_abstract = preg_replace( '`\[[^\]]*\]`', '', $page_abstract );
 	}
 	echo $page_abstract;
 }
@@ -37,8 +37,8 @@ add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
  * @param $url
  */
 function namespace_login_headerurl( $url ) {
-    $url = home_url( '/' );
-    return $url;
+	$url = home_url( '/' );
+	return $url;
 }
 
 add_filter( 'login_headertitle', 'namespace_login_headertitle' );
@@ -48,6 +48,28 @@ add_filter( 'login_headertitle', 'namespace_login_headertitle' );
  * @param $title
  */
 function namespace_login_headertitle( $title ) {
-    $title = get_bloginfo( 'name' );
-    return $title;
+	$title = get_bloginfo( 'name' );
+	return $title;
 }
+
+
+
+
+
+
+
+
+
+
+
+function pr_le_siti_tematici_redirect() {
+	global $post;
+	if ( is_singular( 'siti_tematici_cpt' ) ) {
+		$redirect_url = get_field( 'sito_tematico_url', $post->ID );
+		wp_redirect( $redirect_url );
+		exit;
+	}
+
+
+}
+add_action( 'template_redirect', 'pr_le_siti_tematici_redirect' );

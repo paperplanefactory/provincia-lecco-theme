@@ -122,7 +122,7 @@ while ( have_posts() ) :
 				<?php if ( get_field( 'content_index' ) == 1 ) : ?>
 					<div class="flex-hold flex-hold-page-index">
 						<div class="page-index-left no-print">
-							<nav class="sticky-element sticky-columns-js">
+							<nav class="sticky-element sticky-columns-js" aria-label="Indice della pagina">
 								<button onclick="pageIndexMenuControls(this)"
 									class="index-menu-expander index-menu-expander-js button-appearance-normalizer button-typo-normalizer"
 									aria-controls="index-menu" data-collapsed="Apri l'indice dei contenuti"

@@ -31,8 +31,10 @@
 									<span class="title-icon icon-attachement"></span>
 									<?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>
 								</h2>
-								<a href="<?php echo $doc_link; ?>" class="card-link"><span class="screen-reader-text">Scarica:
-										<?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?></span></a>
+								<a href="<?php echo $doc_link; ?>" class="card-link new-window" target="_blank"><span
+										class="screen-reader-text">Scarica:
+										<?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?> (si apre in
+										una nuova scheda)</span></a>
 								<?php if ( get_sub_field( 'module_gestione_documenti_repeater_doc_description' ) ) : ?>
 									<p>
 										<?php the_sub_field( 'module_gestione_documenti_repeater_doc_description' ); ?>

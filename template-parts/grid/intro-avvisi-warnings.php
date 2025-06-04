@@ -5,7 +5,7 @@ if ( ! isset( $scadenza_check ) ) {
 // avvisi specifici per bandi scaduti
 if ( $scadenza_check === 'scaduto' ) :
 	?>
-	<div class="card warning">
+	<aside class="card warning">
 		<div class="card_inner warning-card">
 			<span class="icon icon-warning"></span>
 			<h5 class="allupper">
@@ -13,7 +13,7 @@ if ( $scadenza_check === 'scaduto' ) :
 			</h5>
 			<?php the_field( 'testo_messaggio_generico_bando_scaduto', 'any-lang' ); ?>
 		</div>
-	</div>
+	</aside>
 <?php endif; ?>
 
 <?php
@@ -93,7 +93,7 @@ if ( $taxonomy != '' ) :
 				$icon_class = 'icon-reserved';
 			}
 			?>
-			<div class="card <?php echo $card_class; ?>">
+			<aside class="card <?php echo $card_class; ?>">
 				<div class="card_inner warning-card">
 					<span class="icon <?php echo $icon_class; ?>"></span>
 					<h2 class="as-h5 allupper">
@@ -101,7 +101,7 @@ if ( $taxonomy != '' ) :
 					</h2>
 					<?php the_content(); ?>
 				</div>
-			</div>
+			</aside>
 		<?php endforeach;
 		wp_reset_postdata(); ?>
 	<?php endif; ?>
@@ -156,17 +156,15 @@ if ( ! empty( $my_singlecontent_messsage ) ) :
 			$icon_class = 'icon-reserved';
 		}
 		?>
-		<div class="card <?php echo $card_class; ?>">
+		<aside class="card <?php echo $card_class; ?>">
 			<div class="card_inner warning-card">
 				<span class="icon <?php echo $icon_class; ?>"></span>
 				<h2 class="as-h5 allupper">
 					<?php the_title(); ?>
 				</h2>
 				<?php the_content(); ?>
-				<?php echo $today;
-				the_field( 'scadenza_avviso_specific_content' ); ?>
 			</div>
-		</div>
+		</aside>
 	<?php endforeach;
 	wp_reset_postdata(); ?>
 <?php endif; ?>

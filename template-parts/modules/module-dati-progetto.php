@@ -11,126 +11,128 @@
 			<?php endif; ?>
 			<?php if ( get_sub_field( 'titolo_progetto' ) ) : ?>
 			<?php endif; ?>
-			<div class="module-dati-progetto-string">
-				<div class="label">Titolo progetto</div>
-				<div class="data">
-					<?php the_sub_field( 'titolo_progetto' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Tipologia opera pubblica</div>
-				<div class="data">
-					<?php the_sub_field( 'tipologia_opera_pubblica' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Tipologia infrastruttura</div>
-				<div class="data">
-					<?php the_sub_field( 'tipologia_infrastruttura' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Nome infrastruttura</div>
-				<div class="data">
-					<?php the_sub_field( 'nome_infrastruttura' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Lineare o puntuale</div>
-				<div class="data">
-					<?php the_sub_field( 'tipo_di_intervento' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Coordinate geografiche</div>
-				<div class="data">
-					<?php the_sub_field( 'coordinate_geografiche' ); ?>
-				</div>
-			</div>
-			<?php if ( get_sub_field( 'tipo_di_intervento' ) === 'Lineare' ) : ?>
+			<dl>
 				<div class="module-dati-progetto-string">
-					<div class="label">Punto di inizio e fine (km)</div>
-					<div class="data">
-						<?php the_sub_field( 'punto_di_inizio_e_fine_km' ); ?>
-					</div>
+					<dt class="label">Titolo progetto</dt>
+					<dd class="data">
+						<?php the_sub_field( 'titolo_progetto' ); ?>
+					</dd>
 				</div>
-			<?php endif; ?>
-			<div class="module-dati-progetto-string">
-				<div class="label">Provincia</div>
-				<div class="data">
-					<?php the_sub_field( 'provincia' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Comune/i</div>
-				<div class="data">
-					<?php the_sub_field( 'comunei' ); ?>
-				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Località</div>
-				<div class="data">
-					<?php the_sub_field( 'localita' ); ?>
-				</div>
-			</div>
-			<?php if ( get_sub_field( 'inizio_lavori' ) ) : ?>
 				<div class="module-dati-progetto-string">
-					<div class="label">Inizio lavori</div>
-					<div class="data">
-						<?php the_sub_field( 'inizio_lavori' ); ?>
-					</div>
+					<dt class="label">Tipologia opera pubblica</dt>
+					<dd class="data">
+						<?php the_sub_field( 'tipologia_opera_pubblica' ); ?>
+					</dd>
 				</div>
-			<?php endif; ?>
-			<?php if ( get_sub_field( 'fine_lavori_presunto' ) ) : ?>
 				<div class="module-dati-progetto-string">
-					<div class="label">Fine lavori (presunto)</div>
-					<div class="data">
-						<?php the_sub_field( 'fine_lavori_presunto' ); ?>
-					</div>
+					<dt class="label">Tipologia infrastruttura</dt>
+					<dd class="data">
+						<?php the_sub_field( 'tipologia_infrastruttura' ); ?>
+					</dd>
 				</div>
-			<?php endif; ?>
-			<?php if ( get_sub_field( 'entrata_in_esercizio' ) ) : ?>
 				<div class="module-dati-progetto-string">
-					<div class="label">Entrata in esercizio</div>
-					<div class="data">
-						<?php the_sub_field( 'entrata_in_esercizio' ); ?>
+					<dt class="label">Nome infrastruttura</dt>
+					<dd class="data">
+						<?php the_sub_field( 'nome_infrastruttura' ); ?>
+					</dd>
+				</div>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Lineare o puntuale</dt>
+					<dd class="data">
+						<?php the_sub_field( 'tipo_di_intervento' ); ?>
+					</dd>
+				</div>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Coordinate geografiche</dt>
+					<dd class="data">
+						<?php the_sub_field( 'coordinate_geografiche' ); ?>
+					</dd>
+				</div>
+				<?php if ( get_sub_field( 'tipo_di_intervento' ) === 'Lineare' ) : ?>
+					<div class="module-dati-progetto-string">
+						<dt class="label">Punto di inizio e fine (km)</dt>
+						<dd class="data">
+							<?php the_sub_field( 'punto_di_inizio_e_fine_km' ); ?>
+						</dd>
 					</div>
+				<?php endif; ?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Provincia</dt>
+					<dd class="data">
+						<?php the_sub_field( 'provincia' ); ?>
+					</dd>
 				</div>
-			<?php endif; ?>
-			<div class="module-dati-progetto-string">
-				<div class="label">Proprietario</div>
-				<div class="data">
-					<?php the_sub_field( 'proprietario' ); ?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Comune/i</dt>
+					<dd class="data">
+						<?php the_sub_field( 'comunei' ); ?>
+					</dd>
 				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Responsabile progettazione</div>
-				<div class="data">
-					<?php the_sub_field( 'responsabile_progettazione' ); ?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Località</dt>
+					<dd class="data">
+						<?php the_sub_field( 'localita' ); ?>
+					</dd>
 				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Tipologia intervento</div>
-				<div class="data">
-					<?php the_sub_field( 'tipologia_intervento' ); ?>
+				<?php if ( get_sub_field( 'inizio_lavori' ) ) : ?>
+					<div class="module-dati-progetto-string">
+						<dt class="label">Inizio lavori</dt>
+						<dd class="data">
+							<?php the_sub_field( 'inizio_lavori' ); ?>
+						</dd>
+					</div>
+				<?php endif; ?>
+				<?php if ( get_sub_field( 'fine_lavori_presunto' ) ) : ?>
+					<div class="module-dati-progetto-string">
+						<dt class="label">Fine lavori (presunto)</dt>
+						<dd class="data">
+							<?php the_sub_field( 'fine_lavori_presunto' ); ?>
+						</dd>
+					</div>
+				<?php endif; ?>
+				<?php if ( get_sub_field( 'entrata_in_esercizio' ) ) : ?>
+					<div class="module-dati-progetto-string">
+						<dt class="label">Entrata in esercizio</dt>
+						<dd class="data">
+							<?php the_sub_field( 'entrata_in_esercizio' ); ?>
+						</dd>
+					</div>
+				<?php endif; ?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Proprietario</dt>
+					<dd class="data">
+						<?php the_sub_field( 'proprietario' ); ?>
+					</dd>
 				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Importo finanziamento</div>
-				<div class="data">
-					€
-					<?php
-					$importo_del_contratto = get_sub_field( 'importo_del_contratto' );
-					echo number_format( $importo_del_contratto, 2, ',', '.' );
-					?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Responsabile progettazione</dt>
+					<dd class="data">
+						<?php the_sub_field( 'responsabile_progettazione' ); ?>
+					</dd>
 				</div>
-			</div>
-			<div class="module-dati-progetto-string">
-				<div class="label">Finanziata da</div>
-				<div class="data">
-					<?php the_sub_field( 'finanziata_da' ); ?>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Tipologia intervento</dt>
+					<dd class="data">
+						<?php the_sub_field( 'tipologia_intervento' ); ?>
+					</dd>
 				</div>
-			</div>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Importo finanziamento</dt>
+					<dd class="data">
+						€
+						<?php
+						$importo_del_contratto = get_sub_field( 'importo_del_contratto' );
+						echo number_format( $importo_del_contratto, 2, ',', '.' );
+						?>
+					</dd>
+				</div>
+				<div class="module-dati-progetto-string">
+					<dt class="label">Finanziata da</dt>
+					<dd class="data">
+						<?php the_sub_field( 'finanziata_da' ); ?>
+					</dd>
+				</div>
+			</dl>
 		</div>
 	</div>
 </section>

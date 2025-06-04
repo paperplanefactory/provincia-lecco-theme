@@ -8,7 +8,8 @@
 			<div class="padder">
 				<ul class="share-actions grey-links">
 					<li>
-						<a href="https://api.whatsapp.com/send?text=<?php the_title(); ?> <?php the_permalink(); ?>" rel="nofollow">
+						<a href="https://api.whatsapp.com/send?text=<?php the_title(); ?> <?php the_permalink(); ?>"
+							rel="nofollow">
 							<span class="icon-whatsapp"></span>WhatsApp
 						</a>
 					</li>
@@ -30,7 +31,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php the_permalink(); ?>" rel="nofollow">
+						<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php the_permalink(); ?>"
+							rel="nofollow">
 							<span class="icon-logo-linkedin"></span>LinkedIn
 						</a>
 					</li>
@@ -52,7 +54,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="mailto:?subject=<?php the_title(); ?>" rel="nofollow">
+						<a href="mailto:?subject=<?php echo get_the_title(); ?> - <?php echo get_permalink(); ?>"
+							rel="nofollow">
 							<span class="icon-email"></span>Invia
 						</a>
 					</li>

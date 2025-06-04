@@ -204,6 +204,11 @@ small {
 
   li {
     margin-bottom: rem(10);
+
+    &.hidden {
+      visibility: hidden;
+      display: none;
+    }
   }
 }
 

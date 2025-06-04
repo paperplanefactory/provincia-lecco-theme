@@ -176,7 +176,7 @@ if ( isset( $module_auto_listing_appearence ) && $module_auto_listing_appearence
 						<?php if ( get_post_thumbnail_id() ) : ?>
 							<div class="flex-hold sito-tematico-grid">
 								<div class="flex-hold-child-sito-tematico">
-									<div class="sito-tematico-image">
+									<div class="sito-tematico-image" aria-hidden="true">
 										<?php
 										$image_data = array(
 											'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field
@@ -195,7 +195,7 @@ if ( isset( $module_auto_listing_appearence ) && $module_auto_listing_appearence
 								</div>
 								<div class="flex-hold-child-sito-tematico">
 									<h2 class="as-h5 element-hover txt-12"><?php the_title(); ?></h2>
-									<a href="<?php the_permalink(); ?>" class="card-link"><span
+									<a href="<?php echo get_field( 'sito_tematico_url' ); ?>" class="card-link"><span
 											class="screen-reader-text"><?php the_title(); ?></span></a>
 									<?php if ( get_field( 'page_abstract' ) ) : ?>
 										<p>
@@ -209,7 +209,7 @@ if ( isset( $module_auto_listing_appearence ) && $module_auto_listing_appearence
 							</div>
 						<?php else : ?>
 							<h2 class="as-h5 element-hover txt-12"><?php the_title(); ?></h2>
-							<a href="<?php the_permalink(); ?>" class="card-link"><span
+							<a href="<?php echo get_field( 'sito_tematico_url' ); ?>" class="card-link"><span
 									class="screen-reader-text"><?php the_title(); ?></span></a>
 							<?php if ( get_field( 'page_abstract' ) ) : ?>
 								<p>
@@ -235,7 +235,7 @@ if ( isset( $module_auto_listing_appearence ) && $module_auto_listing_appearence
 							<div class="card_inner regular-card">
 							<?php endif; ?>
 							<?php if ( get_post_thumbnail_id() ) : ?>
-								<div class="cover-image">
+								<div class="cover-image" aria-hidden="true">
 									<?php
 									$image_data = array(
 										'image_type' => 'post_thumbnail', // options: post_thumbnail, acf_field, acf_sub_field

@@ -25,10 +25,10 @@
 					<!-- blocco data scadenza -->
 
 					<div class="flex-hold flex-hold-scadenze">
-						<div class="data">
-							<h3><?php echo $giorno; ?></h3>
-							<h5><?php echo $mese; ?><br /><?php echo $anno; ?></h5>
-						</div>
+						<p class="data">
+							<span class="as-h3"><?php echo $giorno; ?><br /></span>
+							<span class="as-h5"><?php echo $mese; ?><br /><?php echo $anno; ?></span>
+						</p>
 						<div class="info flex-hold verticalize">
 							<div class="padder paragraph-variant-holder">
 								<?php if ( get_sub_field( 'module_scadenze_repeater_titolo' ) ) : ?>

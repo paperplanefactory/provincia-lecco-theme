@@ -12,6 +12,13 @@
   }
 }
 
+.slick-next,
+.slick-prev {
+  font-size: rem(24);
+  width: rem(24);
+  height: rem(24);
+}
+
 .slide-one {
   background-color: $color-8;
 
@@ -34,17 +41,16 @@
   .slick-next,
   .slick-prev {
     position: absolute;
-    font-size: rem(60);
   }
 
   .slick-prev {
     left: rem(15);
-    bottom: rem(3);
+    bottom: rem(49);
   }
 
   .slick-next {
     left: rem(55);
-    bottom: rem(4);
+    bottom: rem(50);
   }
 
   .wp-caption-text {
@@ -67,7 +73,6 @@
   .slick-next,
   .slick-prev {
     position: absolute;
-    font-size: rem(30);
   }
 
   .slick-prev {

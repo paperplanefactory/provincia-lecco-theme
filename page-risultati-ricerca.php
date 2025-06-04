@@ -197,34 +197,48 @@ $remove_filters = $search_handler->has_active_filters() ? 1 : 0;
 $search_result_card = 1; // per visualizzazione compatta
 ?>
 
-<form method="get" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>/" id="search-filters"
+<div class="wrapper">
+	<div class="wrapper-padded">
+		<div class="wrapper-padded-intro">
+			<div class="single-content-opening-padder">
+				<nav class="breadcrumbs-holder grey-links undelinked-links" aria-label="Percorso"
+					typeof="BreadcrumbList" vocab="http://schema.org/">
+					<?php bcn_display(); ?>
+				</nav>
+				<div class="inpage-searchform">
+
+					<h1 class="as-h4 txt-1">
+						<?php if ( $search_kw != '' ) : ?>
+							Hai cercato: <?php echo esc_attr( $search_kw ); ?>
+						<?php else : ?>
+							Effettua una ricerca
+						<?php endif; ?>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form method="get" action="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>" id="search-filters"
 	autocomplete="off" class="suggested-results-form-js search-form">
 	<div class="wrapper">
 		<div class="wrapper-padded">
 			<div class="wrapper-padded-intro">
-				<div class="single-content-opening-padder">
-					<nav class="breadcrumbs-holder grey-links undelinked-links" aria-label="Percorso"
-						typeof="BreadcrumbList" vocab="http://schema.org/">
-						<?php bcn_display(); ?>
-					</nav>
-					<div class="inpage-searchform">
-						<h1 class="as-h4 txt-1">Hai cercato:</h1>
-						<div class="search-form overlay-form">
-							<label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
-							<input id="search-kw-header-input" type="text" name="search-kw"
-								class="search-autocomplete search-input-kw-js search-input-kw-js-ovarlay"
-								placeholder="Cerca informazioni, persone, servizi" role="combobox"
-								aria-controls="search-suggestion-area" aria-haspopup="listbox" maxlength="100"
-								autocomplete="off" spellcheck="true" value="<?php echo esc_attr( $search_kw ); ?>" />
+				<div class="search-form overlay-form">
+					<label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
+					<input id="search-kw-header-input" type="text" name="search-kw"
+						class="search-autocomplete search-input-kw-js search-input-kw-js-ovarlay"
+						placeholder="Cerca informazioni, persone, servizi" role="combobox"
+						aria-controls="search-suggestion-area" aria-haspopup="listbox" maxlength="100"
+						autocomplete="off" spellcheck="true" value="<?php echo esc_attr( $search_kw ); ?>" />
 
-							<button type="submit" class="search-submit search-submit-js" aria-label="Cerca">
-								<span class="icon-search"></span>
-							</button>
-							<ul class="search-suggestion-area" id="search-suggestion-area" role="dialog"
-								aria-modal="true" aria-label="Suggerimenti di ricerca">
-							</ul>
-						</div>
-					</div>
+					<button type="submit" class="search-submit search-submit-js" aria-label="Cerca">
+						<span class="icon-search"></span>
+					</button>
+					<ul class="search-suggestion-area" id="search-suggestion-area" role="dialog" aria-modal="true"
+						aria-label="Suggerimenti di ricerca">
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -233,7 +247,7 @@ $search_result_card = 1; // per visualizzazione compatta
 	<div class="wrapper">
 		<div class="wrapper-padded">
 			<div class="wrapper-padded-more">
-				<div class="flex-hold flex-hold-search-page bordered top">
+				<div class="flex-hold flex-hold-search-page ">
 					<div class="search-page-left">
 						<div class="sticky-element sticky-columns-js">
 							<div class="padder">
@@ -286,46 +300,45 @@ $search_result_card = 1; // per visualizzazione compatta
 							</div>
 						</div>
 					</div>
-
-					<div class="search-page-right">
-						<div class="padder">
-							<div
-								class="flex-hold flex-hold-2 margins-thin bordered bottom intro-search-results-padder verticalize">
-								<div class="flex-hold-child">
-									<?php
-									$count = $search_query->found_posts;
-									echo absint( $count );
-									echo ( $count == 1 ) ? ' risultato' : ' risultati';
-									?>
-									<?php if ( $remove_filters ) : ?>
-										<h2 class="as-h5 allupper eraser-btn">
-											<a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?search-kw=<?php echo urlencode( $search_kw ); ?>"
-												class="green-link">Elimina filtri</a>
-										</h2>
-									<?php endif; ?>
-								</div>
-								<div class="flex-hold-child"></div>
-							</div>
-
-							<?php if ( $search_query->have_posts() ) : ?>
-								<ul class="flex-hold flex-hold-3 margins-thin search-results">
-									<?php while ( $search_query->have_posts() ) :
-										$search_query->the_post(); ?>
-										<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
-									<?php endwhile; ?>
-								</ul>
-							<?php endif; ?>
-
-							<?php
-							wp_reset_postdata();
-							wp_pagenavi( [ 'query' => $search_query ] );
-							?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 </form>
+<div class="search-page-right">
+	<div class="padder">
+		<div class="flex-hold flex-hold-2 margins-thin bordered bottom intro-search-results-padder verticalize">
+			<div class="flex-hold-child">
+				<?php
+				$count = $search_query->found_posts;
+				echo absint( $count );
+				echo ( $count == 1 ) ? ' risultato' : ' risultati';
+				?>
+				<?php if ( $remove_filters ) : ?>
+					<h2 class="as-h5 allupper eraser-btn">
+						<a href="<?php the_field( 'archives_url_ricerca', 'any-lang' ); ?>?search-kw=<?php echo urlencode( $search_kw ); ?>"
+							class="green-link">Elimina filtri</a>
+					</h2>
+				<?php endif; ?>
+			</div>
+			<div class="flex-hold-child"></div>
+		</div>
+
+		<?php if ( $search_query->have_posts() ) : ?>
+			<ul class="flex-hold flex-hold-3 margins-thin search-results">
+				<?php while ( $search_query->have_posts() ) :
+					$search_query->the_post(); ?>
+					<?php include( locate_template( 'template-parts/grid/listing-card.php' ) ); ?>
+				<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+
+		<?php
+		wp_reset_postdata();
+		wp_pagenavi( [ 'query' => $search_query ] );
+		?>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 
 <?php get_footer(); ?>

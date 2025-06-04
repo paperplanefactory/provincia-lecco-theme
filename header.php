@@ -366,8 +366,7 @@
 							</ul>
 						<?php endif; ?>
 
-						<div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile">
-
+						<div class="flex-hold flex-hold-4 margins-wide footer-block-2 lined-mobile h2-as-h5">
 							<div class="flex-hold-child">
 								<?php the_field( 'informazioni_amministrazione_trasparente', $acf_options_parameter ); ?>
 							</div>

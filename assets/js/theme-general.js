@@ -282,11 +282,11 @@ function scrollDirectionMenu() {
     if ((st > lastScrollTop) && (st > 100)) {
       // downscroll code
       $('#header').addClass('compact');
-      $('.sticky-columns-js').addClass('sticky-element-compact').removeClass('sticky-element-expanded');
+      //$('.sticky-columns-js').addClass('sticky-element-compact').removeClass('sticky-element-expanded');
     } else {
       // upscroll code
       $('#header').removeClass('compact');
-      $('.sticky-columns-js').addClass('sticky-element-expanded').removeClass('sticky-element-compact');
+      //$('.sticky-columns-js').addClass('sticky-element-expanded').removeClass('sticky-element-compact');
     }
   }
 
@@ -480,15 +480,22 @@ $('.actions-holder-js, .print-holder-js').mouseleave(function (e) {
 });
 
 function pageIndexMenuControls(this_element) {
-  if ($(this_element).find('span').hasClass('icon-expand')) {
-    $(this_element).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
-    $(this_element).next('.index-menu-js').slideDown(150).removeClass('hidden');
-
-  } else {
-    $(this_element).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
-    $(this_element).next('.index-menu-js').slideUp(150).addClass('hidden');
+  // Assicurati che il click sia proprio sul button, non su elementi figli
+  if ($(this_element).hasClass('index-menu-expander-js')) {
+    if ($(this_element).find('span').hasClass('icon-expand')) {
+      $(this_element).find('span').removeClass('icon-expand').addClass('icon-collapse-1');
+      $(this_element).next('.index-menu-js').slideDown(150).removeClass('hidden');
+    } else {
+      $(this_element).find('span').addClass('icon-expand').removeClass('icon-collapse-1');
+      $(this_element).next('.index-menu-js').slideUp(150).addClass('hidden');
+    }
   }
 }
+
+// Aggiungi questo codice per fermare la propagazione sui link dell'indice
+$(document).on('click', '.index-listing a', function (e) {
+  e.stopPropagation();
+});
 
 function pageIndexMenuControlsMobile(this_element) {
   if ($(this_element).find('span').hasClass('icon-expand')) {

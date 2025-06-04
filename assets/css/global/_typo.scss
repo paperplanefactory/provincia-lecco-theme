@@ -578,3 +578,16 @@ i {}
   color: #666;
   border: none;
 }
+
+.data {
+
+  .as-h3,
+  .as-h5 {
+    margin-bottom: rem(0);
+  }
+
+  .as-h5 {
+    position: relative;
+    top: -5px;
+  }
+}

@@ -28,13 +28,15 @@
 							}
 							?>
 							<div class="flex-hold-child card insite">
-								<a href="<?php echo $doc_link; ?>" class="absl" target="_blank"
-									aria-label="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"></a>
 								<div class="card_inner compact-card">
 									<div class="texts-holder compact">
-										<h4 class="h4-variant"><span
+										<h2 class="h4-variant iconized element-hover txt-3"><span
 												class="title-icon icon-attachement"></span><?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>
-										</h4>
+										</h2>
+										<a href="<?php echo $doc_link; ?>" class="card-link new-window" target="_blank"><span
+												class="screen-reader-text">Scarica:
+												<?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?> (si apre in
+												una nuova scheda)</span></a>
 										<?php if ( get_sub_field( 'module_gestione_documenti_repeater_doc_description' ) ) : ?>
 											<p>
 												<?php the_sub_field( 'module_gestione_documenti_repeater_doc_description' ); ?>
@@ -75,13 +77,15 @@
 						}
 						?>
 						<div class="flex-hold-child card insite">
-							<a href="<?php echo $doc_link; ?>" class="absl" target="_blank"
-								aria-label="Leggi il documento <?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>"></a>
 							<div class="card_inner compact-card">
 								<div class="texts-holder compact">
-									<h4 class="h4-variant"><span
+									<h2 class="h4-variant iconized element-hover txt-3"><span
 											class="title-icon icon-attachement"></span><?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?>
-									</h4>
+									</h2>
+									<a href="<?php echo $doc_link; ?>" class="card-link new-window" target="_blank"><span
+											class="screen-reader-text">Scarica:
+											<?php the_sub_field( 'module_gestione_documenti_repeater_doc_title' ); ?> (si apre in
+											una nuova scheda)</span></a>
 									<?php if ( get_sub_field( 'module_gestione_documenti_repeater_doc_description' ) ) : ?>
 										<p>
 											<?php the_sub_field( 'module_gestione_documenti_repeater_doc_description' ); ?>
