@@ -584,10 +584,11 @@ body {
   &.image-card-normal {
     .image-card-content {
       position: absolute;
-      bottom: rem(24);
+      bottom: 0;
       left: 0;
       width: calc(100% - rem(40));
-      padding: 0 rem(20);
+      padding: rem(20) rem(20) rem(2) rem(20);
+      background-color: rgba(255, 255, 255, 0.8);
     }
   }
 

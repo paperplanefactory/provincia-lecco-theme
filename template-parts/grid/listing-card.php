@@ -12,6 +12,9 @@ if ( ! isset( $display_h3 ) ) {
 if ( ! isset( $compact_card ) ) {
 	$compact_card = '';
 }
+if ( ! isset( $compact_argomenti ) ) {
+	$compact_argomenti = '';
+}
 if ( ! isset( $slide_listing ) ) {
 	$slide_listing = '';
 }
