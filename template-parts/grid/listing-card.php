@@ -73,7 +73,7 @@ if ( isset( $module_auto_listing_appearence ) && $module_auto_listing_appearence
 			?>
 			<?php
 			$thumb_id = get_post_thumbnail_id();
-			if ( $thumb_id != '' ) {
+			if ( $thumb_id != 0 ) {
 				$thumb_url_desktop = wp_get_attachment_image_src( $thumb_id, 'column', true );
 				$card_bg_image = $thumb_url_desktop[0];
 			} else {
