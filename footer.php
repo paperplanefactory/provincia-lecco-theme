@@ -155,7 +155,9 @@ global $footer_wrapper;
 				?>
 				<ul class="footer-menu-bottom">
 					<li>
-						Sito realizzato da <a href="https://www.paperplanefactory.com/" target="_blank">PaperPlane</a>
+						Sito realizzato da <a
+							href="https://paperplanefactory.com/case-study/linee-guida-agid-sito-web-wordpress/"
+							target="_blank">PaperPlane</a>
 						basato su <a href="https://wordpress.org/" target="_blank">WordPress</a>
 					</li>
 				</ul>

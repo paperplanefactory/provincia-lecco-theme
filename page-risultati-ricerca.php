@@ -26,7 +26,7 @@ class SearchResultsHandler {
 	 * Sanitizza tutti i parametri di ricerca
 	 */
 	private function sanitize_search_parameters() {
-		return [ 
+		return [
 			'search_kw' => isset( $_GET['search-kw'] ) ? sanitize_text_field( $_GET['search-kw'] ) : '',
 			'results_order' => isset( $_GET['results_order'] ) ? sanitize_key( $_GET['results_order'] ) : DEFAULT_ORDER_BY,
 			'amministrazione_tax' => isset( $_GET['amministrazione_tax'] ) ? array_map( 'absint', (array) $_GET['amministrazione_tax'] ) : [],
@@ -62,7 +62,7 @@ class SearchResultsHandler {
 		}
 
 		// Altrimenti processa tutte le tassonomie
-		$taxonomies = [ 
+		$taxonomies = [
 			'amministrazione_tax' => 'amministrazione_tax',
 			'servizi_tax' => 'servizi_tax',
 			'documenti_tax' => 'documenti_tax',
@@ -95,8 +95,8 @@ class SearchResultsHandler {
 	 * Costruisce una query semplice per una singola tassonomia
 	 */
 	private function build_simple_taxonomy_query( $taxonomy ) {
-		return [ 
-			[ 
+		return [
+			[
 				'taxonomy' => $taxonomy,
 				'field' => 'term_id',
 				'terms' => $this->search_params[ $taxonomy ]
@@ -110,14 +110,14 @@ class SearchResultsHandler {
 	private function process_taxonomy_terms( $taxonomy, $terms ) {
 		// Se è combinata con argomenti
 		if ( ! empty( $this->search_params['argomenti_tax'] ) ) {
-			return [ 
+			return [
 				'relation' => 'AND',
-				[ 
+				[
 					'taxonomy' => $taxonomy,
 					'field' => 'term_id',
 					'terms' => $this->parse_terms_array( $terms )
 				],
-				[ 
+				[
 					'taxonomy' => 'argomenti_tax',
 					'field' => 'term_id',
 					'terms' => $this->search_params['argomenti_tax']
@@ -125,7 +125,7 @@ class SearchResultsHandler {
 			];
 		}
 
-		return [ 
+		return [
 			'taxonomy' => $taxonomy,
 			'field' => 'term_id',
 			'terms' => $this->parse_terms_array( $terms )
@@ -163,7 +163,7 @@ class SearchResultsHandler {
 	public function execute_search() {
 		$order_params = $this->get_order_parameters();
 
-		$query_args = array_merge( [ 
+		$query_args = array_merge( [
 			'post_type' => [ 'post', 'servizi_cpt', 'amministrazione_cpt', 'documenti_cpt', 'progetti_cpt', 'amm_trasp_cpt' ],
 			's' => $this->search_params['search_kw'],
 			'paged' => get_query_var( 'paged' ),
@@ -227,18 +227,14 @@ $search_result_card = 1; // per visualizzazione compatta
 			<div class="wrapper-padded-intro">
 				<div class="search-form overlay-form">
 					<label for="search-kw-inpage-search-input">Digita una parola chiave per la ricerca:</label>
-					<input id="search-kw-header-input" type="text" name="search-kw"
-						class="search-autocomplete search-input-kw-js search-input-kw-js-ovarlay"
-						placeholder="Cerca informazioni, persone, servizi" role="combobox"
-						aria-controls="search-suggestion-area" aria-haspopup="listbox" maxlength="100"
+					<input id="search-kw-inpage-search-input" type="text" name="search-kw" class=""
+						placeholder="Cerca informazioni, persone, servizi" role="combobox" maxlength="100"
 						autocomplete="off" spellcheck="true" value="<?php echo esc_attr( $search_kw ); ?>" />
 
 					<button type="submit" class="search-submit search-submit-js" aria-label="Cerca">
 						<span class="icon-search"></span>
 					</button>
-					<ul class="search-suggestion-area" id="search-suggestion-area" role="dialog" aria-modal="true"
-						aria-label="Suggerimenti di ricerca">
-					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -276,7 +272,7 @@ $search_result_card = 1; // per visualizzazione compatta
 											<h2 class="as-h5 allupper txt-4">Categorie</h2>
 											<?php
 											// Configurazione tassonomie
-											$taxonomies_config = [ 
+											$taxonomies_config = [
 												[ 'name' => 'Amministrazione', 'slug' => 'amministrazione_tax', 'js_name' => 'amministrazione' ],
 												[ 'name' => 'Servizi', 'slug' => 'servizi_tax', 'js_name' => 'servizi' ],
 												[ 'name' => 'Novità', 'slug' => 'category', 'js_name' => 'novita' ],
