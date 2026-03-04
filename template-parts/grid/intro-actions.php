@@ -20,7 +20,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=?php the_permalink(); ?>" rel="nofollow">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" rel="nofollow">
 							<span class="icon-logo-facebook"></span>Facebook
 						</a>
 					</li>
